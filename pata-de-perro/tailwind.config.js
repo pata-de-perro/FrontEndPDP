@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,8 +15,29 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors:{
-        blue: "#EC94BC",
+        primary:"#87549F",
+        secondary:"#7ECDCE",
+        accent1:"#B6EAA4",
+        accent2:"#253A74",
         appBackground: "#FEFEFE",
+        azulGris50: "#ECEFF1",
+        azulGris100: "#CFD8DC",
+        azulGris200: "#B0BEC5",
+        azulGris300: "#90A4AE",
+        azulGris400: "#78909C",
+        azulGris500: "#607D8B",
+        azulGris600: "#546E7A",
+        azulGris700: "#455A64",
+        azulGris800: "#37474F",
+        azulGris900: "#263238",
+      },
+      fontFamily:{
+        // montserrat:['Montserrat'],
+        'heading': ['Montserrat'],
+        'body': ['Source Sans 3'],
+      //   sans: [ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+      //   serif: [ui-serif, Georgia, Cambria, "Times New Roman", Times, serif],
+      //   mono:	[ ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace],
       },
     },
   },
