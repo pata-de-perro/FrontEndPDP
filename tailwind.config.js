@@ -32,7 +32,6 @@ module.exports = {
         azulGris900: "#263238",
       },
       fontFamily:{
-        // montserrat:['Montserrat'],
         'heading': ['Montserrat'],
         'body': ['Source Sans 3'],
       //   sans: [ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
