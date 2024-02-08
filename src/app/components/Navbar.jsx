@@ -6,7 +6,7 @@ export default function Navbar(){
             "text-azulGris500",
         )}> This is Navbar
             <p className={clsx(
-                "font-h1"
+                "text-h1"
             )}>Esto es un h1</p>
         </div>
     );
