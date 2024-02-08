@@ -1,11 +1,25 @@
 import Image from "next/image";
-import Card from "./components/card/card";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Hero from "./components/Hero";
+import FirstCards from "./components/FirstCards";
+import SecondCallToAction from "./components/SecondCallToAction";
+import Functions from "./components/Functions";
+import Tutorials from "./components/Tutorials";
+import Comments from "./components/Comments";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <Card />
+    <main>
+      <Navbar />
+      <div>
+        <Hero />
+        <FirstCards />
+        <SecondCallToAction />
+        <Functions />
+        <Tutorials />
+        <Comments />
+        <Footer />
       </div>
     </main>
   );
