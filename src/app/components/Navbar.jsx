@@ -5,7 +5,9 @@ export default function Navbar(){
         <div className={clsx(
             "text-azulGris500",
         )}> This is Navbar
-
+            <p className={clsx(
+                "font-h1"
+            )}>Esto es un h1</p>
         </div>
     );
 }
