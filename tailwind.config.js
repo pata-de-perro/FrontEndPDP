@@ -14,6 +14,15 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      screens:{
+        'xs':'360px',
+        'sm':'640px',
+        'md': '744px',
+        'lg':'1024px',
+        'xl':'1280px',
+        '2xl':'1536px',
+      },
+
       colors:{
         primary:"#87549F",
         secondary:"#7ECDCE",
@@ -31,12 +40,14 @@ module.exports = {
         azulGris800: "#37474F",
         azulGris900: "#263238",
       },
+
       fontFamily:{
         'heading': ['Montserrat'],
         'body': ['Source Sans 3'],
       //   sans: [ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
       //   serif: [ui-serif, Georgia, Cambria, "Times New Roman", Times, serif],
       },
+
       fontSize:{
         'h1':['1.875rem', {
           lineHeight: '2.25rem',
@@ -79,6 +90,7 @@ module.exports = {
           fontWeight: '300',
        }],
       },
+
     },
   },
   plugins: [],
