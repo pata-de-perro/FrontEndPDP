@@ -8,13 +8,16 @@ export default function Navbar(){
             )}>
             <div className={clsx(
                 "max-w-lg",
-                "rounded-e-full"
-                // "w-1280"
+                "rounded-e-full",
+                "w-25"
             )}>
                 <div className={clsx(
-                    "flex h-14 m-8 items-center justify-between",
+                    "flex h-14  m-8 items-center justify-between",
                     
                 )}>
+                    <p className={clsx(
+                        "text-h1 font-body",
+                    )}>Hola mundo</p>
 
                 </div>
 
