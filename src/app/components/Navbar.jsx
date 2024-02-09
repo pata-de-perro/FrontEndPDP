@@ -7,24 +7,33 @@ export default function Navbar(){
     return(
         <header>
             <nav className={clsx(
+                "flex flex-row",
+                "mx-[30px] my-[25px]",
+                "px-[11px] py-[11px]",
+                "bg-accent1",
+                "rounded-full",
+                
             
             )}>
                 <div className={clsx(
-                    "flex flex-row",
-                    "mx-[30px] my-[25px]",
-                    "px-[11px] py-[11px]",
-                    "bg-accent1",
-                    "rounded-full",
-                )}>
-                    <img src="../image/dePataDePerroLogo.svg"></img>
-                    <p className={clsx(
-                        "font-logoFont",
-                        "text-h1",
-                        "text-primary"
-                    )}>depatadeperro</p>
+                    "flex flex-wrap",
+                    "grid justify-items-start",
+                    )}>
+                    <img src="../image/dePataDePerroLogo.svg" className={clsx(
+                    )}></img>
+                        <p className={clsx(
+                            "font-logoFont",
+                            "text-h1",
+                            "text-primary"
+                        )}>depatadeperro</p>
 
-                    <div>
-                        <ul className="menu-list">
+                    <div className={clsx(
+                    )}>
+                        <ul className={clsx(
+                            "flex flex-wrap",
+                            "items-center justify-between",
+                            // "grid justify-items-end",
+                        )}>
                             {MenuItems.map((item, index) => {
                                 return (
                                     <li key={index}>
@@ -37,19 +46,25 @@ export default function Navbar(){
                             <button className={clsx(
                                 "bg-none",
                                 "text-accent2 text-regular",
-                                "px-5 py-2",
+                                "px-[8px] py-[8px]",
+                                "w-[138px]",
+                                "mx-2",
                                 "rounded-full",
-                                "hover:text-primary hover:text-regularBold",
+                                "hover:text-primary",
+                                "border-2 border-accent2 hover:border-primary"
                             )}>¡Registrate!</button>
                             <button className={clsx(
-                            "bg-accent2",
-                            "text-white",
-                            "px-5 py-2",
-                            "rounded-full",
-                            "hover:bg-primary"
+                                "bg-accent2",
+                                "text-white text-regular",
+                                "px-[8px] py-[8px]",
+                                "w-[138px]",
+                                "rounded-full",
+                                "hover:bg-primary",
+                                "border-2 border-accent2 hover:border-primary",
                         )}>Iniciar sesión</button>
                         </ul>
-                    </div>
+                    </div> 
+                    {/* aqui termina */}
                 </div>
 
             </nav>  
