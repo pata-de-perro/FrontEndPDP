@@ -37,43 +37,48 @@ module.exports = {
       //   sans: [ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
       //   serif: [ui-serif, Georgia, Cambria, "Times New Roman", Times, serif],
       },
-      // fontSize:{
-      //   'h1':[
-      //     "text-primary",
-      //     "font-heading",
-      //     "font-bold",
-      //     "text-3xl",
-      //     "bg-clip-text"
-      //   ],
-      //   'h2':[
-      //     "text-2xl",
-      //     "fond-regular",
-      //     "font-heading",
-      //     "text-primary"
-      //   ],
-      //   'h3':[
-      //     "font-heading",
-      //     "text-sm",
-      //     "font-bold",
-      //     "text-secondary"
-      //   ],
-      //   'h4':[
-      //     "font-heading",
-      //     "text-sm",
-      //     "font-semibold",
-      //     "text-accent1"
-      //   ],
-      //   'regularBold':[
-      //     "font-body",
-      //     "font-semibold"
-      //   ],
-      //   'semiBold': [
-      //     "font-body", "font-semibold"
-      //   ],
-      //   'link':[
-      //     "font-body",
-      //     "font-thin"
-      //   ]
+      fontSize:{
+        'h1':['1.875rem', {
+          lineHeight: '2.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '700',
+        }],
+        'h2':['1.5rem', {
+          lineHeight: '2rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '400',
+        }],
+        'h3':['1.25rem', {
+          lineHeight: '1.75rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '700',
+        }],
+        'h4':['1.25rem', {
+          lineHeight: '1.75rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '600',
+        }],
+        'regular':['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '400',
+        }],
+        'regularBold':['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '700',
+        }],
+        'regularSemiBold': ['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '600',
+       }],
+        'link':['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '300',
+       }],
+      },
     },
   },
   plugins: [],

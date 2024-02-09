@@ -5,7 +5,7 @@ export default function Navbar(){
         <div className={clsx(
             "text-azulGris500",
         )}> This is Navbar
-
+            
         </div>
     );
 }

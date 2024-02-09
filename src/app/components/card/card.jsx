@@ -20,7 +20,7 @@ export default function Card(){
             )}>Este es un texto H1</p>
             <p className={clsx(
                 "text-2xl",
-                "fond-regular",
+                "font-regular",
                 "font-heading",
                 "text-primary",
                 )}>Este es un texto H2</p>
