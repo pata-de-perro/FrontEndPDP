@@ -11,28 +11,28 @@ export default function Navbar(){
                 "mx-[30px] my-[25px]",
                 "px-[11px] py-[11px]",
                 "bg-accent1",
-                "rounded-full",
-                
-            
-            )}>
+                // "justify-center",
+                "rounded-full",            
+                )}>
                 <div className={clsx(
                     "flex flex-wrap",
-                    "grid justify-items-start",
+                    // "justify-items-start",
                     )}>
                     <img src="../image/dePataDePerroLogo.svg" className={clsx(
-                    )}></img>
+                        )}></img>
                         <p className={clsx(
                             "font-logoFont",
                             "text-h1",
-                            "text-primary"
+                            "text-primary",
+                            "content-around",
                         )}>depatadeperro</p>
 
                     <div className={clsx(
+                        "items-center justify-between",
+                        // "grid justify-items-end",
                     )}>
                         <ul className={clsx(
                             "flex flex-wrap",
-                            "items-center justify-between",
-                            // "grid justify-items-end",
                         )}>
                             {MenuItems.map((item, index) => {
                                 return (
