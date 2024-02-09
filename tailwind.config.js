@@ -36,7 +36,48 @@ module.exports = {
         'body': ['Source Sans 3'],
       //   sans: [ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
       //   serif: [ui-serif, Georgia, Cambria, "Times New Roman", Times, serif],
-      //   mono:	[ ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace],
+      },
+      fontSize:{
+        'h1':['1.875rem', {
+          lineHeight: '2.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '700',
+        }],
+        'h2':['1.5rem', {
+          lineHeight: '2rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '400',
+        }],
+        'h3':['1.25rem', {
+          lineHeight: '1.75rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '700',
+        }],
+        'h4':['1.25rem', {
+          lineHeight: '1.75rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '600',
+        }],
+        'regular':['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '400',
+        }],
+        'regularBold':['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '700',
+        }],
+        'regularSemiBold': ['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '600',
+       }],
+        'link':['0.875rem', {
+          lineHeight: '1.25rem',
+          letterSpacing: '-0.01em',
+          fontWeight: '300',
+       }],
       },
     },
   },
