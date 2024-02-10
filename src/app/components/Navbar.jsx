@@ -1,74 +1,77 @@
 import clsx from "clsx";
 import { MenuItems } from "./menuItems"; 
-import {Link} from "next/link";
-import logo from "../image/dePataDePerroLogo.svg"
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navbar(){
     return(
-        <header>
-            <nav className={clsx(
-                "flex flex-row",
-                "mx-[30px] my-[25px]",
-                "px-[11px] py-[11px]",
-                "bg-accent1",
-                // "justify-center",
-                "rounded-full",            
+        <nav className={clsx(
+            "flex",
+            "mx-[30px] my-[25px]",
+            "px-[11px] py-[11px]",
+            "bg-accent1",
+            "rounded-full",            
+            )}>
+            <div className={clsx(
+                "flex flex-wrap",
+                "justify-center align-center",
+                // "justify-items-start",
                 )}>
+                    <Image 
+                    src="/dePataDePerroLogo-02.svg"
+                    width={50}
+                    height={50}
+                    alt="Logo Pata de perro" />
+
+                    <p href="#" className={clsx(
+                        "font-logoFont",
+                        "text-h1",
+                        "text-primary",
+                        "content-around",
+                        "cursor-pointer",
+                    )}>depatadeperro</p>
+
                 <div className={clsx(
-                    "flex flex-wrap",
-                    // "justify-items-start",
+                    "flex align-center",
+                    // "grid justify-items-end",
+                )}>
+                    <ul className={clsx(
+                        "flex flex-wrap justify-between",
                     )}>
-                    <img src="../image/dePataDePerroLogo.svg" className={clsx(
-                        )}></img>
-                        <p className={clsx(
-                            "font-logoFont",
-                            "text-h1",
-                            "text-primary",
-                            "content-around",
-                        )}>depatadeperro</p>
+                        {MenuItems.map((item, index) => {
+                            return (
+                                <li key={index}>
+                                    <a className={item.cName} href={item.url}>
+                                        {item.title}
+                                    </a>
+                                </li>
+                            )
+                        })}
+                        <button className={clsx(
+                            "bg-none",
+                            "text-accent2 text-regular",
+                            "px-[8px] py-[8px]",
+                            "w-[138px]",
+                            "mx-2",
+                            "rounded-full",
+                            "hover:text-primary",
+                            "border-2 border-accent2 hover:border-primary"
+                        )}>¡Registrate!</button>
+                        <button className={clsx(
+                            "bg-accent2",
+                            "text-white text-regular",
+                            "px-[8px] py-[8px]",
+                            "w-[138px]",
+                            "rounded-full",
+                            "hover:bg-primary",
+                            "border-2 border-accent2 hover:border-primary",
+                    )}>Iniciar sesión</button>
+                    </ul>
+                </div> 
+                {/* aqui termina */}
+            </div>
 
-                    <div className={clsx(
-                        "items-center justify-between",
-                        // "grid justify-items-end",
-                    )}>
-                        <ul className={clsx(
-                            "flex flex-wrap",
-                        )}>
-                            {MenuItems.map((item, index) => {
-                                return (
-                                    <li key={index}>
-                                        <a className={item.cName} href={item.url}>
-                                            {item.title}
-                                        </a>
-                                    </li>
-                                )
-                            })}
-                            <button className={clsx(
-                                "bg-none",
-                                "text-accent2 text-regular",
-                                "px-[8px] py-[8px]",
-                                "w-[138px]",
-                                "mx-2",
-                                "rounded-full",
-                                "hover:text-primary",
-                                "border-2 border-accent2 hover:border-primary"
-                            )}>¡Registrate!</button>
-                            <button className={clsx(
-                                "bg-accent2",
-                                "text-white text-regular",
-                                "px-[8px] py-[8px]",
-                                "w-[138px]",
-                                "rounded-full",
-                                "hover:bg-primary",
-                                "border-2 border-accent2 hover:border-primary",
-                        )}>Iniciar sesión</button>
-                        </ul>
-                    </div> 
-                    {/* aqui termina */}
-                </div>
-
-            </nav>  
-        </header>
+        </nav> 
         
         );
 }
