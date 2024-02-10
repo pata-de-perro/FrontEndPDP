@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import heroImage from "../image/"
 
 export default function Hero() {
   return (
