@@ -14,6 +14,15 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+
+      screens:{
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1536px',
+      },
+
       colors:{
         primary:"#87549F",
         secondary:"#7ECDCE",
@@ -34,6 +43,7 @@ module.exports = {
       fontFamily:{
         'heading': ['Montserrat'],
         'body': ['Source Sans 3'],
+        'logoFont': ['Protest Riot'],
       //   sans: [ ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
       //   serif: [ui-serif, Georgia, Cambria, "Times New Roman", Times, serif],
       },
