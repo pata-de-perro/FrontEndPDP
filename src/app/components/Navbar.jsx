@@ -11,11 +11,12 @@ export default function Navbar() {
             "px-[11px] py-[11px]",
             "bg-accent1",
             "rounded-full",
-            "justify-between",
+            // "justify-between",
         )}>
             <div className={clsx(
                 "flex flex-wrap",
                 "items-center",
+                // "grid",
                 // "justify-between",
                 // "justify-items-start",
             )}>
@@ -25,7 +26,7 @@ export default function Navbar() {
                         width={45}
                         height={45}
                         alt="Logo Pata de perro" 
-                        className="cursor-pointer"
+                        className="cursor-pointer ml-2 justify-items-start"
                         />
 
                     <p href="#" className={clsx(
@@ -34,26 +35,28 @@ export default function Navbar() {
                         "text-primary",
                         "content-around",
                         "cursor-pointer",
+                        "stroke-white",
                         "sr-only",
                         "sm:not-sr-only",
+                        // "sm:mr-10",
                     )}>depatadeperro</p>
                 </div>
 
                 <div className={clsx(
-                    "flex align-center",
-
-                )}>
+                    "grid", 
+                    "justify-items-end",
+                    )}>
                     <ul className={clsx(
-                        "justify-items-start",
                         "flex flex-wrap",
                         "items-center",
-                        "justify-between",
+                        "px-2",
+                        "mx-2"
                     )}>
                         <li className={clsx(
                             "font-body text-regular text-accent2 hover:text-primary",
                             "sr-only",
                             "lg:not-sr-only",
-                        )}>
+                            )}>
                             <a>
                                 Quienes somos
                             </a>
@@ -89,6 +92,8 @@ export default function Navbar() {
                         <div className={clsx(
                             "sr-only",
                             "md:not-sr-only",
+                            // "grid",
+                            // "justify-items-end",
                         )}>
                             <button className={clsx(
                                 "bg-none",
@@ -99,6 +104,7 @@ export default function Navbar() {
                                 "rounded-full",
                                 "hover:text-primary",
                                 "border-2 border-accent2 hover:border-primary",
+                                
 
                             )}>¡Registrate!</button>
                             <button className={clsx(
@@ -112,9 +118,6 @@ export default function Navbar() {
 
                             )}>Iniciar sesión</button>
                         </div>
-
-
-                    </ul>
                         <Image
                         src="/mobile-menu.svg"
                         width={45}
@@ -123,11 +126,11 @@ export default function Navbar() {
                         className={clsx(
                             "not-sr-only",
                             "lg:sr-only",
-                            // "object-right",
                             "cursor-pointer",
                             "flex",
-                            "justify-items-end"
+                            "justify-end"
                         )}/>
+                    </ul>
                 </div>
                 {/* aqui termina */}
             </div>
