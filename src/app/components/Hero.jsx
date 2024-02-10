@@ -41,7 +41,7 @@ export default function Hero() {
                         "text-h1", 
                         "font-heading",
                         "text-azulGris900",
-                        "mt-6",
+                        "mt-3",
                         )}>Bienvenido a</p>
                     <p className={clsx(
                         "text-h1",
@@ -58,7 +58,11 @@ export default function Hero() {
                     "text-azulGris900",
                     "my-8",
                     "my:m-0",
-                    "lg:w-[500px]",
+                    "w-[400px]",
+                    "md:w-[280px]",
+                    "lg:w-[360px]",
+                    // "flex",
+                    // "shrink",
                     )}>Organiza tu viaje, guarda puntos de interés y comparte el itinerario con
                     todos tus compañeros de viaje.</p>
 
