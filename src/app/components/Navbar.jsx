@@ -6,27 +6,28 @@ import Link from 'next/link';
 export default function Navbar() {
     return (
         <nav className={clsx(
-            // "justify-items-center",
             "mx-[30px] my-[25px]",
             "px-[11px] py-[11px]",
             "bg-accent1",
             "rounded-full",
             )}>
             <div className={clsx(
-                // "flex",
-                // "justify-self-start",
                 "grid",
-                "grid-cols-2",
+                "grid-flow-row-dense",
+                "grid-cols-4",
                 "gap-4",
                 "place-content-evenly",
             )}>
-                <div className="flex">
+                <div className={clsx(
+                    "flex",
+                    "w-fit",
+                )}>
                     <Image
                         src="/dePataDePerroLogo-02.svg"
                         width={45}
                         height={45}
                         alt="Logo Pata de perro" 
-                        className="cursor-pointer ml-2"
+                        className="cursor-pointer ml-[24px]"
                         />
 
                     <p href="#" className={clsx(
@@ -47,19 +48,18 @@ export default function Navbar() {
                 <div className={clsx(
                     // "flex",
                     // "justify-end",
+                    "col-span-3",
                     )}>
                     <ul className={clsx(
-                        // "flex",
-                        // "flex-wrap",
                         "grid",
-                        "grid-cols-7",
+                        "grid-cols-3",
+                        "col-span-2",
+                        "lg:grid-cols-6",
+                        "lg:col-span-4",
                         "gap-1",
                         "justify-end",
                         "items-center",
-                        // "place-items-end",
-                        // "gap-2",
-                        // "px-2",
-                        // "mx-2"
+                        "text-center",
                     )}>
                         <li className={clsx(
                             "font-body text-regular text-accent2 hover:text-primary",
@@ -103,9 +103,6 @@ export default function Navbar() {
                             "md:not-sr-only",
                             "flex",
                             "flex-nowrap",
-                            // "w-[200px]",
-                            // "grid",
-                            // "justify-items-end",
                         )}>
                             <button className={clsx(
                                 "bg-none",
@@ -116,20 +113,25 @@ export default function Navbar() {
                                 "rounded-full",
                                 "hover:text-primary",
                                 "border-2 border-accent2 hover:border-primary",
-                                
-
                             )}>¡Registrate!</button>
-                            <button className={clsx(
-                                "bg-accent2",
-                                "text-white text-regular",
-                                "px-[8px] py-[8px]",
-                                "w-[138px]",
-                                "rounded-full",
-                                "hover:bg-primary",
-                                "border-2 border-accent2 hover:border-primary",
+                        </div>
+                            <div className={clsx(
+                                "sr-only",
+                                "md:not-sr-only",
+                                "flex",
+                                "flex-nowrap",
+                            )}>
+                                <button className={clsx(
+                                    "bg-accent2",
+                                    "text-white text-regular",
+                                    "px-[8px] py-[8px]",
+                                    "w-[138px]",
+                                    "rounded-full",
+                                    "hover:bg-primary",
+                                    "border-2 border-accent2 hover:border-primary",
+                                )}>Iniciar sesión</button>
+                            </div>
 
-                            )}>Iniciar sesión</button>
-                            
                             <Image
                             src="/mobile-menu.svg"
                             width={45}
@@ -142,7 +144,6 @@ export default function Navbar() {
                                 "flex",
                                 "justify-end"
                             )}/>
-                        </div>
                     </ul>
                 </div>
                 {/* aqui termina */}
