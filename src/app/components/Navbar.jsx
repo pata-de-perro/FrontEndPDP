@@ -6,51 +6,60 @@ import Link from 'next/link';
 export default function Navbar() {
     return (
         <nav className={clsx(
-            "flex",
+            // "justify-items-center",
             "mx-[30px] my-[25px]",
             "px-[11px] py-[11px]",
             "bg-accent1",
             "rounded-full",
-            // "justify-between",
-        )}>
-            <div className={clsx(
-                "flex flex-wrap",
-                "items-center",
-                // "grid",
-                // "justify-between",
-                // "justify-items-start",
             )}>
-                <div className="flex items-end">
+            <div className={clsx(
+                // "flex",
+                // "justify-self-start",
+                "grid",
+                "grid-cols-2",
+                "gap-4",
+                "place-content-evenly",
+            )}>
+                <div className="flex">
                     <Image
                         src="/dePataDePerroLogo-02.svg"
                         width={45}
                         height={45}
                         alt="Logo Pata de perro" 
-                        className="cursor-pointer ml-2 justify-items-start"
+                        className="cursor-pointer ml-2"
                         />
 
                     <p href="#" className={clsx(
                         "font-logoFont",
                         "text-h1",
                         "text-primary",
-                        "content-around",
+                        "grid",
+                        "content-end",
                         "cursor-pointer",
                         "stroke-white",
                         "sr-only",
                         "sm:not-sr-only",
+                        "text-end",
                         // "sm:mr-10",
                     )}>depatadeperro</p>
                 </div>
 
                 <div className={clsx(
-                    "grid", 
-                    "justify-items-end",
+                    // "flex",
+                    // "justify-end",
                     )}>
                     <ul className={clsx(
-                        "flex flex-wrap",
+                        // "flex",
+                        // "flex-wrap",
+                        "grid",
+                        "grid-cols-7",
+                        "gap-1",
+                        "justify-end",
                         "items-center",
-                        "px-2",
-                        "mx-2"
+                        // "place-items-end",
+                        // "gap-2",
+                        // "px-2",
+                        // "mx-2"
                     )}>
                         <li className={clsx(
                             "font-body text-regular text-accent2 hover:text-primary",
@@ -92,6 +101,9 @@ export default function Navbar() {
                         <div className={clsx(
                             "sr-only",
                             "md:not-sr-only",
+                            "flex",
+                            "flex-nowrap",
+                            // "w-[200px]",
                             // "grid",
                             // "justify-items-end",
                         )}>
@@ -117,19 +129,20 @@ export default function Navbar() {
                                 "border-2 border-accent2 hover:border-primary",
 
                             )}>Iniciar sesión</button>
+                            
+                            <Image
+                            src="/mobile-menu.svg"
+                            width={45}
+                            height={45}
+                            alt="Mobile Menu"
+                            className={clsx(
+                                "not-sr-only",
+                                "lg:sr-only",
+                                "cursor-pointer",
+                                "flex",
+                                "justify-end"
+                            )}/>
                         </div>
-                        <Image
-                        src="/mobile-menu.svg"
-                        width={45}
-                        height={45}
-                        alt="Mobile Menu"
-                        className={clsx(
-                            "not-sr-only",
-                            "lg:sr-only",
-                            "cursor-pointer",
-                            "flex",
-                            "justify-end"
-                        )}/>
                     </ul>
                 </div>
                 {/* aqui termina */}
