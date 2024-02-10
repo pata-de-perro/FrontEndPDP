@@ -45,7 +45,6 @@ export default function Navbar() {
                         "sr-only",
                         "sm:not-sr-only",
                         "text-end",
-                        // "sm:mr-10",
                     )}>depatadeperro</p>
                 </div>
 
@@ -61,13 +60,11 @@ export default function Navbar() {
                         "grid-cols-1",
                         "col-span-2",
                         "md:grid-cols-4",
-                        // "grid-cols-3",
                         "lg:grid-cols-6",
                         "lg:col-span-4",
                         "gap-1",
                         "justify-end",
                         "text-center",
-                        // "flex",
                         "items-center",
                     )}>
                         <li className={clsx(
