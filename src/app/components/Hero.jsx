@@ -44,6 +44,7 @@ export default function Hero() {
                     // "md:m-6",
                     "lg:flex", 
                     "lg:flex-wrap",
+                    "lg:items-end",
                     // "md:text-left",
                     // "text-center",
                 )}>
@@ -58,7 +59,6 @@ export default function Hero() {
                         "font-heading",
                         "text-primary",
                         "lg:pl-2",
-                        "lg:items-end",
                         )}>PataDePerro</p>
                 </span>
                 <p className={clsx(
