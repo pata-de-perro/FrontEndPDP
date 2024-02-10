@@ -8,9 +8,6 @@ export default function Hero() {
         "flex-wrap",
         "md:flex-nowrap",
         "justify-center",
-        // "sm:/my-6",
-        // "w-[600px]",
-        // "justify-content-center"
     )}>
         <Image 
             src="/Progresive-app-pana.svg"
@@ -24,11 +21,8 @@ export default function Hero() {
                 "border-b-2",
                 "md:border-b-0",
                 "md:mx-6",
-                // "md:px-4",
-                // "border-r-0",
                 "md:border-r-2",
                 "border-azulGris50",
-                // "flex",
                 )}
                 />
             <div className={clsx(
@@ -37,16 +31,11 @@ export default function Hero() {
                 "md:text-left",
                 "m-8",
                 "md:m-4",
-                // "md:grid",
-                // "md:content-end",
             )}>
                 <span className={clsx(
-                    // "md:m-6",
                     "lg:flex", 
                     "lg:flex-wrap",
                     "lg:items-end",
-                    // "md:text-left",
-                    // "text-center",
                 )}>
                     <p className={clsx(
                         "text-h1", 
