@@ -6,6 +6,7 @@ export default function Hero() {
     <div className={clsx(
         "flex",
         "flex-wrap",
+        "md:flex-nowrap",
         "justify-center",
         // "sm:/my-6",
         // "w-[600px]",
@@ -18,29 +19,33 @@ export default function Hero() {
             alt="progresive app pana" 
             className={clsx(
                 "w-[319px]",
+                "md:w-[319px]",
+                "lg:w-[453px]",
                 "border-b-2",
-                // "md:border-b-0",
-                // "my-6",
+                "md:border-b-0",
+                "md:mx-6",
+                // "md:px-4",
                 // "border-r-0",
-                // "md:border-r-2",
+                "md:border-r-2",
                 "border-azulGris50",
                 // "flex",
                 )}
                 />
             <div className={clsx(
                 "justify-center",
-                // "text-center",
-                // "mx-4",
-                // "mb-8",
-                // "md:text-left",
+                "text-center",
+                "md:text-left",
+                "m-8",
+                "md:m-4",
                 // "md:grid",
                 // "md:content-end",
             )}>
                 <span className={clsx(
-                    // "md:flex", 
-                    // "md:flex-wrap",
+                    // "md:m-6",
+                    "lg:flex", 
+                    "lg:flex-wrap",
                     // "md:text-left",
-                    "text-center",
+                    // "text-center",
                 )}>
                     <p className={clsx(
                         "text-h1", 
@@ -52,15 +57,19 @@ export default function Hero() {
                         "text-h1",
                         "font-heading",
                         "text-primary",
-                        "md:pl-2",
+                        "lg:pl-2",
+                        "lg:items-end",
                         )}>PataDePerro</p>
                 </span>
                 <p className={clsx(
                     "text-regular",
                     "text-center",
+                    "md:text-left",
                     "font-body",
                     "text-azulGris900",
-                    "m-8"
+                    "my-8",
+                    "my:m-0",
+                    "lg:w-[500px]",
                     )}>Organiza tu viaje, guarda puntos de interés y comparte el itinerario con
                     todos tus compañeros de viaje.</p>
 
@@ -69,13 +78,15 @@ export default function Hero() {
                     "text-h4",
                     "text-center",
                     "font-heading",
-                    "mt-8"
+                    "mt-8",
+                    "md:text-left",
                     )}>Registrate</p>
                 <p className={clsx(
                     "text-primary",
                     "text-regular",
                     "text-center",
                     "font-body",
+                    "md:text-left",
                     "my-8"
                     )}> -- o --</p>
                 <button
