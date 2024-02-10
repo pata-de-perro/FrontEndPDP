@@ -14,9 +14,13 @@ export default function Navbar() {
             <div className={clsx(
                 "grid",
                 "grid-flow-row-dense",
-                "grid-cols-4",
+                "grid-cols-2",
+                "md:grid-cols-4",
                 "gap-4",
                 "place-content-evenly",
+                "flex",
+                "items-center",
+                "md:col-span-3",
             )}>
                 <div className={clsx(
                     "flex",
@@ -46,20 +50,25 @@ export default function Navbar() {
                 </div>
 
                 <div className={clsx(
-                    // "flex",
-                    // "justify-end",
-                    "col-span-3",
+                    "col-span1",
+                    "flex",
+                    "justify-end",
+                    "mr-[24px]",
+                    "md:col-span-3",
                     )}>
                     <ul className={clsx(
                         "grid",
-                        "grid-cols-3",
+                        "grid-cols-1",
                         "col-span-2",
+                        "md:grid-cols-4",
+                        // "grid-cols-3",
                         "lg:grid-cols-6",
                         "lg:col-span-4",
                         "gap-1",
                         "justify-end",
-                        "items-center",
                         "text-center",
+                        // "flex",
+                        "items-center",
                     )}>
                         <li className={clsx(
                             "font-body text-regular text-accent2 hover:text-primary",
