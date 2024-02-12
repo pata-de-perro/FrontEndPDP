@@ -11,17 +11,58 @@ export default function Navbar() {
         "p-[11px]",
         "bg-accent1",
         "rounded-full",
-       )}>
-        <div>
+        )}>
+        <div className={clsx(
+            "grid",
+            "grid-cols-2",
+            "items-center",
+            )}>
             <div className={clsx(
                 "logoContainer",
-            )}>
-                <Image
-                src="/PataDePerroLogo.svg"
+                // "flex",
+                // "flex-wrap",
+                )}>
+                <Image 
+                src="/DePataDePerroIcon.svg"
                 width={45}
                 height={45}
-                alt="Logo Pata de perro" 
-                className="cursor-pointer ml-[24px]"
+                alt="Icon of De Pata de Perro"
+                className={clsx(
+                    "cursor-pointer",
+                    "ml-[24px]",
+                    "md:sr-only",
+                    )}
+                    />
+                <Image 
+                src="/DePataDePerroLogo.svg"
+                width={226}
+                height={60}
+                alt="Logo of De Pata de Perro"
+                className={clsx(
+                    "cursor-pointer",
+                    "ml-[24px]",
+                    "sr-only",
+                    "md:not-sr-only", 
+                    "md:w-[226px]",
+                    "md:h-[60px]",
+                    )}
+                    />
+
+            </div>
+
+            <div className={clsx(
+                "mobileMenu",
+                "justify-self-end",
+                "mr-[24px]",
+            )}>
+                <Image 
+                src="/mobile-menu.svg"
+                width={24}
+                height={24}
+                alt="Mobile menu icon"
+                className={clsx(
+
+                )}
                 />
             </div>
         </div>
