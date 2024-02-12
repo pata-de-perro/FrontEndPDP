@@ -46,9 +46,10 @@ export default function FirstCards() {
             "p-[20px]",
             "rounded-xl",
             "m-[24px]",
+            "flex",
+            "flex-wrap",
+            "justify-center",
             "lg:h-[200px]",
-            "lg:flex",
-            "lg:flex-wrap",
             "lg:items-center",
             "lg:justify-center",
             "lg:justify-self-start",
@@ -60,7 +61,7 @@ export default function FirstCards() {
             width={453}
             height={453}
             alt="progresive app pana"
-            className={clsx("w-[260px]", "lg:sr-only")}
+            className={clsx("w-[260px]", "lg:sr-only",)}
           />
           <p
             className={clsx(
@@ -97,9 +98,10 @@ export default function FirstCards() {
             "p-[20px]",
             "rounded-xl",
             "m-[24px]",
+            "flex",
+            "flex-wrap",
+            "justify-center",
             "lg:h-[200px]",
-            "lg:flex",
-            "lg:flex-wrap",
             "lg:items-center",
             "lg:justify-center",
             "lg:justify-self-end",
@@ -173,9 +175,10 @@ export default function FirstCards() {
             "p-[20px]",
             "rounded-xl",
             "m-[24px]",
+            "flex",
+            "flex-wrap",
+            "justify-center",
             "lg:h-[200px]",
-            "lg:flex",
-            "lg:flex-wrap",
             "lg:items-center",
             "lg:justify-center",
             "lg:justify-self-start",
@@ -223,9 +226,10 @@ export default function FirstCards() {
             "p-[20px]",
             "rounded-xl",
             "m-[24px]",
+            "flex",
+            "flex-wrap",
+            "justify-center",
             "lg:h-[200px]",
-            "lg:flex",
-            "lg:flex-wrap",
             "lg:items-center",
             "lg:justify-center",
             "lg:justify-self-end",
