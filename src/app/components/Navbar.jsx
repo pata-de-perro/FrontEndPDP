@@ -71,15 +71,6 @@ export default function Navbar() {
                             "font-body text-regular text-accent2 hover:text-primary",
                             "sr-only",
                             "lg:not-sr-only",
-                            )}>
-                            <a>
-                                Quienes somos
-                            </a>
-                        </li>
-                        <li className={clsx(
-                            "font-body text-regular text-accent2 hover:text-primary",
-                            "sr-only",
-                            "lg:not-sr-only",
                         )}>
                             <a>
                                 Nuestras funciones
