@@ -5,151 +5,178 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <nav className={clsx(
-            "mx-[30px] my-[25px]",
-            "px-[11px] py-[11px]",
-            "bg-accent1",
-            "rounded-full",
-            )}>
+       <nav className={clsx(
+        "mx-[30px]",
+        "my-[25px]",
+        "p-[11px]",
+        "bg-accent1",
+        "rounded-full",
+       )}>
+        <div>
             <div className={clsx(
-                "grid",
-                "grid-flow-row-dense",
-                "grid-cols-2",
-                "md:grid-cols-4",
-                "gap-4",
-                "place-content-evenly",
-                "flex",
-                "items-center",
-                "md:col-span-3",
+                "logoContainer",
             )}>
-                <div className={clsx(
-                    "flex",
-                    "w-fit",
-                )}>
-                    <Image
-                        src="/dePataDePerroLogo-02.svg"
-                        width={45}
-                        height={45}
-                        alt="Logo Pata de perro" 
-                        className="cursor-pointer ml-[24px]"
-                        />
-
-                    <p href="#" className={clsx(
-                        "font-logoFont",
-                        "text-h1",
-                        "text-primary",
-                        "grid",
-                        "content-end",
-                        "cursor-pointer",
-                        "stroke-white",
-                        "sr-only",
-                        "sm:not-sr-only",
-                        "text-end",
-                    )}>depatadeperro</p>
-                </div>
-
-                <div className={clsx(
-                    "col-span1",
-                    "flex",
-                    "justify-end",
-                    "mr-[24px]",
-                    "md:col-span-3",
-                    )}>
-                    <ul className={clsx(
-                        "grid",
-                        "grid-cols-1",
-                        "col-span-2",
-                        "md:grid-cols-4",
-                        "lg:grid-cols-6",
-                        "lg:col-span-4",
-                        "gap-1",
-                        "justify-end",
-                        "text-center",
-                        "items-center",
-                    )}>
-                        <li className={clsx(
-                            "font-body text-regular text-accent2 hover:text-primary",
-                            "sr-only",
-                            "lg:not-sr-only",
-                        )}>
-                            <a>
-                                Nuestras funciones
-                            </a>
-                        </li>
-                        <li className={clsx(
-                            "font-body text-regular text-accent2 hover:text-primary",
-                            "sr-only",
-                            "lg:not-sr-only",
-                        )}>
-                            <a>
-                                Opiniones
-                            </a>
-                        </li>
-                        <li className={clsx(
-                            "font-body text-regular text-accent2 hover:text-primary",
-                            "sr-only",
-                            "lg:not-sr-only",
-                        )}>
-                            <a>
-                                Tutoriales
-                            </a>
-                        </li>
-                        
-                        <div className={clsx(
-                            "sr-only",
-                            "md:not-sr-only",
-                            "flex",
-                            "flex-nowrap",
-                        )}>
-                            <button className={clsx(
-                                "bg-none",
-                                "text-accent2 text-regular",
-                                "px-[8px] py-[8px]",
-                                "w-[138px]",
-                                "mx-2",
-                                "rounded-full",
-                                "hover:text-primary",
-                                "border-2 border-accent2 hover:border-primary",
-                            )}>¡Registrate!</button>
-                        </div>
-                            <div className={clsx(
-                                "sr-only",
-                                "md:not-sr-only",
-                                "flex",
-                                "flex-nowrap",
-                            )}>
-                                <button className={clsx(
-                                    "bg-accent2",
-                                    "text-white text-regular",
-                                    "px-[8px] py-[8px]",
-                                    "w-[138px]",
-                                    "rounded-full",
-                                    "hover:bg-primary",
-                                    "border-2 border-accent2 hover:border-primary",
-                                )}>Iniciar sesión</button>
-                            </div>
-
-                            <Image
-                            src="/mobile-menu.svg"
-                            width={45}
-                            height={45}
-                            alt="Mobile Menu"
-                            className={clsx(
-                                "not-sr-only",
-                                "lg:sr-only",
-                                "cursor-pointer",
-                                "flex",
-                                "justify-end"
-                            )}/>
-                    </ul>
-                </div>
-                {/* aqui termina */}
+                <Image
+                src="/PataDePerroLogo.svg"
+                width={45}
+                height={45}
+                alt="Logo Pata de perro" 
+                className="cursor-pointer ml-[24px]"
+                />
             </div>
+        </div>
 
-        </nav>
+       </nav>
 
     );
 }
+
+// ESTE ES UNA VERSION QUE SÍ FUNCIONA
+
+// <nav className={clsx(
+//     "mx-[30px] my-[25px]",
+//     "px-[11px] py-[11px]",
+//     "bg-accent1",
+//     "rounded-full",
+//     )}>
+//     <div className={clsx(
+//         "grid",
+//         "grid-flow-row-dense",
+//         "grid-cols-2",
+//         "md:grid-cols-4",
+//         "gap-4",
+//         "place-content-evenly",
+//         "flex",
+//         "items-center",
+//         "md:col-span-3",
+//     )}>
+//         <div className={clsx(
+//             "flex",
+//             "w-fit",
+//         )}>
+//             <Image
+//                 src="/PataDePerroLogo.svg"
+//                 width={45}
+//                 height={45}
+//                 alt="Logo Pata de perro" 
+//                 className="cursor-pointer ml-[24px]"
+//                 />
+
+//             <p href="#" className={clsx(
+//                 "font-logoFont",
+//                 "text-h1",
+//                 "text-primary",
+//                 "grid",
+//                 "content-end",
+//                 "cursor-pointer",
+//                 "stroke-white",
+//                 "sr-only",
+//                 "sm:not-sr-only",
+//                 "text-end",
+//             )}>depatadeperro</p>
+//         </div>
+
+//         <div className={clsx(
+//             "col-span1",
+//             "flex",
+//             "justify-end",
+//             "mr-[24px]",
+//             "md:col-span-3",
+//             )}>
+//             <ul className={clsx(
+//                 "grid",
+//                 "grid-cols-1",
+//                 "col-span-2",
+//                 "md:grid-cols-4",
+//                 "lg:grid-cols-6",
+//                 "lg:col-span-4",
+//                 "gap-1",
+//                 "justify-end",
+//                 "text-center",
+//                 "items-center",
+//             )}>
+//                 <li className={clsx(
+//                     "font-body text-regular text-accent2 hover:text-primary",
+//                     "sr-only",
+//                     "lg:not-sr-only",
+//                 )}>
+//                     <a>
+//                         Nuestras funciones
+//                     </a>
+//                 </li>
+//                 <li className={clsx(
+//                     "font-body text-regular text-accent2 hover:text-primary",
+//                     "sr-only",
+//                     "lg:not-sr-only",
+//                 )}>
+//                     <a>
+//                         Opiniones
+//                     </a>
+//                 </li>
+//                 <li className={clsx(
+//                     "font-body text-regular text-accent2 hover:text-primary",
+//                     "sr-only",
+//                     "lg:not-sr-only",
+//                 )}>
+//                     <a>
+//                         Tutoriales
+//                     </a>
+//                 </li>
+                
+//                 <div className={clsx(
+//                     "sr-only",
+//                     "md:not-sr-only",
+//                     "flex",
+//                     "flex-nowrap",
+//                 )}>
+//                     <button className={clsx(
+//                         "bg-none",
+//                         "text-accent2 text-regular",
+//                         "px-[8px] py-[8px]",
+//                         "w-[138px]",
+//                         "mx-2",
+//                         "rounded-full",
+//                         "hover:text-primary",
+//                         "border-2 border-accent2 hover:border-primary",
+//                     )}>¡Registrate!</button>
+//                 </div>
+//                     <div className={clsx(
+//                         "sr-only",
+//                         "md:not-sr-only",
+//                         "flex",
+//                         "flex-nowrap",
+//                     )}>
+//                         <button className={clsx(
+//                             "bg-accent2",
+//                             "text-white text-regular",
+//                             "px-[8px] py-[8px]",
+//                             "w-[138px]",
+//                             "rounded-full",
+//                             "hover:bg-primary",
+//                             "border-2 border-accent2 hover:border-primary",
+//                         )}>Iniciar sesión</button>
+//                     </div>
+
+//                     <Image
+//                     src="/mobile-menu.svg"
+//                     width={45}
+//                     height={45}
+//                     alt="Mobile Menu"
+//                     className={clsx(
+//                         "not-sr-only",
+//                         "lg:sr-only",
+//                         "cursor-pointer",
+//                         "flex",
+//                         "justify-end"
+//                     )}/>
+//             </ul>
+//         </div>
+//         {/* aqui termina */}
+//     </div>
+
+// </nav>
+
+// AQUI TERMINA LA VERSION QUE FUNCIONA
 
 // <nav className={clsx(
 //     "bg-accent1",
