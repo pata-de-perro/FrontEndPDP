@@ -34,8 +34,8 @@ export default function FirstCards() {
           className={clsx(
             "w-[370px]",
             "sr-only",
-            "lg:not-sr-only"
-            // "justify-center"
+            "lg:not-sr-only",
+            "lg:justify-self-end",
           )}
         />
         <div
@@ -50,7 +50,9 @@ export default function FirstCards() {
             "lg:flex",
             "lg:flex-wrap",
             "lg:items-center",
-            "lg:justify-center"
+            "lg:justify-center",
+            "lg:justify-self-start",
+            "lg:self-center",
           )}
         >
           <Image
@@ -99,7 +101,9 @@ export default function FirstCards() {
             "lg:flex",
             "lg:flex-wrap",
             "lg:items-center",
-            "lg:justify-center"
+            "lg:justify-center",
+            "lg:justify-self-end",
+            "lg:self-center",
           )}
         >
           <Image
@@ -107,7 +111,10 @@ export default function FirstCards() {
             width={453}
             height={453}
             alt="progresive app pana"
-            className={clsx("w-[260px]", "lg:sr-only")}
+            className={clsx(
+                "w-[260px]", 
+                "lg:sr-only",
+                )}
           />
           <p
             className={clsx(
@@ -139,7 +146,12 @@ export default function FirstCards() {
           width={453}
           height={453}
           alt="progresive app pana"
-          className={clsx("w-[370px]", "sr-only", "lg:not-sr-only")}
+          className={clsx(
+            "w-[370px]", 
+            "sr-only", 
+            "lg:not-sr-only",
+            "lg:justify-self-start",
+            )}
         />
 
         <Image
@@ -147,7 +159,11 @@ export default function FirstCards() {
           width={453}
           height={453}
           alt="progresive app pana"
-          className={clsx("w-[370px]", "sr-only", "lg:not-sr-only")}
+          className={clsx(
+            "w-[370px]", 
+            "sr-only", 
+            "lg:not-sr-only",             
+            "lg:justify-self-end",)}
         />
         <div
           className={clsx(
@@ -161,7 +177,9 @@ export default function FirstCards() {
             "lg:flex",
             "lg:flex-wrap",
             "lg:items-center",
-            "lg:justify-center"
+            "lg:justify-center",
+            "lg:justify-self-start",
+            "lg:self-center",
           )}
         >
           <Image
@@ -209,7 +227,9 @@ export default function FirstCards() {
             "lg:flex",
             "lg:flex-wrap",
             "lg:items-center",
-            "lg:justify-center"
+            "lg:justify-center",
+            "lg:justify-self-end",
+            "lg:self-center",
           )}
         >
           <Image
@@ -248,7 +268,12 @@ export default function FirstCards() {
           width={453}
           height={453}
           alt="Account Rafiki"
-          className={clsx("w-[370px]", "sr-only", "lg:not-sr-only")}
+          className={clsx(
+            "w-[370px]", 
+            "sr-only", 
+            "lg:not-sr-only",
+            "lg:justify-self-start",
+            )}
         />
       </div>
     </section>
