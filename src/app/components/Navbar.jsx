@@ -52,9 +52,8 @@ export default function Navbar() {
               "flex",
               "flex-wrap",
               "lg:justify-around",
-              "md:justify-end",
+              "justify-end",
               "items-center",
-              "w-full"
             )}
           >
             <li className="sr-only lg:not-sr-only">
@@ -136,7 +135,7 @@ export default function Navbar() {
                 width={24}
                 height={24}
                 alt="Mobile menu icon"
-                className={clsx("cursor-pointer", "")}
+                className={clsx("cursor-pointer", "ml-[15px]")}
               />
             </div>
           </ul>
