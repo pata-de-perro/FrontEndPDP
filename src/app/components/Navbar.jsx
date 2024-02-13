@@ -1,9 +1,14 @@
+'use client'
+
 import clsx from "clsx";
 import { MenuItems } from "./menuItems";
 import Image from "next/image";
 import Link from "next/link";
 
+import { useState } from "react";
+
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false)
   return (
     <nav
       className={clsx(
@@ -110,13 +115,15 @@ export default function Navbar() {
                 Iniciar sesión
               </button>
             </li>
-            <div
+            <button
+              onClick={()=> setIsOpen((prev) => !prev)}
               className={clsx(
                 "mobileMenu",
                 "justify-self-end",
                 "mr-[24px]",
                 "lg:sr-only",
-                "md:justify-end"
+                "md:justify-end",
+                "",
               )}
             >
               <Image
@@ -124,9 +131,14 @@ export default function Navbar() {
                 width={24}
                 height={24}
                 alt="Mobile menu icon"
-                className={clsx("cursor-pointer", "ml-[15px]")}
+                className={clsx(
+                    "ml-[15px]",
+                    // "stroke-accent2",
+                    "hover:stroke-primary",
+                    )}
               />
-            </div>
+              
+            </button>
           </ul>
         </div>
       </div>
