@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from "clsx";
-import { MenuItems } from "./menuItems";
+import  MenuItems from "./menuItems";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -126,7 +126,8 @@ export default function Navbar() {
                 "",
               )}
             >
-              <Image
+              {!isOpen ? (
+                <Image
                 src="/mobile-menu.svg"
                 width={24}
                 height={24}
@@ -137,8 +138,32 @@ export default function Navbar() {
                     "hover:stroke-primary",
                     )}
               />
-              
+              ) : (
+                <Image
+                src="/close-icon.svg"
+                width={24}
+                height={24}
+                alt="Close icon on mobile menu"
+                className={clsx(
+                    "ml-[15px]",
+                    "hover:stroke-primary",
+                )}
+                />
+              )}
             </button>
+            {/* {isOpen && 
+                <div className={clsx(
+                    "bg-accent1",
+                    "absoulte",
+                    "top-20",
+                )}>
+                    {MenuItems.map((item, index) => (
+                        <div>
+                            <p>{item.title}</p>
+                        </div>
+                    ))}
+                </div>
+            } */}
           </ul>
         </div>
       </div>

@@ -1,6 +1,6 @@
 export const MenuItems=[
     {
-        title: "Nuestras funciones",
+        title: "Funciones",
         url:"#",
         cName:"nav-links text-regular text-accent2 hover:text-primary",
     },
