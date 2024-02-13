@@ -24,24 +24,13 @@ export default function Navbar() {
       >
         <div className={clsx("logoContainer")}>
           <Image
-            src="/DePataDePerroIcon.svg"
-            width={45}
-            height={45}
-            alt="Icon of De Pata de Perro"
-            className={clsx("cursor-pointer", "ml-[24px]", "md:sr-only")}
-          />
-          <Image
             src="/DePataDePerroLogo.svg"
-            width={226}
-            height={60}
+            width={188}
+            height={50}
             alt="Logo of De Pata de Perro"
             className={clsx(
               "cursor-pointer",
               "ml-[24px]",
-              "sr-only",
-              "md:not-sr-only",
-              "md:w-[226px]",
-              "md:h-[60px]"
             )}
           />
         </div>
