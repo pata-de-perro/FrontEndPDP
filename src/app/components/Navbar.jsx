@@ -12,8 +12,7 @@ export default function Navbar() {
   return (
     <nav
       className={clsx(
-        "mx-[30px]",
-        "my-[25px]",
+        "mx-[30px] my-[25px]",
         "p-[11px]",
         "bg-accent1",
         "rounded-full"
@@ -53,9 +52,7 @@ export default function Navbar() {
             <li className="sr-only lg:not-sr-only">
               <a
                 className={clsx(
-                  "font-body",
-                  "text-accent2",
-                  "text-regular",
+                  "font-body text-accent2 text-regular",
                   "hover:text-primary"
                 )}
               >
