@@ -53,6 +53,28 @@ export default function Footer(){
                 />
             </div>
 
+                <div>
+                    <ul className={clsx(
+                        "text-white text-regularBold font-body",
+                        "text-center",
+                        "m-[15px]",
+                        "grid grid-cols-2",
+                    )}>
+                        <li>
+                            <Link href="#">Inicio</Link>
+                        </li>
+                        <li>
+                            <Link href="#">Blog</Link>
+                        </li>
+                        <li>
+                            <Link href="#">Contáctanos</Link>
+                        </li>
+                        <li>
+                            <Link href="#">Soporte técnico</Link>
+                        </li>
+                    </ul>
+                </div>
+
             <div>
                 <ul className={clsx(
                     "text-regular text-white font-body text-center",
