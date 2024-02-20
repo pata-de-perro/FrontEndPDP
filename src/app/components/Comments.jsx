@@ -5,7 +5,8 @@ export default function Comments() {
   return (
     <div
       className={clsx(
-        "max-w-lg",
+        "flex-wrap",
+        
         "w-auto",
         "full-size",
         "flex",
