@@ -5,13 +5,11 @@ export default function Functions() {
   return (
     <div
       className={clsx(
-        "max-w-lg",
         "w-auto",
-        "full-size",
         "flex",
         "items-center",
         "justify-center",
-        "flex-col"
+        "flex-wrap",
       )}
     >
       <div
@@ -47,103 +45,27 @@ export default function Functions() {
       </div>
       <div className={clsx("size-full", "relative")}>
         <Image
-          className={clsx("mt-7")}
+          className={clsx("mt-7", "md:sr-only",) }
           src="/Vertical-road.svg"
-          width={500}
+          width={800}
           height={100}
           alt="Vertical road pic"
         />
-        <div
-          className={clsx(
-            "w-44",
-            "flex",
-            "items-center",
-            "justify-center",
-            "absolute top-[-20px] right-11"
-          )}
-        >
-          <p
-            className={clsx(
-              "text-h1",
-              "font-heading",
-              "text-wrap",
-              "text-primary"
-            )}
-          >
-            Facilita las reuniones
-          </p>
-        </div>
-        <div
-          className={clsx(
-            "w-44",
-            "flex",
-            "items-center",
-            "justify-center",
-            "absolute top-[305px] left-[60px]"
-          )}
-        >
-          <p
-            className={clsx(
-              "text-h1",
-              "font-heading",
-              "text-wrap",
-              "text-primary"
-            )}
-          >
-            Divide gastos
-          </p>
-        </div>
-        <div
-          className={clsx(
-            "w-50",
-            "flex",
-            "items-center",
-            "justify-center",
-            "absolute top-[671px] left-[232px]"
-          )}
-        >
-          <p
-            className={clsx(
-              "text-h1",
-              "font-heading",
-              "text-wrap",
-              "text-primary"
-            )}
-          >
-            Comparte itinerarios
-          </p>
-        </div>
-        <div
-          className={clsx(
-            "w-72",
-            "flex",
-            "items-center",
-            "justify-center",
-            "flex-col",
-            "absolute top-[1285px] left-[75px]"
-          )}
-        >
-          <p
-            className={clsx(
-              "text-h1",
-              "font-heading",
-              "text-wrap",
-              "text-primary"
-            )}
-          >
-            Simplifica el
-          </p>
-          <p
-            className={clsx(
-              "text-h1",
-              "font-heading",
-              "text-wrap",
-              "text-primary"
-            )}
-          >
-            control de gastos
-          </p>
-        </div>
+          <Image
+          className={clsx("mb-40", "sm:hidden","md:not-sr-only",)}
+          src="/Horizontal-road-md.svg"
+          width={1200}
+          height={100}
+          alt="Vertical road pic"
+        />
+         <Image
+          className={clsx("mb-15", "sm:hidden", "lg:visible" )}
+          src="/Horizontal-road-lg.svg"
+          width={1200}
+          height={100}
+          alt="Vertical road pic"
+        />
+       
       </div>
     </div>
   );
