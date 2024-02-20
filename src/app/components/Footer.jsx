@@ -64,20 +64,20 @@ export default function Footer() {
             className={clsx(
               "text-white text-regularBold font-body",
               "text-center",
-              "m-[15px]",
+              "mt-[15px]",
               "grid grid-cols-2"
             )}
           >
-            <li>
+            <li className="p-[5px]">
               <Link href="#">Inicio</Link>
             </li>
-            <li>
+            <li className="p-[5px]">
               <Link href="#">Blog</Link>
             </li>
-            <li>
+            <li className="p-[5px]">
               <Link href="#">Contáctanos</Link>
             </li>
-            <li>
+            <li className="p-[5px]">
               <Link href="#">Soporte técnico</Link>
             </li>
           </ul>
@@ -88,8 +88,7 @@ export default function Footer() {
             className={clsx(
               "text-regular text-white font-body text-center",
               "grid grid-cols-3",
-              "my-[15px] pt-[15px]",
-              "border-t border-t-white"
+              "m-[15px]",
             )}
           >
             <li>
