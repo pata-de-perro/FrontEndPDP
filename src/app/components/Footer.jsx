@@ -11,7 +11,8 @@ export default function Footer() {
         "flex",
         "justify-center",
         "w-[100vw]",
-        "md:grid-cols-2"
+        "md:grid-cols-2",
+        "md:px-[24px]",
       )}
     >
       <div
@@ -103,7 +104,6 @@ export default function Footer() {
         </div>
         
         <div className={clsx(
-            "border border-sky-200",
             "m-[5px]",
             "md:flex flex-row-reverse",
             "md:items-center",
@@ -137,6 +137,7 @@ export default function Footer() {
               "mb-[25px]",
               "md:text-start",
               "md:self-center",
+              "md:mb-[0px]",
             )}
           >
             © 2024 | PataDePerro
