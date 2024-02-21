@@ -116,6 +116,9 @@ export default function Footer() {
               "grid grid-cols-3",
               "m-[15px]",
               "md:justify-around",
+              "md:w-[300px]",
+              "md:text-end",
+              "md:m-[0px]"
             )}
           >
             <li>
