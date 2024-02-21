@@ -13,16 +13,17 @@ export default function Footer() {
         "w-[100vw]",
         "md:grid-cols-2",
         "md:px-[24px]",
-      )}
-    >
+        )}
+        >
       <div
         className={clsx(
-          "m-[5px]",
-          "pt-[24px]",
-          "w-[500px]",
-          "flex flex-wrap flex-col",
-          "md:w-[100vw]",
-          "md:flex-no-wrap"
+            "m-[5px]",
+            "pt-[24px]",
+            "w-[500px]",
+            "flex flex-wrap flex-col",
+            "md:w-[100vw]",
+            "lg:w-[1179px]",
+            "md:flex-no-wrap"
         )}
       >
         <div className={clsx(
@@ -86,6 +87,7 @@ export default function Footer() {
               "m-[5px]",
               "md:grid-cols-1",
               "md:text-start",
+              "lg:grid-cols-4",
             )}
           >
             <li className="p-[5px]">
