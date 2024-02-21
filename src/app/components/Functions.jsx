@@ -10,6 +10,8 @@ export default function Functions() {
         "items-center",
         "justify-center",
         "flex-wrap",
+        "lg:mb-48",
+        "md:mb-40"
       )}
     >
       <div
@@ -45,21 +47,21 @@ export default function Functions() {
       </div>
       <div className={clsx("size-full", "relative")}>
         <Image
-          className={clsx("mt-7", "md:sr-only",) }
+          className={clsx("mt-7", "md:sr-only", ) }
           src="/Vertical-road.svg"
           width={800}
           height={100}
           alt="Vertical road pic"
         />
           <Image
-          className={clsx("mb-40", "sm:hidden","md:not-sr-only",)}
+          className={clsx("mb-40","sr-only" ,"md:not-sr-only", "lg:sr-only", "w-[800px]")}
           src="/Horizontal-road-md.svg"
-          width={1200}
-          height={100}
+          width={800}
+          height={200}
           alt="Vertical road pic"
         />
          <Image
-          className={clsx("mb-15", "sm:hidden", "lg:visible" )}
+          className={clsx("mb-15", "sr-only", "lg:not-sr-only" )}
           src="/Horizontal-road-lg.svg"
           width={1200}
           height={100}

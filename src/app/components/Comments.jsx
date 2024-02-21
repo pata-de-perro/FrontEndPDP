@@ -3,21 +3,37 @@ import Image from "next/image";
 
 export default function Comments() {
   return (
+    
     <div
       className={clsx(
         "flex-wrap",
-        
         "w-auto",
         "full-size",
         "flex",
         "items-center",
         "justify-center",
-        "mt-20",
-        "flex-col"
+        "mt-28",
+        "flex-col",
+        
+         
+        
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>
-      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]")}>
+        <div className={clsx(
+        "w-auto",
+        "full-size",
+        "flex",
+        "items-center",
+        "justify-center",
+        "flex-col",
+        "md:flex-row", 
+        "md:place-content-evenly",
+        "md:w-full",
+        "lg:w-full",
+        
+      )}>
+          <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]")}>
         <div
           className={clsx(
             "mt-5",
@@ -25,7 +41,8 @@ export default function Comments() {
             "rounded-xl",
             "flex",
             "flex-col",
-            "items-center"
+            "items-center",
+            "md:h-[369px]"
           )}
         >
           <div
@@ -96,7 +113,7 @@ export default function Comments() {
           </div>
         </div>
       </div>
-      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]")}>
+      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]")}>
         <div
           className={clsx(
             "mt-5",
@@ -104,7 +121,8 @@ export default function Comments() {
             "rounded-xl",
             "flex",
             "flex-col",
-            "items-center"
+            "items-center",
+            "md:h-[369px]"
           )}
         >
           <div
@@ -171,7 +189,7 @@ export default function Comments() {
           </div>
         </div>
       </div>
-      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]")}>
+      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]" )}>
         <div
           className={clsx(
             "mt-5",
@@ -179,7 +197,8 @@ export default function Comments() {
             "rounded-xl",
             "flex",
             "flex-col",
-            "items-center"
+            "items-center",
+            "md:h-[369px]"
           )}
         >
           <div
@@ -245,6 +264,8 @@ export default function Comments() {
           </div>
         </div>
       </div>
+      </div>
+    
     </div>
   );
 }
