@@ -18,7 +18,7 @@ export default function Login() {
         width={316}
         height={316}
         alt="World image"
-        className="absolute left-[-50px] top-[-150px] z-0 justify-self-start"
+        className="absolute left-[-50px] top-[-150px] z-0 justify-self-start shrink"
       />
       <div
         className={clsx(
@@ -70,6 +70,7 @@ export default function Login() {
           width={250}
           height={50}
           alt="Logo Pata de Perro"
+          className="lg:w-[420px] lg:h-[111px]"
         />
         <p className="text-regular font-body text-center text-azulGris900">
           ¿Eres un nuevo usuario?
