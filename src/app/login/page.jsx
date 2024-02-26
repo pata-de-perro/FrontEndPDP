@@ -1,61 +1,76 @@
+'use client';
+
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import {useState} from 'react';
 
 export default function Login() {
+    const [email, setEmail] = useState("email");
+    const [password, setPassword ] = useState("password");
+    
+    console.log(email, password)
+
   return (
     <main
+    className={clsx(
+      "flex",
+      "flex-wrap",
+      "lg:flex-nowrap",
+      "justify-center",
+      "p-[20px]",
+      "lg:w-[1280px] lg:mt-[30px] lg:justify-center",
+    )}
+  >
+    <Image
+      src="/World.svg"
+      width={316}
+      height={316}
+      alt="World image"
+      className="absolute left-[-50px] top-[-150px] z-0 justify-self-start shrink"
+    />
+    <div
       className={clsx(
-        "flex",
-        "flex-wrap",
-        "lg:flex-nowrap",
         "justify-center",
-        "p-[20px]"
+        "pb-[15px]",
+        "md:grid md:grid-cols-2 md:pb-[0px]",
+        "lg:flex lg:flex-wrap",
       )}
     >
       <Image
-        src="/World.svg"
-        width={316}
-        height={316}
-        alt="World image"
-        className="absolute left-[-50px] top-[-150px] z-0 justify-self-start shrink"
-      />
-      <div
+        src="/Login-cuate-1.svg"
+        width={329}
+        height={329}
+        alt="progresive app pana"
         className={clsx(
-          "justify-center",
-          "pb-[15px]",
-          "md:grid md:grid-cols-2 md:pb-[0px]"
-        )}
-      >
-        <Image
-          src="/Login-cuate-1.svg"
-          width={329}
-          height={329}
-          alt="progresive app pana"
-          className={clsx("w-[319px]", "pt-[45px]")}
-        />
-        <div className="md:grid md:content-center">
-        <div className="grid justify-items-center md:justify-items-start" >
+          "w-[319px]", 
+          "pt-[45px]",
+          "lg:w-[600px]",
+          "lg:h-[600px]",
+          "lg:items-end lg:self-end",
+      )}/>
+      <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
+          <div className="grid justify-items-center md:justify-items-start lg:flex" >
           <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
-            Bienvenido a{" "}
+              Bienvenido a{" "}
           </p>
           <p
-            className={clsx(
+              className={clsx(
               "pl-[3px]",
               "text-h1 text-primary",
               "font-heading",
               "justify-center",
               "md:justify-items-start",
-            )}
+              )}
           >
-            PataDePerro
+              PataDePerro
           </p>
-        </div>
-        <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px]">
-          Organiza tu viaje, guarda puntos de interés y comparte el itinerario
-          con todos tus compañeros de viaje.
-        </p>
-        </div>
+          </div>
+      <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px] lg:w-[400px]">
+        Organiza tu viaje, guarda puntos de interés y comparte el itinerario
+        con todos tus compañeros de viaje.
+      </p>
+      </div>
       </div>
       <div className={clsx(
         "w-[90vw] border-b border-azulGris50 my-[15px]",
@@ -97,9 +112,12 @@ export default function Login() {
           </p>
           <p className="px-[10px]">----</p>
         </div>
+        
         <input
           type="email"
           name="email"
+        //   value={email}
+          onChange={e => setEmail(e.target.value)}
           className={clsx(
             "mt-1 px-3 py-2",
             "h-[50px]",
@@ -114,6 +132,7 @@ export default function Login() {
         <input
           type="password"
           name="password"
+          onChange={e => setPassword(e.target.value)}
           className={clsx(
             "mt-[27px] px-3 py-2",
             "bg-white",
