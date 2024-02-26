@@ -23,8 +23,7 @@ export default function Login() {
       <div
         className={clsx(
           "justify-center",
-          "border-b-2 border-azulGris50",
-          "pb-[15px] mb-[15px]"
+          "pb-[15px]",
         )}
       >
         <Image
@@ -54,8 +53,9 @@ export default function Login() {
           con todos tus compañeros de viaje.
         </p>
       </div>
-      <div className="grid justify-items-center">
-        <p className="text-h1 font-heading text-center text-azulGris900">
+      <div className="w-[90vw] border-b-2 border-azulGris50 my-[15px] "></div>
+      <div className="grid justify-items-center pb-[15px]">
+        <p className="text-h1 font-heading text-center text-azulGris900 ">
           Inicia sesión en
         </p>
         <Image
