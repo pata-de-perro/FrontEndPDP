@@ -8,7 +8,7 @@ export default function Login() {
       className={clsx(
         "flex",
         "flex-wrap",
-        "md:flex-nowrap",
+        "lg:flex-nowrap",
         "justify-center",
         "p-[20px]"
       )}
@@ -24,6 +24,7 @@ export default function Login() {
         className={clsx(
           "justify-center",
           "pb-[15px]",
+          "md:grid md:grid-cols-2 md:pb-[0px]"
         )}
       >
         <Image
@@ -33,7 +34,8 @@ export default function Login() {
           alt="progresive app pana"
           className={clsx("w-[319px]", "pt-[45px]")}
         />
-        <div className="grid justify-items-center">
+        <div className="md:grid md:content-center">
+        <div className="grid justify-items-center md:justify-items-start" >
           <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
             Bienvenido a{" "}
           </p>
@@ -42,20 +44,25 @@ export default function Login() {
               "pl-[3px]",
               "text-h1 text-primary",
               "font-heading",
-              "justify-center"
+              "justify-center",
+              "md:justify-items-start",
             )}
           >
             PataDePerro
           </p>
         </div>
-        <p className="font-body text-regular w-[360px] text-center">
+        <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px]">
           Organiza tu viaje, guarda puntos de interés y comparte el itinerario
           con todos tus compañeros de viaje.
         </p>
+        </div>
       </div>
-      <div className="w-[90vw] border-b-2 border-azulGris50 my-[15px] "></div>
+      <div className={clsx(
+        "w-[90vw] border-b border-azulGris50 my-[15px]",
+        "lg:my-[0px] lg:mx-[15px] lg:border-b-0 lg:border-l-2"
+      )}></div>
       <div className="grid justify-items-center pb-[15px]">
-        <p className="text-h1 font-heading text-center text-azulGris900 ">
+      <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Inicia sesión en
         </p>
         <Image
