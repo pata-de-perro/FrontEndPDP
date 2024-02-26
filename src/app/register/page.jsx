@@ -13,11 +13,26 @@ export default function Login() {
         "p-[20px]"
       )}
     >
+      <Image
+        src="/World.svg"
+        width={316}
+        height={316}
+        alt="World image"
+        className="absolute left-[-50px] top-[-150px] z-0 justify-self-start"
+      />
+      {/* <Image
+            src="/World.svg"
+            width={316}
+            height={316}
+            alt="World image"
+            className="absolute bottom-[-450px] right-[-100px] z-0"
+          /> */}
       <div
         className={clsx(
           "justify-center",
           "border-b-2 border-azulGris50",
-          "pb-[15px] mb-[15px]"
+          "pb-[15px] mb-[15px]",
+          "relative",
         )}
       >
         <Image
@@ -25,7 +40,7 @@ export default function Login() {
           width={329}
           height={329}
           alt="progresive app pana"
-          className={clsx("w-[319px]", "pt-[45px]",)}
+          className={clsx("w-[319px]", "pt-[45px]")}
         />
         <div className="grid justify-items-center">
           <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
@@ -83,67 +98,69 @@ export default function Login() {
           <p className="px-[10px]">----</p>
         </div>
         <input
-            type="username"
-            name="username"
-            className={clsx(
-                "mt-1 px-3 py-2",
-                "h-[50px]",
-                "bg-white", 
-                "border shadow-sm border-slate-300", 
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                "block w-[450px] rounded-lg focus:ring-1",
-            )}
-            placeholder="Nombre"
-          />
-          <input
-            type="email"
-            name="email"
-            className={clsx(
-                "mt-[27px] px-3 py-2",
-                "h-[50px]",
-                "bg-white", 
-                "border shadow-sm border-slate-300", 
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                "block w-[450px] rounded-lg focus:ring-1",
-            )}
-            placeholder="Correo electrónico"
-          />
-          <input
-            type="password"
-            name="password"
-            className={clsx(
-                "mt-[27px] px-3 py-2",
-                "bg-white", 
-                "border shadow-sm border-slate-300", 
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-                "block w-[450px] h-[50px] rounded-lg focus:ring-1",
-            )}
-            placeholder="Contraseña"
-          />
-          <input
-            type="password"
-            name="password"
-            className={clsx(
-                "mt-[27px] px-3 py-2",
-                "bg-white", 
-                "border shadow-sm border-slate-300", 
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-                "block w-[450px] h-[50px] rounded-lg focus:ring-1",
-            )}
-            placeholder="Confirma contraseña"
-          />
+          type="username"
+          name="username"
+          className={clsx(
+            "mt-1 px-3 py-2",
+            "h-[50px]",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+            "block w-[450px] rounded-lg focus:ring-1"
+          )}
+          placeholder="Nombre"
+        />
+        <input
+          type="email"
+          name="email"
+          className={clsx(
+            "mt-[27px] px-3 py-2",
+            "h-[50px]",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+            "block w-[450px] rounded-lg focus:ring-1"
+          )}
+          placeholder="Correo electrónico"
+        />
+        <input
+          type="password"
+          name="password"
+          className={clsx(
+            "mt-[27px] px-3 py-2",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+          )}
+          placeholder="Contraseña"
+        />
+        <input
+          type="password"
+          name="password"
+          className={clsx(
+            "mt-[27px] px-3 py-2",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+          )}
+          placeholder="Confirma contraseña"
+        />
         <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
           ¿Ya tienes cuenta?
         </p>
-        <Link className="text-link font-body text-azulGris900 justify-self-start" 
-        href="/login">Haz click para ir a inicio de sesión</Link>
-        <p className="text-link font-body text-azulGris900 justify-self-start">
-          
-        </p>
+        <Link
+          className="text-link font-body text-azulGris900 justify-self-start"
+          href="/login"
+        >
+          Haz click para ir a inicio de sesión
+        </Link>
+        <p className="text-link font-body text-azulGris900 justify-self-start"></p>
         <button
           className={clsx(
             "bg-primary",
@@ -154,7 +171,7 @@ export default function Login() {
             "rounded-md",
             "flex justify-center",
             "hover:bg-accent1 hover:text-accent2",
-            "border-2 border-primary hover:border-accent1"
+            "border-2 border-primary hover:border-accent1",
           )}
         >
           Entrar
@@ -164,6 +181,7 @@ export default function Login() {
           confirmas que has leído la Política de privacidad.
         </p>
       </div>
+          
     </main>
   );
 }

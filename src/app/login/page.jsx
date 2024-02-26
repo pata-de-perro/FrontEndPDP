@@ -13,6 +13,13 @@ export default function Login() {
         "p-[20px]"
       )}
     >
+      <Image
+        src="/World.svg"
+        width={316}
+        height={316}
+        alt="World image"
+        className="absolute left-[-50px] top-[-150px] z-0 justify-self-start"
+      />
       <div
         className={clsx(
           "justify-center",
@@ -25,7 +32,7 @@ export default function Login() {
           width={329}
           height={329}
           alt="progresive app pana"
-          className={clsx("w-[319px]", "pt-[45px]",)}
+          className={clsx("w-[319px]", "pt-[45px]")}
         />
         <div className="grid justify-items-center">
           <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
@@ -82,33 +89,33 @@ export default function Login() {
           </p>
           <p className="px-[10px]">----</p>
         </div>
-          <input
-            type="email"
-            name="email"
-            className={clsx(
-                "mt-1 px-3 py-2",
-                "h-[50px]",
-                "bg-white", 
-                "border shadow-sm border-slate-300", 
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                "block w-[450px] rounded-lg focus:ring-1",
-            )}
-            placeholder="Correo electrónico"
-          />
-          <input
-            type="password"
-            name="password"
-            className={clsx(
-                "mt-[27px] px-3 py-2",
-                "bg-white", 
-                "border shadow-sm border-slate-300", 
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-                "block w-[450px] h-[50px] rounded-lg focus:ring-1",
-            )}
-            placeholder="Contraseña"
-          />
+        <input
+          type="email"
+          name="email"
+          className={clsx(
+            "mt-1 px-3 py-2",
+            "h-[50px]",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+            "block w-[450px] rounded-lg focus:ring-1"
+          )}
+          placeholder="Correo electrónico"
+        />
+        <input
+          type="password"
+          name="password"
+          className={clsx(
+            "mt-[27px] px-3 py-2",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+          )}
+          placeholder="Contraseña"
+        />
         <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
           ¿Olvidaste tu contraseña?
         </p>
