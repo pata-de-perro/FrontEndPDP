@@ -10,7 +10,8 @@ export default function Login() {
         "flex-wrap",
         "lg:flex-nowrap",
         "justify-center",
-        "p-[20px]"
+        "p-[20px]",
+        "lg:w-[100vw]"
       )}
     >
       <Image
@@ -27,48 +28,59 @@ export default function Login() {
             alt="World image"
             className="absolute bottom-[-450px] right-[-100px] z-0"
           /> */}
-       <div
+      <div
         className={clsx(
           "justify-center",
           "pb-[15px]",
-          "md:grid md:grid-cols-2 md:pb-[0px]"
+          "md:grid md:grid-cols-2 md:pb-[0px]",
+          "lg:flex lg:flex-wrap lg:pb-[2px]",
         )}
       >
         <Image
           src="/Login-cuate-1.svg"
           width={329}
           height={329}
-          alt="progresive app pana"
-          className={clsx("w-[319px]", "pt-[45px]")}
+          alt="login image"
+          className={clsx(
+            "w-[319px]",
+            "pt-[45px]",
+            "lg:w-[600px]",
+            "lg:h-[600px]",
+            "lg:items-end lg:self-end",
+          )}
         />
-        <div className="md:grid md:content-center">
-        <div className="grid justify-items-center md:justify-items-start" >
-          <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
-            Bienvenido a{" "}
+        <div className="md:grid md:content-center md:w-[350px] lg:ml-[100px] lg:content-start">
+          <div className="grid justify-items-center md:justify-items-start lg:flex ">
+            <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
+              Bienvenido a{" "}
+            </p>
+            <p
+              className={clsx(
+                "pl-[3px]",
+                "text-h1 text-primary",
+                "font-heading",
+                "justify-center",
+                "md:justify-items-start",
+                "lg:pl-[8px]"
+              )}
+            >
+              PataDePerro
+            </p>
+          </div>
+          <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px] lg:w-[400px]">
+            Organiza tu viaje, guarda puntos de interés y comparte el itinerario
+            con todos tus compañeros de viaje.
           </p>
-          <p
-            className={clsx(
-              "pl-[3px]",
-              "text-h1 text-primary",
-              "font-heading",
-              "justify-center",
-              "md:justify-items-start",
-            )}
-          >
-            PataDePerro
-          </p>
-        </div>
-        <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px]">
-          Organiza tu viaje, guarda puntos de interés y comparte el itinerario
-          con todos tus compañeros de viaje.
-        </p>
         </div>
       </div>
-      <div className={clsx(
-        "w-[90vw] border-b border-azulGris50 my-[15px]",
-        "lg:my-[0px] lg:mx-[15px] lg:border-b-0 lg:border-l-2"
-      )}></div>
-      <div className="grid justify-items-center">
+      <div
+        className={clsx(
+          "w-[90vw] border-b border-azulGris50 my-[15px]",
+          "lg:my-[0px] lg:mx-[0px] md:border-b-0 lg:border-l lg:w-[2px]"
+        
+        )}
+      ></div>
+      <div className="grid justify-items-center lg:justify-items-start lg:ml-[40px]">
         <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Inicia sesión en
         </p>
@@ -78,12 +90,6 @@ export default function Login() {
           height={50}
           alt="Logo Pata de Perro"
         />
-        <p className="text-regular font-body text-center text-azulGris900">
-          ¿Ya tienes cuenta?
-        </p>
-        <p className="text-regularBold font-body text-center text-azulGris900">
-          <Link href="/login">Haz click para ir a inicio de sesión</Link>
-        </p>
         <button
           className={clsx(
             "border border-azulGris600",
@@ -177,7 +183,7 @@ export default function Login() {
             "rounded-md",
             "flex justify-center",
             "hover:bg-accent1 hover:text-accent2",
-            "border-2 border-primary hover:border-accent1",
+            "border-2 border-primary hover:border-accent1"
           )}
         >
           Entrar
@@ -187,7 +193,6 @@ export default function Login() {
           confirmas que has leído la Política de privacidad.
         </p>
       </div>
-          
     </main>
   );
 }
