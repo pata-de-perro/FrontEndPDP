@@ -80,14 +80,14 @@ export default function Tutorials() {
           src="/Hand.svg"
           width={500}
           height={100}
-          alt="Vertical road pic"
+          alt="Hand with phone screen sm"
         ></Image>
         <Image
-          className={clsx("z-40", "sr-only", "md:not-sr-only", "lg:sr-only")}
+          className={clsx("z-40", "sr-only", "md:not-sr-only", "lg:sr-only",)}
           src="/Hand-md.svg"
           width={500}
           height={100}
-          alt="Vertical road pic"
+          alt="Hand with phone screen lg"
         ></Image>
         <div
           className={clsx("flex", "items-center", "justify-center", "flex-col")}
@@ -128,11 +128,11 @@ export default function Tutorials() {
         )}
       >
         <Image
-          className={clsx("mt-7", "md:mt-4", "z-0")}
+          className={clsx("mt-7", "md:mt-4", "z-10")}
           src="/Hand-lg.svg"
           width={1200}
           height={100}
-          alt="Vertical road pic"
+          alt="hand with phone screen lg"
         ></Image>
         <div
           className={clsx(
@@ -148,7 +148,8 @@ export default function Tutorials() {
               "flex",
               "items-center",
               "justify-center",
-              "flex-col"
+              "flex-col",
+              "z-0"
             )}
           >
             <p className={clsx("text-h3", "text-accent2", "drop-shadow-xl")}>
