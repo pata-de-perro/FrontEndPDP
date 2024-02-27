@@ -77,14 +77,14 @@ export default function Tutorials() {
         </div>
         <Image
           className={clsx("z-40", "sm:not-sr-only", "md:sr-only")}
-          src="/Hand.svg"
+          src="/App-mockup-sm.svg"
           width={500}
           height={100}
-          alt="Hand with phone screen sm"
+          alt="mockup phone screen sm"
         ></Image>
         <Image
           className={clsx("z-40", "sr-only", "md:not-sr-only", "lg:sr-only")}
-          src="/Hand-md.svg"
+          src="/App-mockup-md.svg"
           width={500}
           height={100}
           alt="Hand with phone screen lg"
@@ -129,14 +129,14 @@ export default function Tutorials() {
           "bg-cover bg-no-repeat"
         )}
       >
-        <div className="relative w-[100vw] h-[100px] mb-[800px]">
+        <div className="relative w-[100vw] h-[100px] mb-[500px]">
           <div className="absolute -z-10 h-full left-0">
             <Image
               className={clsx("mt-7", "-z-10", "w-full")}
-              src="/Hand-lg.svg"
+              src="/App-mockup-lg.svg"
               width={1200}
               height={100}
-              alt="hand with phone screen lg"
+              alt="mockup phone screen lg"
             ></Image>
           </div>
 
@@ -156,7 +156,6 @@ export default function Tutorials() {
                 "justify-center",
                 "flex-col",
                 "pr-10",
-                "border-2 border-black"
               )}
             >
               <p className={clsx("text-h3", "text-accent2", "drop-shadow-xl")}>
@@ -178,7 +177,6 @@ export default function Tutorials() {
                 "flex-col",
                 "flex",
                 "flex-col-reverse",
-                "border-2 border-black",
                 "ml-2"
               )}
             >
