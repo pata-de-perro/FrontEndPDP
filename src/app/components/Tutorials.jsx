@@ -13,8 +13,7 @@ export default function Tutorials() {
         "flex-col",
         "flex-wrap",
         "md:h-[400px]",
-        "lg:h-[500px]",
-        "lg:bg-[url('')]"
+        "lg:h-[500px]"
       )}
     >
       <div
@@ -24,17 +23,11 @@ export default function Tutorials() {
           "justify-center",
           "flex-col",
           "md:flex-row",
-          "md:flex-row-reverse"
+          "md:flex-row-reverse",
+          "lg:sr-only"
         )}
       >
-        <div
-          className={clsx(
-            "flex",
-            "flex-col-reverse",
-            "lg:flex-row",
-            "md:items-start"
-          )}
-        >
+        <div className={clsx("flex", "flex-col-reverse", "md:items-start")}>
           <div
             className={clsx(
               "flex",
@@ -67,8 +60,7 @@ export default function Tutorials() {
               "md:not-sr-only",
               "flex",
               "flex-col-reverse",
-              "md:items-start",
-              
+              "md:items-start"
             )}
           >
             <p className={clsx("text-accent2", "text-h3", "deop-shadow-2xl")}>
@@ -97,7 +89,6 @@ export default function Tutorials() {
           height={100}
           alt="Vertical road pic"
         ></Image>
-
         <div
           className={clsx("flex", "items-center", "justify-center", "flex-col")}
         >
@@ -112,13 +103,82 @@ export default function Tutorials() {
               "w-[400px]"
             )}
           >
-            <p className={clsx("text-accent2", "text-h3", "deop-shadow-2xl")}>
+            <p className={clsx("text-accent2", "text-h3", "deep-shadow-2xl")}>
               Agregando experiencias
             </p>
             <Image
               className={clsx("mt-4")}
               src="/Video-cover2.svg"
               width={500}
+              height={100}
+              alt="Vertical road pic"
+            ></Image>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={clsx(
+          "flex",
+          "flex-row",
+          "sr-only",
+          "lg:not-sr-only",
+          "full-size",
+          "relative"
+        )}
+      >
+        <Image
+          className={clsx("mt-7", "md:mt-4", "z-0")}
+          src="/Hand-lg.svg"
+          width={1200}
+          height={100}
+          alt="Vertical road pic"
+        ></Image>
+        <div
+          className={clsx(
+            "flex",
+            "flex-row",
+            "full-size",
+            "relative top-20 left-0 right-0",
+            "z-50"
+          )}
+        >
+          <div
+            className={clsx(
+              "flex",
+              "items-center",
+              "justify-center",
+              "flex-col"
+            )}
+          >
+            <p className={clsx("text-h3", "text-accent2", "drop-shadow-xl")}>
+              Cómo funciona
+            </p>
+            <Image
+              className={clsx("mt-7", "md:mt-4")}
+              src="/Video-cover.svg"
+              width={350}
+              height={100}
+              alt="Vertical road pic"
+            ></Image>
+          </div>
+          <div
+            className={clsx(
+              "flex",
+              "items-center",
+              "justify-center",
+              "flex-col",
+              "flex",
+              "flex-col-reverse"
+            )}
+          >
+            <p className={clsx("text-accent2", "text-h3", "deop-shadow-2xl")}>
+              Agregando experiencias
+            </p>
+            <Image
+              className={clsx("mt-4", "z-10")}
+              src="/Video-cover2.svg"
+              width={350}
               height={100}
               alt="Vertical road pic"
             ></Image>

@@ -63,8 +63,8 @@ export default function Functions() {
          <Image
           className={clsx("mb-15", "sr-only", "lg:not-sr-only" )}
           src="/Horizontal-road-lg.svg"
-          width={1200}
-          height={100}
+          width={2000}
+          height={200}
           alt="Vertical road pic"
         />
        
