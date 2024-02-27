@@ -37,7 +37,7 @@ export default function Comments() {
         <div
           className={clsx(
             "mt-5",
-            "bg-azulGris50",
+            "bg-appBackground",
             "rounded-xl",
             "flex",
             "flex-col",
@@ -117,7 +117,7 @@ export default function Comments() {
         <div
           className={clsx(
             "mt-5",
-            "bg-azulGris50",
+            "bg-appBackground",
             "rounded-xl",
             "flex",
             "flex-col",
@@ -193,7 +193,7 @@ export default function Comments() {
         <div
           className={clsx(
             "mt-5",
-            "bg-azulGris50",
+            "bg-appBackground",
             "rounded-xl",
             "flex",
             "flex-col",
