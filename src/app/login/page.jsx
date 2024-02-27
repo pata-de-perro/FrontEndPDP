@@ -169,7 +169,7 @@ export default function Login() {
             "hover:bg-accent1 hover:text-accent2",
             "border-2 border-primary hover:border-accent1"
           )}
-          onClick={}
+          // onClick={}
         >
           Entrar
         </button>
