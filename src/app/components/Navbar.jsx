@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from "clsx";
-import  MenuItems from "./menuItems";
+// import  MenuItems from "./menuItems";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -96,7 +96,7 @@ export default function Navbar() {
                   "border-2 border-accent2 hover:border-primary"
                 )}
               >
-                ¡Registrate!
+                <Link href="/register">¡Registrate!</Link>
               </button>
               <button
                 className={clsx(
@@ -109,7 +109,7 @@ export default function Navbar() {
                   "border-2 border-accent2 hover:border-primary"
                 )}
               >
-                Iniciar sesión
+                <Link href="/login">Iniciar sesión</Link>
               </button>
             </li>
             <button
