@@ -1,0 +1,27 @@
+
+.Main_Box {
+    background-color: #B6EAA4;
+    width: 320px;
+    height: 565px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Register_card{
+    border: solid 1px black;
+    width: 302px;
+    height: 539px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_Box {
+    height: 191px;
+    width: 286px;
+    background-color: aqua;
+}
+
+span{
+    font-size: 32px;
+}

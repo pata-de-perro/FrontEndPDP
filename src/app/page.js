@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -11,7 +10,9 @@ import Comments from "./components/Comments";
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <div>
         <Hero />
         <FirstCards />
