@@ -27,7 +27,7 @@ export default function Login() {
       width={316}
       height={316}
       alt="World image"
-      className="absolute left-[-50px] top-[-150px] z-0 justify-self-start shrink"
+      className="absolute left-[-50px] top-[-150px] z-0 justify-self-start"
     />
     <div
       className={clsx(
@@ -85,7 +85,7 @@ export default function Login() {
           width={250}
           height={50}
           alt="Logo Pata de Perro"
-          className="lg:w-[420px] lg:h-[111px]"
+          className="lg:w-[420px] lg:h-[auto]"
         />
         <p className="text-regular font-body text-center text-azulGris900">
           ¿Eres un nuevo usuario?
@@ -112,11 +112,14 @@ export default function Login() {
           </p>
           <p className="px-[10px]">----</p>
         </div>
-        
+        <label className={clsx(
+            "text-regular font-body text-azulGris800",
+            "bg-appBackground",
+            "z-10 justify-self-start ml-[15px] mt-[15px]",
+        )}>Correo electrónico</label>
         <input
           type="email"
           name="email"
-        //   value={email}
           onChange={e => setEmail(e.target.value)}
           className={clsx(
             "mt-1 px-3 py-2",
@@ -129,12 +132,17 @@ export default function Login() {
           )}
           placeholder="Correo electrónico"
         />
+                <label className={clsx(
+            "text-regular font-body text-azulGris800",
+            "bg-appBackground",
+            "z-10 justify-self-start ml-[15px] mt-[27px]",
+        )}>Contraseña</label>
         <input
           type="password"
           name="password"
           onChange={e => setPassword(e.target.value)}
           className={clsx(
-            "mt-[27px] px-3 py-2",
+            "px-3 py-2",
             "bg-white",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
@@ -161,6 +169,7 @@ export default function Login() {
             "hover:bg-accent1 hover:text-accent2",
             "border-2 border-primary hover:border-accent1"
           )}
+          onClick={}
         >
           Entrar
         </button>
