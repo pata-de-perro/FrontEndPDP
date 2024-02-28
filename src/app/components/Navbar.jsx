@@ -33,7 +33,6 @@ export default function Navbar() {
             height={50}
             alt="Logo of De Pata de Perro"
             className={clsx(
-              "cursor-pointer",
               "ml-[24px]",
             )}
           />
