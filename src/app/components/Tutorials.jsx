@@ -8,23 +8,18 @@ export default function Tutorials() {
         "w-auto",
         "full-size",
         "flex",
-        "items-center",
-        "justify-center",
         "flex-col",
         "flex-wrap",
-        "md:h-[400px]",
-        "lg:h-[500px]"
+        "md:h-[500px]",
       )}
     >
       <div
         className={clsx(
           "flex",
           "items-center",
-          "justify-center",
           "flex-col",
           "md:flex-row",
           "md:flex-row-reverse",
-          "lg:sr-only"
         )}
       >
         <div className={clsx("flex", "flex-col-reverse", "md:items-start")}>
@@ -39,7 +34,7 @@ export default function Tutorials() {
               "md:mb-8"
             )}
           >
-            <p className={clsx("text-h3", "text-accent2", "drop-shadow-xl")}>
+            <p className={clsx("text-h3", "text-accent2",)}>
               Cómo funciona
             </p>
             <Image
@@ -47,7 +42,7 @@ export default function Tutorials() {
               src="/Video-cover.svg"
               width={350}
               height={100}
-              alt="Vertical road pic"
+              alt="VIDEO COVER 1"
             ></Image>
           </div>
           <div
@@ -71,7 +66,7 @@ export default function Tutorials() {
               src="/Video-cover2.svg"
               width={350}
               height={100}
-              alt="Vertical road pic"
+              alt="VIDEO COVER 2"
             ></Image>
           </div>
         </div>
@@ -83,7 +78,7 @@ export default function Tutorials() {
           alt="mockup phone screen sm"
         ></Image>
         <Image
-          className={clsx("z-40", "sr-only", "md:not-sr-only", "lg:sr-only")}
+          className={clsx("z-40", "sr-only", "md:not-sr-only",)}
           src="/App-mockup-md.svg"
           width={500}
           height={100}
@@ -111,7 +106,7 @@ export default function Tutorials() {
               src="/Video-cover2.svg"
               width={500}
               height={100}
-              alt="Vertical road pic"
+              alt="VIDEO COVER 2"
             ></Image>
           </div>
         </div>
@@ -129,10 +124,10 @@ export default function Tutorials() {
           "bg-cover bg-no-repeat"
         )}
       >
-        <div className="relative w-[100vw] h-[100px] mb-[500px]">
-          <div className="absolute -z-10 h-full left-0">
+        {/* <div className="relative w-[1028px] h-[100px] mb-[500px]">
+          <div className="absolute z-10 h-full left-0">
             <Image
-              className={clsx("mt-7", "-z-10", "w-full")}
+              className={clsx("mt-7", "z-10", "w-full")}
               src="/App-mockup-lg.svg"
               width={1200}
               height={100}
@@ -142,8 +137,6 @@ export default function Tutorials() {
 
           <div
             className={clsx(
-              // "flex",
-              // "flex-row",
               "full-size",
               "relative top-20 left-0 right-0",
               "z-50"
@@ -158,7 +151,7 @@ export default function Tutorials() {
                 "pr-10",
               )}
             >
-              <p className={clsx("text-h3", "text-accent2", "drop-shadow-xl")}>
+              <p className={clsx("text-h3", "text-accent2")}>
                 Cómo funciona
               </p>
               <Image
@@ -177,10 +170,10 @@ export default function Tutorials() {
                 "flex-col",
                 "flex",
                 "flex-col-reverse",
-                "ml-2"
+                "ml-2",
               )}
             >
-              <p className={clsx("text-accent2", "text-h3", "deop-shadow-2xl")}>
+              <p className={clsx("text-accent2", "text-h3")}>
                 Agregando experiencias
               </p>
               <Image
@@ -192,7 +185,7 @@ export default function Tutorials() {
               ></Image>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
