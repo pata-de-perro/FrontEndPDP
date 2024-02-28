@@ -6,41 +6,29 @@ export default function Comments() {
     
     <div
       className={clsx(
-        "flex-wrap",
+        "flex flex-wrap flex-col",
+        "items-center justify-center",
         "w-auto",
         "full-size",
-        "flex",
-        "items-center",
-        "justify-center",
         "mt-28",
-        "flex-col",
-        
-         
-        
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>
         <div className={clsx(
-        "w-auto",
-        "full-size",
-        "flex",
-        "items-center",
-        "justify-center",
-        "flex-col",
-        "md:flex-row", 
-        "md:place-content-evenly",
-        "md:w-full",
-        "lg:w-full",
-        
+          "flex flex-col",
+          "items-center justify-center",
+          "w-auto",
+          "full-size",
+          "md:flex-row md:place-content-evenly md:w-full",
+          "lg:w-full",
       )}>
           <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]")}>
         <div
           className={clsx(
-            "mt-5",
+            "flex flex-col",
             "bg-appBackground",
+            "mt-5",
             "rounded-xl",
-            "flex",
-            "flex-col",
             "items-center",
             "md:h-[369px]"
           )}
@@ -49,8 +37,7 @@ export default function Comments() {
             className={clsx(
               "flex",
               "justify-start",
-              "mt-3",
-              "ml-6",
+              "mt-3 ml-6",
               "size-full"
             )}
           >
@@ -71,10 +58,8 @@ export default function Comments() {
           </div>
           <div
             className={clsx(
-              "flex",
-              "items-center",
-              "justify-center",
-              "flex-col",
+              "flex flex-col",
+              "items-center justify-center",
               "my-4"
             )}
           >
@@ -88,8 +73,7 @@ export default function Comments() {
             )}>(34 años)</p>
             <div
               className={clsx(
-                "flex",
-                "flex-col",
+                "flex flex-col",
                 "items-center",
                 "justify-center"
               )}
