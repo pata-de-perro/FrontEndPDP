@@ -20,6 +20,7 @@ export default function Tutorials() {
           "flex-col",
           "md:flex-row",
           "md:flex-row-reverse",
+          "lg:sr-only",
         )}
       >
         <div className={clsx("flex", "flex-col-reverse", "md:items-start")}>
@@ -124,7 +125,7 @@ export default function Tutorials() {
           "bg-cover bg-no-repeat"
         )}
       >
-        {/* <div className="relative w-[1028px] h-[100px] mb-[500px]">
+        <div className="relative w-[1028px] h-[100px] mb-[500px]">
           <div className="absolute z-10 h-full left-0">
             <Image
               className={clsx("mt-7", "z-10", "w-full")}
@@ -185,8 +186,9 @@ export default function Tutorials() {
               ></Image>
             </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
 }
+
