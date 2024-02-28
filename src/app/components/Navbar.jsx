@@ -16,6 +16,8 @@ export default function Navbar() {
         "p-[11px]",
         "bg-accent1",
         "rounded-full",
+        // "lg:w-[1028px]",
+        // "lg:flex lg:justify-center",
       )}
     >
       <div
