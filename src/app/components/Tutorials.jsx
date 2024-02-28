@@ -10,7 +10,7 @@ export default function Tutorials() {
         "flex",
         "flex-col",
         "flex-wrap",
-        "md:h-[500px]",
+        "md:h-[500px]"
       )}
     >
       <div
@@ -20,7 +20,7 @@ export default function Tutorials() {
           "flex-col",
           "md:flex-row",
           "md:flex-row-reverse",
-          "lg:sr-only",
+          "lg:sr-only"
         )}
       >
         <div className={clsx("flex", "flex-col-reverse", "md:items-start")}>
@@ -35,9 +35,7 @@ export default function Tutorials() {
               "md:mb-8"
             )}
           >
-            <p className={clsx("text-h3", "text-accent2",)}>
-              Cómo funciona
-            </p>
+            <p className={clsx("text-h3", "text-accent2")}>Cómo funciona</p>
             <Image
               className={clsx("mt-7", "md:mt-4")}
               src="/Video-cover.svg"
@@ -79,7 +77,7 @@ export default function Tutorials() {
           alt="mockup phone screen sm"
         ></Image>
         <Image
-          className={clsx("z-40", "sr-only", "md:not-sr-only",)}
+          className={clsx("z-40", "sr-only", "md:not-sr-only")}
           src="/App-mockup-md.svg"
           width={500}
           height={100}
@@ -96,7 +94,7 @@ export default function Tutorials() {
               "flex-col",
               "md:sr-only",
               "sm:not-sr-only",
-              "w-[400px]",
+              "w-[400px]"
             )}
           >
             <p className={clsx("text-accent2", "text-h3", "deep-shadow-2xl")}>
@@ -140,55 +138,75 @@ export default function Tutorials() {
             className={clsx(
               "full-size",
               "relative top-20 left-0 right-0",
-              "z-50"
+              "z-50",
+              // "items-center",
+              // "w-[1028px]",
+              // "justify-center",
             )}
           >
             <div
               className={clsx(
                 "flex",
                 "items-center",
-                "justify-center",
-                "flex-col",
-                "pr-10",
+                // "flex-col",
+                // "pl-[300px] pb-[-100px]"
               )}
             >
-              <p className={clsx("text-h3", "text-accent2")}>
-                Cómo funciona
-              </p>
-              <Image
-                className={clsx("mt-7 mb-0", "md:mt-4")}
-                src="/Video-cover.svg"
-                width={350}
-                height={100}
-                alt="¿Cómo funciona? video cover"
-              ></Image>
-            </div>
-            <div
-              className={clsx(
+              <div className={clsx(
+                "flex-col",
                 "flex",
-                "items-end",
-                "justify-center",
+                "items-center",
+                "px-6"
+              )}>
+                <p className={clsx("text-h3", "text-accent2")}>Cómo funciona</p>
+                <Image
+                  className={clsx("mt-7 mb-0", "md:mt-4")}
+                  src="/Video-cover.svg"
+                  width={350}
+                  height={100}
+                  alt="¿Cómo funciona? video cover"
+                ></Image>
+              </div>
+
+              <div className={clsx(
                 "flex-col",
                 "flex",
                 "flex-col-reverse",
-                "ml-2",
-              )}
-            >
-              <p className={clsx("text-accent2", "text-h3")}>
-                Agregando experiencias
-              </p>
-              <Image
-                className={clsx("mt-4", "z-10")}
-                src="/Video-cover2.svg"
-                width={350}
-                height={100}
-                alt="Agregando experiencias video cover"
-              ></Image>
+                "items-center",
+              )}>
+                <p className={clsx("text-accent2", "text-h3")}>
+                  Agregando experiencias
+                </p>
+                <Image
+                  className={clsx("mt-4", "z-10")}
+                  src="/Video-cover2.svg"
+                  width={350}
+                  height={100}
+                  alt="Agregando experiencias video cover"
+                ></Image>
+              </div>
             </div>
+            {/* <div
+              className={clsx(
+                "flex",
+                "justify-end",
+                // "ml-2",
+                "border-2"
+                )}
+                >
+              <div className={clsx(
+                "flex-col",
+                // "pl-[300px]",
+                "flex",
+                "flex-col-reverse",
+                "items-center",
+              )}>
+              
+              </div>
+            </div> */}
           </div>
         </div>
       </div>
     </div>
   );
 }
-
