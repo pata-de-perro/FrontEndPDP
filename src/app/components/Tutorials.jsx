@@ -95,7 +95,7 @@ export default function Tutorials() {
               "flex-col",
               "md:sr-only",
               "sm:not-sr-only",
-              "w-[400px]"
+              "w-[400px]",
             )}
           >
             <p className={clsx("text-accent2", "text-h3", "deep-shadow-2xl")}>
