@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Tutorials() {
   return (
-    <div
+    <div id="tutorials"
       className={clsx(
         "w-auto",
         "full-size",

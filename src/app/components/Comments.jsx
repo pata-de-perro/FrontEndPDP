@@ -4,15 +4,13 @@ import Image from "next/image";
 export default function Comments() {
   return (
     
-    <div
+    <div id="comments"
       className={clsx(
         "flex flex-wrap flex-col",
         "items-center justify-center",
         "w-auto",
         "full-size",
         "my-28",
-        // "lg:w-[1028px]",
-        // "lg:justify-center"
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>

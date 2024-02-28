@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Functions() {
   return (
-    <div
+    <div id="functions"
       className={clsx(
         "w-auto",
         "flex flex-wrap",
