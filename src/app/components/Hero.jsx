@@ -4,10 +4,9 @@ import Image from 'next/image';
 export default function Hero() {
   return (
     <div className={clsx(
-        "flex",
-        "flex-wrap",
-        "md:flex-nowrap",
+        "flex flex-wrap",
         "justify-center",
+        "md:flex-nowrap",
     )}>
         <Image 
             src="/Progresive-app-pana.svg"
@@ -16,21 +15,16 @@ export default function Hero() {
             alt="progresive app pana" 
             className={clsx(
                 "w-[319px]",
-                "md:w-[319px]",
-                "lg:w-[453px]",
-                "border-b-2",
-                "md:border-b-0",
-                "md:mx-6",
-                "md:border-r-2",
                 "border-azulGris50",
+                "md:w-[319px] md:border-b-0 md:mx-6 md:border-r",
+                "lg:w-[453px]",
                 )}
                 />
             <div className={clsx(
                 "justify-center",
                 "text-center",
-                "md:text-left",
                 "m-8",
-                "md:m-4",
+                "md:text-left md:m-4",
             )}>
                 <span className={clsx(
                     "lg:flex", 
@@ -53,16 +47,12 @@ export default function Hero() {
                 <p className={clsx(
                     "text-regular",
                     "text-center",
-                    "md:text-left",
                     "font-body",
                     "text-azulGris900",
                     "my-8",
-                    "my:m-0",
                     "w-[400px]",
-                    "md:w-[280px]",
+                    "md:w-[280px] md:text-left md:my-0",
                     "lg:w-[360px]",
-                    // "flex",
-                    // "shrink",
                     )}>Organiza tu viaje, guarda puntos de interés y comparte el itinerario con
                     todos tus compañeros de viaje.</p>
 
@@ -86,9 +76,9 @@ export default function Hero() {
                     className={clsx(
                     "w-[250px] h-[48px]",
                     "rounded-full",
+                    "mb-8",
                     "bg-primary",
                     "text-heading text-white",
-                    "mb-8",
                     "justify-center",
                     )}
                 >
