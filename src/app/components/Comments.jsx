@@ -10,7 +10,7 @@ export default function Comments() {
         "items-center justify-center",
         "w-auto",
         "full-size",
-        "mt-28",
+        "my-28",
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>
@@ -176,12 +176,11 @@ export default function Comments() {
       <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]" )}>
         <div
           className={clsx(
+            "flex flex-col",
             "mt-5",
+            "items-center",
             "bg-appBackground",
             "rounded-xl",
-            "flex",
-            "flex-col",
-            "items-center",
             "md:h-[369px]"
           )}
         >
@@ -211,10 +210,9 @@ export default function Comments() {
           </div>
           <div
             className={clsx(
-              "flex",
+              "flex flex-col",
               "items-center",
               "justify-center",
-              "flex-col",
               "my-4"
             )}
           >
@@ -225,8 +223,7 @@ export default function Comments() {
             <p>(45 años)</p>
             <div
               className={clsx(
-                "flex",
-                "flex-col",
+                "flex flex-col",
                 "items-center",
                 "justify-center"
               )}
