@@ -50,7 +50,8 @@ export default function Navbar() {
             <li className="sr-only lg:not-sr-only">
               <Link className={clsx(
                 "font-body text-accent2 text-regular", 
-                "hover:text-primary"
+                "hover:text-primary",
+                "cursor-pointer",
               )}
               activeClass="active"
               to="functions" 
@@ -62,7 +63,8 @@ export default function Navbar() {
             <li className="sr-only lg:not-sr-only">
             <Link className={clsx(
                 "font-body text-accent2 text-regular", 
-                "hover:text-primary"
+                "hover:text-primary",
+                "cursor-pointer",
               )}
               activeClass="active"
               to="comments" 
@@ -74,7 +76,8 @@ export default function Navbar() {
             <li className="sr-only lg:not-sr-only">
             <Link className={clsx(
                 "font-body text-accent2 text-regular", 
-                "hover:text-primary"
+                "hover:text-primary",
+                "cursor-pointer",
               )}
               activeClass="active"
               to="tutorials" 
