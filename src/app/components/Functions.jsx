@@ -7,9 +7,9 @@ export default function Functions() {
       className={clsx(
         "w-auto",
         "flex",
+        "flex-wrap",
         "items-center",
         "justify-center",
-        "flex-wrap",
         "lg:mb-48",
         "md:mb-40"
       )}
