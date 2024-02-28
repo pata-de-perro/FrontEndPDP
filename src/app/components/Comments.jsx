@@ -11,6 +11,8 @@ export default function Comments() {
         "w-auto",
         "full-size",
         "my-28",
+        // "lg:w-[1028px]",
+        // "lg:justify-center"
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>
@@ -20,7 +22,7 @@ export default function Comments() {
           "w-auto",
           "full-size",
           "md:flex-row md:place-content-evenly md:w-full",
-          "lg:w-full",
+          "lg:w-[1028px]",
       )}>
           <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]")}>
         <div
