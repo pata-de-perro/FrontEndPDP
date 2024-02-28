@@ -15,15 +15,14 @@ export default function Navbar() {
         "mx-[30px] my-[25px]",
         "p-[11px]",
         "bg-accent1",
-        "rounded-full"
+        "rounded-full",
       )}
     >
       <div
         className={clsx(
-          "grid",
-          "grid-cols-2",
+          "grid grid-cols-2",
           "items-center",
-          "md:grid-cols-3"
+          "md:grid-cols-3",
         )}
       >
         <div className={clsx("logoContainer")}>
@@ -42,11 +41,9 @@ export default function Navbar() {
         <div className={clsx("justify-end", "md:col-span-2")}>
           <ul
             className={clsx(
-              "flex",
-              "flex-wrap",
+              "flex flex-wrap",
+              "justify-end items-center",
               "lg:justify-around",
-              "justify-end",
-              "items-center",
             )}
           >
             <li className="sr-only lg:not-sr-only">
@@ -62,9 +59,7 @@ export default function Navbar() {
             <li className="sr-only lg:not-sr-only">
               <a
                 className={clsx(
-                  "font-body",
-                  "text-accent2",
-                  "text-regular",
+                  "font-body text-accent2 text-regular",
                   "hover:text-primary"
                 )}
               >
@@ -74,9 +69,7 @@ export default function Navbar() {
             <li className="sr-only lg:not-sr-only">
               <a
                 className={clsx(
-                  "font-body",
-                  "text-accent2",
-                  "text-regular",
+                  "font-body text-accent2 text-regular",
                   "hover:text-primary"
                 )}
               >
@@ -120,7 +113,6 @@ export default function Navbar() {
                 "mr-[24px]",
                 "lg:sr-only",
                 "md:justify-end",
-                "",
               )}
             >
               {!isOpen ? (
@@ -131,7 +123,6 @@ export default function Navbar() {
                 alt="Mobile menu icon"
                 className={clsx(
                     "ml-[15px]",
-                    // "stroke-accent2",
                     "hover:stroke-primary",
                     )}
               />
