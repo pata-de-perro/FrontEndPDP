@@ -3,27 +3,27 @@
 import clsx from "clsx";
 // import  MenuItems from "./menuItems";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "react-scroll/modules";
 
 import { useState } from "react";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+
   return (
     <nav
       className={clsx(
         "mx-[30px] my-[25px]",
         "p-[11px]",
         "bg-accent1",
-        "rounded-full"
+        "rounded-full",
       )}
     >
       <div
         className={clsx(
-          "grid",
-          "grid-cols-2",
+          "grid grid-cols-2",
           "items-center",
-          "md:grid-cols-3"
+          "md:grid-cols-3",
         )}
       >
         <div className={clsx("logoContainer")}>
@@ -33,7 +33,6 @@ export default function Navbar() {
             height={50}
             alt="Logo of De Pata de Perro"
             className={clsx(
-              "cursor-pointer",
               "ml-[24px]",
             )}
           />
@@ -42,46 +41,49 @@ export default function Navbar() {
         <div className={clsx("justify-end", "md:col-span-2")}>
           <ul
             className={clsx(
-              "flex",
-              "flex-wrap",
+              "flex flex-wrap",
+              "justify-end items-center",
               "lg:justify-around",
-              "justify-end",
-              "items-center",
             )}
           >
             <li className="sr-only lg:not-sr-only">
-              <a
-                className={clsx(
-                  "font-body text-accent2 text-regular",
-                  "hover:text-primary"
-                )}
-              >
-                Funciones
-              </a>
+              <Link className={clsx(
+                "font-body text-accent2 text-regular", 
+                "hover:text-primary",
+                "cursor-pointer",
+              )}
+              activeClass="active"
+              to="functions" 
+              spy={true}
+              smooth={true}
+              duartion={500}
+              >Funciones</Link>
             </li>
             <li className="sr-only lg:not-sr-only">
-              <a
-                className={clsx(
-                  "font-body",
-                  "text-accent2",
-                  "text-regular",
-                  "hover:text-primary"
-                )}
-              >
-                Opiniones
-              </a>
+            <Link className={clsx(
+                "font-body text-accent2 text-regular", 
+                "hover:text-primary",
+                "cursor-pointer",
+              )}
+              activeClass="active"
+              to="comments" 
+              spy={true}
+              smooth={true}
+              duartion={500}
+              >Opiniones</Link>
             </li>
             <li className="sr-only lg:not-sr-only">
-              <a
-                className={clsx(
-                  "font-body",
-                  "text-accent2",
-                  "text-regular",
-                  "hover:text-primary"
-                )}
-              >
-                Tutoriales
-              </a>
+            <Link className={clsx(
+                "font-body text-accent2 text-regular", 
+                "hover:text-primary",
+                "cursor-pointer",
+              )}
+              activeClass="active"
+              to="tutorials" 
+              spy={true}
+              smooth={true}
+              duartion={500}
+              >Tutoriales</Link>
             </li>
             <li className={clsx("sr-only", "md:not-sr-only")}>
               <button
@@ -120,7 +122,6 @@ export default function Navbar() {
                 "mr-[24px]",
                 "lg:sr-only",
                 "md:justify-end",
-                "",
               )}
             >
               {!isOpen ? (
@@ -131,7 +132,6 @@ export default function Navbar() {
                 alt="Mobile menu icon"
                 className={clsx(
                     "ml-[15px]",
-                    // "stroke-accent2",
                     "hover:stroke-primary",
                     )}
               />

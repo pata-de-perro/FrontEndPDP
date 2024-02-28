@@ -5,40 +5,28 @@ export default function SecondCallToAction() {
   return (
     <div
       className={clsx(
+        "flex flex-wrap",
         "bg-accent1",
         "w-auto",
-        "flex",
-        "items-center",
-        "justify-center",
-        "flex-wrap",
+        "items-center justify-center",
         "md:h-[400px]",
         "lg:h-[500px]"
-        
-       
       )}
     >
       <div
         className={clsx(
           "my-3.5",
           "size-full",
-          "flex",
-          "items-center",
-          "justify-center",
-          "flex-col",
-          "md:flex-row", 
-          "md:flex-row-reverse", 
-         
+          "flex flex-col",
+          "items-center justify-center",
+          "md:flex-row md:flex-row-reverse", 
         )}
       >
-        <div className={clsx(
-          
-        )}></div>
         <div className={clsx("my-3.5", "size-full", "h-48", "w-80", "md:w-[350px]", "lg:h-[500px]","lg:w-[600px]")}>
           <Image
           className={clsx(
             "md:h-[210px]","md:w-[350px]",
-            "lg:h-[500px]","lg:w-[600px]"
-            
+            "lg:h-[500px]","lg:w-[600px]",
           )}
             src="/Coworking-pana-2.svg"
             width={400}
@@ -48,55 +36,45 @@ export default function SecondCallToAction() {
         </div>
         <div
           className={clsx(
-            "flex",
-            "items-center",
-            "justify-center",
-            "flex-col",
+            "flex flex-col",
+            "items-center justify-center",
             "w-80",
             "mt-3",
             "md:place-items-start", 
-            "lg:w-[481px]"
-            
+            "lg:w-[350px]",
           )}
         >
           <p
             className={clsx(
               "text-h1",
               "font-heading",
+              "text-accent2",
               "text-wrap",
-              "text-[#253A74]"
             )}
           >
             Pasa menos tiempo
           </p>
           <p
             className={clsx(
-              "text-h1",
+              "text-h1 text-wrap text-accent2",
               "font-heading",
-              "text-wrap",
-              "text-[#253A74]"
             )}
           >
             planeando y más
           </p>
           <p
             className={clsx(
-              "text-h1",
+              "text-h1 text-wrap text-accent2",
               "font-heading",
-              "text-wrap",
-              "text-[#253A74]"
             )}
           >
             disfrutando
           </p>
           <div
           className={clsx(
-            "flex",
-            "items-center",
-            "justify-center",
-            " flex-col",
-            "max-w-80",
-            "w-80",
+            "flex flex-col",
+            "items-center justify-center",
+            "max-w-80 w-80",
             "mt-3",
             "md:place-items-start", 
           )}
@@ -109,20 +87,17 @@ export default function SecondCallToAction() {
         <button
           className={clsx(
             "w-[250px] h-[48px]",
+            "my-8",
             "rounded-full",
             "bg-accent2",
-            "text-heading text-white",
-            "my-8",
             "justify-center",
-            "md:w-[159px]",
-            "md:h-[36px]"
-            
+            "text-heading text-white",
+            "md:w-[159px] md:h-[36px]"
           )}
         >
           ¡Registrate!
         </button>
         </div>
-      
       </div>
     </div>
   );

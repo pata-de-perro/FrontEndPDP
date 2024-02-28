@@ -3,25 +3,21 @@ import Image from "next/image";
 
 export default function Functions() {
   return (
-    <div
+    <div id="functions"
       className={clsx(
         "w-auto",
-        "flex",
-        "items-center",
-        "justify-center",
-        "flex-wrap",
+        "flex flex-wrap",
+        "items-center justify-center",
         "lg:mb-48",
-        "md:mb-40"
+        "md:mb-40",
       )}
     >
       <div
         className={clsx(
+          "flex flex-col",
           "my-24",
-          "flex",
-          "items-center",
-          "justify-center",
-          "w-80",
-          " flex-col"
+          "items-center justify-center",
+          "md:flex-row",
         )}
       >
         <p
@@ -29,23 +25,24 @@ export default function Functions() {
             "text-h1",
             "font-heading",
             "text-wrap",
-            "text-[#253A74]"
+            "text-accent2"
           )}
         >
-          Algunas de
+          Algunas de 
         </p>
         <p
           className={clsx(
             "text-h1",
             "font-heading",
             "text-wrap",
-            "text-[#253A74]"
+            "text-accent2",
+            "md:pl-2",
           )}
         >
           nuestras funciones
         </p>
       </div>
-      <div className={clsx("size-full", "relative")}>
+      <div className={clsx("size-full", "relative", "flex justify-center")}>
         <Image
           className={clsx("mt-7", "md:sr-only", ) }
           src="/Vertical-road.svg"
