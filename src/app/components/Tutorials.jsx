@@ -120,7 +120,9 @@ export default function Tutorials() {
           "lg:not-sr-only",
           "full-size",
           "relative",
-          "bg-cover bg-no-repeat"
+          "w-[1028px]",
+          "justify-center"
+          // "bg-cover bg-no-repeat"
         )}
       >
         <div className="relative w-[1028px] h-[100px] mb-[500px]">
