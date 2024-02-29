@@ -22,6 +22,24 @@ export default function Login() {
         "lg:w-[1280px] lg:mt-[30px] lg:justify-center"
       )}
     >
+      {/* <button className={clsx(
+        "flex",
+        // "border",
+        "w-[150px] h-[40px]",
+        "items-end",
+        "z-10",
+        // "rounded-full border-2 border-primary",
+      )}>
+        <Image
+        src="/DePataDePerroIcon.svg"
+        width={35}
+        height={35}
+        ></Image>
+        <Link href="/" className={clsx(
+          "font-body text-h3",
+          "text-primary",
+        )}>Regresar</Link>
+      </button> */}
       <Image
         src="/World.svg"
         width={316}
@@ -31,10 +49,10 @@ export default function Login() {
       />
       <div
         className={clsx(
-          "justify-center",
-          "md:pb-[15px]",
-          "md:grid md:grid-cols-2 md:pb-[0px]",
-          "lg:flex lg:flex-wrap"
+          "flex justify-center",
+          "md:pb-[15px] md:flex-row md:justify-start",
+          "lg:flex-wrap",
+          "lg:w-[500px]"
         )}
       >
         <Image
@@ -47,9 +65,9 @@ export default function Login() {
             "pt-[45px]",
             "sr-only",
             "md:not-sr-only",
-            "lg:w-[600px]",
-            "lg:h-[600px]",
-            "lg:items-end lg:self-end"
+            "md:w-[329px] md:h-[329px]",
+            "lg:w-[400px] lg:h-[400px]",
+            "lg:self-end"
           )}
         />
         <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
@@ -77,21 +95,30 @@ export default function Login() {
       </div>
       <div
         className={clsx(
-          "w-[90vw] border-azulGris50 mb-[15px]",
-          "lg:my-[0px] lg:mx-[15px] lg:border-b-0 lg:border-l-2"
+          "w-[90vw] mb-[15px]",
+          "lg:my-[0px] lg:mx-[15px] border-azulGris50 md:border-b lg:border-b-0 lg:border-l",
+          "lg:w-[35px]"
         )}
       ></div>
-      <div className="grid justify-items-center pb-[15px]">
+      <div
+        className={clsx(
+          "grid justify-items-center",
+          "pb-[15px]",
+          "lg:justify-items-start"
+        )}
+      >
         <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Inicia sesión en
         </p>
-        <Image
-          src="/dePataDePerroLogo.svg"
-          width={250}
-          height={50}
-          alt="Logo Pata de Perro"
-          className="lg:w-[420px] lg:h-[auto]"
-        />
+        <Link href="/">
+          <Image
+            src="/dePataDePerroLogo.svg"
+            width={250}
+            height={50}
+            alt="Logo Pata de Perro"
+            className="lg:w-[420px] lg:h-[auto]"
+          />
+        </Link>
         <p className="text-regular font-body text-center text-azulGris900">
           ¿Eres un nuevo usuario?
         </p>
@@ -167,10 +194,15 @@ export default function Login() {
         <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
           ¿Olvidaste tu contraseña?
         </p>
-        <Link href="#" className={clsx(
-          "text-regularSemiBold font-body text-azulGris900",
-          "justify-self-start",
-        )}>Recuperar contraseña</Link>
+        <Link
+          href="#"
+          className={clsx(
+            "text-regularSemiBold font-body text-azulGris900",
+            "justify-self-start"
+          )}
+        >
+          Recuperar contraseña
+        </Link>
         <button
           className={clsx(
             "bg-primary",
