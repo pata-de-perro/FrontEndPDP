@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function SecondCallToAction() {
   return (
@@ -95,7 +96,7 @@ export default function SecondCallToAction() {
             "md:w-[159px] md:h-[36px]"
           )}
         >
-          ¡Registrate!
+          <Link href="/register">¡Regístrate!</Link>
         </button>
         </div>
       </div>

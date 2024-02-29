@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from 'next/image';
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -56,14 +57,15 @@ export default function Hero() {
                     )}>Organiza tu viaje, guarda puntos de interés y comparte el itinerario con
                     todos tus compañeros de viaje.</p>
 
-                <p className={clsx(
+                    <Link className={clsx(
                     "text-primary",
                     "text-h4",
                     "text-center",
                     "font-heading",
                     "mt-8",
                     "md:text-left",
-                    )}>Registrate</p>
+                    )}
+                    href="/register">Regístrate</Link>
                 <p className={clsx(
                     "text-primary",
                     "text-regular",
@@ -82,7 +84,7 @@ export default function Hero() {
                     "justify-center",
                     )}
                 >
-                    Inicia sesión
+                    <Link href="/login">Iniciar sesión</Link>
                 </button>
             </div>
     </div>

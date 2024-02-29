@@ -1,23 +1,14 @@
 export const MenuItems=[
     {
         title: "Funciones",
-        url:"#",
-        cName:"nav-links text-regular text-accent2 hover:text-primary",
+        to:"tutorials",
     },
     {
         title: "Opiniones",
-        url:"#",
-        cName:"nav-links text-regular text-accent2 hover:text-primary",
+        to:"comments",
     },
     {
         title: "Tutoriales",
-        url:"#",
-        cName:"nav-links text-regular text-accent2 hover:text-primary",
+        to:"tutorials",
     },
 ]
-
-// {
-//     title: "",
-//     url:"#",
-//     cName:"nav-links",
-// },
