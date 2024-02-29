@@ -84,7 +84,7 @@ export default function Hero() {
                     "justify-center",
                     )}
                 >
-                    Inicia sesión
+                    <Link href="/login">Iniciar sesión</Link>
                 </button>
             </div>
     </div>
