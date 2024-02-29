@@ -1,23 +1,24 @@
 export const MenuItems=[
     {
         title: "Funciones",
-        url:"#",
-        cName:"nav-links text-regular text-accent2 hover:text-primary",
+        to:"tutorials",
     },
     {
         title: "Opiniones",
-        url:"#",
-        cName:"nav-links text-regular text-accent2 hover:text-primary",
+        to:"comments",
     },
     {
         title: "Tutoriales",
-        url:"#",
-        cName:"nav-links text-regular text-accent2 hover:text-primary",
+        to:"tutorials",
     },
+    // {
+    //     title: "Iniciar sesión",
+    //     to:"/login",
+    //     href:"/login",
+    // },
+    // {
+    //     title: "¡Regístrate!",
+    //     to:"/register",
+    //     href:"/register",
+    // },
 ]
-
-// {
-//     title: "",
-//     url:"#",
-//     cName:"nav-links",
-// },
