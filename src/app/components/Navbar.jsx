@@ -4,7 +4,6 @@ import clsx from "clsx";
 import { MenuItems } from "./menuItems";
 import Image from "next/image";
 import { Link } from "react-scroll/modules";
-// import Link from "next/link";
 import { useState } from "react";
 import MenuButtons from "./menuButtons";
 
@@ -41,56 +40,25 @@ export default function Navbar() {
               "lg:justify-around"
             )}
           >
-            <li className="sr-only lg:not-sr-only">
-              <Link
-                className={clsx(
-                  "font-body text-accent2 text-regular",
-                  "hover:text-primary",
-                  "cursor-pointer"
-                )}
-                activeClass="active"
-                to="functions"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Funciones
-              </Link>
-            </li>
-            <li className="sr-only lg:not-sr-only">
-              <Link
-                className={clsx(
-                  "font-body text-accent2 text-regular",
-                  "hover:text-primary",
-                  "cursor-pointer"
-                )}
-                activeClass="active"
-                to="comments"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Opiniones
-              </Link>
-            </li>
-            <li className="sr-only lg:not-sr-only">
-              <Link
-                className={clsx(
-                  "font-body text-accent2 text-regular",
-                  "hover:text-primary",
-                  "cursor-pointer"
-                )}
-                activeClass="active"
-                to="tutorials"
-                spy={true}
-                smooth={true}
-                duration={500}
-              >
-                Tutoriales
-              </Link>
-            </li>
+            {MenuItems.map((item, index) => {
+              return (
+                <li key={index} className="sr-only lg:not-sr-only">
+                  <Link
+                    className="nav-links text-regular text-accent2 hover:text-primary"
+                    to={item.to}
+                    href={item.href}
+                    activeClass="active"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              );
+            })}
             <li className={clsx("sr-only", "md:not-sr-only")}>
-              <MenuButtons/>
+              <MenuButtons />
             </li>
             <details className="dropdown dropdown-end lg:sr-only">
               <summary
@@ -119,19 +87,23 @@ export default function Navbar() {
                 {MenuItems.map((item, index) => {
                   return (
                     <li key={index}>
-                      <Link className="nav-links text-regular text-accent2 hover:text-primary"
-                      to={item.to}
-                      href={item.href}
-                      activeClass="active"
-                      spy={true}
-                      smooth={true}
-                      duration={500} >
+                      <Link
+                        className="nav-links text-regular text-accent2 hover:text-primary"
+                        to={item.to}
+                        href={item.href}
+                        activeClass="active"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                      >
                         {item.title}
                       </Link>
                     </li>
                   );
                 })}
-              <div className="md:sr-only"><MenuButtons/></div>
+                <div className="md:sr-only">
+                  <MenuButtons />
+                </div>
               </ul>
             </details>
           </ul>

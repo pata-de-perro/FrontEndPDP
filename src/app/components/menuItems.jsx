@@ -11,14 +11,4 @@ export const MenuItems=[
         title: "Tutoriales",
         to:"tutorials",
     },
-    // {
-    //     title: "Iniciar sesión",
-    //     to:"/login",
-    //     href:"/login",
-    // },
-    // {
-    //     title: "¡Regístrate!",
-    //     to:"/register",
-    //     href:"/register",
-    // },
 ]
