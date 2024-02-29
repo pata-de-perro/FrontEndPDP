@@ -4,8 +4,9 @@ import clsx from "clsx";
 import { MenuItems } from "./menuItems";
 import Image from "next/image";
 import { Link } from "react-scroll/modules";
-
+// import Link from "next/link";
 import { useState } from "react";
+import MenuButtons from "./menuButtons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -89,33 +90,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className={clsx("sr-only", "md:not-sr-only")}>
-              <button
-                className={clsx(
-                  "bg-none",
-                  "text-accent2 text-regular",
-                  "px-[8px] py-[8px]",
-                  "w-[138px]",
-                  "mx-2",
-                  "rounded-full",
-                  "hover:text-primary",
-                  "border-2 border-accent2 hover:border-primary"
-                )}
-              >
-                <Link href="/register">¡Registrate!</Link>
-              </button>
-              <button
-                className={clsx(
-                  "bg-accent2",
-                  "text-white text-regular",
-                  "px-[8px] py-[8px]",
-                  "w-[138px]",
-                  "rounded-full",
-                  "hover:bg-primary",
-                  "border-2 border-accent2 hover:border-primary"
-                )}
-              >
-                <Link href="/login">Iniciar sesión</Link>
-              </button>
+              <MenuButtons/>
             </li>
             <details className="dropdown dropdown-end lg:sr-only">
               <summary
@@ -140,7 +115,6 @@ export default function Navbar() {
                   />
                 )}
               </summary>
-
               <ul class="p-2 menu dropdown-content z-[1] bg-accent1 rounded-box w-52">
                 {MenuItems.map((item, index) => {
                   return (
@@ -157,39 +131,8 @@ export default function Navbar() {
                     </li>
                   );
                 })}
-
-              <div className="md:sr-only ">
-              <button
-                className={clsx(
-                  "bg-none",
-                  "text-accent2 text-regular",
-                  "px-[8px] py-[8px]",
-                  "w-[138px]",
-                  "my-2",
-                  "rounded-full",
-                  "hover:text-primary",
-                  "border-2 border-accent2 hover:border-primary"
-                )}
-              >
-                <Link href="/register">¡Registrate!</Link>
-              </button>
-              <button
-                className={clsx(
-                  "bg-accent2",
-                  "text-white text-regular",
-                  "px-[8px] py-[8px]",
-                  "w-[138px]",
-                  "rounded-full",
-                  "hover:bg-primary",
-                  "border-2 border-accent2 hover:border-primary"
-                )}
-              >
-                <Link href="/login">Iniciar sesión</Link>
-              </button>
-              </div>
-
+              <div className="md:sr-only"><MenuButtons/></div>
               </ul>
-
             </details>
           </ul>
         </div>
