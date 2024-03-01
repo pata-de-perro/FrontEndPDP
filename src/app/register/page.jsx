@@ -19,7 +19,7 @@ export default function Login() {
         width={316}
         height={316}
         alt="World image"
-        className="absolute left-[-50px] top-[-150px] z-0 justify-self-start shrink"
+        className="absolute left-[-50px] top-[-150px] -z-10 justify-self-start shrink"
       />
       <div
         className={clsx(
@@ -43,8 +43,16 @@ export default function Login() {
               "lg:items-end lg:self-end"
             )}
           />
-        <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
-          <div className="grid justify-items-center md:justify-items-start lg:flex">
+        <div className={clsx(
+          "mt-6",
+          "md:grid md:content-center md:w-[350px]",
+          "lg:content-start lg:w-[500px]",
+        )}>
+          <div className={clsx(
+            "grid justify-items-center", 
+            "md:justify-items-start",
+            "lg:flex",
+          )}>
             <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
               Bienvenido a{" "}
             </p>
@@ -60,7 +68,12 @@ export default function Login() {
               PataDePerro
             </p>
           </div>
-          <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px] lg:w-[400px]">
+          <p className={clsx(
+            "font-body text-regular text-center", 
+            "w-[360px] pt-2",
+            "md:text-left md:w-[300px]",
+            "lg:w-[400px]",
+          )}>
             Organiza tu viaje, guarda puntos de interés y comparte el itinerario
             con todos tus compañeros de viaje.
           </p>
@@ -68,7 +81,8 @@ export default function Login() {
       </div>
       <div
         className={clsx(
-          "w-[90vw] border-b border-azulGris50 my-[15px]",
+          "w-[90vw] border-azulGris50",
+          "md:border-b",
           "lg:my-[0px] lg:mx-[25px] lg:border-b-0 lg:border-l-2 lg:w-1"
         )}
       ></div>
@@ -88,7 +102,7 @@ export default function Login() {
         <button
           className={clsx(
             "border border-azulGris600",
-            "w-[300px] p-[15px] my-[34px]",
+            "w-[300px] p-[15px] my-[25px]",
             "flex justify-center",
             "items-center",
             "rounded-lg"
@@ -97,7 +111,15 @@ export default function Login() {
           <Image src="/Google.svg" width={25} height={25} alt="Google logo" />
           <p className="font-body text-regularSemiBold">Continuar con Google</p>
         </button>
-
+        <label
+          className={clsx(
+            "text-regular font-body text-azulGris800",
+            "bg-appBackground",
+            "z-10 justify-self-start ml-[15px] mt-[15px]"
+          )}
+        >
+          Nombre
+        </label>
         <input
           type="username"
           name="username"
@@ -112,11 +134,20 @@ export default function Login() {
           )}
           placeholder="Nombre"
         />
+                <label
+          className={clsx(
+            "text-regular font-body text-azulGris800",
+            "bg-appBackground",
+            "z-10 justify-self-start ml-[15px] mt-[15px]"
+          )}
+        >
+          Correo electrónico
+        </label>
         <input
           type="email"
           name="email"
           className={clsx(
-            "mt-[27px] px-3 py-2",
+            "px-3 py-2",
             "h-[50px]",
             "bg-white",
             "border shadow-sm border-slate-300",
@@ -126,11 +157,20 @@ export default function Login() {
           )}
           placeholder="Correo electrónico"
         />
+        <label
+          className={clsx(
+            "text-regular font-body text-azulGris800",
+            "bg-appBackground",
+            "z-10 justify-self-start ml-[15px] mt-[15px]"
+          )}
+        >
+          Contraseña
+        </label>
         <input
           type="password"
           name="password"
           className={clsx(
-            "mt-[27px] px-3 py-2",
+            "px-3 py-2",
             "bg-white",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
@@ -139,11 +179,20 @@ export default function Login() {
           )}
           placeholder="Contraseña"
         />
+                <label
+          className={clsx(
+            "text-regular font-body text-azulGris800",
+            "bg-appBackground",
+            "z-10 justify-self-start ml-[15px] mt-[15px]"
+          )}
+        >
+          Confirma tu contraseña
+        </label>
         <input
           type="passwordConfirmation"
           name="passwordConfirmation"
           className={clsx(
-            "mt-[27px] px-3 py-2",
+            "px-3 py-2",
             "bg-white",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
