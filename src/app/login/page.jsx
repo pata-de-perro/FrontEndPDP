@@ -4,12 +4,31 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
-  const [email, setEmail] = useState("email");
-  const [password, setPassword] = useState("password");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  // const [errors, setErrors] = useState<{ email:string; password:string} > ({
+  //   email:"",
+  //   password:"",
+  // })
 
-  console.log(email, password);
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   setErrors({ email:"", password:""});
+  // }
+
+  // if (!email.includes("@")) {
+  //   setErrors({...errors, email: "El correo electrónico debe incluir un @"});
+  //   return
+  // }
+
+  // if (!password.length>8) {
+  //   setErrors({...errors, password: "La contraseña debe ser de más de 8 carácteres"});
+  //   return
+  // }
 
   return (
     <main
@@ -126,53 +145,59 @@ export default function Login() {
           </p>
           <p className="px-[10px]">----</p>
         </div>
-        <label
-          className={clsx(
-            "text-regular font-body text-azulGris800",
-            "bg-appBackground",
-            "z-10 justify-self-start ml-[15px] mt-[15px]"
-          )}
-        >
-          Correo electrónico
-        </label>
-        <input
-          type="email"
-          name="email"
-          onChange={(e) => setEmail(e.target.value)}
-          className={clsx(
-            "mt-1 px-3 py-2",
-            "h-[50px]",
-            "bg-white",
-            "border shadow-sm border-slate-300",
-            "placeholder-slate-400",
-            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-            "block w-[450px] rounded-lg focus:ring-1"
-          )}
-          placeholder="Correo electrónico"
-        />
-        <label
-          className={clsx(
-            "text-regular font-body text-azulGris800",
-            "bg-appBackground",
-            "z-10 justify-self-start ml-[15px] mt-[27px]"
-          )}
-        >
-          Contraseña
-        </label>
-        <input
-          type="password"
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-          className={clsx(
-            "px-3 py-2",
-            "bg-white",
-            "border shadow-sm border-slate-300",
-            "placeholder-slate-400",
-            "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
-          )}
-          placeholder="Contraseña"
-        />
+        <form>
+          <label
+            className={clsx(
+              "text-regular font-body text-azulGris800",
+              "bg-appBackground",
+              "z-10 justify-self-start ml-[15px] mt-[15px]"
+            )}
+          >
+            Correo electrónico
+          </label>
+          <input
+            type="email"
+            name="email"
+            onChange={(e) => setEmail(e.target.value)}
+            className={clsx(
+              "mt-1 px-3 py-2",
+              "h-[50px]",
+              "bg-white",
+              "border shadow-sm border-slate-300",
+              "placeholder-slate-400",
+              "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+              "block w-[450px] rounded-lg focus:ring-1"
+            )}
+            placeholder="Correo electrónico"
+          />
+          {/* {errors.email && <div className="text-red-500">{errors.email}</div>} */}
+          <label
+            className={clsx(
+              "text-regular font-body text-azulGris800",
+              "bg-appBackground",
+              "z-10 justify-self-start ml-[15px] mt-[27px]"
+            )}
+          >
+            Contraseña
+          </label>
+          <input
+            type="password"
+            name="password"
+            onChange={(e) => setPassword(e.target.value)}
+            className={clsx(
+              "px-3 py-2",
+              "bg-white",
+              "border shadow-sm border-slate-300",
+              "placeholder-slate-400",
+              "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+              "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+            )}
+            placeholder="Contraseña"
+          />
+          
+          {/* {errors.email && <div className="text-red-500">{errors.email}</div>} */}
+
+        </form>
         <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
           ¿Olvidaste tu contraseña?
         </p>
