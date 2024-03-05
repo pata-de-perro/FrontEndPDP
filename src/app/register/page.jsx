@@ -4,12 +4,20 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 
 export default function Login() {
-  const [email, setEmail] = useState("email");
-  const [password, setPassword] = useState("password");
+  // const [email, setEmail] = useState("email");
+  // const [password, setPassword] = useState("password");
 
-  console.log(email, password);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  // console.log(errors)
+  // console.log(email, password);
 
   return (
     <main
@@ -90,18 +98,18 @@ export default function Login() {
         )}
       >
         <div className="grid md:grid-cols-2 lg:grid-cols-1">
-        <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
-          Regístrate en
-        </p>
-        <Link href="/">
-          <Image
-            src="/dePataDePerroLogo.svg"
-            width={200}
-            height={35}
-            alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[auto]"
-          />
-        </Link>
+          <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
+            Regístrate en
+          </p>
+          <Link href="/">
+            <Image
+              src="/dePataDePerroLogo.svg"
+              width={200}
+              height={35}
+              alt="Logo Pata de Perro"
+              className="lg:w-[420px] lg:h-[auto]"
+            />
+          </Link>
         </div>
         <p className="text-regular font-body text-center text-azulGris900">
           ¿Ya eres usuario?
@@ -128,116 +136,201 @@ export default function Login() {
           </p>
           <p className="px-[10px]">----</p>
         </div>
-        <label
-          className={clsx(
-            "text-regular font-body text-azulGris800",
-            "bg-appBackground",
-            "z-10 justify-self-start ml-[15px] mt-[15px]"
-          )}
+        <form
+          onSubmit={handleSubmit((data) => {
+            console.log(data);
+          })}
         >
-          Nombre
-        </label>
-        <input
-          type="text"
-          name="username"
-          onChange={(e) => setEmail(e.target.value)}
-          className={clsx(
-            "mt-1 px-3 py-2",
-            "h-[50px]",
-            "bg-white",
-            "border shadow-sm border-slate-300",
-            "placeholder-slate-400",
-            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-            "block w-[450px] rounded-lg focus:ring-1"
-          )}
-          placeholder="Tu nombre"
-        />
+          <div>
+            <label
+              className={clsx(
+                "text-regular font-body text-azulGris800",
+                "bg-appBackground",
+                "z-10 justify-self-start ml-[15px] mt-[15px]"
+              )}
+            >
+              Nombre
+            </label>
+            <input
+              type="text"
+              className={clsx(
+                "mt-1 px-3 py-2",
+                "h-[50px]",
+                "bg-white",
+                "border shadow-sm border-slate-300",
+                "placeholder-slate-400",
+                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+                "block w-[450px] rounded-lg focus:ring-1"
+              )}
+              placeholder="Tu nombre"
+              {...register("userName", {
+                required: {
+                  value: true,
+                  message: "Nombre es requerido",
+                },
+                minLength: {
+                  value: 2,
+                  message: "El nombre debe de ser de mínimo 2 carateres",
+                },
+                maxLength: {
+                  value: 20,
+                  message: "El nombre debe de ser de máximo 20 carateres",
+                },
+              })}
+            />
+            {errors.userName && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.userName.message}
+              </span>
+            )}
+            {errors.minLength && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.minLength.message}
+              </span>
+            )}
+            {errors.maxLength && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.maxLength.message}
+              </span>
+            )}
+          </div>
+          <div>
+            <label
+              className={clsx(
+                "text-regular font-body text-azulGris800",
+                "bg-appBackground",
+                "z-10 justify-self-start ml-[15px] mt-[15px]"
+              )}
+            >
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              className={clsx(
+                "mt-1 px-3 py-2",
+                "h-[50px]",
+                "bg-white",
+                "border shadow-sm border-slate-300",
+                "placeholder-slate-400",
+                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+                "block w-[450px] rounded-lg focus:ring-1"
+              )}
+              placeholder="Correo electrónico"
+              {...register("email", {
+                required: {
+                  value:true,
+                  message:"Tu correo electrónico es requerido",
+                },
+                pattern:{
+                  value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+                }
+              })}
+            />
+            {errors.email && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.email.message}
+              </span>
+            )}
+          </div>
+          <div>
+            <label
+              className={clsx(
+                "text-regular font-body text-azulGris800",
+                "bg-appBackground",
+                "z-10 justify-self-start ml-[15px] mt-[15px]"
+              )}
+            >
+              Contraseña
+            </label>
+            <input
+              type="password"
 
-        <label
-          className={clsx(
-            "text-regular font-body text-azulGris800",
-            "bg-appBackground",
-            "z-10 justify-self-start ml-[15px] mt-[15px]"
-          )}
-        >
-          Correo electrónico
-        </label>
-        <input
-          type="email"
-          name="email"
-          onChange={(e) => setEmail(e.target.value)}
-          className={clsx(
-            "mt-1 px-3 py-2",
-            "h-[50px]",
-            "bg-white",
-            "border shadow-sm border-slate-300",
-            "placeholder-slate-400",
-            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-            "block w-[450px] rounded-lg focus:ring-1"
-          )}
-          placeholder="Correo electrónico"
-        />
-        <label
-          className={clsx(
-            "text-regular font-body text-azulGris800",
-            "bg-appBackground",
-            "z-10 justify-self-start ml-[15px] mt-[15px]"
-          )}
-        >
-          Contraseña
-        </label>
-        <input
-          type="password"
-          name="password"
-          onChange={(e) => setPassword(e.target.value)}
-          className={clsx(
-            "px-3",
-            "bg-white",
-            "border shadow-sm border-slate-300",
-            "placeholder-slate-400",
-            "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
-          )}
-          placeholder="Contraseña"
-        />
-        <label
-          className={clsx(
-            "text-regular font-body text-azulGris800",
-            "bg-appBackground",
-            "z-10 justify-self-start ml-[15px] mt-[15px]"
-          )}
-        >
-          Confirma tu contraseña
-        </label>
-        <input
-          type="password"
-          name="passwordConfirmation"
-          onChange={(e) => setPassword(e.target.value)}
-          className={clsx(
-            "px-3",
-            "bg-white",
-            "border shadow-sm border-slate-300",
-            "placeholder-slate-400",
-            "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
-          )}
-          placeholder="Confirma tu contraseña"
-        />
-        <button
-          className={clsx(
-            "bg-primary",
-            "text-white text-regular",
-            "px-[8px] py-[8px]",
-            "mb-[15px] mt-[60px]",
-            "w-[450px]",
-            "rounded-md",
-            "flex justify-center",
-            "hover:bg-accent1 hover:text-accent2",
-            "border-2 border-primary hover:border-accent1"
-          )}
-        >
-          Entrar
-        </button>
+              className={clsx(
+                "px-3",
+                "bg-white",
+                "border shadow-sm border-slate-300",
+                "placeholder-slate-400",
+                "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+                "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+              )}
+              placeholder="Contraseña"
+              {...register("password", {
+                required: {
+                  value: true,
+                  message:"Es requerida tu contraseña",
+                },
+                pattern:{
+                  value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+                }
+              })}
+            />
+            {errors.password && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                Es requerida tu contraseña
+              </span>
+            )}
+          </div>
+          <div>
+            <label
+              className={clsx(
+                "text-regular font-body text-azulGris800",
+                "bg-appBackground",
+                "z-10 justify-self-start ml-[15px] mt-[15px]"
+              )}
+            >
+              Confirma tu contraseña
+            </label>
+            <input
+              type="password"
+              // name="passwordConfirmation"
+              // onChange={(e) => setPassword(e.target.value)}
+              className={clsx(
+                "px-3",
+                "bg-white",
+                "border shadow-sm border-slate-300",
+                "placeholder-slate-400",
+                "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+                "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+              )}
+              placeholder="Confirma tu contraseña"
+              {...register("confirmPassword", {
+                required: true,
+              })}
+            />
+            {errors.confirmPassword && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                Es requerido confirmar tu contraseña
+              </span>
+            )}
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              {...register("termsAndConditions", {
+                required: true,
+              })}
+              className="mr-2"
+            ></input>
+            <label>Acepto términos y condiciones</label>
+          </div>
+
+          <button
+            type="submit"
+            className={clsx(
+              "bg-primary",
+              "text-white text-regular",
+              "px-[8px] py-[8px]",
+              "mb-[15px] mt-[60px]",
+              "w-[450px]",
+              "rounded-md",
+              "flex justify-center",
+              "hover:bg-accent1 hover:text-accent2",
+              "border-2 border-primary hover:border-accent1"
+            )}
+          >
+            Enviar
+          </button>
+        </form>
         <p className="text-center text-regular font-body text-azulGris500 w-[450px] p-[5px]">
           Al seguir usando una cuenta en México, aceptas los Términos de uso y
           confirmas que has leído la Política de privacidad.

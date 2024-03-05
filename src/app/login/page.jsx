@@ -146,58 +146,83 @@ export default function Login() {
           <p className="px-[10px]">----</p>
         </div>
         <form>
-          <label
-            className={clsx(
-              "text-regular font-body text-azulGris800",
-              "bg-appBackground",
-              "z-10 justify-self-start ml-[15px] mt-[15px]"
+        <div>
+            <label
+              className={clsx(
+                "text-regular font-body text-azulGris800",
+                "bg-appBackground",
+                "z-10 justify-self-start ml-[15px] mt-[15px]"
+              )}
+            >
+              Correo electrónico
+            </label>
+            <input
+              type="email"
+              className={clsx(
+                "mt-1 px-3 py-2",
+                "h-[50px]",
+                "bg-white",
+                "border shadow-sm border-slate-300",
+                "placeholder-slate-400",
+                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+                "block w-[450px] rounded-lg focus:ring-1"
+              )}
+              placeholder="Correo electrónico"
+              {...register("email", {
+                required: {
+                  value:true,
+                  message:"Tu correo electrónico es requerido",
+                },
+                pattern:{
+                  value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+                }
+              })}
+            />
+            {errors.email && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.email.message}
+              </span>
             )}
-          >
-            Correo electrónico
-          </label>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            className={clsx(
-              "mt-1 px-3 py-2",
-              "h-[50px]",
-              "bg-white",
-              "border shadow-sm border-slate-300",
-              "placeholder-slate-400",
-              "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-              "block w-[450px] rounded-lg focus:ring-1"
-            )}
-            placeholder="Correo electrónico"
-          />
-          {/* {errors.email && <div className="text-red-500">{errors.email}</div>} */}
-          <label
-            className={clsx(
-              "text-regular font-body text-azulGris800",
-              "bg-appBackground",
-              "z-10 justify-self-start ml-[15px] mt-[27px]"
-            )}
-          >
-            Contraseña
-          </label>
-          <input
-            type="password"
-            name="password"
-            onChange={(e) => setPassword(e.target.value)}
-            className={clsx(
-              "px-3 py-2",
-              "bg-white",
-              "border shadow-sm border-slate-300",
-              "placeholder-slate-400",
-              "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-              "block w-[450px] h-[50px] rounded-lg focus:ring-1"
-            )}
-            placeholder="Contraseña"
-          />
-          
-          {/* {errors.email && <div className="text-red-500">{errors.email}</div>} */}
+          </div>
+          <div>
+            <label
+              className={clsx(
+                "text-regular font-body text-azulGris800",
+                "bg-appBackground",
+                "z-10 justify-self-start ml-[15px] mt-[15px]"
+              )}
+            >
+              Contraseña
+            </label>
+            <input
+              type="password"
 
-        </form>
+              className={clsx(
+                "px-3",
+                "bg-white",
+                "border shadow-sm border-slate-300",
+                "placeholder-slate-400",
+                "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
+                "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+              )}
+              placeholder="Contraseña"
+              {...register("password", {
+                required: {
+                  value: true,
+                  message:"Es requerida tu contraseña",
+                },
+                pattern:{
+                  value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+                }
+              })}
+            />
+            {errors.password && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                Es requerida tu contraseña
+              </span>
+            )}
+          </div>
+
         <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
           ¿Olvidaste tu contraseña?
         </p>
@@ -225,6 +250,7 @@ export default function Login() {
         >
           Entrar
         </button>
+        </form>
         <p className="text-center text-regular font-body text-azulGris500 w-[450px] p-[5px]">
           Al seguir usando una cuenta en México, aceptas los Términos de uso y
           confirmas que has leído la Política de privacidad.
