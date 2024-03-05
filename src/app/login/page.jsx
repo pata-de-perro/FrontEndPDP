@@ -22,24 +22,6 @@ export default function Login() {
         "lg:w-[1280px] lg:mt-[30px] lg:justify-center"
       )}
     >
-      {/* <button className={clsx(
-        "flex",
-        // "border",
-        "w-[150px] h-[40px]",
-        "items-end",
-        "z-10",
-        // "rounded-full border-2 border-primary",
-      )}>
-        <Image
-        src="/DePataDePerroIcon.svg"
-        width={35}
-        height={35}
-        ></Image>
-        <Link href="/" className={clsx(
-          "font-body text-h3",
-          "text-primary",
-        )}>Regresar</Link>
-      </button> */}
       <Image
         src="/World.svg"
         width={316}
@@ -139,7 +121,7 @@ export default function Login() {
         </button>
         <div className="flex justify-center items-center m-[15px]">
           <p className="px-[10px]">----</p>
-          <p className="text-regular font-body text-center text-azulGris900 w-[200px]">
+          <p className="text-regular font-body text-center text-azulGris900 w-[200px] md:w-[250px]">
             O entra con tu correo electrónico y contraseña
           </p>
           <p className="px-[10px]">----</p>

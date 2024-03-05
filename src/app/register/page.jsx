@@ -1,8 +1,16 @@
+"use client";
+
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Login() {
+  const [email, setEmail] = useState("email");
+  const [password, setPassword] = useState("password");
+
+  console.log(email, password);
+
   return (
     <main
       className={clsx(
@@ -19,40 +27,33 @@ export default function Login() {
         width={316}
         height={316}
         alt="World image"
-        className="absolute left-[-50px] top-[-150px] -z-10 justify-self-start shrink"
+        className="absolute left-[-50px] top-[-150px] -z-10 justify-self-start"
       />
       <div
         className={clsx(
-          "justify-center",
-          "pb-[15px]",
-          "md:grid md:grid-cols-2 md:pb-[0px]",
-          "lg:flex lg:flex-wrap"
+          "flex justify-center",
+          "md:pb-[15px] md:flex-row md:justify-start",
+          "lg:flex-wrap",
+          "lg:w-[500px]"
         )}
       >
-          <Image
-            src="/Login-cuate-1.svg"
-            width={329}
-            height={329}
-            alt="progresive app pana"
-            className={clsx(
-              "w-[319px]",
-              "pt-[45px]",
-              "sr-only",
-              "md:not-sr-only",
-              "lg:w-[600px] lg:h-[600px]",
-              "lg:items-end lg:self-end"
-            )}
-          />
-        <div className={clsx(
-          "mt-6",
-          "md:grid md:content-center md:w-[350px]",
-          "lg:content-start lg:w-[500px]",
-        )}>
-          <div className={clsx(
-            "grid justify-items-center", 
-            "md:justify-items-start",
-            "lg:flex",
-          )}>
+        <Image
+          src="/Login-cuate-1.svg"
+          width={329}
+          height={329}
+          alt="progresive app pana"
+          className={clsx(
+            "w-[319px]",
+            "pt-[45px]",
+            "sr-only",
+            "md:not-sr-only",
+            "md:w-[329px] md:h-[329px]",
+            "lg:w-[400px] lg:h-[400px]",
+            "lg:self-end"
+          )}
+        />
+        <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
+          <div className="grid justify-items-center md:justify-items-start lg:flex">
             <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
               Bienvenido a{" "}
             </p>
@@ -68,12 +69,7 @@ export default function Login() {
               PataDePerro
             </p>
           </div>
-          <p className={clsx(
-            "font-body text-regular text-center", 
-            "w-[360px] pt-2",
-            "md:text-left md:w-[300px]",
-            "lg:w-[400px]",
-          )}>
+          <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px] lg:w-[400px]">
             Organiza tu viaje, guarda puntos de interés y comparte el itinerario
             con todos tus compañeros de viaje.
           </p>
@@ -81,28 +77,42 @@ export default function Login() {
       </div>
       <div
         className={clsx(
-          "w-[90vw] border-azulGris50",
-          "md:border-b",
-          "lg:my-[0px] lg:mx-[25px] lg:border-b-0 lg:border-l-2 lg:w-1"
+          "w-[90vw] mb-[15px]",
+          "lg:my-[0px] lg:mx-[15px] border-azulGris50 md:border-b lg:border-b-0 lg:border-l",
+          "lg:w-[35px]"
         )}
       ></div>
-      <div className="grid justify-items-center pb-[15px]">
+      <div
+        className={clsx(
+          "grid justify-items-center",
+          "pb-[15px]",
+          "lg:justify-items-start"
+        )}
+      >
+        <div className="grid md:grid-cols-2 lg:grid-cols-1">
         <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
-          Inicia sesión en
+          Regístrate en
         </p>
         <Link href="/">
           <Image
             src="/dePataDePerroLogo.svg"
-            width={250}
-            height={50}
+            width={200}
+            height={35}
             alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[111px]"
+            className="lg:w-[420px] lg:h-[auto]"
           />
         </Link>
+        </div>
+        <p className="text-regular font-body text-center text-azulGris900">
+          ¿Ya eres usuario?
+        </p>
+        <p className="text-regularBold font-body text-center text-azulGris900">
+          <Link href="/login">Inicia sesión ahora!</Link>
+        </p>
         <button
           className={clsx(
             "border border-azulGris600",
-            "w-[300px] p-[15px] my-[25px]",
+            "w-[300px] p-[15px] my-[15px]",
             "flex justify-center",
             "items-center",
             "rounded-lg"
@@ -111,6 +121,13 @@ export default function Login() {
           <Image src="/Google.svg" width={25} height={25} alt="Google logo" />
           <p className="font-body text-regularSemiBold">Continuar con Google</p>
         </button>
+        <div className="flex justify-center items-center m-[15px]">
+          <p className="px-[10px]">----</p>
+          <p className="text-regular font-body text-center text-azulGris900 w-[200px] md:w-[250px]">
+            O registrate con tu correo electrónico
+          </p>
+          <p className="px-[10px]">----</p>
+        </div>
         <label
           className={clsx(
             "text-regular font-body text-azulGris800",
@@ -121,8 +138,9 @@ export default function Login() {
           Nombre
         </label>
         <input
-          type="username"
+          type="text"
           name="username"
+          onChange={(e) => setEmail(e.target.value)}
           className={clsx(
             "mt-1 px-3 py-2",
             "h-[50px]",
@@ -132,9 +150,10 @@ export default function Login() {
             "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
             "block w-[450px] rounded-lg focus:ring-1"
           )}
-          placeholder="Nombre"
+          placeholder="Tu nombre"
         />
-                <label
+
+        <label
           className={clsx(
             "text-regular font-body text-azulGris800",
             "bg-appBackground",
@@ -146,8 +165,9 @@ export default function Login() {
         <input
           type="email"
           name="email"
+          onChange={(e) => setEmail(e.target.value)}
           className={clsx(
-            "px-3 py-2",
+            "mt-1 px-3 py-2",
             "h-[50px]",
             "bg-white",
             "border shadow-sm border-slate-300",
@@ -169,8 +189,9 @@ export default function Login() {
         <input
           type="password"
           name="password"
+          onChange={(e) => setPassword(e.target.value)}
           className={clsx(
-            "px-3 py-2",
+            "px-3",
             "bg-white",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
@@ -179,7 +200,7 @@ export default function Login() {
           )}
           placeholder="Contraseña"
         />
-                <label
+        <label
           className={clsx(
             "text-regular font-body text-azulGris800",
             "bg-appBackground",
@@ -189,10 +210,11 @@ export default function Login() {
           Confirma tu contraseña
         </label>
         <input
-          type="passwordConfirmation"
+          type="password"
           name="passwordConfirmation"
+          onChange={(e) => setPassword(e.target.value)}
           className={clsx(
-            "px-3 py-2",
+            "px-3",
             "bg-white",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
@@ -214,13 +236,20 @@ export default function Login() {
             "border-2 border-primary hover:border-accent1"
           )}
         >
-          Registrarte
+          Entrar
         </button>
         <p className="text-center text-regular font-body text-azulGris500 w-[450px] p-[5px]">
           Al seguir usando una cuenta en México, aceptas los Términos de uso y
           confirmas que has leído la Política de privacidad.
         </p>
       </div>
+      <Image
+        src="/World.svg"
+        width={450}
+        height={450}
+        alt="World image"
+        className="absolute right-0 bottom-0 -z-10 justify-self-start"
+      />
     </main>
   );
 }
