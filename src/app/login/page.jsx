@@ -218,7 +218,7 @@ export default function Login() {
             />
             {errors.password && (
               <span className="text-regular font-body text-red-500 ml-[15px]">
-                Es requerida tu contraseña
+                {errors.password.message}
               </span>
             )}
           </div>
