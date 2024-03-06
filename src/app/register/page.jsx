@@ -7,8 +7,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Login() {
-  // const [email, setEmail] = useState("email");
-  // const [password, setPassword] = useState("password");
 
   const {
     register,
@@ -17,7 +15,6 @@ export default function Login() {
   } = useForm();
 
   // console.log(errors)
-  // console.log(email, password);
 
   return (
     <main
@@ -266,7 +263,7 @@ export default function Login() {
             />
             {errors.password && (
               <span className="text-regular font-body text-red-500 ml-[15px]">
-                Es requerida tu contraseña
+                {errors.password.message}
               </span>
             )}
           </div>
@@ -282,8 +279,6 @@ export default function Login() {
             </label>
             <input
               type="password"
-              // name="passwordConfirmation"
-              // onChange={(e) => setPassword(e.target.value)}
               className={clsx(
                 "px-3",
                 "bg-white",
@@ -294,12 +289,15 @@ export default function Login() {
               )}
               placeholder="Confirma tu contraseña"
               {...register("confirmPassword", {
-                required: true,
+                required: {
+                  value: true,
+                  message: "No coincide tu contraseña, porfavor verifica su escritura",
+                },
               })}
             />
             {errors.confirmPassword && (
               <span className="text-regular font-body text-red-500 ml-[15px]">
-                Es requerido confirmar tu contraseña
+                {errors.confirmPassword.message}
               </span>
             )}
           </div>
