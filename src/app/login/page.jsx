@@ -133,15 +133,16 @@ export default function Login() {
           </p>
           <p className="px-[10px]">----</p>
         </div> */}
-        <form onSubmit={handleSubmit((data) => {
+        <form
+          onSubmit={handleSubmit((data) => {
             console.log(data);
 
-            alert('Enviando datos')
+            alert("Enviando datos");
 
-            reset()
+            reset();
           })}
         >
-        <div>
+          <div>
             <label
               className={clsx(
                 "text-regular font-body text-azulGris800",
@@ -165,12 +166,12 @@ export default function Login() {
               placeholder="Correo electrónico"
               {...register("email", {
                 required: {
-                  value:true,
-                  message:"Tu correo electrónico es requerido",
+                  value: true,
+                  message: "Tu correo electrónico es requerido",
                 },
-                pattern:{
+                pattern: {
                   value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
-                }
+                },
               })}
             />
             {errors.email && (
@@ -191,7 +192,6 @@ export default function Login() {
             </label>
             <input
               type="password"
-
               className={clsx(
                 "px-3",
                 "bg-white",
@@ -204,12 +204,14 @@ export default function Login() {
               {...register("password", {
                 required: {
                   value: true,
-                  message:"Es requerida tu contraseña",
+                  message: "Es requerida tu contraseña",
                 },
-                pattern:{
-                  value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-                  message:"La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
-                }
+                pattern: {
+                  value:
+                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+                  message:
+                    "La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
+                },
               })}
             />
             {errors.password && (
@@ -217,26 +219,51 @@ export default function Login() {
                 {errors.password.message}
               </span>
             )}
-            {
-              errors.pattern && (
-                <span>{errors.pattern.message}</span>
-              )
-            }
+            {errors.pattern && <span>{errors.pattern.message}</span>}
           </div>
 
-        <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
-          ¿Olvidaste tu contraseña?
-        </p>
-        <Link
-          href="#"
-          className={clsx(
-            "text-regularSemiBold font-body text-azulGris900",
-            "justify-self-start"
-          )}
-        >
-          Recuperar contraseña
-        </Link>
-        <button
+          <div>
+            <div className="mt-4">
+              <input
+                type="checkbox"
+                {...register("termsAndConditions", {
+                  required: {
+                    value: true,
+                    message:
+                      "Es necesario que aceptes los términos y condiciones.",
+                  },
+                })}
+                className="mr-2"
+              ></input>
+              <label
+                className={clsx(
+                  "text-regular font-body text-azulGris800",
+                  "justify-self-start ml-[5px] mt-[15px]"
+                )}
+              >
+                Acepto términos y condiciones
+              </label>
+            </div>
+            {errors.termsAndConditions && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.termsAndConditions.message}
+              </span>
+            )}
+          </div>
+
+          <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
+            ¿Olvidaste tu contraseña?
+          </p>
+          <Link
+            href="#"
+            className={clsx(
+              "text-regularSemiBold font-body text-azulGris900",
+              "justify-self-start"
+            )}
+          >
+            Recuperar contraseña
+          </Link>
+          <button
             type="submit"
             className={clsx(
               "bg-primary",

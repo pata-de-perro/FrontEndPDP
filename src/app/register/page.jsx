@@ -332,7 +332,7 @@ export default function Login() {
             )}
           </div>
           <div>
-            <div>
+            <div className="mt-4">
             <input
               type="checkbox"
               {...register("termsAndConditions", {
