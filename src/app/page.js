@@ -7,11 +7,13 @@ import Functions from "./components/Functions";
 import Tutorials from "./components/Tutorials";
 import Comments from "./components/Comments";
 
+
 export default function Home() {
   return (
     <main>
       <header>
-        <Navbar />
+        <Navbar />  
+      
       </header>
       <div>
         <Hero />
