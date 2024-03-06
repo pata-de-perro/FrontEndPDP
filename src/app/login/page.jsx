@@ -7,28 +7,13 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Login() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [errors, setErrors] = useState<{ email:string; password:string} > ({
-  //   email:"",
-  //   password:"",
-  // })
-
-  // const handleSubmit = (e: React.FormEvent) => {
-  //   e.preventDefault();
-
-  //   setErrors({ email:"", password:""});
-  // }
-
-  // if (!email.includes("@")) {
-  //   setErrors({...errors, email: "El correo electrónico debe incluir un @"});
-  //   return
-  // }
-
-  // if (!password.length>8) {
-  //   setErrors({...errors, password: "La contraseña debe ser de más de 8 carácteres"});
-  //   return
-  // }
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    watch,
+    reset,
+  } = useForm();
 
   return (
     <main
@@ -126,7 +111,10 @@ export default function Login() {
         <p className="text-regularBold font-body text-center text-azulGris900">
           <Link href="/register">¡Registrate ahora!</Link>
         </p>
-        <button
+
+        {/* We will work on the google login if we got time */}
+
+        {/* <button
           className={clsx(
             "border border-azulGris600",
             "w-[300px] p-[15px] my-[15px]",
@@ -144,8 +132,15 @@ export default function Login() {
             O entra con tu correo electrónico y contraseña
           </p>
           <p className="px-[10px]">----</p>
-        </div>
-        <form>
+        </div> */}
+        <form onSubmit={handleSubmit((data) => {
+            console.log(data);
+
+            alert('Enviando datos')
+
+            reset()
+          })}
+        >
         <div>
             <label
               className={clsx(
@@ -213,6 +208,7 @@ export default function Login() {
                 },
                 pattern:{
                   value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+                  message:"La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
                 }
               })}
             />
@@ -221,6 +217,11 @@ export default function Login() {
                 {errors.password.message}
               </span>
             )}
+            {
+              errors.pattern && (
+                <span>{errors.pattern.message}</span>
+              )
+            }
           </div>
 
         <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
@@ -236,20 +237,21 @@ export default function Login() {
           Recuperar contraseña
         </Link>
         <button
-          className={clsx(
-            "bg-primary",
-            "text-white text-regular",
-            "px-[8px] py-[8px]",
-            "mb-[15px] mt-[60px]",
-            "w-[450px]",
-            "rounded-md",
-            "flex justify-center",
-            "hover:bg-accent1 hover:text-accent2",
-            "border-2 border-primary hover:border-accent1"
-          )}
-        >
-          Entrar
-        </button>
+            type="submit"
+            className={clsx(
+              "bg-primary",
+              "text-white text-regular",
+              "px-[8px] py-[8px]",
+              "mb-[15px] mt-[60px]",
+              "w-[450px]",
+              "rounded-md",
+              "flex justify-center",
+              "hover:bg-accent1 hover:text-accent2",
+              "border-2 border-primary hover:border-accent1"
+            )}
+          >
+            Enviar
+          </button>
         </form>
         <p className="text-center text-regular font-body text-azulGris500 w-[450px] p-[5px]">
           Al seguir usando una cuenta en México, aceptas los Términos de uso y

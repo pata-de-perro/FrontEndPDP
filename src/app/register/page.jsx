@@ -3,7 +3,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Login() {
@@ -12,9 +11,9 @@ export default function Login() {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
+    reset,
   } = useForm();
-
-  // console.log(errors)
 
   return (
     <main
@@ -112,9 +111,12 @@ export default function Login() {
           ¿Ya eres usuario?
         </p>
         <p className="text-regularBold font-body text-center text-azulGris900">
-          <Link href="/login">Inicia sesión ahora!</Link>
+          <Link href="/login">¡Inicia sesión ahora!</Link>
         </p>
-        <button
+
+        {/* We will work on the google login if we got time */}
+
+        {/* <button
           className={clsx(
             "border border-azulGris600",
             "w-[300px] p-[15px] my-[15px]",
@@ -132,10 +134,13 @@ export default function Login() {
             O registrate con tu correo electrónico
           </p>
           <p className="px-[10px]">----</p>
-        </div>
+        </div> */}
         <form
           onSubmit={handleSubmit((data) => {
             console.log(data);
+            onerror
+
+            reset()
           })}
         >
           <div>
@@ -258,6 +263,7 @@ export default function Login() {
                 },
                 pattern:{
                   value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+                  message:"La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
                 }
               })}
             />
@@ -266,6 +272,11 @@ export default function Login() {
                 {errors.password.message}
               </span>
             )}
+            {
+              errors.pattern && (
+                <span>{errors.pattern.message}</span>
+              )
+            }
           </div>
           <div>
             <label
@@ -291,8 +302,15 @@ export default function Login() {
               {...register("confirmPassword", {
                 required: {
                   value: true,
-                  message: "No coincide tu contraseña, porfavor verifica su escritura",
+                  message: "Es necesario confirmar la contraseña",
                 },
+                validate: (value) => {
+                  if (value === watch('password')){
+                    return true
+                  } else {
+                    return 'Las contraseñas no coinciden. Verifica su escritura'
+                  }
+                }
               })}
             />
             {errors.confirmPassword && (
@@ -302,14 +320,28 @@ export default function Login() {
             )}
           </div>
           <div>
+            <div>
             <input
               type="checkbox"
               {...register("termsAndConditions", {
-                required: true,
+                required: {
+                  value: true,
+                  message: "Es necesario que aceptes los términos y condiciones.",
+                },
               })}
               className="mr-2"
             ></input>
-            <label>Acepto términos y condiciones</label>
+            <label className={clsx(
+                "text-regular font-body text-azulGris800",
+                "justify-self-start ml-[5px] mt-[15px]"
+              )}
+            >Acepto términos y condiciones</label>
+            </div>
+            {errors.termsAndConditions && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.termsAndConditions.message}
+              </span>
+            )}
           </div>
 
           <button
@@ -325,6 +357,7 @@ export default function Login() {
               "hover:bg-accent1 hover:text-accent2",
               "border-2 border-primary hover:border-accent1"
             )}
+            // disabled={}
           >
             Enviar
           </button>
