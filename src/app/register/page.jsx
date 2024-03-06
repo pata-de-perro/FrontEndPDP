@@ -13,7 +13,9 @@ export default function Login() {
     formState: { errors },
     watch,
     reset,
-  } = useForm();
+  } = useForm({ 
+    mode: 'onTouched'
+  });
 
   return (
     <main
@@ -170,6 +172,10 @@ export default function Login() {
                   value: true,
                   message: "Nombre es requerido",
                 },
+                pattern: {
+                  value: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
+                  message: "Utiliza puros carácteres del alfabeto"
+                },
                 minLength: {
                   value: 2,
                   message: "El nombre debe de ser de mínimo 2 carateres",
@@ -178,11 +184,17 @@ export default function Login() {
                   value: 20,
                   message: "El nombre debe de ser de máximo 20 carateres",
                 },
+
               })}
             />
             {errors.userName && (
               <span className="text-regular font-body text-red-500 ml-[15px]">
                 {errors.userName.message}
+              </span>
+            )}
+              {errors.pattern && (
+              <span className="text-regular font-body text-red-500 ml-[15px]">
+                {errors.pattern.message}
               </span>
             )}
             {errors.minLength && (
