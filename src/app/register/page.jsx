@@ -17,6 +17,15 @@ export default function Login() {
     mode: 'onTouched'
   });
 
+  const userName = watch("userName")
+  const mail = watch("mail")
+  const password = watch("password")
+  const confirmPassword = watch("confirmPassword")
+
+  //handle disabled submit
+
+  const isValid = userName && mail && password && confirmPassword
+
   return (
     <main
       className={clsx(
@@ -358,18 +367,21 @@ export default function Login() {
 
           <button
             type="submit"
-            className={clsx(
-              "bg-primary",
-              "text-white text-regular",
-              "px-[8px] py-[8px]",
-              "mb-[15px] mt-[60px]",
-              "w-[450px]",
-              "rounded-md",
-              "flex justify-center",
-              "hover:bg-accent1 hover:text-accent2",
-              "border-2 border-primary hover:border-accent1"
-            )}
-            // disabled={}
+            className={ `bg-azulGris100 text-azulGris400 text-regular px-[8px] py-[8px] mb-[15px] mt-[60px] w-[450px] rounded-md flex justify-center ${isValid} && 'bg-pink-500'` }
+
+            // className={clsx(
+            //   // "bg-primary text-white ",
+            //   "bg-azulGris100",
+            //   "text-azulGris400 text-regular",
+            //   "px-[8px] py-[8px]",
+            //   "mb-[15px] mt-[60px]",
+            //   "w-[450px]",
+            //   "rounded-md",
+            //   "flex justify-center",
+            //   // "hover:bg-accent1 hover:text-accent2",
+            // )}
+
+            disabled={!isValid}
           >
             Enviar
           </button>
