@@ -226,7 +226,6 @@ export default function Login() {
                 {errors.password.message}
               </span>
             )}
-            {errors.pattern && <span>{errors.pattern.message}</span>}
           </div>
 
           <p className={clsx(
