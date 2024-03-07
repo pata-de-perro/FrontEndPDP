@@ -363,7 +363,7 @@ export default function Login() {
                 {errors.termsAndConditions.message}
               </span>
             )}
-          </div>
+          </div>git
 
           <button
             type="submit"
