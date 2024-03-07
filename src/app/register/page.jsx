@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import {  } from "react-hook-form";
 
 export default function Login() {
 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isDirty },
     watch,
     reset,
   } = useForm({ 
     mode: 'onTouched'
   });
 
+
   const userName = watch("userName")
   const mail = watch("mail")
   const password = watch("password")
   const confirmPassword = watch("confirmPassword")
+  const termsAndConditions = watch(false)
 
-  //handle disabled submit
-
-  const isValid = userName && mail && password && confirmPassword
 
   return (
     <main
@@ -182,12 +182,12 @@ export default function Login() {
                   message: "Nombre es requerido",
                 },
                 pattern: {
-                  value: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
+                  value: /^[A-Za-z.-]+(\s*[A-Za-z.-]+)*$/,
                   message: "Utiliza puros carácteres del alfabeto"
                 },
                 minLength: {
-                  value: 2,
-                  message: "El nombre debe de ser de mínimo 2 carateres",
+                  value: 3,
+                  message: "El nombre debe de ser de mínimo 3 carateres",
                 },
                 maxLength: {
                   value: 20,
@@ -284,7 +284,7 @@ export default function Login() {
                 },
                 pattern:{
                   value: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-                  message:"La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
+                  message:"La contraseña debe tener entre 8 y 30 caracteres y solo puede incluir letras, números y los puedes utilizar los siguientes carcteres especiales #?!@$ %^&*-",
                 }
               })}
             />
@@ -363,25 +363,22 @@ export default function Login() {
                 {errors.termsAndConditions.message}
               </span>
             )}
-          </div>git
+          </div>
 
           <button
             type="submit"
-            className={ `bg-azulGris100 text-azulGris400 text-regular px-[8px] py-[8px] mb-[15px] mt-[60px] w-[450px] rounded-md flex justify-center ${isValid} && 'bg-pink-500'` }
+            className={clsx(
+              "bg-azulGris100",
+              "text-azulGris400 text-regular",
+              "px-[8px] py-[8px]",
+              "mb-[15px] mt-[60px]",
+              "w-[450px]",
+              "rounded-md",
+              "flex justify-center",
+              "bg-primary text-white ",
+              "hover:bg-accent1 hover:text-accent2",
+            )}
 
-            // className={clsx(
-            //   // "bg-primary text-white ",
-            //   "bg-azulGris100",
-            //   "text-azulGris400 text-regular",
-            //   "px-[8px] py-[8px]",
-            //   "mb-[15px] mt-[60px]",
-            //   "w-[450px]",
-            //   "rounded-md",
-            //   "flex justify-center",
-            //   // "hover:bg-accent1 hover:text-accent2",
-            // )}
-
-            disabled={!isValid}
           >
             Enviar
           </button>
