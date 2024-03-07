@@ -4,7 +4,6 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
-import {  } from "react-hook-form";
 
 export default function Login() {
 
@@ -17,13 +16,6 @@ export default function Login() {
   } = useForm({ 
     mode: 'onTouched'
   });
-
-
-  const userName = watch("userName")
-  const mail = watch("mail")
-  const password = watch("password")
-  const confirmPassword = watch("confirmPassword")
-  const termsAndConditions = watch(false)
 
 
   return (
@@ -148,7 +140,7 @@ export default function Login() {
         </div> */}
         <form
           onSubmit={handleSubmit((data) => {
-            // console.log(data);
+            console.log(data);
             onerror
 
             reset()
