@@ -11,7 +11,7 @@ export default function Login() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isDirty },
+    formState: { errors },
     watch,
     reset,
   } = useForm({ 
@@ -148,7 +148,7 @@ export default function Login() {
         </div> */}
         <form
           onSubmit={handleSubmit((data) => {
-            console.log(data);
+            // console.log(data);
             onerror
 
             reset()

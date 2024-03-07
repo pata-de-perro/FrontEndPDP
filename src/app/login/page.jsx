@@ -13,16 +13,9 @@ export default function Login() {
     formState: { errors },
     watch,
     reset,
-  } = useForm();
-
-  // const userName = watch("userName")
-  // const mail = watch("mail")
-  // const password = watch("password")
-  // const confirmPassword = watch("confirmPassword")
-
-  // //handle disabled submit
-
-  // const isValid = userName && mail && password && confirmPassword
+  } = useForm({ 
+    mode: 'onTouched'
+  });
 
   return (
     <main
@@ -145,14 +138,13 @@ export default function Login() {
         <form
           onSubmit={handleSubmit((data) => {
             console.log(data);
-
-            alert("Enviando datos");
-
+            
+            onerror
             reset();
           })}
         >
           <div>
-            <label
+          <label
               className={clsx(
                 "text-regular font-body text-azulGris800",
                 "bg-appBackground",
@@ -175,12 +167,12 @@ export default function Login() {
               placeholder="Correo electrónico"
               {...register("email", {
                 required: {
-                  value: true,
-                  message: "Tu correo electrónico es requerido",
+                  value:true,
+                  message:"Tu correo electrónico es requerido",
                 },
-                pattern: {
+                pattern:{
                   value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
-                },
+                }
               })}
             />
             {errors.email && (
@@ -215,13 +207,7 @@ export default function Login() {
                   value: true,
                   message: "Es requerida tu contraseña",
                 },
-                pattern: {
-                  value:
-                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-                  message:
-                    "La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
-                },
-              })}
+               })}
             />
             {errors.password && (
               <span className="text-regular font-body text-red-500 ml-[15px]">
@@ -229,35 +215,6 @@ export default function Login() {
               </span>
             )}
             {errors.pattern && <span>{errors.pattern.message}</span>}
-          </div>
-
-          <div>
-            <div className="mt-4">
-              <input
-                type="checkbox"
-                {...register("termsAndConditions", {
-                  required: {
-                    value: true,
-                    message:
-                      "Es necesario que aceptes los términos y condiciones.",
-                  },
-                })}
-                className="mr-2"
-              ></input>
-              <label
-                className={clsx(
-                  "text-regular font-body text-azulGris800",
-                  "justify-self-start ml-[5px] mt-[15px]"
-                )}
-              >
-                Acepto términos y condiciones
-              </label>
-            </div>
-            {errors.termsAndConditions && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
-                {errors.termsAndConditions.message}
-              </span>
-            )}
           </div>
 
           <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
