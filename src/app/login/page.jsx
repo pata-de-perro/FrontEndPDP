@@ -1,9 +1,8 @@
-"use client";
+'use client';
 
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export default function Login() {
@@ -13,16 +12,9 @@ export default function Login() {
     formState: { errors },
     watch,
     reset,
-  } = useForm();
-
-  // const userName = watch("userName")
-  // const mail = watch("mail")
-  // const password = watch("password")
-  // const confirmPassword = watch("confirmPassword")
-
-  // //handle disabled submit
-
-  // const isValid = userName && mail && password && confirmPassword
+  } = useForm({ 
+    mode: 'onTouched'
+  });
 
   return (
     <main
@@ -40,7 +32,11 @@ export default function Login() {
         width={316}
         height={316}
         alt="World image"
-        className="absolute left-[-50px] top-[-150px] -z-10 justify-self-start"
+        className={clsx(
+          "absolute justify-self-start",
+          "left-[-50px] top-[-150px]",
+          "-z-10"
+        )}
       />
       <div
         className={clsx(
@@ -59,10 +55,8 @@ export default function Login() {
             "w-[319px]",
             "pt-[45px]",
             "sr-only",
-            "md:not-sr-only",
-            "md:w-[329px] md:h-[329px]",
-            "lg:w-[400px] lg:h-[400px]",
-            "lg:self-end"
+            "md:not-sr-only md:w-[329px] md:h-[329px]",
+            "lg:w-[400px] lg:h-[400px] lg:self-end"
           )}
         />
         <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
@@ -114,10 +108,16 @@ export default function Login() {
             className="lg:w-[420px] lg:h-[auto]"
           />
         </Link>
-        <p className="text-regular font-body text-center text-azulGris900">
+        <p className={clsx(
+          "text-regular font-body",
+          "text-center text-azulGris900",
+        )}>
           ¿Eres un nuevo usuario?
         </p>
-        <p className="text-regularBold font-body text-center text-azulGris900">
+        <p className={clsx(
+          "text-regularBold font-body",
+          "text-center text-azulGris900",
+        )}>
           <Link href="/register">¡Registrate ahora!</Link>
         </p>
 
@@ -145,18 +145,19 @@ export default function Login() {
         <form
           onSubmit={handleSubmit((data) => {
             console.log(data);
-
-            alert("Enviando datos");
-
+            
+            onerror
             reset();
           })}
         >
           <div>
-            <label
+          <label
               className={clsx(
                 "text-regular font-body text-azulGris800",
                 "bg-appBackground",
-                "z-10 justify-self-start ml-[15px] mt-[15px]"
+                "justify-self-start",
+                "ml-[15px] mt-[15px]",
+                "z-10",
               )}
             >
               Correo electrónico
@@ -175,16 +176,19 @@ export default function Login() {
               placeholder="Correo electrónico"
               {...register("email", {
                 required: {
-                  value: true,
-                  message: "Tu correo electrónico es requerido",
+                  value:true,
+                  message:"Tu correo electrónico es requerido",
                 },
-                pattern: {
+                pattern:{
                   value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
-                },
+                }
               })}
             />
             {errors.email && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
+              <span className={clsx(
+                "text-regular font-body text-red-500",
+                "ml-[15px]",
+              )}>
                 {errors.email.message}
               </span>
             )}
@@ -215,13 +219,7 @@ export default function Login() {
                   value: true,
                   message: "Es requerida tu contraseña",
                 },
-                pattern: {
-                  value:
-                    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-                  message:
-                    "La contraseña necesita mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula, un número y un carácter especial ",
-                },
-              })}
+               })}
             />
             {errors.password && (
               <span className="text-regular font-body text-red-500 ml-[15px]">
@@ -231,36 +229,11 @@ export default function Login() {
             {errors.pattern && <span>{errors.pattern.message}</span>}
           </div>
 
-          <div>
-            <div className="mt-4">
-              <input
-                type="checkbox"
-                {...register("termsAndConditions", {
-                  required: {
-                    value: true,
-                    message:
-                      "Es necesario que aceptes los términos y condiciones.",
-                  },
-                })}
-                className="mr-2"
-              ></input>
-              <label
-                className={clsx(
-                  "text-regular font-body text-azulGris800",
-                  "justify-self-start ml-[5px] mt-[15px]"
-                )}
-              >
-                Acepto términos y condiciones
-              </label>
-            </div>
-            {errors.termsAndConditions && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
-                {errors.termsAndConditions.message}
-              </span>
-            )}
-          </div>
-
-          <p className="text-link font-body text-azulGris900 justify-self-start mt-[32px]">
+          <p className={clsx(
+            "text-link font-body",
+            "text-azulGris900",
+            "justify-self-start mt-[32px]"
+          )}>
             ¿Olvidaste tu contraseña?
           </p>
           <Link
@@ -276,10 +249,10 @@ export default function Login() {
             type="submit"
             className={clsx(
               "bg-primary",
+              "w-[450px]",
               "text-white text-regular",
               "px-[8px] py-[8px]",
               "mb-[15px] mt-[60px]",
-              "w-[450px]",
               "rounded-md",
               "flex justify-center",
               "hover:bg-accent1 hover:text-accent2",
@@ -289,7 +262,11 @@ export default function Login() {
             Enviar
           </button>
         </form>
-        <p className="text-center text-regular font-body text-azulGris500 w-[450px] p-[5px]">
+        <p className={clsx(
+          "text-center text-regular text-azulGris500", 
+          "font-body",
+          "w-[450px] p-[5px]"
+        )}>
           Al seguir usando una cuenta en México, aceptas los Términos de uso y
           confirmas que has leído la Política de privacidad.
         </p>
@@ -299,7 +276,10 @@ export default function Login() {
         width={450}
         height={450}
         alt="World image"
-        className="absolute right-0 bottom-0 -z-10 justify-self-start"
+        className={clsx(
+          "absolute right-0 bottom-0 -z-10",
+          "justify-self-start",
+        )}
       />
     </main>
   );
