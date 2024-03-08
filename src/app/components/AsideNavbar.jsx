@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export default function AsideNavbar() {
+export default function Comments() {
   return (
     <div
       className={clsx("lg:flex", "lg:flex-row", "lg:grid ", "lg:grid-cols-12")}
