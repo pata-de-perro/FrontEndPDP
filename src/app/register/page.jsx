@@ -154,69 +154,6 @@ export default function Login() {
                 "z-10 justify-self-start ml-[15px] mt-[15px]"
               )}
             >
-              Nombre
-            </label>
-            <input
-              type="text"
-              className={clsx(
-                "mt-1 px-3 py-2",
-                "h-[50px]",
-                "bg-white",
-                "border shadow-sm border-slate-300",
-                "placeholder-slate-400",
-                "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                "block w-[450px] rounded-lg focus:ring-1"
-              )}
-              placeholder="Tu nombre"
-              {...register("userName", {
-                required: {
-                  value: true,
-                  message: "Nombre es requerido",
-                },
-                pattern: {
-                  value: /^[A-Za-z.-]+(\s*[A-Za-z.-]+)*$/,
-                  message: "Utiliza puros carácteres del alfabeto"
-                },
-                minLength: {
-                  value: 3,
-                  message: "El nombre debe de ser de mínimo 3 carateres",
-                },
-                maxLength: {
-                  value: 20,
-                  message: "El nombre debe de ser de máximo 20 carateres",
-                },
-
-              })}
-            />
-            {errors.userName && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
-                {errors.userName.message}
-              </span>
-            )}
-              {errors.pattern && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
-                {errors.pattern.message}
-              </span>
-            )}
-            {errors.minLength && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
-                {errors.minLength.message}
-              </span>
-            )}
-            {errors.maxLength && (
-              <span className="text-regular font-body text-red-500 ml-[15px]">
-                {errors.maxLength.message}
-              </span>
-            )}
-          </div>
-          <div>
-            <label
-              className={clsx(
-                "text-regular font-body text-azulGris800",
-                "bg-appBackground",
-                "z-10 justify-self-start ml-[15px] mt-[15px]"
-              )}
-            >
               Correo electrónico
             </label>
             <input
