@@ -27,6 +27,7 @@ module.exports = {
       colors:{
         primary:"#87549F",
         secondary:"#7ECDCE",
+        secondaryOpacity: "#DECFE5",
         accent1:"#B6EAA4",
         accent2:"#253A74",
         greentext:"#689600",
@@ -58,7 +59,7 @@ module.exports = {
           letterSpacing: '-0.01em',
           fontWeight: '400',
         }],
-        'h3':['1.25rem', {
+        'h3':['1rem', {
           lineHeight: '1.75rem',
           letterSpacing: '-0.01em',
           fontWeight: '700',
@@ -88,6 +89,11 @@ module.exports = {
           letterSpacing: '-0.01em',
           fontWeight: '300',
        }],
+       'inviteSmallText':['0.875rem',{
+        lineHeight:'1.25rem',
+        letterSpacing:'-0.01em',
+        fontWeight:'0.75rem',
+     }],
       },
     },
   },
