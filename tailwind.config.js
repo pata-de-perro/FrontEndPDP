@@ -89,6 +89,11 @@ module.exports = {
           letterSpacing: '-0.01em',
           fontWeight: '300',
        }],
+       'inviteSmallText':['0.875rem',{
+        lineHeight:'1.25rem',
+        letterSpacing:'-0.01em',
+        fontWeight:'0.75rem',
+     }],
       },
     },
   },
