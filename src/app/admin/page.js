@@ -8,6 +8,7 @@ export default function page() {
     <main>
       <div
         className={clsx(
+          // "relative",
           "bg-gradient-to-r from-[#F5F5F5] to-secondary",
           "rounded-2xl",
           "mr-[24px] mt-[35px] p-[24px]",
@@ -15,11 +16,18 @@ export default function page() {
         )}
       >
         <div className="flex">
-          <div className="w-[550px]">
-            <p className={clsx("font-heading text-azulGris900 text-h1")}>
+          <div className="w-[500px]">
+            <p className={clsx(
+              "font-heading text-azulGris900 text-h1",
+              "mb-2",
+              )}>
               ¡Facilitando tus planes!
             </p>
-            <p className={clsx("font-body text-azulGris900 text-regular")}>
+            <p className={clsx(
+              "font-body text-azulGris900 text-regular",
+              "md:w-[350px]",
+              // "lg:w-[450px]",
+              )}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
@@ -27,10 +35,12 @@ export default function page() {
               className={clsx(
                 "w-[224px] h-[48px]",
                 "rounded-2xl",
-                "my-8",
+                "mt-8",
                 "bg-primary",
                 "font-body text-regular text-white",
-                "justify-center"
+                "justify-center",
+                "z-10 absolute -right-20 top-28",
+                "md:static"
               )}
             >
               Planea tu primer viaje
@@ -41,7 +51,13 @@ export default function page() {
             width={330}
             height={330}
             alt="progresive app pana"
-            className={clsx("z-10 absolute", "right-10 top-0")}
+            className={clsx(
+              "md:z-10 md:absolute", 
+              "md:right-10 md:top-14",
+              "sr-only",
+              "md:not-sr-only md:w-[225px] md:h-[225px] ",
+              "lg:w-[330px] lg:h-[330px] lg:top-0",
+              )}
           ></Image>
         </div>
       </div>
