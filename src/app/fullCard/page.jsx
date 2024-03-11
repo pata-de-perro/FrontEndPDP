@@ -127,31 +127,13 @@ export default function fullCard() {
     },
   ];
 
-  //   let div = document.getElementById('allEventInfo');
-  //   let display = false;
-
-  //   function hideShow(){
-  //     if (display === true){
-  //         div.style.display = 'block'
-  //         display = false
-  //     } else {
-  //         div.style.display = 'none'
-  //         display = true
-  //     }
-  //   }
-
   return (
     <div className="container flex flex-wrap justify-evenly">
       {/* EVENT CARD */}
       <div
         className={clsx(
           "bg-white shadow-xl rounded-2xl",
-          // CLOSED CARD
-          // "w-[400px] h-[356px]",
-
-          // OPEN CARD
           "w-[400px]",
-          // "h-[1199px]",
           "flex-none ",
           "m-3",
           "grid justify-items-center items-start"
@@ -163,7 +145,6 @@ export default function fullCard() {
             "w-[400px] h-[150px]",
             "bg-secondary",
             "mb-2"
-            // "bg-local"
           )}
         ></div>
         <div className="infoContainer w-[350px]">
@@ -196,7 +177,6 @@ export default function fullCard() {
               width={21}
               height={21}
               alt="invite icon"
-              // className="mr-2"
             />
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
               Ubicación
@@ -530,17 +510,77 @@ export default function fullCard() {
             </p>
           </div>
         </div>
-        <button
-          className={clsx(
-            "bg-primary",
-            "w-[216px] h-[45px] rounded-xl",
-            "flex justify-center items-center",
-            "font-body text-regular text-white",
-            "my-6"
-          )}
-        >
-          Ver viaje
-        </button>
+        <div className="collapse collapse-arrow">
+          <input
+            type="checkbox"
+            name="my-accordion-1"
+            className="w-[auto] h-[auto]"
+          />
+          <p
+            className={clsx(
+              "collapse-title"
+              //   "bg-secondary",
+              //   "w-[216px] h-[45px] rounded-xl my-6",
+              //   "font-body text-regular text-white",
+              //   "flex justify-center items-center",
+            )}
+          >
+            Ver más información de la salida
+          </p>
+          <div className="collapse-content">
+            <div className={clsx(" mt-2", "dropdown-content")}>
+              <div className="w-[350px] h-[280px] bg-azulGris200 text-white">
+                MAPA
+              </div>
+              <div className={clsx()}>
+
+                <div className="my-4">
+                  <p
+                    className={clsx(
+                      "font-heading text-h3 text-azulGris900 mt-4"
+                    )}
+                  >
+                    Viajeros Agregados
+                  </p>
+                  <div className="ContainerForParters">
+                    {/* PERSONA AGREGADA */}
+                    <div className="flex justify-around items-end">
+                      <div className="flex flex-none items-end">
+                        <Image
+                          src="/person_icon.svg"
+                          width={24}
+                          height={24}
+                          alt="user icon"
+                        />
+                        <p className="font-heading text-regularSemiBold text-azulGris900">
+                          Juan Perez
+                        </p>
+                      </div>
+                      <p className="font-body text-link text-azulGris900">
+                        Pendiente de aceptar invitación
+                      </p>
+                    </div>
+
+                    {/* PERSONA AGREGADA */}
+                    <div className="flex justify-around">
+                      <div className="flex flex-none items-end">
+                        <Image
+                          src="/person_icon.svg"
+                          width={24}
+                          height={24}
+                          alt="user icon"
+                        />
+                        <p className="font-heading text-regularSemiBold text-azulGris900">
+                          Juan Perez
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
