@@ -8,16 +8,12 @@ export default function page() {
   return (
     //hero Auth
     <main>
-      <div
-        className={clsx(
-          // "relative",
+      <div className={clsx(
           "bg-gradient-to-r from-[#F5F5F5] to-secondary",
           "rounded-2xl",
           "mr-[24px] mt-[35px] p-[24px]",
-          "w-[auto] h-[auto]"
-          // "static"
-        )}
-      >
+          "w-[auto] h-[auto]",
+      )}>
         <div className={clsx("flex", "relative")}>
           <div className="w-[500px]">
             <p
@@ -30,7 +26,6 @@ export default function page() {
                 "font-body text-azulGris900 text-regular",
                 "mb-8",
                 "md:w-[350px] md:mb-0"
-                // "lg:w-[450px]",
               )}
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -38,7 +33,7 @@ export default function page() {
             </p>
             <button
               className={clsx(
-                "w-[224px] h-[48px]",
+                "w-[224px] h-[45px]",
                 "rounded-2xl",
                 "mt-8",
                 "bg-primary",
@@ -68,20 +63,23 @@ export default function page() {
 
       {/* Revisa tus planes */}
 
-      <div className="mt-[16px] mr-[24px] w-[auto] flex items-center">
-        <div className="w-[40px] h-[40px] rounded-full bg-secondaryOpacity flex justify-center items-center">
+      <div className="mt-[16px] mr-[24px] w-[auto] flex items-center ">
+        <div className="w-[40px] h-[40px] rounded-full bg-secondaryOpacity flex justify-center items-center border">
           <Image
             src="Icono-Fecha.svg"
             width={24}
             height={24}
             alt="Calendar icon"
+            className={clsx(
+              
+            )}
           ></Image>
         </div>
         <p className="ml-4 font-body text-h3">Revisa tus planes</p>
       </div>
 
       {/* Botón para registrar primer plan */}
-      <div className="w-[full] flex justify-center my-[24px]">
+      <div className="w-[full] flex justify-center my-[24px] border-b pb-6">
         <button className="flex flex-wrap w-[200px] justify-center">
           <Image
             src="Icono-Fecha.svg"
@@ -89,7 +87,7 @@ export default function page() {
             height={100}
             alt="Calendar icon on button"
           />
-          <p className={clsx("text-regularSemiBold font-body")}>
+          <p className={clsx("text-regular font-body")}>
             Registra tu primer plan
           </p>
         </button>
@@ -108,6 +106,7 @@ export default function page() {
         </div>
         <p className="ml-4 font-body text-h3">Invitaciones</p>
       </div>
+
       <div className="container">
         <div className={clsx(
           "bg-white shadow-xl rounded-2xl",
@@ -115,7 +114,7 @@ export default function page() {
           "grid justify-items-center",
           "mt-6",
           "md:w-[540px] md:h-[190px]",
-          // "md:border",
+          "md:border",
           "md:flex md:flex-row-reverse"
         )}>
           <div>
@@ -131,10 +130,12 @@ export default function page() {
           </div>
           <div className={clsx(
             "md:grid md:justify-items-start",
-            // "md:border",
             "md:mr-10"
           )}>
-            <div className="flex items-center md:mt-2">
+            <p className="font-heading text-accent2 text-h4 mt-2">
+              Nombre de tu viaje
+            </p>
+            <div className="flex items-center">
               <span>
                 <Image
                   src="/calendar_today.svg"
@@ -147,9 +148,6 @@ export default function page() {
                 15 Mayo - 17 Mayo
               </span>
             </div>
-            <p className="font-heading text-secondary text-h4">
-              Nombre de tu viaje
-            </p>
             <div className="flex items-center">
             <Image
                 src="/pin_drop.svg"
@@ -181,12 +179,12 @@ export default function page() {
             </div>
           <button className={clsx(
             "bg-secondary",
-            "w-[216px] h-[52px] rounded-xl",
+            "w-[216px] h-[45px] rounded-xl",
             "mt-4",
             "flex justify-center items-center",
             "md:mb-2"
           )}>
-            <p className="font-body text-regularSemiBold text-accent2">Aceptar invitación</p>
+            <p className="font-body text-regular text-accent2">Aceptar invitación</p>
             <Image
             src="/Invite.svg"
             width={21}
