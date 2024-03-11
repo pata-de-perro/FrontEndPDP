@@ -3,6 +3,7 @@ import clsx from "clsx";
 
 // import heroAuth from "../components/heroAuth"
 // import calendarIcon from "../components/calendarIcon";
+import inviteImage from "../../../public/InviteImage.png";
 
 export default function page() {
   return (
@@ -78,208 +79,59 @@ export default function page() {
       </div>
 
       {/* Revisa tus planes aceptados y o creados*/}
-      <div className="container border-b pb-6 flex flex-wrap">
-{/* TRIP CARD */}
+      <div className="container border-b pb-6 flex flex-wrap justify-evenly">
+        {/* EVENT CARD */}
         <div
           className={clsx(
             "bg-white shadow-xl rounded-2xl",
             "w-[304px] h-[356px]",
-            "grid justify-items-center",
-            "m-6",
-            "flex-none",
-            "md:w-[540px] md:h-[190px]",
-            "md:border",
-            "md:flex md:flex-row-reverse"
+            "flex-none ",
+            "m-3",
+            "grid justify-items-center items-start"
           )}
         >
-          <div>
-            <Image
+          <div
+            className={clsx(
+              "rounded-t-2xl",
+              "w-[304px] h-[150px]",
+              "bg-secondary",
+              "mb-2"
+              // "bg-local"
+            )}
+            //   style="background-image: url(https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ)"
+          >
+            {/* <Image
               src="/InviteImage.png"
               width={304}
               height={160}
               className={clsx(
                 "rounded-t-2xl",
-                "md:rounded-r-2xl md:rounded-tl-none",
-                "md:h-[190px] md:w-[260px]"
               )}
-            />
+            /> */}
           </div>
-          <div className={clsx("md:grid md:justify-items-start", "md:mr-5")}>
-            <div className="flex items-end">
-              <p className="font-heading text-accent2 text-h4 mt-2">
-                Nombre de tu viaje
-              </p>
-              <Image
-              src="/restaurant.svg"
-              width={35}
-              height={35}
-              alt="trip icon"
-              />
-            </div>
-            <div className="flex items-center">
-              <span>
-                <Image
-                  src="/calendar_today.svg"
-                  width={12}
-                  height={12}
-                  alt="icon calendar today"
-                />
-              </span>
-              <span className="font-body inviteSmallText text-azulGris600 ml-2">
-                15 Mayo - 17 Mayo
-              </span>
-            </div>
-            <div className="flex items-center">
-              <Image
-                src="/pin_drop.svg"
-                width={21}
-                height={21}
-                alt="invite icon"
-                className="mr-2"
-              />
-              <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                Ubicación
-              </p>
-            </div>
-
-            <button
-              className={clsx(
-                "bg-secondary",
-                "w-[216px] h-[45px] rounded-xl",
-                "mt-4",
-                "flex justify-center items-center",
-                "font-body text-regular text-accent2",
-                "md:mb-2"
-              )}
-            >Ver viaje</button>
-          </div>
-        </div>
-
-        <div
-          className={clsx(
-            "bg-white shadow-xl rounded-2xl",
-            "w-[304px] h-[356px]",
-            "grid justify-items-center",
-            "flex-none",
-            "m-6",
-            "md:w-[540px] md:h-[190px]",
-            "md:border",
-            "md:flex md:flex-row-reverse"
-          )}
-        >
-          <div>
-            <Image
-              src="/InviteImage.png"
-              width={304}
-              height={160}
-              className={clsx(
-                "rounded-t-2xl",
-                "md:rounded-r-2xl md:rounded-tl-none",
-                "md:h-[190px] md:w-[260px]"
-              )}
-            />
-          </div>
-          <div className={clsx("md:grid md:justify-items-start", "md:mr-5")}>
-            <div className="flex items-end">
-              <p className="font-heading text-accent2 text-h4 mt-2">
-                Nombre de tu viaje
-              </p>
-              <Image
-              src="/restaurant.svg"
-              width={35}
-              height={35}
-              alt="trip icon"
-              />
-
-            </div>
-            <div className="flex items-center">
-              <span>
-                <Image
-                  src="/calendar_today.svg"
-                  width={12}
-                  height={12}
-                  alt="icon calendar today"
-                />
-              </span>
-              <span className="font-body inviteSmallText text-azulGris600 ml-2">
-                15 Mayo - 17 Mayo
-              </span>
-            </div>
-            <div className="flex items-center">
-              <Image
-                src="/pin_drop.svg"
-                width={21}
-                height={21}
-                alt="invite icon"
-                className="mr-2"
-              />
-              <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                Ubicación
-              </p>
-            </div>
-
-            <button
-              className={clsx(
-                "bg-secondary",
-                "w-[216px] h-[45px] rounded-xl",
-                "mt-4",
-                "flex justify-center items-center",
-                "font-body text-regular text-accent2",
-                "md:mb-2"
-              )}
-            >Ver viaje</button>
-          </div>
-        </div>
-
-{/* OUTING CARD */}
-        <div
-          className={clsx(
-            "bg-white shadow-xl rounded-2xl",
-            "w-[304px] h-[356px]",
-            "grid justify-items-center",
-            "m-6",
-            "flex-none",
-            "md:w-[540px] md:h-[190px]",
-            "md:border",
-            "md:flex md:flex-row-reverse"
-          )}
-        >
-          <div>
-            <Image
-              src="/InviteImage.png"
-              width={304}
-              height={160}
-              className={clsx(
-                "rounded-t-2xl",
-                "md:rounded-r-2xl md:rounded-tl-none",
-                "md:h-[190px] md:w-[260px]"
-              )}
-            />
-          </div>
-          <div className={clsx("md:grid md:justify-items-start", "md:mr-2")}>
-            <div className="flex items-end">
-              <p className="font-heading text-accent2 text-h4 mt-2">
+          <div className="infoContainer w-[280px]">
+            <div className="flex justify-between content-end">
+              <p className="font-heading text-accent2 text-h4">
                 Nombre de tu salida
               </p>
               <Image
-              src="/airport_shuttle.svg"
-              width={35}
-              height={35}
-              alt="trip icon"
+                src="/restaurant.svg"
+                width={35}
+                height={35}
+                alt="trip icon"
+                className=""
               />
             </div>
             <div className="flex items-center">
-              <span>
-                <Image
-                  src="/calendar_today.svg"
-                  width={12}
-                  height={12}
-                  alt="icon calendar today"
-                />
-              </span>
-              <span className="font-body inviteSmallText text-azulGris600 ml-2">
-                15 Mayo - 17 Mayo
-              </span>
+              <Image
+                src="/calendar_today.svg"
+                width={21}
+                height={21}
+                alt="icon calendar today"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                15 Mayo
+              </p>
             </div>
             <div className="flex items-center">
               <Image
@@ -287,29 +139,224 @@ export default function page() {
                 width={21}
                 height={21}
                 alt="invite icon"
-                className="mr-2"
+                // className="mr-2"
               />
-              <p className="font-body inviteSmallText text-azulGris600 ml-2">
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
                 Ubicación
               </p>
             </div>
-
-            <button
-              className={clsx(
-                "bg-primary",
-                "w-[216px] h-[45px] rounded-xl",
-                "mt-4",
-                "flex justify-center items-center",
-                "font-body text-regular text-white",
-                "md:mb-2"
-              )}
-            >Ver viaje</button>
+            <div className="flex items-end">
+              <Image
+                src="/people-icon.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+                className="mr-2"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600">
+                0
+              </p>
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Personas
+              </p>
+            </div>
           </div>
+          <button
+            className={clsx(
+              "bg-secondary",
+              "w-[216px] h-[45px] rounded-xl",
+              "flex justify-center items-center",
+              "font-body text-regular text-accent2"
+            )}
+          >
+            Ver salida
+          </button>
+        </div>
+
+        {/* OUTING CARD */}
+        <div
+          className={clsx(
+            "bg-white shadow-xl rounded-2xl",
+            "w-[304px] h-[356px]",
+            "flex-none ",
+            "m-3",
+            "grid justify-items-center items-start"
+          )}
+        >
+          <div
+            className={clsx(
+              "rounded-t-2xl",
+              "w-[304px] h-[150px]",
+              "bg-primary",
+              "mb-2"
+              // "bg-local"
+            )}
+            //   style="background-image: url(https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ)"
+          >
+            {/* <Image
+              src="/InviteImage.png"
+              width={304}
+              height={160}
+              className={clsx(
+                "rounded-t-2xl",
+              )}
+            /> */}
+          </div>
+          <div className="infoContainer w-[280px]">
+            <div className="flex justify-between content-end">
+              <p className="font-heading text-accent2 text-h4">
+                Nombre de tu viaje
+              </p>
+              <Image
+                src="/airport_shuttle.svg"
+                width={35}
+                height={35}
+                alt="trip icon"
+                className=""
+              />
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/calendar_today.svg"
+                width={21}
+                height={21}
+                alt="icon calendar today"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                15 Mayo - 18 Mayo
+              </p>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/pin_drop.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Ubicación
+              </p>
+            </div>
+            <div className="flex items-end">
+              <Image
+                src="/people-icon.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+                className="mr-2"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600">
+                0
+              </p>
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Personas
+              </p>
+            </div>
+          </div>
+          <button
+            className={clsx(
+              "bg-primary",
+              "w-[216px] h-[45px] rounded-xl",
+              "flex justify-center items-center",
+              "font-body text-regular text-white"
+            )}
+          >
+            Ver salida
+          </button>
+        </div>
+
+        {/* OUTING CARD */}
+        <div
+          className={clsx(
+            "bg-white shadow-xl rounded-2xl",
+            "w-[304px] h-[356px]",
+            "flex-none ",
+            "m-3",
+            "grid justify-items-center items-start"
+          )}
+        >
+          <div
+            className={clsx(
+              "rounded-t-2xl",
+              "w-[304px] h-[150px]",
+              "bg-primary",
+              "mb-2"
+              // "bg-local"
+            )}
+            //   style="background-image: url(https://fastly.picsum.photos/id/11/2500/1667.jpg?hmac=xxjFJtAPgshYkysU_aqx2sZir-kIOjNR9vx0te7GycQ)"
+          >
+            {/* <Image
+              src="/InviteImage.png"
+              width={304}
+              height={160}
+              className={clsx(
+                "rounded-t-2xl",
+              )}
+            /> */}
+          </div>
+          <div className="infoContainer w-[280px]">
+            <div className="flex justify-between content-end">
+              <p className="font-heading text-accent2 text-h4">
+                Nombre de tu viaje
+              </p>
+              <Image
+                src="/airport_shuttle.svg"
+                width={35}
+                height={35}
+                alt="trip icon"
+                className=""
+              />
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/calendar_today.svg"
+                width={21}
+                height={21}
+                alt="icon calendar today"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                15 Mayo - 18 Mayo
+              </p>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/pin_drop.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Ubicación
+              </p>
+            </div>
+            <div className="flex items-end">
+              <Image
+                src="/people-icon.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+                className="mr-2"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600">
+                0
+              </p>
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Personas
+              </p>
+            </div>
+          </div>
+          <button
+            className={clsx(
+              "bg-primary",
+              "w-[216px] h-[45px] rounded-xl",
+              "flex justify-center items-center",
+              "font-body text-regular text-white"
+            )}
+          >
+            Ver salida
+          </button>
         </div>
       </div>
-
-
-
 
       {/* Invitaciones tus planes */}
 
@@ -325,17 +372,16 @@ export default function page() {
         <p className="ml-4 font-body text-h3">Invitaciones</p>
       </div>
 
-
-{/* CARDS */}
-{/* INVITE CARD */}
-      <div className="container pb-6 flex flex-wrap">
+      {/* CARDS */}
+      {/* INVITE CARD */}
+      <div className="container border-b pb-6 flex flex-wrap justify-evenly">
         <div
           className={clsx(
             "bg-white shadow-xl rounded-2xl",
             "w-[304px] h-[356px]",
             "grid justify-items-center",
-            "flex-none",
             "m-6",
+            "flex-none",
             "md:w-[540px] md:h-[190px]",
             "md:border",
             "md:flex md:flex-row-reverse"
@@ -358,17 +404,15 @@ export default function page() {
               Nombre de tu viaje
             </p>
             <div className="flex items-center">
-              <span>
-                <Image
-                  src="/calendar_today.svg"
-                  width={12}
-                  height={12}
-                  alt="icon calendar today"
-                ></Image>
-              </span>
-              <span className="font-body inviteSmallText text-azulGris600 ml-2">
+              <Image
+                src="/calendar_today.svg"
+                width={21}
+                height={21}
+                alt="icon calendar today"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
                 15 Mayo - 17 Mayo
-              </span>
+              </p>
             </div>
             <div className="flex items-center">
               <Image
@@ -376,121 +420,25 @@ export default function page() {
                 width={21}
                 height={21}
                 alt="invite icon"
-                className="mr-2"
-              ></Image>
-              <p className="font-body inviteSmallText text-azulGris600 ml-2">
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
                 Ubicación
               </p>
             </div>
-            <div>
-              <span className="flex">
-                <Image
-                  src="/people-icon.svg"
-                  width={21}
-                  height={21}
-                  alt="invite icon"
-                  className="mr-2"
-                ></Image>
-                <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                  0
-                </p>
-                <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                  Personas
-                </p>
-              </span>
-            </div>
-            <button
-              className={clsx(
-                "bg-secondary",
-                "w-[216px] h-[45px] rounded-xl",
-                "mt-4",
-                "flex justify-center items-center",
-                "md:mb-2"
-              )}
-            >
-              <p className="font-body text-regular text-accent2">
-                Aceptar invitación
-              </p>
+            <div className="flex items-end">
               <Image
-                src="/Invite.svg"
-                width={21}
-                height={21}
-                alt="invite icon"
-                className="mx-2"
-              ></Image>
-            </button>
-          </div>
-        </div>
-
-        <div
-          className={clsx(
-            "bg-white shadow-xl rounded-2xl",
-            "w-[304px] h-[356px]",
-            "grid justify-items-center",
-            "flex-none",
-            "m-6",
-            "md:w-[540px] md:h-[190px]",
-            "md:border",
-            "md:flex md:flex-row-reverse"
-          )}
-        >
-          <div>
-            <Image
-              src="/InviteImage.png"
-              width={304}
-              height={160}
-              className={clsx(
-                "rounded-t-2xl",
-                "md:rounded-r-2xl md:rounded-tl-none",
-                "md:h-[190px] md:w-[260px]"
-              )}
-            />
-          </div>
-          <div className={clsx("md:grid md:justify-items-start", "md:mr-10")}>
-            <p className="font-heading text-accent2 text-h4 mt-2">
-              Nombre de tu viaje
-            </p>
-            <div className="flex items-center">
-              <span>
-                <Image
-                  src="/calendar_today.svg"
-                  width={12}
-                  height={12}
-                  alt="icon calendar today"
-                />
-              </span>
-              <span className="font-body inviteSmallText text-azulGris600 ml-2">
-                15 Mayo - 17 Mayo
-              </span>
-            </div>
-            <div className="flex items-center">
-              <Image
-                src="/pin_drop.svg"
+                src="/people-icon.svg"
                 width={21}
                 height={21}
                 alt="invite icon"
                 className="mr-2"
               />
-              <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                Ubicación
+              <p className="font-body text-inviteSmallText text-azulGris600">
+                0
               </p>
-            </div>
-            <div>
-              <span className="flex">
-                <Image
-                  src="/people-icon.svg"
-                  width={21}
-                  height={21}
-                  alt="invite icon"
-                  className="mr-2"
-                />
-                <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                  0
-                </p>
-                <p className="font-body inviteSmallText text-azulGris600 ml-2">
-                  Personas
-                </p>
-              </span>
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Personas
+              </p>
             </div>
             <button
               className={clsx(
@@ -515,6 +463,93 @@ export default function page() {
           </div>
         </div>
 
+        <div
+          className={clsx(
+            "bg-white shadow-xl rounded-2xl",
+            "w-[304px] h-[356px]",
+            "grid justify-items-center",
+            "m-6",
+            "flex-none",
+            "md:w-[540px] md:h-[190px]",
+            "md:border",
+            "md:flex md:flex-row-reverse"
+          )}
+        >
+          <div>
+            <Image
+              src="/InviteImage.png"
+              width={304}
+              height={160}
+              className={clsx(
+                "rounded-t-2xl",
+                "md:rounded-r-2xl md:rounded-tl-none",
+                "md:h-[190px] md:w-[260px]"
+              )}
+            />
+          </div>
+          <div className={clsx("md:grid md:justify-items-start", "md:mr-10")}>
+            <p className="font-heading text-accent2 text-h4 mt-2">
+              Nombre de tu viaje
+            </p>
+            <div className="flex items-center">
+              <Image
+                src="/calendar_today.svg"
+                width={21}
+                height={21}
+                alt="icon calendar today"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                15 Mayo - 17 Mayo
+              </p>
+            </div>
+            <div className="flex items-center">
+              <Image
+                src="/pin_drop.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Ubicación
+              </p>
+            </div>
+            <div className="flex items-end">
+              <Image
+                src="/people-icon.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+                className="mr-2"
+              />
+              <p className="font-body text-inviteSmallText text-azulGris600">
+                0
+              </p>
+              <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
+                Personas
+              </p>
+            </div>
+            <button
+              className={clsx(
+                "bg-secondary",
+                "w-[216px] h-[45px] rounded-xl",
+                "mt-4",
+                "flex justify-center items-center",
+                "md:mb-2"
+              )}
+            >
+              <p className="font-body text-regular text-accent2">
+                Aceptar invitación
+              </p>
+              <Image
+                src="/Invite.svg"
+                width={21}
+                height={21}
+                alt="invite icon"
+                className="mx-2"
+              />
+            </button>
+          </div>
+        </div>
       </div>
     </main>
   );
