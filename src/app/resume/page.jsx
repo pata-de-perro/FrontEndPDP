@@ -59,7 +59,7 @@ export default function page() {
               "md:not-sr-only md:w-[225px] md:h-[225px] ",
               "lg:w-[330px] lg:h-[330px] lg:-top-16"
             )}
-          ></Image>
+          />
         </div>
       </div>
 
@@ -72,7 +72,7 @@ export default function page() {
             width={24}
             height={24}
             alt="Calendar icon"
-          ></Image>
+          />
         </div>
         <p className="ml-4 font-body text-h3">Revisa tus planes</p>
       </div>
@@ -111,15 +111,10 @@ export default function page() {
               </p>
               <Image
               src="/restaurant.svg"
-              width={46}
-              height={46}
+              width={35}
+              height={35}
               alt="trip icon"
-              className={clsx(
-                "md:w-[35px] md:h-[35px]"
-              )}
-              >
-
-              </Image>
+              />
             </div>
             <div className="flex items-center">
               <span>
@@ -128,7 +123,7 @@ export default function page() {
                   width={12}
                   height={12}
                   alt="icon calendar today"
-                ></Image>
+                />
               </span>
               <span className="font-body inviteSmallText text-azulGris600 ml-2">
                 15 Mayo - 17 Mayo
@@ -141,7 +136,7 @@ export default function page() {
                 height={21}
                 alt="invite icon"
                 className="mr-2"
-              ></Image>
+              />
               <p className="font-body inviteSmallText text-azulGris600 ml-2">
                 Ubicación
               </p>
@@ -191,15 +186,11 @@ export default function page() {
               </p>
               <Image
               src="/restaurant.svg"
-              width={46}
-              height={46}
+              width={35}
+              height={35}
               alt="trip icon"
-              className={clsx(
-                "md:w-[35px] md:h-[35px]"
-              )}
-              >
+              />
 
-              </Image>
             </div>
             <div className="flex items-center">
               <span>
@@ -208,7 +199,7 @@ export default function page() {
                   width={12}
                   height={12}
                   alt="icon calendar today"
-                ></Image>
+                />
               </span>
               <span className="font-body inviteSmallText text-azulGris600 ml-2">
                 15 Mayo - 17 Mayo
@@ -221,7 +212,7 @@ export default function page() {
                 height={21}
                 alt="invite icon"
                 className="mr-2"
-              ></Image>
+              />
               <p className="font-body inviteSmallText text-azulGris600 ml-2">
                 Ubicación
               </p>
@@ -272,16 +263,10 @@ export default function page() {
               </p>
               <Image
               src="/airport_shuttle.svg"
-              width={46}
-              height={46}
+              width={35}
+              height={35}
               alt="trip icon"
-              className={clsx(
-                "ml-2",
-                "md:w-[35px] md:h-[35px]"
-              )}
-              >
-
-              </Image>
+              />
             </div>
             <div className="flex items-center">
               <span>
@@ -290,7 +275,7 @@ export default function page() {
                   width={12}
                   height={12}
                   alt="icon calendar today"
-                ></Image>
+                />
               </span>
               <span className="font-body inviteSmallText text-azulGris600 ml-2">
                 15 Mayo - 17 Mayo
@@ -303,7 +288,7 @@ export default function page() {
                 height={21}
                 alt="invite icon"
                 className="mr-2"
-              ></Image>
+              />
               <p className="font-body inviteSmallText text-azulGris600 ml-2">
                 Ubicación
               </p>
@@ -335,7 +320,7 @@ export default function page() {
             width={24}
             height={24}
             alt="Calendar icon"
-          ></Image>
+          />
         </div>
         <p className="ml-4 font-body text-h3">Invitaciones</p>
       </div>
@@ -472,7 +457,7 @@ export default function page() {
                   width={12}
                   height={12}
                   alt="icon calendar today"
-                ></Image>
+                />
               </span>
               <span className="font-body inviteSmallText text-azulGris600 ml-2">
                 15 Mayo - 17 Mayo
@@ -485,7 +470,7 @@ export default function page() {
                 height={21}
                 alt="invite icon"
                 className="mr-2"
-              ></Image>
+              />
               <p className="font-body inviteSmallText text-azulGris600 ml-2">
                 Ubicación
               </p>
@@ -498,7 +483,7 @@ export default function page() {
                   height={21}
                   alt="invite icon"
                   className="mr-2"
-                ></Image>
+                />
                 <p className="font-body inviteSmallText text-azulGris600 ml-2">
                   0
                 </p>
@@ -525,7 +510,7 @@ export default function page() {
                 height={21}
                 alt="invite icon"
                 className="mx-2"
-              ></Image>
+              />
             </button>
           </div>
         </div>
