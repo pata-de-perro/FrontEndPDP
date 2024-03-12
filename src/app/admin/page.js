@@ -8,6 +8,7 @@ import {
   TitleSection,
 } from "@/app/components/common";
 import { CreateEvent } from "./CreateEvent";
+import { NotEvent } from "./NotEvent";
 
 export default function AdminPage() {
   const handleOpenModal = () => {
@@ -28,20 +29,7 @@ export default function AdminPage() {
           />
         </HeroAdmin>
         <TitleSection title="Revisa tus planes" />
-        {/* Botón para registrar primer plan */}
-        <div className="w-[full] flex justify-center my-[24px] border-b pb-6">
-          <button className="flex flex-wrap w-[200px] justify-center">
-            <Image
-              src="Icono-Fecha.svg"
-              width={100}
-              height={100}
-              alt="Calendar icon on button"
-            />
-            <p className={clsx("text-regular font-body")}>
-              Aún no registras un plan
-            </p>
-          </button>
-        </div>
+        <NotEvent />
 
         {/* Invitaciones tus planes */}
         <TitleSection title="Revisa tus invitaciones" />
