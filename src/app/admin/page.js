@@ -1,8 +1,12 @@
 "use client";
 import Image from "next/image";
 import clsx from "clsx";
-
-import { BtnPrimary, HeroAdmin, ModalContent } from "../components/common";
+import {
+  BtnPrimary,
+  HeroAdmin,
+  ModalContent,
+  TitleSection,
+} from "@/app/components/common";
 import { CreateEvent } from "./CreateEvent";
 
 export default function AdminPage() {
@@ -23,20 +27,7 @@ export default function AdminPage() {
             onClick={handleOpenModal}
           />
         </HeroAdmin>
-
-        <div className="mt-[16px] mr-[24px] w-[auto] flex items-center ">
-          <div className="w-[40px] h-[40px] rounded-full bg-secondaryOpacity flex justify-center items-center border">
-            <Image
-              src="Icono-Fecha.svg"
-              width={24}
-              height={24}
-              alt="Calendar icon"
-              className={clsx()}
-            ></Image>
-          </div>
-          <p className="ml-4 font-body text-h3">Revisa tus planes</p>
-        </div>
-
+        <TitleSection title="Revisa tus planes" />
         {/* Botón para registrar primer plan */}
         <div className="w-[full] flex justify-center my-[24px] border-b pb-6">
           <button className="flex flex-wrap w-[200px] justify-center">
@@ -53,18 +44,7 @@ export default function AdminPage() {
         </div>
 
         {/* Invitaciones tus planes */}
-
-        <div className="mt-[16px] mr-[24px] w-[auto] flex items-center">
-          <div className="w-[40px] h-[40px] rounded-full bg-secondaryOpacity flex justify-center items-center">
-            <Image
-              src="Icono-Fecha.svg"
-              width={24}
-              height={24}
-              alt="Calendar icon"
-            />
-          </div>
-          <p className="ml-4 font-body text-h3">Invitaciones</p>
-        </div>
+        <TitleSection title="Revisa tus invitaciones" />
 
         {/* Invite Card */}
         <div className="container">
