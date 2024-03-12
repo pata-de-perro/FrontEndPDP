@@ -4,13 +4,13 @@ import clsx from "clsx";
 export function NavAside() {
   return (
     <nav
-      class=" p-6 w-full flex flex-col flex-wrap"
+      className=" p-6 w-full flex flex-col flex-wrap"
       data-hs-accordion-always-open
     >
-      <ul class="space-y-1.5">
+      <ul className="space-y-1.5">
         <li className={clsx("mb-2")}>
           <a
-            class={clsx(
+            className={clsx(
               "flex",
               "items-center",
               "gap-x-3.5",
@@ -34,7 +34,7 @@ export function NavAside() {
         </li>
         <li className={clsx("mb-2")}>
           <a
-            class={clsx(
+            className={clsx(
               "flex",
               "items-center",
               "gap-x-3.5",
@@ -58,7 +58,7 @@ export function NavAside() {
         </li>
         <li className={clsx("mb-2")}>
           <a
-            class={clsx(
+            className={clsx(
               "flex",
               "items-center",
               "gap-x-3.5",
@@ -82,7 +82,7 @@ export function NavAside() {
         </li>
         <li className={clsx("mb-2")}>
           <a
-            class={clsx(
+            className={clsx(
               "flex",
               "items-center",
               "gap-x-3.5",
@@ -106,7 +106,7 @@ export function NavAside() {
         </li>
         <li className={clsx("mb-2")}>
           <a
-            class={clsx(
+            className={clsx(
               "flex",
               "items-center",
               "gap-x-3.5",

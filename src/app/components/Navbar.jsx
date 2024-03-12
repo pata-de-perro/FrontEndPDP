@@ -83,7 +83,7 @@ export default function Navbar() {
                   />
                 )}
               </summary>
-              <ul class="p-2 menu dropdown-content z-[1] bg-accent1 rounded-box w-52">
+              <ul className="p-2 menu dropdown-content z-[1] bg-accent1 rounded-box w-52">
                 {MenuItems.map((item, index) => {
                   return (
                     <li key={index}>
