@@ -3,6 +3,7 @@ import Image from "next/image";
 import clsx from "clsx";
 
 import { ModalContent } from "../components/common";
+import { CreateEvent } from "./CreateEvent";
 
 export default function page() {
   const handleOpenModal = () => {
@@ -208,7 +209,9 @@ export default function page() {
       <ModalContent
         idModal="modal_create_event"
         title="Háblanos un poco de tu evento"
-      ></ModalContent>
+      >
+        <CreateEvent />
+      </ModalContent>
     </>
   );
 }
