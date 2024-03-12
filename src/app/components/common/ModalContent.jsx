@@ -1,18 +1,14 @@
-export function ModalContent({ title, open, showModal, children }) {
+export function ModalContent({ idModal, title, children }) {
   return (
-    <dialog id="my_modal_3" className="modal" open={open}>
+    <dialog id={idModal} className="modal">
       <div className="modal-box">
         <form method="dialog">
-          {/* if there is a button in form, it will close the modal */}
-          <button
-            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-            onClick={showModal}
-          >
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
             ✕
           </button>
         </form>
-        <h3 className="font-bold text-lg">{title}</h3>
-        <div className="py-4">{children}</div>
+        <h2 className="font-bold text-lg text-center">{title}</h2>
+        <div className="pt-4 pb-2">{children}</div>
       </div>
     </dialog>
   );

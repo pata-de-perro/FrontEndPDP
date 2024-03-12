@@ -1,16 +1,12 @@
 "use client";
-import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 
 import { ModalContent } from "../components/common";
 
 export default function page() {
-  const [open, setOpen] = useState(false);
-  console.log(open);
-
-  const showModal = () => {
-    setOpen(!open);
+  const handleOpenModal = () => {
+    document.getElementById("modal_create_event").showModal();
   };
 
   return (
@@ -55,7 +51,7 @@ export default function page() {
                   "absolute right-4 -bottom-10",
                   "md:static"
                 )}
-                onClick={showModal}
+                onClick={handleOpenModal}
               >
                 Planea tu primer viaje
               </button>
@@ -210,9 +206,8 @@ export default function page() {
         </div>
       </main>
       <ModalContent
-        title="Hablanos un poco de tu evento"
-        open={open}
-        showModal={showModal}
+        idModal="modal_create_event"
+        title="Háblanos un poco de tu evento"
       ></ModalContent>
     </>
   );
