@@ -143,17 +143,17 @@ export default function fullCard() {
           className={clsx(
             "rounded-t-2xl",
             "w-[400px] h-[150px]",
-            "bg-secondary",
+            "bg-primary",
             "mb-2"
           )}
         ></div>
         <div className="infoContainer w-[350px]">
           <div className="flex justify-between content-end">
             <p className="font-heading text-accent2 text-h4">
-              Nombre de evento
+              Nombre de tu viaje
             </p>
             <Image
-              src="/restaurant.svg"
+              src="/airport_shuttle.svg"
               width={35}
               height={35}
               alt="trip icon"
@@ -168,7 +168,7 @@ export default function fullCard() {
               alt="icon calendar today"
             />
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              15 Mayo
+              15 Mayo - 18 Mayo
             </p>
           </div>
           <div className="flex items-center">
@@ -417,7 +417,7 @@ export default function fullCard() {
                         </p>
                       </div>
                       <p className="font-body text-link text-azulGris900">
-                        Pendiente de aceptar invitación
+                        Invitación pendiente
                       </p>
                     </div>
 
@@ -436,6 +436,27 @@ export default function fullCard() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div className="flex justify-around">
+                  <button className={clsx(
+                      "bg-primary",
+                      "text-white font-body text-regular",
+                      "px-6 py-4",
+                      "rounded-full",
+                      "flex justify-center items-center",
+                      "hover:bg-accent1 hover:text-accent2",
+                      "hover:border-accent1"
+                  )}>Guardar en calendario</button>
+                  <button className={clsx(
+                      "bg-azulGris100",
+                      "text-azulGris900 font-body text-regular",
+                      "px-10",
+                      "rounded-full",
+                      "flex justify-center items-center",
+                      "hover:bg-accent1 hover:text-accent2",
+                      "hover:border-accent1"
+                  )}>Editar viaje</button>
                 </div>
               </div>
             </div>
@@ -457,17 +478,17 @@ export default function fullCard() {
           className={clsx(
             "rounded-t-2xl",
             "w-[400px] h-[150px]",
-            "bg-primary",
+            "bg-secondary",
             "mb-2"
           )}
         ></div>
         <div className="infoContainer w-[350px]">
           <div className="flex justify-between content-end">
             <p className="font-heading text-accent2 text-h4">
-              Nombre de tu viaje
+              Nombre de tu evento
             </p>
             <Image
-              src="/airport_shuttle.svg"
+              src="/restaurant.svg"
               width={35}
               height={35}
               alt="trip icon"
@@ -482,7 +503,7 @@ export default function fullCard() {
               alt="icon calendar today"
             />
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              15 Mayo - 18 Mayo
+              15 Mayo
             </p>
           </div>
           <div className="flex items-center">
@@ -519,10 +540,6 @@ export default function fullCard() {
           <p
             className={clsx(
               "collapse-title"
-              //   "bg-secondary",
-              //   "w-[216px] h-[45px] rounded-xl my-6",
-              //   "font-body text-regular text-white",
-              //   "flex justify-center items-center",
             )}
           >
             Ver más información de la salida
@@ -557,7 +574,7 @@ export default function fullCard() {
                         </p>
                       </div>
                       <p className="font-body text-link text-azulGris900">
-                        Pendiente de aceptar invitación
+                        Invitación pendiente
                       </p>
                     </div>
 
@@ -577,6 +594,28 @@ export default function fullCard() {
                     </div>
                   </div>
                 </div>
+
+                <div className="flex justify-around">
+                  <button className={clsx(
+                      "bg-secondary",
+                      "text-accent2 font-body text-regular",
+                      "px-6 py-4",
+                      "rounded-full",
+                      "flex justify-center items-center",
+                      "hover:bg-accent1 hover:text-accent2",
+                      "hover:border-accent1"
+                  )}>Guardar en calendario</button>
+                  <button className={clsx(
+                      "bg-azulGris100",
+                      "text-azulGris900 font-body text-regular",
+                      "px-10",
+                      "rounded-full",
+                      "flex justify-center items-center",
+                      "hover:bg-accent1 hover:text-accent2",
+                      "hover:border-accent1"
+                  )}>Editar salida</button>
+                </div>
+
               </div>
             </div>
           </div>
