@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export default function fullCard() {
+export default function tripCard() {
   const events = [
     {
       eventName: "Viaje a Sayulita",
@@ -127,31 +127,13 @@ export default function fullCard() {
     },
   ];
 
-  //   let div = document.getElementById('allEventInfo');
-  //   let display = false;
-
-  //   function hideShow(){
-  //     if (display === true){
-  //         div.style.display = 'block'
-  //         display = false
-  //     } else {
-  //         div.style.display = 'none'
-  //         display = true
-  //     }
-  //   }
-
   return (
     <div className="container flex flex-wrap justify-evenly">
-      {/* EVENT CARD */}
+      {/* Trip CARD */}
       <div
         className={clsx(
           "bg-white shadow-xl rounded-2xl",
-          // CLOSED CARD
-          // "w-[400px] h-[356px]",
-
-          // OPEN CARD
           "w-[400px]",
-          // "h-[1199px]",
           "flex-none ",
           "m-3",
           "grid justify-items-center items-start"
@@ -161,18 +143,17 @@ export default function fullCard() {
           className={clsx(
             "rounded-t-2xl",
             "w-[400px] h-[150px]",
-            "bg-secondary",
+            "bg-primary",
             "mb-2"
-            // "bg-local"
           )}
         ></div>
         <div className="infoContainer w-[350px]">
           <div className="flex justify-between content-end">
             <p className="font-heading text-accent2 text-h4">
-              Nombre de evento
+              Nombre de tu viaje
             </p>
             <Image
-              src="/restaurant.svg"
+              src="/airport_shuttle.svg"
               width={35}
               height={35}
               alt="trip icon"
@@ -187,7 +168,7 @@ export default function fullCard() {
               alt="icon calendar today"
             />
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              15 Mayo
+              15 Mayo - 18 Mayo
             </p>
           </div>
           <div className="flex items-center">
@@ -196,7 +177,6 @@ export default function fullCard() {
               width={21}
               height={21}
               alt="invite icon"
-              // className="mr-2"
             />
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
               Ubicación
@@ -437,7 +417,7 @@ export default function fullCard() {
                         </p>
                       </div>
                       <p className="font-body text-link text-azulGris900">
-                        Pendiente de aceptar invitación
+                        Invitación pendiente
                       </p>
                     </div>
 
@@ -457,90 +437,31 @@ export default function fullCard() {
                     </div>
                   </div>
                 </div>
+
+                <div className="flex justify-around">
+                  <button className={clsx(
+                      "bg-primary",
+                      "text-white font-body text-regular",
+                      "px-6 py-4",
+                      "rounded-full",
+                      "flex justify-center items-center",
+                      "hover:bg-accent1 hover:text-accent2",
+                      "hover:border-accent1"
+                  )}>Guardar en calendario</button>
+                  <button className={clsx(
+                      "bg-azulGris100",
+                      "text-azulGris900 font-body text-regular",
+                      "px-10",
+                      "rounded-full",
+                      "flex justify-center items-center",
+                      "hover:bg-accent1 hover:text-accent2",
+                      "hover:border-accent1"
+                  )}>Editar viaje</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* OUTING CARD */}
-      <div
-        className={clsx(
-          "bg-white shadow-xl rounded-2xl",
-          "w-[400px]",
-          "flex-none ",
-          "m-3",
-          "grid justify-items-center items-start"
-        )}
-      >
-        <div
-          className={clsx(
-            "rounded-t-2xl",
-            "w-[400px] h-[150px]",
-            "bg-primary",
-            "mb-2"
-          )}
-        ></div>
-        <div className="infoContainer w-[350px]">
-          <div className="flex justify-between content-end">
-            <p className="font-heading text-accent2 text-h4">
-              Nombre de tu viaje
-            </p>
-            <Image
-              src="/airport_shuttle.svg"
-              width={35}
-              height={35}
-              alt="trip icon"
-              className=""
-            />
-          </div>
-          <div className="flex items-center">
-            <Image
-              src="/calendar_today.svg"
-              width={21}
-              height={21}
-              alt="icon calendar today"
-            />
-            <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              15 Mayo - 18 Mayo
-            </p>
-          </div>
-          <div className="flex items-center">
-            <Image
-              src="/pin_drop.svg"
-              width={21}
-              height={21}
-              alt="invite icon"
-            />
-            <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              Ubicación
-            </p>
-          </div>
-          <div className="flex items-end">
-            <Image
-              src="/people-icon.svg"
-              width={21}
-              height={21}
-              alt="invite icon"
-              className="mr-2"
-            />
-            <p className="font-body text-inviteSmallText text-azulGris600">0</p>
-            <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              Personas
-            </p>
-          </div>
-        </div>
-        <button
-          className={clsx(
-            "bg-primary",
-            "w-[216px] h-[45px] rounded-xl",
-            "flex justify-center items-center",
-            "font-body text-regular text-white",
-            "my-6"
-          )}
-        >
-          Ver viaje
-        </button>
       </div>
     </div>
   );
