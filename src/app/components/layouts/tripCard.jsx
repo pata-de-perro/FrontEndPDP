@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export default function fullCard() {
+export default function tripCard() {
   const events = [
     {
       eventName: "Viaje a Sayulita",
@@ -129,7 +129,7 @@ export default function fullCard() {
 
   return (
     <div className="container flex flex-wrap justify-evenly">
-      {/* OUTING CARD */}
+      {/* Trip CARD */}
       <div
         className={clsx(
           "bg-white shadow-xl rounded-2xl",
@@ -143,17 +143,17 @@ export default function fullCard() {
           className={clsx(
             "rounded-t-2xl",
             "w-[400px] h-[150px]",
-            "bg-secondary",
+            "bg-primary",
             "mb-2"
           )}
         ></div>
         <div className="infoContainer w-[350px]">
           <div className="flex justify-between content-end">
             <p className="font-heading text-accent2 text-h4">
-              Nombre de tu evento
+              Nombre de tu viaje
             </p>
             <Image
-              src="/restaurant.svg"
+              src="/airport_shuttle.svg"
               width={35}
               height={35}
               alt="trip icon"
@@ -168,7 +168,7 @@ export default function fullCard() {
               alt="icon calendar today"
             />
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-              15 Mayo
+              15 Mayo - 18 Mayo
             </p>
           </div>
           <div className="flex items-center">
@@ -196,6 +196,7 @@ export default function fullCard() {
             </p>
           </div>
         </div>
+
         <div className="collapse collapse-arrow">
           <input
             type="checkbox"
@@ -205,6 +206,10 @@ export default function fullCard() {
           <p
             className={clsx(
               "collapse-title"
+              //   "bg-secondary",
+              //   "w-[216px] h-[45px] rounded-xl my-6",
+              //   "font-body text-regular text-white",
+              //   "flex justify-center items-center",
             )}
           >
             Ver más información de la salida
@@ -215,6 +220,179 @@ export default function fullCard() {
                 MAPA
               </div>
               <div className={clsx()}>
+                <div className={clsx()}>
+                  <p
+                    className={clsx(
+                      "font-heading text-h3 text-azulGris900 mt-4"
+                    )}
+                  >
+                    Lugares de interés
+                  </p>
+                  {/* // LUGARES DE INTERÉS */}
+                  <div>
+                    <div className="collapse collapse-arrow">
+                      <input type="checkbox" default="Checked" />
+                      <div
+                        className={clsx(
+                          "collapse-title",
+                          "font-heading text-regularSemiBold text-azulGris900 mt-4"
+                        )}
+                      >
+                        Hotel
+                      </div>
+                      <div
+                        className={clsx("collapse-content", "grid grid-cols-2")}
+                      >
+                        <div className="flex items-end mt-2">
+                          <Image
+                            src="/location_on.svg"
+                            width={20}
+                            height={20}
+                            alt="gps pin icon"
+                          />
+                          <p className="font-body text-regular text-azulGris900">
+                            Lugar de interés
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="collapse collapse-arrow">
+                      <input type="checkbox" default="Checked" />
+                      <div
+                        className={clsx(
+                          "collapse-title",
+                          "font-heading text-regularSemiBold text-azulGris900 mt-4"
+                        )}
+                      >
+                        Restaurantes
+                      </div>
+                      <div
+                        className={clsx("collapse-content", "grid grid-cols-2")}
+                      >
+                        <div className="flex items-end mt-2">
+                          <Image
+                            src="/location_on.svg"
+                            width={20}
+                            height={20}
+                            alt="gps pin icon"
+                          />
+                          <p className="font-body text-regular text-azulGris900">
+                            Lugar de interés
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="collapse collapse-arrow">
+                      <input type="checkbox" default="Checked" />
+                      <div
+                        className={clsx(
+                          "collapse-title",
+                          "font-heading text-regularSemiBold text-azulGris900 mt-4"
+                        )}
+                      >
+                        Vida nocturna
+                      </div>
+                      <div
+                        className={clsx("collapse-content", "grid grid-cols-2")}
+                      >
+                        <div className="flex items-end mt-2">
+                          <Image
+                            src="/location_on.svg"
+                            width={20}
+                            height={20}
+                            alt="gps pin icon"
+                          />
+                          <p className="font-body text-regular text-azulGris900">
+                            Lugar de interés
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="collapse collapse-arrow">
+                      <input type="checkbox" default="Checked" />
+                      <div
+                        className={clsx(
+                          "collapse-title",
+                          "font-heading text-regularSemiBold text-azulGris900 mt-4"
+                        )}
+                      >
+                        Atracciones turísticas
+                      </div>
+                      <div
+                        className={clsx("collapse-content", "grid grid-cols-2")}
+                      >
+                        <div className="flex items-end mt-2">
+                          <Image
+                            src="/location_on.svg"
+                            width={20}
+                            height={20}
+                            alt="gps pin icon"
+                          />
+                          <p className="font-body text-regular text-azulGris900">
+                            Lugar de interés
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="collapse collapse-arrow">
+                      <input type="checkbox" default="Checked" />
+                      <div
+                        className={clsx(
+                          "collapse-title",
+                          "font-heading text-regularSemiBold text-azulGris900 mt-4"
+                        )}
+                      >
+                        Museos y Arte
+                      </div>
+                      <div
+                        className={clsx("collapse-content", "grid grid-cols-2")}
+                      >
+                        <div className="flex items-end mt-2">
+                          <Image
+                            src="/location_on.svg"
+                            width={20}
+                            height={20}
+                            alt="gps pin icon"
+                          />
+                          <p className="font-body text-regular text-azulGris900">
+                            Lugar de interés
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="collapse collapse-arrow">
+                      <input type="checkbox" default="Checked" />
+                      <div
+                        className={clsx(
+                          "collapse-title",
+                          "font-heading text-regularSemiBold text-azulGris900 mt-4"
+                        )}
+                      >
+                        Actividades al aire libre
+                      </div>
+                      <div
+                        className={clsx("collapse-content", "grid grid-cols-2")}
+                      >
+                        <div className="flex items-end mt-2">
+                          <Image
+                            src="/location_on.svg"
+                            width={20}
+                            height={20}
+                            alt="gps pin icon"
+                          />
+                          <p className="font-body text-regular text-azulGris900">
+                            Lugar de interés
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="my-4">
                   <p
@@ -262,8 +440,8 @@ export default function fullCard() {
 
                 <div className="flex justify-around">
                   <button className={clsx(
-                      "bg-secondary",
-                      "text-accent2 font-body text-regular",
+                      "bg-primary",
+                      "text-white font-body text-regular",
                       "px-6 py-4",
                       "rounded-full",
                       "flex justify-center items-center",
@@ -278,9 +456,8 @@ export default function fullCard() {
                       "flex justify-center items-center",
                       "hover:bg-accent1 hover:text-accent2",
                       "hover:border-accent1"
-                  )}>Editar salida</button>
+                  )}>Editar viaje</button>
                 </div>
-
               </div>
             </div>
           </div>
