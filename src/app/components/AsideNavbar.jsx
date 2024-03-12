@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function AsideNavbar() {
   return (
     <div
-      className={clsx("lg:flex", "lg:flex-row", "lg:grid ", "lg:grid-cols-12")}
+      className={clsx("lg:flex", "lg:flex-row", "lg:grid ", "lg:grid-cols-3")}
     >
       <div
         className={clsx(
@@ -50,12 +50,260 @@ export default function AsideNavbar() {
                   />
                 </svg>
                 <span className="badge badge-xs badge-primary indicator-item"></span>
+                <details className="dropdown">
+                  <summary className=" btn"><Image
+                                  src="/X-mark-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Mobile menu icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                /></summary>
+                  <ul
+                    className={clsx(
+                      "p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box ",
+                      "w-fit",
+                      "content-none"
+                    )}
+                  >
+                    <li className={clsx("w-fit")}>
+                      <div
+                        className={clsx(
+                          "bg-white",
+                          "w-screen	",
+                          "flex",
+                          "flex-col",
+                          "h-auto",
+                          "items-start"
+                        )}
+                      >
+                        <div
+                          className={clsx("flex", "justify-center", "flex-col")}
+                        >
+                          <div className={clsx("logoContainer", "mt-8")}>
+                            <Image
+                              src="/DePataDePerroLogo.svg"
+                              width={188}
+                              height={50}
+                              alt="Logo of De Pata de Perro"
+                            />
+                          </div>
+                          <div
+                            className={clsx(
+                              "flex",
+                              "items-center",
+                              "flex-col",
+                              "mt-8",
+                              "mb-12"
+                            )}
+                          >
+                            <div
+                              tabIndex={0}
+                              role="button"
+                              className={clsx(
+                                "btn btn-ghost  avatar",
+                                "w-auto",
+                                "h-auto"
+                              )}
+                            >
+                              <div
+                                className={clsx(
+                                  "w-[113px]",
+                                  "rounded-full",
+                                  "h-[113px]"
+                                )}
+                              >
+                                <img
+                                  className={clsx("w-24")}
+                                  alt="Tailwind CSS Navbar component"
+                                  src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                                />
+                              </div>
+                            </div>
+                            <p className={clsx("text-h3")}>Nina Vidales</p>
+                          </div>
+                        </div>
+                        <div class={clsx("w-auto")}>
+                          <a class={clsx("text-h2")}>DASHBOARD</a>
+                        </div>
+                        <nav
+                          class="  w-full flex flex-col flex-wrap"
+                          data-hs-accordion-always-open
+                        >
+                          <ul >
+                            <li className={clsx("mb-8")}>
+                              <a
+                                class={clsx(
+                                  "flex",
+                                  "items-center",
+                                  "gap-x-3.5",
+                                  "py-2",
+                                  "px-2.5",
+                                  "bg-white",
+                                  "text-sm",
+                                  "rounded-lg",
+                                  "hover:bg-accent1"
+                                )}
+                              >
+                                <Image
+                                  src="/House-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Mobile menu icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                />
+                                Inicio
+                              </a>
+                            </li>
+                            <li className={clsx("mb-8")}>
+                              <a
+                                class={clsx(
+                                  "flex",
+                                  "items-center",
+                                  "gap-x-3.5",
+                                  "py-2",
+                                  "px-2.5",
+                                  "bg-white",
+                                  "text-sm",
+                                  "rounded-lg",
+                                  "hover:bg-accent1"
+                                )}
+                              >
+                                <Image
+                                  src="/Car-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Car aside icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                />
+                                Tus viajes
+                              </a>
+                            </li>
+                            <li className={clsx("mb-8")}>
+                              <a
+                                class={clsx(
+                                  "flex",
+                                  "items-center",
+                                  "gap-x-3.5",
+                                  "py-2",
+                                  "px-2.5",
+                                  "bg-white",
+                                  "text-sm",
+                                  "rounded-lg",
+                                  "hover:bg-accent1"
+                                )}
+                              >
+                                <Image
+                                  src="/Fork-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Fork aside icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                />
+                                Tus salidas
+                              </a>
+                            </li>
+                            <li className={clsx("mb-8")}>
+                              <a
+                                class={clsx(
+                                  "flex",
+                                  "items-center",
+                                  "gap-x-3.5",
+                                  "py-2",
+                                  "px-2.5",
+                                  "bg-white",
+                                  "text-sm",
+                                  "rounded-lg",
+                                  "hover:bg-accent1"
+                                )}
+                              >
+                                <Image
+                                  src="/Calender-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Calender aside icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                />
+                                Tus eventos
+                              </a>
+                            </li>
+                            <li className={clsx("mb-8")}>
+                              <a
+                                class={clsx(
+                                  "flex",
+                                  "items-center",
+                                  "gap-x-3.5",
+                                  "py-2",
+                                  "px-2.5",
+                                  "bg-white",
+                                  "text-sm",
+                                  "rounded-lg",
+                                  "hover:bg-accent1"
+                                )}
+                              >
+                                <Image
+                                  src="/Tutorials-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Tutorials aside icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                />
+                                Tutorials
+                              </a>
+                            </li>
+                            <li className={clsx("mb-8")}>
+                              <a
+                                class={clsx(
+                                  "flex",
+                                  "items-center",
+                                  "gap-x-3.5",
+                                  "py-2",
+                                  "px-2.5",
+                                  "bg-white",
+                                  "text-sm",
+                                  "rounded-lg",
+                                  "hover:bg-accent1",
+                                  
+                                )}
+                              >
+                                <Image
+                                  src="/Log-out-icon.svg"
+                                  width={24}
+                                  height={24}
+                                  alt="Log out aside icon"
+                                  className={clsx(
+                                    "ml-[15px]",
+                                    "hover:stroke-primary"
+                                  )}
+                                />
+                                Cerrar sesion
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                      </div>
+                    </li>
+                  </ul>
+                </details>
               </div>
             </button>
-            
-           
-
-           
           </div>
         </div>
       </div>
@@ -67,8 +315,8 @@ export default function AsideNavbar() {
           "flex-col",
           "h-auto",
           "items-center",
-          "sr-only", "lg:not-sr-only" 
-          
+          "sr-only",
+          "lg:not-sr-only"
         )}
       >
         <div className={clsx("flex", "justify-center", "flex-col")}>
@@ -80,7 +328,15 @@ export default function AsideNavbar() {
               alt="Logo of De Pata de Perro"
             />
           </div>
-          <div className={clsx("flex", "items-center", "flex-col", "mt-8", "mb-12")}>
+          <div
+            className={clsx(
+              "flex",
+              "items-center",
+              "flex-col",
+              "mt-8",
+              "mb-12"
+            )}
+          >
             <div
               tabIndex={0}
               role="button"
@@ -97,79 +353,162 @@ export default function AsideNavbar() {
             <p className={clsx("text-h3")}>Nina Vidales</p>
           </div>
         </div>
-        <div class={clsx(
-          "w-auto",
-        )}>
-    <a class={clsx(
-      "text-h2",
-    )}>DASHBOARD</a>
-  </div>
-  <nav class=" p-6 w-full flex flex-col flex-wrap" data-hs-accordion-always-open>
-    <ul class="space-y-1.5">
-      <li className={clsx("mb-2")}>
-        <a class={clsx("flex", "items-center", "gap-x-3.5", "py-2", "px-2.5" ,"bg-gray-100", "text-sm",  "rounded-lg", "hover:bg-accent1", )}>
-        <Image
-                    src="/House-icon.svg"
-                    width={24}
-                    height={24}
-                    alt="Mobile menu icon"
-                    className={clsx("ml-[15px]", "hover:stroke-primary")}
-                  />
-          Inicio
-        </a>
-      </li>
-      <li className={clsx("mb-2")}>
-        <a class={clsx("flex", "items-center", "gap-x-3.5", "py-2", "px-2.5" ,"bg-gray-100", "text-sm",  "rounded-lg", "hover:bg-accent1", )}>
-        <Image
-                    src="/Car-icon.svg"
-                    width={24}
-                    height={24}
-                    alt="Car aside icon"
-                    className={clsx("ml-[15px]", "hover:stroke-primary")}
-                  />
-          Tus viajes
-        </a>
-      </li>
-      <li className={clsx("mb-2")}>
-        <a class={clsx("flex", "items-center", "gap-x-3.5", "py-2", "px-2.5" ,"bg-gray-100", "text-sm",  "rounded-lg", "hover:bg-accent1", )}>
-        <Image
-                    src="/Fork-icon.svg"
-                    width={24}
-                    height={24}
-                    alt="Fork aside icon"
-                    className={clsx("ml-[15px]", "hover:stroke-primary")}
-                  />
-          Tus salidas
-        </a>
-      </li>
-      <li className={clsx("mb-2")}>
-        <a class={clsx("flex", "items-center", "gap-x-3.5", "py-2", "px-2.5" ,"bg-gray-100", "text-sm",  "rounded-lg", "hover:bg-accent1", )}>
-        <Image
-                    src="/Calender-icon.svg"
-                    width={24}
-                    height={24}
-                    alt="Calender aside icon"
-                    className={clsx("ml-[15px]", "hover:stroke-primary")}
-                  />
-          Tus eventos
-        </a>
-      </li>
-      <li className={clsx("mb-2")}>
-        <a class={clsx("flex", "items-center", "gap-x-3.5", "py-2", "px-2.5" ,"bg-gray-100", "text-sm",  "rounded-lg", "hover:bg-accent1", )}>
-        <Image
-                    src="/Tutorials-icon.svg"
-                    width={24}
-                    height={24}
-                    alt="Tutorials aside icon"
-                    className={clsx("ml-[15px]", "hover:stroke-primary")}
-                  />
-          Tutorials
-        </a>
-      </li>
-      </ul>
-  </nav>
+        <div class={clsx("w-auto")}>
+          <a class={clsx("text-h2")}>DASHBOARD</a>
+        </div>
+        <nav
+          class=" p-6 w-full flex flex-col flex-wrap"
+          data-hs-accordion-always-open
+        >
+          <ul class="space-y-1.5">
+            <li className={clsx("mb-2")}>
+              <a
+                class={clsx(
+                  "flex",
+                  "items-center",
+                  "gap-x-3.5",
+                  "py-2",
+                  "px-2.5",
+                  "bg-gray-100",
+                  "text-sm",
+                  "rounded-lg",
+                  "hover:bg-accent1"
+                )}
+              >
+                <Image
+                  src="/House-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Mobile menu icon"
+                  className={clsx("ml-[15px]", "hover:stroke-primary")}
+                />
+                Inicio
+              </a>
+            </li>
+            <li className={clsx("mb-2")}>
+              <a
+                class={clsx(
+                  "flex",
+                  "items-center",
+                  "gap-x-3.5",
+                  "py-2",
+                  "px-2.5",
+                  "bg-gray-100",
+                  "text-sm",
+                  "rounded-lg",
+                  "hover:bg-accent1"
+                )}
+              >
+                <Image
+                  src="/Car-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Car aside icon"
+                  className={clsx("ml-[15px]", "hover:stroke-primary")}
+                />
+                Tus viajes
+              </a>
+            </li>
+            <li className={clsx("mb-2")}>
+              <a
+                class={clsx(
+                  "flex",
+                  "items-center",
+                  "gap-x-3.5",
+                  "py-2",
+                  "px-2.5",
+                  "bg-gray-100",
+                  "text-sm",
+                  "rounded-lg",
+                  "hover:bg-accent1"
+                )}
+              >
+                <Image
+                  src="/Fork-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Fork aside icon"
+                  className={clsx("ml-[15px]", "hover:stroke-primary")}
+                />
+                Tus salidas
+              </a>
+            </li>
+            <li className={clsx("mb-2")}>
+              <a
+                class={clsx(
+                  "flex",
+                  "items-center",
+                  "gap-x-3.5",
+                  "py-2",
+                  "px-2.5",
+                  "bg-gray-100",
+                  "text-sm",
+                  "rounded-lg",
+                  "hover:bg-accent1"
+                )}
+              >
+                <Image
+                  src="/Calender-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Calender aside icon"
+                  className={clsx("ml-[15px]", "hover:stroke-primary")}
+                />
+                Tus eventos
+              </a>
+            </li>
+            <li className={clsx("mb-2")}>
+              <a
+                class={clsx(
+                  "flex",
+                  "items-center",
+                  "gap-x-3.5",
+                  "py-2",
+                  "px-2.5",
+                  "bg-gray-100",
+                  "text-sm",
+                  "rounded-lg",
+                  "hover:bg-accent1"
+                )}
+              >
+                <Image
+                  src="/Tutorials-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Tutorials aside icon"
+                  className={clsx("ml-[15px]", "hover:stroke-primary")}
+                />
+                Tutorials
+              </a>
+            </li>
+            <li className={clsx("mb-2")}>
+              <a
+                class={clsx(
+                  "flex",
+                  "items-center",
+                  "gap-x-3.5",
+                  "py-2",
+                  "px-2.5",
+                  "bg-gray-100",
+                  "text-sm",
+                  "rounded-lg",
+                  "hover:bg-accent1",
+                  "mt-40"
+                )}
+              >
+                <Image
+                  src="/Log-out-icon.svg"
+                  width={24}
+                  height={24}
+                  alt="Log out aside icon"
+                  className={clsx("ml-[15px]", "hover:stroke-primary")}
+                />
+                Cerrar sesion
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-     
     </div>
   );
 }
