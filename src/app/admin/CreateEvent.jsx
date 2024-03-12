@@ -1,5 +1,7 @@
-import { useForm } from "react-hook-form";
 import clsx from "clsx";
+import { useForm } from "react-hook-form";
+
+import { FormEvent } from "./FormEvent";
 
 export function CreateEvent() {
   const {
@@ -7,8 +9,8 @@ export function CreateEvent() {
     handleSubmit,
     formState: { errors },
     watch,
-    reset,
-  } = useForm();
+    setValue,
+  } = useForm({ defaultValues: { isTravel: true } });
 
   const onSubmitEvent = handleSubmit((data) => {
     console.log(data);
@@ -16,9 +18,16 @@ export function CreateEvent() {
 
   return (
     <div>
-      <h3 className={clsx("mb-6", "text-center text-xs")}>
+      <h3 className={clsx("mb-6", "text-center text-sm")}>
         Esto facilitará encontrar información de tu viaje
       </h3>
+      <FormEvent
+        register={register}
+        onSubmitEvent={onSubmitEvent}
+        errors={errors}
+        watch={watch}
+        setValue={setValue}
+      />
     </div>
   );
 }

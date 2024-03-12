@@ -5,7 +5,7 @@ import clsx from "clsx";
 import { ModalContent } from "../components/common";
 import { CreateEvent } from "./CreateEvent";
 
-export default function page() {
+export default function AdminPage() {
   const handleOpenModal = () => {
     document.getElementById("modal_create_event").showModal();
   };
@@ -206,6 +206,7 @@ export default function page() {
           </div>
         </div>
       </main>
+      {/* TODO: Utilizar estado para el modal */}
       <ModalContent
         idModal="modal_create_event"
         title="Háblanos un poco de tu evento"
