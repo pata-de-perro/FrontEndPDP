@@ -44,7 +44,7 @@ export default function Navbar() {
               return (
                 <li key={index} className="sr-only lg:not-sr-only">
                   <Link
-                    className="nav-links text-regular text-accent2 hover:text-primary"
+                    className="nav-links text-regular text-accent2 hover:text-primary cursor-pointer"
                     to={item.to}
                     href={item.href}
                     activeClass="active"
@@ -66,7 +66,7 @@ export default function Navbar() {
                 className="m-1 btn border-0 bg-transparent shadow-none mobileMenu justify-self-end mr-[24px] lg:sr-only md:justify-end hover:bg-accent1"
               >
                 {!isOpen ? (
-                  <Image
+                  <img
                     src="/mobile-menu.svg"
                     width={24}
                     height={24}
@@ -74,7 +74,7 @@ export default function Navbar() {
                     className={clsx("ml-[15px]", "hover:stroke-primary")}
                   />
                 ) : (
-                  <Image
+                  <img
                     src="/close-icon.svg"
                     width={24}
                     height={24}

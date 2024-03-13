@@ -52,29 +52,25 @@ export default function Footer() {
               "justify-items-center"
             )}
           >
-            <Image
+            <img
               src="./instagram.svg"
-              width={24}
-              height={24}
               alt="Instagram icon"
+              className="cursor-pointer"
             />
-            <Image
+            <img
               src="./tiktok.svg"
-              width={24}
-              height={24}
               alt="Tiktok icon"
+              className="cursor-pointer"
             />
-            <Image
+            <img
               src="./youtube.svg"
-              width={24}
-              height={24}
               alt="Youtube icon"
+              className="cursor-pointer"
             />
-            <Image
+            <img
               src="./twitter-x.svg"
-              width={24}
-              height={24}
               alt="Twitter X icon"
+              className="cursor-pointer"
             />
           </div>
           </div>
