@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 
 export default function FirstCards() {
   return (
@@ -26,7 +25,7 @@ export default function FirstCards() {
           "md:grid-cols-2"
         )}
       >
-        <Image
+        <img
           src="/Navigation-pana.svg"
           width={453}
           height={453}
@@ -56,7 +55,7 @@ export default function FirstCards() {
             "lg:self-center",
           )}
         >
-          <Image
+          <img
             src="/Navigation-pana.svg"
             width={453}
             height={453}
@@ -108,7 +107,7 @@ export default function FirstCards() {
             "lg:self-center",
           )}
         >
-          <Image
+          <img
             src="/Date-picker-pana.svg"
             width={453}
             height={453}
@@ -143,7 +142,7 @@ export default function FirstCards() {
             tus amigos y tu reciban recordatorios.
           </p>
         </div>
-        <Image
+        <img
           src="/Date-picker-pana.svg"
           width={453}
           height={453}
@@ -156,7 +155,7 @@ export default function FirstCards() {
             )}
         />
 
-        <Image
+        <img
           src="/Trip-pana.svg"
           width={453}
           height={453}
@@ -185,7 +184,7 @@ export default function FirstCards() {
             "lg:self-center",
           )}
         >
-          <Image
+          <img
             src="/Trip-pana.svg"
             width={453}
             height={453}
@@ -236,7 +235,7 @@ export default function FirstCards() {
             "lg:self-center",
           )}
         >
-          <Image
+          <img
             src="/Account-rafiki.svg"
             width={453}
             height={453}
@@ -267,7 +266,7 @@ export default function FirstCards() {
             divides entre tus amigos, guarda su ubicación y notas de compra.
           </p>
         </div>
-        <Image
+        <img
           src="/Account-rafiki.svg"
           width={453}
           height={453}

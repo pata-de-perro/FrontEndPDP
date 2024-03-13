@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 
 export default function Tutorials() {
   return (
@@ -28,13 +27,13 @@ export default function Tutorials() {
             )}
           >
             <p className={clsx("text-h3", "text-accent2")}>Cómo funciona</p>
-            <Image
+            <img
               className={clsx("mt-7", "md:mt-4")}
               src="/Video-cover.svg"
               width={350}
               height={100}
               alt="VIDEO COVER 1"
-            ></Image>
+            />
           </div>
           <div
             className={clsx(
@@ -47,29 +46,29 @@ export default function Tutorials() {
             <p className={clsx("text-accent2", "text-h3", "deop-shadow-2xl")}>
               Agregando experiencias
             </p>
-            <Image
+            <img
               className={clsx("mt-4", "z-10")}
               src="/Video-cover2.svg"
               width={350}
               height={100}
               alt="VIDEO COVER 2"
-            ></Image>
+            />
           </div>
         </div>
-        <Image
+        <img
           className={clsx("z-40", "sm:not-sr-only", "md:sr-only")}
           src="/App-mockup-sm.svg"
           width={500}
           height={100}
           alt="mockup phone screen sm"
-        ></Image>
-        <Image
+        />
+        <img
           className={clsx("z-40", "sr-only", "md:not-sr-only")}
           src="/App-mockup-md.svg"
           width={500}
           height={100}
           alt="Hand with phone screen lg"
-        ></Image>
+        />
         <div
           className={clsx("flex", "items-center", "justify-center", "flex-col")}
         >
@@ -86,13 +85,13 @@ export default function Tutorials() {
             <p className={clsx("text-accent2", "text-h3", "deep-shadow-2xl")}>
               Agregando experiencias
             </p>
-            <Image
+            <img
               className="mt-4"
               src="/Video-cover2.svg"
               width={500}
               height={100}
               alt="VIDEO COVER 2"
-            ></Image>
+            />
           </div>
         </div>
       </div>
@@ -109,7 +108,7 @@ export default function Tutorials() {
       >
         <div className="relative w-[1028px] h-[500px]">
           <div className="absolute z-10 h-full left-0">
-            <Image
+            <img
               className={clsx(
                 "z-10", 
                 "w-full",)}
@@ -117,7 +116,7 @@ export default function Tutorials() {
               width={1200}
               height={100}
               alt="mockup phone screen lg"
-            ></Image>
+            />
           </div>
 
           <div
@@ -138,13 +137,13 @@ export default function Tutorials() {
                 "px-6"
               )}>
                 <p className={clsx("text-h3", "text-accent2", "mt-4")}>Cómo funciona</p>
-                <Image
+                <img
                   className={clsx("mt-7 mb-0", "md:mt-4")}
                   src="/Video-cover.svg"
                   width={350}
                   height={100}
                   alt="¿Cómo funciona? video cover"
-                ></Image>
+                />
               </div>
 
               <div className={clsx(
@@ -154,7 +153,7 @@ export default function Tutorials() {
                 <p className={clsx("text-accent2", "text-h3", "mt-4")}>
                   Agregando experiencias
                 </p>
-                <Image
+                <img
                   className={clsx(
                     "mt-4", 
                   )}
@@ -162,7 +161,7 @@ export default function Tutorials() {
                   width={350}
                   height={100}
                   alt="Agregando experiencias video cover"
-                ></Image>
+                />
               </div>
             </div>
           </div>

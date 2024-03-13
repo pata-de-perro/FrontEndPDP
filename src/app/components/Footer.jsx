@@ -6,17 +6,16 @@ export default function Footer() {
     <footer
       className={clsx(
         "bg-accent2",
-        "mt-[24px]",
         "flex",
         "justify-center",
-        "w-[100vw]",
+        "w-[full]",
         "md:grid-cols-2",
         "md:px-[24px]",
         )}
         >
       <div
         className={clsx(
-            "m-[5px]",
+            // "m-[5px]",
             "pt-[24px]",
             "w-[500px]",
             "flex flex-wrap flex-col",

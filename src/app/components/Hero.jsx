@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from 'next/image';
 import Link from "next/link";
 
 export default function Hero() {
@@ -9,7 +8,7 @@ export default function Hero() {
         "justify-center",
         "md:flex-nowrap",
     )}>
-        <Image 
+        <img 
             src="/Progresive-app-pana.svg"
             width={453}
             height={453}
