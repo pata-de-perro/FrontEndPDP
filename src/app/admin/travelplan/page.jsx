@@ -10,7 +10,7 @@ export default function TravelPlan() {
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </HeroAdmin>
-      <TitleSection title="Revisa tu mapa" />
+      <TitleSection title="Revisa tu mapa" urlIcon="/Icono-Fecha.svg" />
       <TravelMapContainer></TravelMapContainer>
     </div>
   );

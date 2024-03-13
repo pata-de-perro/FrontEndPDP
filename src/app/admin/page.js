@@ -28,11 +28,14 @@ export default function AdminPage() {
             onClick={handleOpenModal}
           />
         </HeroAdmin>
-        <TitleSection title="Revisa tus planes" />
+        <TitleSection title="Revisa tus planes" urlIcon="/Icono-Fecha.svg" />
         <NotEvent />
 
         {/* Invitaciones tus planes */}
-        <TitleSection title="Revisa tus invitaciones" />
+        <TitleSection
+          title="Revisa tus invitaciones"
+          urlIcon="/Icono-Fecha.svg"
+        />
 
         {/* Invite Card */}
         <div className="container">

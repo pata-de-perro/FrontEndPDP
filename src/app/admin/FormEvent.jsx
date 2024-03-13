@@ -9,8 +9,6 @@ export function FormEvent({
   watch,
   setValue,
 }) {
-  // console.log(errors);
-
   useEffect(() => {
     const initialDateValue = watch("initialDate");
 
