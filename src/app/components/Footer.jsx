@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -33,7 +32,7 @@ export default function Footer() {
             "md:justify-between",
         )}>
           <div>
-          <Image
+          <img
             src="/dePataDePerroLogo.svg"
             width={217}
             height={41}
