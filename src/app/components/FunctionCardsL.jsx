@@ -33,8 +33,11 @@ export function FunctionCardsL({title, description, urlImg}){
         </p>
         <p
           className={clsx(
-            "font-body text-regular text-azulGris900 text-center",
-            "mx-[25px]"
+            "font-body",
+            "text-regular",
+            "text-azulGris900",
+            "text-center",
+            "mx-4"
           )}
         >
           {description}

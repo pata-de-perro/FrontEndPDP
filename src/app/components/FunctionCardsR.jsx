@@ -6,7 +6,7 @@ export function FunctionCardsR({ title, description, urlImg }){
           className={clsx(
             "w-[358px] h-[425px]",
             "shadow-xl",
-            "p-[20px]",
+            "p-[10px]",
             "m-[24px]",
             "rounded-xl",
             "flex",
@@ -34,7 +34,7 @@ export function FunctionCardsR({ title, description, urlImg }){
               "text-center",
               "lg:justify-items-center",
               "mb-[10px]",
-              "lg:mb-[-40px]"
+              // "lg:mb-[-40px]"
             )}
           >
             {title}
@@ -45,7 +45,7 @@ export function FunctionCardsR({ title, description, urlImg }){
               "text-regular",
               "text-azulGris900",
               "text-center",
-              "mx-[20px]"
+              "mx-4"
             )}
           >
             {description}
