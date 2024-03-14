@@ -27,38 +27,27 @@ export default function Functions() {
             "text-accent2"
           )}
         >
-          Algunas de 
-        </p>
-        <p
-          className={clsx(
-            "text-h1",
-            "font-heading",
-            "text-wrap",
-            "text-accent2",
-            "md:pl-2",
-          )}
-        >
-          nuestras funciones
+          Algunas de nuestras funciones
         </p>
       </div>
       <div className={clsx("size-full", "relative", "flex justify-center")}>
         <img
           className={clsx("mt-7", "md:sr-only", ) }
-          src="/Vertical-road.svg"
+          src="/Road2.svg"
           width={800}
           height={100}
           alt="Vertical road pic"
         />
           <img
           className={clsx("mb-40","sr-only" ,"md:not-sr-only", "lg:sr-only", "w-[800px]")}
-          src="/Horizontal-road-md.svg"
+          src="/Road1.svg"
           width={800}
           height={200}
           alt="Vertical road pic"
         />
          <img
           className={clsx("mb-15", "sr-only", "lg:not-sr-only" )}
-          src="/Horizontal-road-lg.svg"
+          src="/Road1.svg"
           width={2000}
           height={200}
           alt="Vertical road pic"
