@@ -1,7 +1,6 @@
 'use client';
 
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
@@ -27,7 +26,7 @@ export default function Login() {
         "lg:w-[1280px] lg:mt-[30px] lg:justify-center"
       )}
     >
-      <Image
+      <img
         src="/World.svg"
         width={316}
         height={316}
@@ -46,7 +45,7 @@ export default function Login() {
           "lg:w-[500px]"
         )}
       >
-        <Image
+        <img
           src="/Login-cuate-1.svg"
           width={329}
           height={329}
@@ -100,7 +99,7 @@ export default function Login() {
           Inicia sesión en
         </p>
         <Link href="/">
-          <Image
+          <img
             src="/dePataDePerroLogo.svg"
             width={250}
             height={50}
@@ -132,7 +131,7 @@ export default function Login() {
             "rounded-lg"
           )}
         >
-          <Image src="/Google.svg" width={25} height={25} alt="Google logo" />
+          <img src="/Google.svg" width={25} height={25} alt="Google logo" />
           <p className="font-body text-regularSemiBold">Continuar con Google</p>
         </button>
         <div className="flex justify-center items-center m-[15px]">
@@ -270,7 +269,7 @@ export default function Login() {
           confirmas que has leído la Política de privacidad.
         </p>
       </div>
-      <Image
+      <img
         src="/World.svg"
         width={450}
         height={450}

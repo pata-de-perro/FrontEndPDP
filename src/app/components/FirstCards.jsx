@@ -91,20 +91,13 @@ export default function FirstCards() {
 
         <div
           className={clsx(
-            "w-[358px]",
-            "h-[425px]",
+            "w-[358px] h-[425px]",
+            "p-[20px] m-[24px]",
             "shadow-xl",
-            "p-[20px]",
             "rounded-xl",
-            "m-[24px]",
-            "flex",
-            "flex-wrap",
+            "flex flex-wrap",
             "justify-center",
-            "lg:h-[200px]",
-            "lg:items-center",
-            "lg:justify-center",
-            "lg:justify-self-end",
-            "lg:self-center",
+            "lg:h-[200px] lg:items-center lg:justify-center lg:justify-self-end lg:self-center",
           )}
         >
           <img
@@ -119,22 +112,15 @@ export default function FirstCards() {
           />
           <p
             className={clsx(
-              "font-heading",
-              "text-accent2",
-              "text-h3",
-              "text-center",
-              "mb-[10px]",
-              "mx-[50px]"
+              "font-heading text-accent2 text-h3 text-center",
+              "mb-[10px] mx-[50px]"
             )}
           >
             Controla las fechas de tus eventos
           </p>
           <p
             className={clsx(
-              "font-body",
-              "text-regular",
-              "text-azulGris900",
-              "text-center",
+              "font-body text-regular text-azulGris900 text-center",
               "mx-[25px]"
             )}
           >
@@ -150,8 +136,7 @@ export default function FirstCards() {
           className={clsx(
             "w-[370px]", 
             "sr-only", 
-            "lg:not-sr-only",
-            "lg:justify-self-start",
+            "lg:not-sr-only lg:justify-self-start",
             )}
         />
 

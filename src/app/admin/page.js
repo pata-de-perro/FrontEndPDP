@@ -51,7 +51,7 @@ export default function AdminPage() {
             )}
           >
             <div>
-              <Image
+              <img
                 src="/InviteImage.png"
                 width={304}
                 height={160}
@@ -67,7 +67,7 @@ export default function AdminPage() {
                 Nombre de tu viaje
               </p>
               <div className="flex items-center">
-                <Image
+                <img
                   src="/calendar_today.svg"
                   width={21}
                   height={21}
@@ -78,7 +78,7 @@ export default function AdminPage() {
                 </p>
               </div>
               <div className="flex items-center">
-                <Image
+                <img
                   src="/pin_drop.svg"
                   width={21}
                   height={21}
@@ -89,7 +89,7 @@ export default function AdminPage() {
                 </p>
               </div>
               <div className="flex items-end">
-                <Image
+                <img
                   src="/people-icon.svg"
                   width={21}
                   height={21}
@@ -115,7 +115,7 @@ export default function AdminPage() {
                 <p className="font-body text-regular text-accent2">
                   Aceptar invitación
                 </p>
-                <Image
+                <img
                   src="/Invite.svg"
                   width={21}
                   height={21}

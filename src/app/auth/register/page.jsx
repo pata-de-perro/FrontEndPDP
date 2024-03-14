@@ -23,7 +23,7 @@ export default function Register() {
             Regístrate en
           </p>
           <Link href="/">
-            <Image
+            <img
               src="/dePataDePerroLogo.svg"
               width={200}
               height={35}
@@ -50,7 +50,7 @@ export default function Register() {
             "rounded-lg"
           )}
         >
-          <Image src="/Google.svg" width={25} height={25} alt="Google logo" />
+          <img src="/Google.svg" width={25} height={25} alt="Google logo" />
           <p className="font-body text-regularSemiBold">Continuar con Google</p>
         </button>
         <div className="flex justify-center items-center m-[15px]">

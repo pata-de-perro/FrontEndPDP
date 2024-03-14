@@ -1,8 +1,7 @@
 import clsx from "clsx";
 
-import Image from "next/image";
 
-export default function Out({ children }) {
+export default function Auth({ children }) {
   return (
     <>
       <main
@@ -21,7 +20,7 @@ export default function Out({ children }) {
           "lg:w-[1280px] lg:mt-[30px] lg:justify-center",
         )}
       >
-        <Image
+        <img
           src="/World.svg"
           width={316}
           height={316}
@@ -36,7 +35,7 @@ export default function Out({ children }) {
             "lg:w-[500px]"
           )}
         >
-          <Image
+          <img
             src="/Login-cuate-1.svg"
             width={329}
             height={329}
@@ -95,7 +94,7 @@ export default function Out({ children }) {
             confirmas que has leído la Política de privacidad.
           </p>
         </div>
-        <Image
+        <img
           src="/World.svg"
           width={450}
           height={450}
