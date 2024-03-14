@@ -15,7 +15,6 @@ export default function Footer() {
         >
       <div
         className={clsx(
-            // "m-[5px]",
             "pt-[24px]",
             "w-[500px]",
             "flex flex-wrap flex-col",
