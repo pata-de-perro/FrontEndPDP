@@ -1,4 +1,3 @@
-import Image from "next/image";
 import clsx from "clsx";
 
 export function HeroAdmin({ title, children, urlImg }) {
@@ -27,7 +26,7 @@ export function HeroAdmin({ title, children, urlImg }) {
           </div>
         </div>
         {urlImg && (
-          <Image
+          <img
             src={urlImg}
             width={330}
             height={330}
