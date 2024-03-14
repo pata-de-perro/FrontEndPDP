@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import clsx from "clsx";
 import {
   BtnPrimary,
@@ -10,7 +9,7 @@ import {
 import { CreateEvent } from "./CreateEvent";
 import { NotEvent } from "./NotEvent";
 
-export default function AdminPage() {
+export default function HomePage() {
   const handleOpenModal = () => {
     document.getElementById("modal_create_event").showModal();
   };

@@ -85,17 +85,16 @@ export default function FirstCards() {
         />
 
         <FunctionCardsL 
-        title="Controla los gastos de viaje"
-        urlImg="/Account-rafiki.svg"
-        description="Lleva un control fácil y rápido de cuentas que pagas y cómo la
-        divides entre tus amigos, guarda su ubicación y notas de compra."
+        title="Cambia los lugares guardados"
+        urlImg="/Post-rafiki.svg"
+        description="Es muy fácil agregar y editar los lugares que ya agregaste. Así tendras siempre actualizado tu itinerario."
         />
 
         <img
-          src="/Account-rafiki.svg"
+          src="/Post-rafiki.svg"
           width={453}
           height={453}
-          alt="Account Rafiki"
+          alt="Post Rafiki"
           className={clsx(
             "w-[370px]", 
             "sr-only", 
