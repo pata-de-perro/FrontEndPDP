@@ -1,50 +1,23 @@
 import clsx from "clsx";
 import Image from "next/image";
+import { TitleSection } from "@/app/components/common";
 
 export default function Profile() {
-  const users = [
-    {
-      id: "123ABC",
-      name: "Nina Vidales",
-      email: "ninavidales@email.com",
-      phoneNumber: 331245678,
-      avatar: "",
-      friends: 45,
-      outings: 35,
-      events: 5,
-    },
-    {
-      id: "456DEF",
-      userName: "Noe",
-      mail: "noe@email.com",
-      phone: 331245678,
-      profileImage: "",
-      friends: 25,
-      outings: 45,
-      events: 5,
-    },
-  ];
 
   return (
-    <div className="flex flex-wrap justify-center">
-      <span className="flex aboslute left-0 items-center my-4 w-[95vw]">
-        <Image
-          src="/Avatar.svg"
-          width={24}
-          height={24}
-          alt="Profile icon"
-          className="m-2"
+    <section className="flex flex-wrap">
+        <TitleSection 
+        urlIcon="/Avatar.svg"
+        title="Perfil"
         />
-        <p className={clsx("font-heading text-h3")}>Perfil</p>
-      </span>
       <div className={clsx(
             "bg-gradient-to-br from-[#F5F5F5] to-75% to-secondary",
             "rounded-2xl",
-            "p-[25px]",
-            "w-[630px]",
+            "m-2 p-[25px]",
+            "w-full",
             "flex",
-            "md:p-10 md:w-[632px]",
-            "lg:w-[1000px]"
+            "md:p-10 ",
+            // "lg:w-[1000px]"
           )}>
         <div className={clsx(
             "justify-start"
@@ -93,6 +66,6 @@ export default function Profile() {
         )}>Editar</button>
         <button>Cambiar imagen</button>
       </div>
-    </div>
+    </section>
   );
 }
