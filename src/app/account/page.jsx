@@ -190,14 +190,7 @@ export default function Login() {
             Enviar
           </button>
         </form>
-        <p className={clsx(
-          "text-center text-regular text-azulGris500", 
-          "font-body",
-          "w-[450px] p-[5px]"
-        )}>
-          Al seguir usando una cuenta en México, aceptas los Términos de uso y
-          confirmas que has leído la Política de privacidad.
-        </p>
+
       </div>
       <Image
         src="/World.svg"

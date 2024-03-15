@@ -6,8 +6,8 @@ import {
   ModalContent,
   TitleSection,
 } from "@/app/components/common";
-import { CreateEvent } from "./CreateEvent";
-import { NotEvent } from "./NotEvent";
+import { CreateEvent } from "../../components/events/CreateEvent";
+import { NotEvent } from "../../components/events/NotEvent";
 
 export default function HomePage() {
   const handleOpenModal = () => {
