@@ -118,7 +118,7 @@ export function NavAside() {
           )}
         >
           <Image
-            src="/Logout-icon.svg"
+            src="/Log-out-icon.svg"
             width={24}
             height={24}
             alt="Logout aside icon"
