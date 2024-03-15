@@ -5,29 +5,22 @@ export default function Footer() {
   return (
     <footer
       className={clsx(
-        "bg-accent2",
-        "flex",
-        "justify-center",
-        "w-[full]",
-        "md:grid-cols-2",
-        "md:px-[24px]",
+        "bg-accent2 w-[full]",
+        "flex justify-center",
+        "md:grid-cols-2 md:px-[24px]",
         )}
         >
       <div
         className={clsx(
-            "pt-[24px]",
-            "w-[500px]",
-            "flex flex-wrap flex-col",
-            "md:w-[100vw]",
-            "lg:w-[1179px]",
-            "md:flex-no-wrap"
+          "w-[500px] pt-[24px]",
+          "flex flex-wrap flex-col",
+          "md:flex-no-wrap md:w-[100vw]",
+          "lg:w-[1179px]",
         )}
       >
         <div className={clsx(
             "m-[5px]",
-            "md:col-span-1",
-            "md:flex flex-row-reverse",
-            "md:justify-between",
+            "md:col-span-1 md:flex flex-row-reverse md:justify-between",
         )}>
           <div>
           <img
@@ -37,14 +30,12 @@ export default function Footer() {
             alt="Footer logo"
             className={clsx(
               "grid justify-self-center",
-              "md:flex",
-              "md:justify-end"
+              "md:flex md:justify-end"
             )}
           />
           <div
             className={clsx(
-              "grid",
-              "grid-cols-4",
+              "grid grid-cols-4",
               "mt-[15px]",
               "justify-items-center"
             )}
@@ -73,13 +64,10 @@ export default function Footer() {
           </div>
         <ul
             className={clsx(
-              "text-white text-regularBold font-body",
-              "text-center",
-              "mt-[15px]",
+              "mt-[15px] m-[5px]",
               "grid grid-cols-2",
-              "m-[5px]",
-              "md:grid-cols-1",
-              "md:text-start",
+              "text-white text-regularBold font-body text-center",
+              "md:grid-cols-1 md:text-start",
               "lg:grid-cols-4",
             )}
           >
@@ -101,19 +89,14 @@ export default function Footer() {
         <div className={clsx(
             "m-[5px]",
             "md:flex flex-row-reverse",
-            "md:items-center",
-            "md:m-[15px]",
-            "md:justify-between",
+            "md:m-[15px] md:items-center md:justify-between",
         )}>
           <ul
             className={clsx(
-              "text-regular text-white font-body text-center",
-              "grid grid-cols-3",
               "m-[15px]",
-              "md:justify-around",
-              "md:w-[300px]",
-              "md:text-end",
-              "md:m-[0px]"
+              "grid grid-cols-3",
+              "text-regular text-white font-body text-center",
+              "md:justify-around md:w-[300px] md:text-end md:m-[0px]"
             )}
           >
             <li>
@@ -128,11 +111,9 @@ export default function Footer() {
           </ul>
           <p
             className={clsx(
-              "text-regular font-body text-white text-center",
               "mb-[25px]",
-              "md:text-start",
-              "md:self-center",
-              "md:mb-[0px]",
+              "text-regular font-body text-white text-center",
+              "md:text-start md:self-center md:mb-[0px]",
             )}
           >
             © 2024 | PataDePerro
