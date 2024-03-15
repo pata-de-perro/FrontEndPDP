@@ -1,21 +1,20 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export function PlacesListNDD() {
-
+export function PlacesList() {
   const placesList = [
     {
-        hotel: "Hotel",
-      hotelList: ["Hotel 1", "Hotel 2", "Hotel 3", "Hotel 4", "Hotel 5", "Hotel 6"],
+      Title: "Hotel",
+      List: ["Hotel 1", "Hotel 2", "Hotel 3", "Hotel 4", "Hotel 5", "Hotel 6"],
     },
     {
-        rest: "Restaurantes",
-      restList: [
+      Title: "Restaurantes",
+      List: [
         "Restaurante 1", "Restaurante 2", "Restaurante 3", "Restaurante 4", "Restaurante 5", "Restaurante 6",],
     },
     {
-        nightLife: "Vida Noctura",
-      nightLifeList: [
+      Title: "Vida Noctura",
+      List: [
         "Vida Noctura 1",
         "Vida Noctura 2",
         "Vida Noctura 3",
@@ -25,8 +24,8 @@ export function PlacesListNDD() {
       ],
     },
     {
-        turistic: "Atracciones turísticas",
-      turisticList: [
+      Title: "Atracciones turísticas",
+      List: [
         "Atracciones turísticas 1",
         "Atracciones turísticas 2",
         "Atracciones turísticas 3",
@@ -36,8 +35,8 @@ export function PlacesListNDD() {
       ],
     },
     {
-        museums: "Museos y Arte",
-      museumsList: [
+      Title: "Museos y Arte",
+      List: [
         "Museos y Arte 1",
         "Museos y Arte 2",
         "Museos y Arte 3",
@@ -47,8 +46,8 @@ export function PlacesListNDD() {
       ],
     },
     {
-      openAir: "Actividades al aire libre",
-      openAirList: [
+      Title: "Actividades al aire libre",
+      List: [
         "Actividades al aire libre 1",
         "Actividades al aire libre 2",
         "Actividades al aire libre 3",
@@ -61,30 +60,7 @@ export function PlacesListNDD() {
 
   return (
     <div id="placesList">
-      <div
-        className={clsx(
-          "font-heading text-regularSemiBold text-azulGriss900 mt-4"
-        )}>Hoteles</div>
-        {placesList.HotelList.amp((item, index) )>{
-          return(
-            <div key={index}>
-            <img
-            src="/location_on.svg"
-            width={20}
-            height={20}
-            alt="gps pin icon"
-          />
-            <p
-              className={clsx(
-                "collapse-title",
-                "font-heading text-regularSemiBold text-azulGriss900 mt-4"
-              )}
-            >
-              {item.List}
-            </p>
-          )
-        }}
-      {/* {placesList.map((item, index) => {
+      {placesList.map((item, index) => {
         return (
           <div key={index} className="collapse collapse-arrow">
             <input type="checkbox" />
@@ -111,7 +87,7 @@ export function PlacesListNDD() {
             </div>
           </div>
         );
-      })} */}
+      })}
     </div>
   );
 }
