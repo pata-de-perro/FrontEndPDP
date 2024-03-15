@@ -29,24 +29,23 @@ export default function Profile() {
         />
         <HeroAdmin 
         title="Nina Vidales"
-        urlImg="/profile-pic.png"
         >
         <p className="font-heading text-regularSemiBold">ninavidales@email.com</p>
         <p className="font-heading text-regularSemiBold">331245678</p>
         </HeroAdmin>
         <section className="mt-4">
             <div className={clsx(
-                "mb-16",
-                "flex justify-around"
+                // "mb-16",
+                "flex justify-start"
             )}>
                 <button      
                     className={clsx(
                     "w-[180px] h-[45px]",
                     "rounded-xl",
-                    // "m-8",
+                    "mx-2",
                     "bg-azulGris500",
                     "font-body text-regular text-white",
-                    "justify-center",
+                    // "justify-start",
                     "absolute right-4 -bottom-10",
                     "md:static"
                     )}>Editar</button>
@@ -54,13 +53,20 @@ export default function Profile() {
                       className={clsx(
                         "w-[180px] h-[45px]",
                         "rounded-xl",
-                        // "m-8",
+                        "mx-2",
                         "bg-secondary",
                         "font-body text-regular text-accent2",
                         "justify-center",
                         "absolute right-4 -bottom-10",
                         "md:static"
                       )}>Cambiar imagen</button>
+
+                      <div className="static">
+                        <img src="/profile-pic.png" width={150} height={150}
+                        className={clsx(
+                            "absolute z-10 right-10 top-16",
+                        )}/>
+                      </div>
             </div>
             {/* <div className="grid grid-cols-1 justify-items-center w-fit bg-accent1">
                 <div className={clsx(
