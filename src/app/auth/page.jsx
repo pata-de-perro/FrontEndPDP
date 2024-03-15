@@ -20,13 +20,6 @@ export default function Login() {
     <div>
       <div
         className={clsx(
-          "w-[90vw] mb-[15px]",
-          "lg:my-[0px] lg:mx-[15px] border-azulGris50 md:border-b lg:border-b-0 lg:border-l",
-          "lg:w-[35px]"
-        )}
-      ></div>
-      <div
-        className={clsx(
           "grid justify-items-center",
           "pb-[15px]",
           "lg:justify-items-start"
