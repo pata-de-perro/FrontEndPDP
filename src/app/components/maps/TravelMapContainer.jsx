@@ -10,13 +10,13 @@ export function TravelMapContainer() {
 
   return (
      <div className={clsx(
-      "h-[500px]",
+      "h-[630px]",
       "mt-4",
       "flex",
       
      )}>
       <GoogleMap/>
-      <AsideSearchList></AsideSearchList>
+      <AsideSearchList/>
      </div>
   );
   }
