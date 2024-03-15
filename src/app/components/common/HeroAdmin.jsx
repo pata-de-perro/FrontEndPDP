@@ -19,7 +19,8 @@ export function HeroAdmin({ title, children, urlImg }) {
             className={clsx(
               "font-body text-azulGris900 text-regular",
               "mb-8",
-              "md:w-[350px] md:mb-0"
+              "md:w-[400px] md:mb-0",
+              "w-[400px]"
             )}
           >
             {children}

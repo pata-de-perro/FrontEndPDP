@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { clsx } from "clsx";
 import { addHoursToDateTime } from "../../../helpers";
+import Link from "next/link";
 
 export function FormEvent({
   register,
@@ -267,7 +268,7 @@ export function FormEvent({
             "hover:bg-secondary"
           )}
         >
-          Guardar
+          <Link href="/mx//travelplan">Guardar</Link>
         </button>
       </div>
     </form>
