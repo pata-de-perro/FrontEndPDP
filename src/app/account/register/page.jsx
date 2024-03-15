@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { CreateRegister } from "@/app/components/account";
 
 export default function RegisterPage() {
   return (
@@ -46,6 +47,7 @@ export default function RegisterPage() {
           </p>
           <p className="px-[10px]">----</p>
         </div> */}
+      <CreateRegister />
     </>
   );
 }
