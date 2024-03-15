@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function SecondCallToAction() {
@@ -24,7 +23,7 @@ export default function SecondCallToAction() {
         )}
       >
         <div className={clsx("my-3.5", "size-full", "h-48", "w-80", "md:w-[350px]", "lg:h-[500px]","lg:w-[600px]")}>
-          <Image
+          <img
           className={clsx(
             "md:h-[210px]","md:w-[350px]",
             "lg:h-[500px]","lg:w-[600px]",
@@ -53,23 +52,7 @@ export default function SecondCallToAction() {
               "text-wrap",
             )}
           >
-            Pasa menos tiempo
-          </p>
-          <p
-            className={clsx(
-              "text-h1 text-wrap text-accent2",
-              "font-heading",
-            )}
-          >
-            planeando y más
-          </p>
-          <p
-            className={clsx(
-              "text-h1 text-wrap text-accent2",
-              "font-heading",
-            )}
-          >
-            disfrutando
+            Pasa menos tiempo planeando y más disfrutando
           </p>
           <div
           className={clsx(
@@ -92,7 +75,7 @@ export default function SecondCallToAction() {
             "rounded-full",
             "bg-accent2",
             "justify-center",
-            "text-heading text-white",
+            "font-body text-regular text-white",
             "md:w-[159px] md:h-[36px]"
           )}
         >

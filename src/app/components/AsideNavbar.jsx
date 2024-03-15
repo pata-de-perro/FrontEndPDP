@@ -51,16 +51,15 @@ export default function AsideNavbar() {
                 </svg>
                 <span className="badge badge-xs badge-primary indicator-item"></span>
                 <details className="dropdown">
-                  <summary className=" btn"><Image
-                                  src="/X-mark-icon.svg"
-                                  width={24}
-                                  height={24}
-                                  alt="Mobile menu icon"
-                                  className={clsx(
-                                    "ml-[15px]",
-                                    "hover:stroke-primary"
-                                  )}
-                                /></summary>
+                  <summary className=" btn">
+                    <img
+                      src="/X-mark-icon.svg"
+                      width={24}
+                      height={24}
+                      alt="Mobile menu icon"
+                      className={clsx("ml-[15px]", "hover:stroke-primary")}
+                    />
+                  </summary>
                   <ul
                     className={clsx(
                       "p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box ",
@@ -83,7 +82,7 @@ export default function AsideNavbar() {
                           className={clsx("flex", "justify-center", "flex-col")}
                         >
                           <div className={clsx("logoContainer", "mt-8")}>
-                            <Image
+                            <img
                               src="/DePataDePerroLogo.svg"
                               width={188}
                               height={50}
@@ -132,7 +131,7 @@ export default function AsideNavbar() {
                           class="  w-full flex flex-col flex-wrap"
                           data-hs-accordion-always-open
                         >
-                          <ul >
+                          <ul>
                             <li className={clsx("mb-8")}>
                               <a
                                 class={clsx(
@@ -147,7 +146,7 @@ export default function AsideNavbar() {
                                   "hover:bg-accent1"
                                 )}
                               >
-                                <Image
+                                <img
                                   src="/House-icon.svg"
                                   width={24}
                                   height={24}
@@ -174,7 +173,7 @@ export default function AsideNavbar() {
                                   "hover:bg-accent1"
                                 )}
                               >
-                                <Image
+                                <img
                                   src="/Car-icon.svg"
                                   width={24}
                                   height={24}
@@ -279,8 +278,7 @@ export default function AsideNavbar() {
                                   "bg-white",
                                   "text-sm",
                                   "rounded-lg",
-                                  "hover:bg-accent1",
-                                  
+                                  "hover:bg-accent1"
                                 )}
                               >
                                 <Image

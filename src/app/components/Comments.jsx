@@ -1,252 +1,132 @@
 import clsx from "clsx";
-import Image from "next/image";
 
 export default function Comments() {
+  const comments = [
+    {
+      img: "/Women-comments.svg",
+      name: "Mariana",
+      age: "34 años",
+      coment:
+        "Como guía turística siempre necesito tener orden y claridad, me ayudará a organizar mis tours sin contratiempos.",
+    },
+    {
+      img: "/Man-comments1.svg",
+      name: "Santiago",
+      age: "22 años",
+      coment:
+        "Lo que me gusta es que podré viajar con mis amigos seguros y sin preocupaciones.",
+    },
+    {
+      img: "/Man-comments2.svg",
+      name: "Miguel",
+      age: "45 años",
+      coment:
+        "Olvidate de que tus amigos lleguen al lugar que no era. Todos pueden ver cual es el plan y su ubicación.",
+    },
+  ];
+
   return (
-    
-    <div id="comments"
+    <div
+      id="comments"
       className={clsx(
         "flex flex-wrap flex-col",
         "items-center justify-center",
         "w-auto",
         "full-size",
-        "my-28",
+        "my-10"
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>
-        <div className={clsx(
+      <div
+        className={clsx(
           "flex flex-col",
           "items-center justify-center",
           "w-auto",
           "full-size",
           "md:flex-row md:place-content-evenly md:w-full",
-          "lg:w-[1028px]",
-      )}>
-          <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]")}>
-        <div
-          className={clsx(
-            "flex flex-col",
-            "bg-appBackground",
-            "mt-5",
-            "rounded-xl",
-            "items-center",
-            "md:h-[369px]"
-          )}
-        >
-          <div
-            className={clsx(
-              "flex",
-              "justify-start",
-              "mt-3 ml-6",
-              "size-full"
-            )}
-          >
-            <Image
-              src="/Accent.svg"
-              width={20}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-          <div className={clsx("flex items-center", "justify-center", "mt-3")}>
-            <Image
-              src="/Women-comments.svg"
-              width={100}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-          <div
-            className={clsx(
-              "flex flex-col",
-              "items-center justify-center",
-              "my-4"
-            )}
-          >
-            <p className={clsx(
-                "text-h3",
-                "text-secondary"
-            )}>Mariana</p>
-            <p className={clsx(
-                "text-regular-bold",
-                "text-azulGris700",
-            )}>(34 años)</p>
+          "lg:w-[1028px]"
+        )}
+      >
+        {comments.map((item, index) => {
+          return (
             <div
+              key={index}
               className={clsx(
-                "flex flex-col",
-                "items-center",
-                "justify-center"
-              )}
-            >
-              <p>Como guía de turista </p>
-              <p>siempre necesito un</p>
-              <p>transporte seguro,</p>
-              <p> me ayudara a organizar mis</p>
-              <p>tours sin contratiempos.</p>
-            </div>
-          </div>
-          <div
-            className={clsx("flex", "justify-end", "mb-3", "mr-6", "size-full")}
-          >
-            <Image
-              src="/Accent.svg"
-              width={20}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-        </div>
-      </div>
-      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]")}>
-        <div
-          className={clsx(
-            "mt-5",
-            "bg-appBackground",
-            "rounded-xl",
-            "flex",
-            "flex-col",
-            "items-center",
-            "md:h-[369px]"
-          )}
-        >
-          <div
-            className={clsx(
-              "flex",
-              "justify-start",
-              "mt-3",
-              "ml-6",
-              "size-full"
-            )}
-          >
-            <Image
-              src="/Accent.svg"
-              width={20}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-          <div className={clsx("flex items-center", "justify-center", "mt-3")}>
-            <Image
-              src="/Man-comments1.svg"
-              width={100}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-          <div
-            className={clsx(
-              "flex",
-              "items-center",
-              "justify-center",
-              "flex-col",
-              "my-4"
-            )}
-          >
-            <p className={clsx(
-                "text-h3",
-                "text-secondary"
-            )}>Santiago</p>
-            <p>(22 años)</p>
-            <div
-              className={clsx(
-                "flex",
+                "flex flex-none",
                 "flex-col",
-                "items-center",
-                "justify-center"
+                "drop-shadow-2xl",
+                "w-[302px]",
+                "md:mx-2 md:w-[220px]",
+                "lg:w-[300px]"
               )}
             >
-              <p>Lo que me gusta es que</p>
-              <p>podré viajar con mis amigos</p>
-              <p>seguros y sin </p>
-              <p>preocupaciones.</p>
+              <div
+                className={clsx(
+                  "grid grid-cols-1",
+                  "bg-appBackground",
+                  "mt-5",
+                  "rounded-xl",
+                  "md:h-[369px]"
+                )}
+              >
+                <img
+                  src="/Accent.svg"
+                  alt="accent icon"
+                  className={clsx("w-[20px] h-[20px]", "mt-3 ml-3")}
+                />
+                <div className={clsx("flex flex-wrap ", "justify-center")}>
+                  <img
+                    src={item.img}
+                    width={100}
+                    height={20}
+                    alt="comment user image"
+                  ></img>
+                  <div
+                    className={clsx(
+                      "flex flex-col",
+                      "items-center justify-center",
+                      "my-4"
+                    )}
+                  >
+                    <p
+                      className={clsx("text-h3 font-heading", "text-secondary")}
+                    >
+                      {item.name}
+                    </p>
+                    <p
+                      className={clsx(
+                        "text-regularBold font-body",
+                        "text-azulGris700"
+                      )}
+                    >
+                      {item.age}
+                    </p>
+                    <div
+                      className={clsx(
+                        "flex flex-col",
+                        "items-center justify-center"
+                      )}
+                    >
+                      <p className="font-body text-regular text-center mx-6 mt-2">
+                        {item.coment}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className={clsx("flex", "justify-end items-end", "size-full")}
+                >
+                  <img
+                    src="/Accent.svg"
+                    alt="Vertical road pic"
+                    className={clsx("w-[20px] h-[20px]", "mb-3 mr-3")}
+                  ></img>
+                </div>
+              </div>
             </div>
-          </div>
-          <div
-            className={clsx("flex", "justify-end", "mb-3", "mr-6", "size-full")}
-          >
-            <Image
-              src="/Accent.svg"
-              width={20}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-        </div>
+          );
+        })}
       </div>
-      <div className={clsx("flex", "flex-col", "drop-shadow-2xl", "w-[302px]", "md:w-[220px]", "lg:w-[300px]" )}>
-        <div
-          className={clsx(
-            "flex flex-col",
-            "mt-5",
-            "items-center",
-            "bg-appBackground",
-            "rounded-xl",
-            "md:h-[369px]"
-          )}
-        >
-          <div
-            className={clsx(
-              "flex",
-              "justify-start",
-              "mt-3",
-              "ml-6",
-              "size-full"
-            )}
-          >
-            <Image
-              src="/Accent.svg"
-              width={20}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-          <div className={clsx("flex items-center", "justify-center", "mt-3")}>
-            <Image
-              src="/Man-comments2.svg"
-              width={100}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-          <div
-            className={clsx(
-              "flex flex-col",
-              "items-center",
-              "justify-center",
-              "my-4"
-            )}
-          >
-            <p className={clsx(
-                "text-h3",
-                "text-secondary"
-            )}>Miguel</p>
-            <p>(45 años)</p>
-            <div
-              className={clsx(
-                "flex flex-col",
-                "items-center",
-                "justify-center"
-              )}
-            >
-              <p>Cómo manejaré y  </p>
-              <p>disfrutaré con mi familia</p>
-              <p>y mascotas al 100%. </p>
-            </div>
-          </div>
-          <div
-            className={clsx("flex", "justify-end", "mb-3", "mr-6", "size-full")}
-          >
-            <Image
-              src="/Accent.svg"
-              width={20}
-              height={20}
-              alt="Vertical road pic"
-            ></Image>
-          </div>
-        </div>
-      </div>
-      </div>
-    
     </div>
   );
 }

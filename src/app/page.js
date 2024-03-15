@@ -11,10 +11,7 @@ import Comments from "./components/Comments";
 export default function Home() {
   return (
     <main>
-      <header>
-        <Navbar />  
-      
-      </header>
+      <header><Navbar /></header>
       <div>
         <Hero />
         <FirstCards />

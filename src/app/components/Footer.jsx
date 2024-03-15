@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -7,17 +6,15 @@ export default function Footer() {
     <footer
       className={clsx(
         "bg-accent2",
-        "mt-[24px]",
         "flex",
         "justify-center",
-        "w-[100vw]",
+        "w-[full]",
         "md:grid-cols-2",
         "md:px-[24px]",
         )}
         >
       <div
         className={clsx(
-            "m-[5px]",
             "pt-[24px]",
             "w-[500px]",
             "flex flex-wrap flex-col",
@@ -33,7 +30,7 @@ export default function Footer() {
             "md:justify-between",
         )}>
           <div>
-          <Image
+          <img
             src="/dePataDePerroLogo.svg"
             width={217}
             height={41}
@@ -52,29 +49,25 @@ export default function Footer() {
               "justify-items-center"
             )}
           >
-            <Image
+            <img
               src="./instagram.svg"
-              width={24}
-              height={24}
               alt="Instagram icon"
+              className="cursor-pointer"
             />
-            <Image
+            <img
               src="./tiktok.svg"
-              width={24}
-              height={24}
               alt="Tiktok icon"
+              className="cursor-pointer"
             />
-            <Image
+            <img
               src="./youtube.svg"
-              width={24}
-              height={24}
               alt="Youtube icon"
+              className="cursor-pointer"
             />
-            <Image
+            <img
               src="./twitter-x.svg"
-              width={24}
-              height={24}
               alt="Twitter X icon"
+              className="cursor-pointer"
             />
           </div>
           </div>

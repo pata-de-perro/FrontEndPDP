@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from "clsx";
+import Image from "next/image";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 
@@ -16,71 +17,7 @@ export default function Login() {
   });
 
   return (
-    <main
-      className={clsx(
-        "flex",
-        "flex-wrap",
-        "lg:flex-nowrap",
-        "justify-center",
-        "p-[20px]",
-        "lg:w-[1280px] lg:mt-[30px] lg:justify-center"
-      )}
-    >
-      <img
-        src="/World.svg"
-        width={316}
-        height={316}
-        alt="World image"
-        className={clsx(
-          "absolute justify-self-start",
-          "left-[-50px] top-[-150px]",
-          "-z-10"
-        )}
-      />
-      <div
-        className={clsx(
-          "flex justify-center",
-          "md:pb-[15px] md:flex-row md:justify-start",
-          "lg:flex-wrap",
-          "lg:w-[500px]"
-        )}
-      >
-        <img
-          src="/Login-cuate-1.svg"
-          width={329}
-          height={329}
-          alt="progresive app pana"
-          className={clsx(
-            "w-[319px]",
-            "pt-[45px]",
-            "sr-only",
-            "md:not-sr-only md:w-[329px] md:h-[329px]",
-            "lg:w-[400px] lg:h-[400px] lg:self-end"
-          )}
-        />
-        <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
-          <div className="grid justify-items-center md:justify-items-start lg:flex">
-            <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
-              Bienvenido a{" "}
-            </p>
-            <p
-              className={clsx(
-                "pl-[3px]",
-                "text-h1 text-primary",
-                "font-heading",
-                "justify-center",
-                "md:justify-items-start"
-              )}
-            >
-              PataDePerro
-            </p>
-          </div>
-          <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px] lg:w-[400px]">
-            Organiza tu viaje, guarda puntos de interés y comparte el itinerario
-            con todos tus compañeros de viaje.
-          </p>
-        </div>
-      </div>
+    <div>
       <div
         className={clsx(
           "w-[90vw] mb-[15px]",
@@ -99,7 +36,7 @@ export default function Login() {
           Inicia sesión en
         </p>
         <Link href="/">
-          <img
+          <Image
             src="/dePataDePerroLogo.svg"
             width={250}
             height={50}
@@ -131,7 +68,7 @@ export default function Login() {
             "rounded-lg"
           )}
         >
-          <img src="/Google.svg" width={25} height={25} alt="Google logo" />
+          <Image src="/Google.svg" width={25} height={25} alt="Google logo" />
           <p className="font-body text-regularSemiBold">Continuar con Google</p>
         </button>
         <div className="flex justify-center items-center m-[15px]">
@@ -269,7 +206,7 @@ export default function Login() {
           confirmas que has leído la Política de privacidad.
         </p>
       </div>
-      <img
+      <Image
         src="/World.svg"
         width={450}
         height={450}
@@ -279,6 +216,6 @@ export default function Login() {
           "justify-self-start",
         )}
       />
-    </main>
+    </div>
   );
 }
