@@ -33,7 +33,7 @@ export default function Comments() {
         "items-center justify-center",
         "w-auto",
         "full-size",
-        "my-28"
+        "my-10"
       )}
     >
       <p className={clsx("text-accent2", "text-h1")}>Nuestros usuarios</p>
