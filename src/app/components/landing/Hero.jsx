@@ -25,7 +25,7 @@ export default function Hero() {
         )}
       >
         <span className={clsx("lg:flex", "lg:flex-wrap", "lg:items-end")}>
-          <p
+          <h1
             className={clsx(
               "text-h1",
               "font-heading",
@@ -34,8 +34,8 @@ export default function Hero() {
             )}
           >
             Bienvenido a
-          </p>
-          <p
+          </h1>
+          <h1
             className={clsx(
               "text-h1",
               "font-heading",
@@ -44,7 +44,7 @@ export default function Hero() {
             )}
           >
             PataDePerro
-          </p>
+          </h1>
         </span>
         <p
           className={clsx(

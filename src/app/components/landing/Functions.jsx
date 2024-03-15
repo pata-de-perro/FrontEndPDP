@@ -17,13 +17,13 @@ export default function Functions() {
           "md:flex-row",
         )}
       >
-        <p
+        <h1
           className={clsx(
             "text-h1 font-heading text-wrap text-accent2"
           )}
         >
           Algunas de nuestras funciones
-        </p>
+        </h1>
       </div>
       <div className={clsx("size-full", "relative", "flex justify-center")}>
         <img

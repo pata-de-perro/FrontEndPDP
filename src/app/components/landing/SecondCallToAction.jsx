@@ -44,7 +44,7 @@ export default function SecondCallToAction() {
             "lg:w-[350px]",
           )}
         >
-          <p
+          <h1
             className={clsx(
               "text-h1",
               "font-heading",
@@ -53,7 +53,7 @@ export default function SecondCallToAction() {
             )}
           >
             Pasa menos tiempo planeando y más disfrutando
-          </p>
+          </h1>
           <div
           className={clsx(
             "flex flex-col",

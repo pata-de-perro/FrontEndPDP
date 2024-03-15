@@ -11,11 +11,9 @@ export function NavAside() {
         <li className={clsx("mb-2")}>
           <a
             className={clsx(
-              "flex",
-              "items-center",
+              "flex items-center",
               "gap-x-3.5",
-              "py-2",
-              "px-2.5",
+              "py-2 px-2.5",
               "bg-gray-100",
               "text-sm",
               "rounded-lg",
@@ -35,11 +33,9 @@ export function NavAside() {
         <li className={clsx("mb-2")}>
           <a
             className={clsx(
-              "flex",
-              "items-center",
+              "flex items-center",
               "gap-x-3.5",
-              "py-2",
-              "px-2.5",
+              "py-2 px-2.5",
               "bg-gray-100",
               "text-sm",
               "rounded-lg",
@@ -62,8 +58,7 @@ export function NavAside() {
               "flex",
               "items-center",
               "gap-x-3.5",
-              "py-2",
-              "px-2.5",
+              "py-2 px-2.5",
               "bg-gray-100",
               "text-sm",
               "rounded-lg",
@@ -86,8 +81,7 @@ export function NavAside() {
               "flex",
               "items-center",
               "gap-x-3.5",
-              "py-2",
-              "px-2.5",
+              "py-2 px-2.5",
               "bg-gray-100",
               "text-sm",
               "rounded-lg",
