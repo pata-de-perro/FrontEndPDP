@@ -6,13 +6,10 @@ export default function FirstCards() {
     <section className={clsx("mb-[80px]")}>
       <p
         className={clsx(
-          "font-heading",
-          "text-h1",
-          "text-center",
-          "text-accent2",
-          "m-[24px]",
           "flex",
-          "justify-center"
+          "m-[24px]",
+          "justify-center",
+          "font-heading text-h1 text-center text-accent2",
         )}
       >
         Facilitamos la planificación de tus viajes
@@ -20,8 +17,7 @@ export default function FirstCards() {
 
       <div
         className={clsx(
-          "grid",
-          "justify-items-center",
+          "grid justify-items-center",
           "md:grid",
           "md:grid-cols-2"
         )}
