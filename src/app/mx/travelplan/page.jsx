@@ -1,5 +1,5 @@
 import { HeroAdmin, TitleSection } from "@/app/components/common";
-import { TravelMapContainer } from "./TravelMapContainer";
+import { TravelMapContainer } from "../../components/maps/TravelMapContainer";
 
 export default function TravelPlan() {
   return (
