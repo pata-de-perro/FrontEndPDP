@@ -40,7 +40,7 @@ export default function LoginPage() {
             "text-center text-azulGris900"
           )}
         >
-          <Link href="/register">¡Registrate ahora!</Link>
+          <Link href="/account/register">¡Registrate ahora!</Link>
         </p>
 
         {/* We will work on the google login if we got time */}
@@ -66,16 +66,6 @@ export default function LoginPage() {
         </div> */}
         <PerformLogin />
       </div>
-      <Image
-        src="/World.svg"
-        width={450}
-        height={450}
-        alt="World image"
-        className={clsx(
-          "absolute right-0 bottom-0 -z-10",
-          "justify-self-start"
-        )}
-      />
     </>
   );
 }
