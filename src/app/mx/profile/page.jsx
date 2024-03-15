@@ -1,8 +1,6 @@
 import clsx from "clsx";
-import Image from "next/image";
 import { TitleSection } from "@/app/components/common";
 import { HeroAdmin } from "@/app/components/common";
-import { BtnPrimary } from "@/app/components/common";
 import { NotInvite } from "@/app/components/events/NotInvite";
 
 export default function Profile() {
