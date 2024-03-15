@@ -8,8 +8,7 @@ export function FunctionCards({title, description, urlImg, orientation}){
           "p-[20px] m-[24px]",
           "shadow-xl",
           "rounded-xl",
-          "flex flex-wrap",
-          "justify-center",
+          "flex flex-wrap justify-center",
           "lg:h-[200px] ",
           {orientation}
         )}
@@ -34,10 +33,7 @@ export function FunctionCards({title, description, urlImg, orientation}){
         </p>
         <p
           className={clsx(
-            "font-body",
-            "text-regular",
-            "text-azulGris900",
-            "text-center",
+            "font-body text-regular text-azulGris900 text-center",
             "mx-4"
           )}
         >
