@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export function FunctionCardsL({title, description, urlImg}){
+export function FunctionCards({title, description, urlImg, orientation}){
     return(
         <div
         className={clsx(
@@ -8,9 +8,9 @@ export function FunctionCardsL({title, description, urlImg}){
           "p-[20px] m-[24px]",
           "shadow-xl",
           "rounded-xl",
-          "flex flex-wrap",
-          "justify-center",
-          "lg:h-[200px] lg:items-center lg:justify-center lg:justify-self-end lg:self-center",
+          "flex flex-wrap justify-center",
+          "lg:h-[200px] ",
+          {orientation}
         )}
       >
         <img
@@ -33,10 +33,7 @@ export function FunctionCardsL({title, description, urlImg}){
         </p>
         <p
           className={clsx(
-            "font-body",
-            "text-regular",
-            "text-azulGris900",
-            "text-center",
+            "font-body text-regular text-azulGris900 text-center",
             "mx-4"
           )}
         >

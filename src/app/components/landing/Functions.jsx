@@ -5,34 +5,29 @@ export default function Functions() {
     <div id="functions"
       className={clsx(
         "w-auto",
-        "flex flex-wrap",
-        "items-center justify-center",
+        "flex flex-wrap items-center justify-center",
         "lg:mb-48",
         "md:mb-40",
       )}
     >
       <div
         className={clsx(
-          "flex flex-col",
           "my-24",
-          "items-center justify-center",
+          "flex flex-col items-center justify-center",
           "md:flex-row",
         )}
       >
-        <p
+        <h1
           className={clsx(
-            "text-h1",
-            "font-heading",
-            "text-wrap",
-            "text-accent2"
+            "text-h1 font-heading text-wrap text-accent2"
           )}
         >
           Algunas de nuestras funciones
-        </p>
+        </h1>
       </div>
       <div className={clsx("size-full", "relative", "flex justify-center")}>
         <img
-          className={clsx("mt-7", "md:sr-only", ) }
+          className={clsx("md:sr-only", ) }
           src="/Road2.svg"
           width={800}
           height={100}

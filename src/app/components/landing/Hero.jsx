@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import Link from "next/link";
-import BtnPrimary from "@/app/components/common/BtnPrimary";
 
 export default function Hero() {
   return (
@@ -26,7 +25,7 @@ export default function Hero() {
         )}
       >
         <span className={clsx("lg:flex", "lg:flex-wrap", "lg:items-end")}>
-          <p
+          <h1
             className={clsx(
               "text-h1",
               "font-heading",
@@ -35,8 +34,8 @@ export default function Hero() {
             )}
           >
             Bienvenido a
-          </p>
-          <p
+          </h1>
+          <h1
             className={clsx(
               "text-h1",
               "font-heading",
@@ -45,14 +44,11 @@ export default function Hero() {
             )}
           >
             PataDePerro
-          </p>
+          </h1>
         </span>
         <p
           className={clsx(
-            "text-regular",
-            "text-center",
-            "font-body",
-            "text-azulGris900",
+            "text-regular text-center font-body text-azulGris900",
             "my-8",
             "w-[400px]",
             "md:w-[280px] md:text-left md:my-2",
@@ -68,7 +64,6 @@ export default function Hero() {
             "text-primary text-h4 text-center",
             "font-heading",
             "mt-8",
-            // "bg-primary md:my-2",
             "md:text-left"
           )}
           href="/register"
@@ -86,7 +81,6 @@ export default function Hero() {
           {" "}
           -- o --
         </p>
-        {/* <BtnPrimary></BtnPrimary> */}
         <button
           className={clsx(
             "text-heading text-white justify-center",
