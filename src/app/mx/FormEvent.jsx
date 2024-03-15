@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { clsx } from "clsx";
-import { addHoursToDateTime } from "../helpers";
+import { addHoursToDateTime } from "../../helpers";
 
 export function FormEvent({
   register,
