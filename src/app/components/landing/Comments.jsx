@@ -52,8 +52,7 @@ export default function Comments() {
             <div
               key={index}
               className={clsx(
-                "flex flex-none",
-                "flex-col",
+                "flex flex-none flex-col",
                 "drop-shadow-2xl",
                 "w-[302px]",
                 "md:mx-2 md:w-[220px]",
