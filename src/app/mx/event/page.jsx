@@ -1,4 +1,5 @@
 import { PlacesList } from "@/app/components/PlacesList";
+import { GoogleMap } from "@/app/components/maps";
 import clsx from "clsx";
 
 export default function EventPage() {
@@ -11,7 +12,7 @@ export default function EventPage() {
               Nombre de tu evento
             </p>
             <img
-              src="/restaurant.svg"
+              src="/airport_shuttle.svg"
               width={35}
               height={35}
               alt="trip icon"
@@ -34,12 +35,12 @@ export default function EventPage() {
         <section className="mt-2">
         <div className="bg-primary rounded-t-2xl h-[150px] mr-2 "/>
             <div className="grid grid-cols-3 grid-gap-1">
-                <div className="grid-span-1">
+                <div className="col-span-1">
                     <h3 className="fond-heading text-h3 ml-4">Lugares de interés</h3>
-                    <PlacesList />
+                    <PlacesListNDD />
                 </div>
-                <div className="map-container grid-span-2">
-
+                <div className="map-container col-span-2 mr-4">
+                    <GoogleMap />
                 </div>
             </div>
 
