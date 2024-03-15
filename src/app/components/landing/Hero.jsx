@@ -66,7 +66,7 @@ export default function Hero() {
             "mt-8",
             "md:text-left"
           )}
-          href="/register"
+          href="/account/register"
         >
           Regístrate
         </Link>
@@ -90,7 +90,7 @@ export default function Hero() {
             "mb-8"
           )}
         >
-          <Link href="/login">Iniciar sesión</Link>
+          <Link href="/account/login">Iniciar sesión</Link>
         </button>
       </div>
     </div>
