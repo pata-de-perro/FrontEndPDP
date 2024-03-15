@@ -27,7 +27,7 @@ export default function Functions() {
       </div>
       <div className={clsx("size-full", "relative", "flex justify-center")}>
         <img
-          className={clsx("mt-7", "md:sr-only", ) }
+          className={clsx("md:sr-only", ) }
           src="/Road2.svg"
           width={800}
           height={100}
