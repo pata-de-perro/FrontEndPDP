@@ -5,26 +5,21 @@ export default function Functions() {
     <div id="functions"
       className={clsx(
         "w-auto",
-        "flex flex-wrap",
-        "items-center justify-center",
+        "flex flex-wrap items-center justify-center",
         "lg:mb-48",
         "md:mb-40",
       )}
     >
       <div
         className={clsx(
-          "flex flex-col",
           "my-24",
-          "items-center justify-center",
+          "flex flex-col items-center justify-center",
           "md:flex-row",
         )}
       >
         <p
           className={clsx(
-            "text-h1",
-            "font-heading",
-            "text-wrap",
-            "text-accent2"
+            "text-h1 font-heading text-wrap text-accent2"
           )}
         >
           Algunas de nuestras funciones
