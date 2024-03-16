@@ -1,5 +1,6 @@
 import { PlacesList } from "@/app/components/PlacesList";
 import { GoogleMap } from "@/app/components/maps";
+
 import clsx from "clsx";
 
 export default function EventPage() {
@@ -37,13 +38,12 @@ export default function EventPage() {
             <div className="grid grid-cols-3 grid-gap-1">
                 <div className="col-span-1">
                     <h3 className="fond-heading text-h3 ml-4">Lugares de interés</h3>
-                    <PlacesListNDD />
+                    <PlacesList />
                 </div>
                 <div className="map-container col-span-2 mr-4">
                     <GoogleMap />
                 </div>
             </div>
-
         </section>
     </div>
   );
