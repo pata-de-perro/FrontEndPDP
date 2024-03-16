@@ -1,5 +1,7 @@
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
-import { postLoginApi } from "@/services";
+
 import { FormLogin } from "@/app/components/account";
 
 export function PerformLogin() {
@@ -12,14 +14,22 @@ export function PerformLogin() {
   } = useForm({
     mode: "onTouched",
   });
+  const router = useRouter();
 
   const onSubmitSignIn = handleSubmit(async (data) => {
-    console.log(data);
-    const result = await postLoginApi(data);
-    console.log(result);
-  });
+    const res = await signIn("credentials", {
+      email: data.email,
+      password: data.password,
+      redirect: false,
+    });
 
-  console.log(errors);
+    if (res.error) {
+      console.log(res.error);
+    } else {
+      router.push("/mx");
+      reset();
+    }
+  });
 
   return (
     <FormLogin

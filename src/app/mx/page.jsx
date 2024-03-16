@@ -6,8 +6,8 @@ import {
   ModalContent,
   TitleSection,
 } from "@/app/components/common";
-import { CreateEvent } from "../../components/events/CreateEvent";
-import { NotEvent } from "../../components/events/NotEvent";
+import { CreateEvent } from "../components/events/CreateEvent";
+import { NotEvent } from "../components/events/NotEvent";
 
 export default function HomePage() {
   const handleOpenModal = () => {
@@ -19,7 +19,9 @@ export default function HomePage() {
       <main>
         <HeroAdmin title="¡Facilitando tus planes!" urlImg="/Reminders-bro.svg">
           <p>
-            Queremos que el planear tu viaje o salida sea lo más fácil posible. En Pata de Perro puedes guardar diferentes ubicaciones segun su categoría.
+            Queremos que el planear tu viaje o salida sea lo más fácil posible.
+            En Pata de Perro puedes guardar diferentes ubicaciones segun su
+            categoría.
           </p>
           <BtnPrimary
             title="Planea tu primer viaje"

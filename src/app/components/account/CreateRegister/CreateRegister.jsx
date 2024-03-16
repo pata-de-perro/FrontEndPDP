@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { postCreateNewUserApi } from "@/services";
 import { FormRegister } from "@/app/components/account";
@@ -12,14 +13,15 @@ export function CreateRegister() {
   } = useForm({
     mode: "onTouched",
   });
+  const router = useRouter();
 
   const onSubmitRegister = handleSubmit(async (data) => {
-    console.log(data);
     const result = await postCreateNewUserApi(data);
-    console.log(result);
+    if (result?.success === true) {
+      router.push("/account/login");
+      reset();
+    }
   });
-
-  console.log(errors);
 
   return (
     <FormRegister
