@@ -12,6 +12,7 @@ export default function TravelPlan() {
       </HeroAdmin>
       <TitleSection title="Revisa tu mapa" urlIcon="/Icono-Fecha.svg" />
       <TravelMapContainer/>
+     
     </div>
   );
 }

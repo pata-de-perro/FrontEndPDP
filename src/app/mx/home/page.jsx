@@ -19,8 +19,7 @@ export default function HomePage() {
       <main>
         <HeroAdmin title="¡Facilitando tus planes!" urlImg="/Reminders-bro.svg">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Queremos que el planear tu viaje o salida sea lo más fácil posible. En Pata de Perro puedes guardar diferentes ubicaciones segun su categoría.
           </p>
           <BtnPrimary
             title="Planea tu primer viaje"
