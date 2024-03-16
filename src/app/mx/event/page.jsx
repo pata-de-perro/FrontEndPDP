@@ -9,10 +9,11 @@ import {
   ModalContent,
   TitleSection,
 } from "@/app/components/common";
+import { CreateInvite } from "@/app/components/sendInvite/CreateInvite";
 
 export default function EventPage() {
   const handleOpenModal = () => {
-    document.getElementById("modal_create_event").showModal();
+    document.getElementById("modal_send_invite").showModal();
   };
   return (
     <>
@@ -57,7 +58,7 @@ export default function EventPage() {
           </div>
         </section>
         <section>
-          <h3>Compañeros de viaje</h3>
+          <h3 className="font-heading text-h3 text-azulGris900">Compañeros de viaje</h3>
           <BtnPrimary
             title="Agrega compañeros de viaje"
             onClick={handleOpenModal}
@@ -66,10 +67,10 @@ export default function EventPage() {
       </div>
 
       <ModalContent
-        idModal="modal_create_event"
+        idModal="modal_send_invite"
         title="Agrega a compañeros de viaje"
       >
-        
+        <CreateInvite />
       </ModalContent>
     </>
   );
