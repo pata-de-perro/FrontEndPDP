@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 
 import { FormInvite }from "@/app/components/sendInvite/FormInvite"
 
+
 export function CreateInvite() {
   const {
     register,
