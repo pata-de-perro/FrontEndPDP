@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export function PlacesList() {
+export function PlacesListDD() {
   const placesList = [
     {
       Title: "Hotel",
@@ -63,15 +63,21 @@ export function PlacesList() {
     <div id="placesList" className="ml-2">
       {placesList.map((item, index) => {
         return (
-          <div key={index} >
+          <div key={index} className="collapse collapse-arrow">
+            <input type="checkbox" />
             <div
               className={clsx(
-                "font-heading text-regularSemiBold text-azulGriss900 mt-4"
+                "collapse-title",
+                "font-heading text-regularSemiBold text-azulGriss900",
+                "mt-4",
               )}
             >
               {item.Title}
             </div>
-            <div className={clsx("grid grid-cols-2")}>
+            <div className={clsx(
+                "collapse-content",
+                "grid grid-cols-2",
+                )}>
               <div className="flex items-end mt-2">
                 <Image
                   src="/location_on.svg"
