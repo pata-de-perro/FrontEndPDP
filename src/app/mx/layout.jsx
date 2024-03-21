@@ -21,7 +21,7 @@ export default function AuthLayout({ children }) {
         {/* <AvatarAside /> */}
         {/* <NavAside /> */}
       </AsideAuth>
-      <main className="my-2">
+      <main className="m-2">
         <div>{children}</div>
       </main>
     </div>
