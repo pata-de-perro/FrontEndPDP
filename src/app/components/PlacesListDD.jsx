@@ -4,13 +4,15 @@ import Image from "next/image";
 export function PlacesListDD() {
   const placesList = [
     {
-      Title: "Hotel",
-      Top1: "Hotel1",
-      Top2: "Hotel2",
-      Top3: "Hotel3",
-      Top4: "Hotel4",
-      Top5: "Hotel5",
-      Top6: "Hotel6",
+      Hotel: "Hotel",
+      Places: [
+        Top1 = "Hotel1",
+        Top2 = "Hotel2",
+        Top3 = "Hotel3",
+        Top4 = "Hotel4",
+        Top5 = "Hotel5",
+        Top6 = "Hotel6",
+      ]
     },
     {
       Title: "Restaurantes",

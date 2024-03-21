@@ -55,12 +55,12 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
               value:
                 /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
               message:
-                "La contraseña debe tener al menos 8 caracteres: Letras minúsculas(a-z), letras mayúsculas (A-Z), números (0-9) y al menos uno de los siguientes carácteres especiales (#?!@$ %^&*-)",
+                "La contraseña debe tener al menos 8 caracteres: Letras minúsculas(a-z), letras mayúsculas (A-Z), números (0-9) y al menos uno de los siguientes carácteres especiales #?!@$ %^&*-",
             },
           })}
         />
         {errors.password && (
-          <span className="text-regular font-body text-red-500 ml-[5px]">
+          <span className="text-regular font-body text-red-500 ml-[5px] w-[450px]">
             {errors.password.message}
           </span>
         )}
