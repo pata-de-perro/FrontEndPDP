@@ -1,7 +1,7 @@
 "use client"
 
 import clsx from "clsx";
-import React, { useEffect, useState} from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import { 
   AiOutlineHome, 
@@ -52,7 +52,7 @@ export function AsideAuth() {
               "flex gap-4 items-center",
               "p-2 rounded-md",
               "font-body",
-              "text-lg",
+              "text-md",
               "hover:bg-secondaryOpacity",
             )}>
               <Link href={item.href} className="flex items-center">
@@ -62,15 +62,18 @@ export function AsideAuth() {
             </li>
           ))}
           <div className="fixed bottom-0">
-            <lu>
+            <lu className={clsx(
+            "flex flex-col gap-8 p-2",
+            "gap-8 p-2"
+            )}>
               <li className={clsx(
               "flex gap-4 items-center",
               "p-2 mb-4 rounded-md",
               "font-body",
-              "text-lg",
-              "hover:bg-secondaryOpacity",
+              "text-md",
+              "hover:text-primary",
             )}>
-              <a className="flex items-center" onClick={() => signOut()}>
+              <a className="flex items-center cursor-pointer" onClick={() => signOut()}>
                 <LuLogOut className="text-md mr-2" />
                 <span className={`${nav ? 'hidden' : 'flex'}  ml-2`}>Cerrar sesión</span>
               </a>

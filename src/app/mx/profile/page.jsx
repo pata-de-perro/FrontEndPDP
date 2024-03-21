@@ -7,7 +7,7 @@ export default function Profile() {
   return (
     <>
       <main>
-        <TitleSection urlIcon="/person_icon.svg" title="Perfil" />
+        <TitleSection urlIcon={"/person_icon.svg"} title="Perfil" />
         <HeroAdmin title="Nina Vidales">
           <p className="font-heading text-regularSemiBold">
             ninavidales@email.com
