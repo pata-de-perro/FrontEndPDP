@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 export function FormRegister({ onSubmitRegister, register, errors, watch }) {
+
   return (
     <form onSubmit={onSubmitRegister}>
       <div className="form-control">
@@ -58,7 +59,8 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
                 "La contraseña debe tener entre 8 y 30 caracteres. Debe incluir: letras minúsuclas (a-z), letras mayúsculas (A-Z), números (0-9) y al menos uno siguientes caracteres especiales #?!@$ %^&*-",
             },
           })}
-        />
+        >
+        </input>
         {errors.password && (
           <span className={clsx(
             "text-regular font-body text-red-500",
@@ -67,7 +69,10 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
             {errors.password.message}
           </span>
         )}
-        {errors.pattern && <span>{errors.pattern.message}</span>}
+        {errors.pattern && <span className={clsx(
+            "text-regular font-body text-red-500",
+            "ml-[5px] w-[450px]",
+          )}>{errors.pattern.message}</span>}
       </div>
       <div className="form-control">
         <label className="label">Confirma tu contraseña</label>
