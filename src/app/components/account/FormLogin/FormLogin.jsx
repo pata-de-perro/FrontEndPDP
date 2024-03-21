@@ -62,7 +62,7 @@ export function FormLogin({ onSubmitSignIn, register, errors, watch }) {
           </span>
         )}
       </div>
-      <div className="form-control">
+      {/* <div className="form-control">
         <span
           className={clsx(
             "text-link font-body",
@@ -81,7 +81,7 @@ export function FormLogin({ onSubmitSignIn, register, errors, watch }) {
         >
           Recuperar contraseña
         </Link>
-      </div>
+      </div> */}
       <div className="form-control">
         <button
           type="submit"

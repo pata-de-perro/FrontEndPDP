@@ -1,21 +1,21 @@
 "use client";
 import Link from "next/link";
+import clsx from "clsx";
 import { CreateRegister } from "@/app/components/account";
 
 export default function RegisterPage() {
   return (
     <>
-      <div className="grid md:grid-cols-2 lg:grid-cols-1">
+      <div         
+      className={clsx("grid justify-items-center", "pb-[15px]", "lg:justify-items-start")}>
         <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Regístrate en
         </p>
         <Link href="/">
-          <img
+        <img
             src="/dePataDePerroLogo.svg"
-            width={200}
-            height={35}
             alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[auto]"
+            className="w-[250px] h-[50px] lg:w-[420px] lg:h-[auto]"
           />
         </Link>
       </div>
