@@ -51,12 +51,12 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
               value: true,
               message: "Es requerida tu contraseña",
             },
-            // pattern: {
-            //   value:
-            //     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
-            //   message:
-            //     "La contraseña debe tener entre 8 y 30 caracteres y solo puede incluir letras, números y los puedes utilizar los siguientes carcteres especiales #?!@$ %^&*-",
-            // },
+            pattern: {
+              value:
+                /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
+              message:
+                "La contraseña debe tener al menos 8 caracteres: Letras minúsculas(a-z), letras mayúsculas (A-Z), números (0-9) y al menos uno de los siguientes carácteres especiales (#?!@$ %^&*-)",
+            },
           })}
         />
         {errors.password && (
