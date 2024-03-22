@@ -62,28 +62,7 @@ export default function Footer() {
             />
           </div>
           </div>
-        <ul
-            className={clsx(
-              "mt-[15px] m-[5px]",
-              "grid grid-cols-2",
-              "text-white text-regularBold font-body text-center",
-              "md:grid-cols-1 md:text-start",
-              "lg:grid-cols-4",
-            )}
-          >
-            <li className="p-[5px]">
-              <Link href="#">Inicio</Link>
-            </li>
-            <li className="p-[5px]">
-              <Link href="#">Blog</Link>
-            </li>
-            <li className="p-[5px]">
-              <Link href="#">Contáctanos</Link>
-            </li>
-            <li className="p-[5px]">
-              <Link href="#">Soporte técnico</Link>
-            </li>
-          </ul>
+
         </div>
         
         <div className={clsx(
@@ -91,24 +70,6 @@ export default function Footer() {
             "md:flex flex-row-reverse",
             "md:m-[15px] md:items-center md:justify-between",
         )}>
-          <ul
-            className={clsx(
-              "m-[15px]",
-              "grid grid-cols-3",
-              "text-regular text-white font-body text-center",
-              "md:justify-around md:w-[300px] md:text-end md:m-[0px]"
-            )}
-          >
-            <li>
-              <Link href="#">Terms</Link>
-            </li>
-            <li>
-              <Link href="#">Privacy</Link>
-            </li>
-            <li>
-              <Link href="#">Cookies</Link>
-            </li>
-          </ul>
           <p
             className={clsx(
               "mb-[25px]",
