@@ -72,12 +72,13 @@ export function PlacesList() {
               {item.Title}
             </div>
             <div className={clsx("grid grid-cols-2")}>
-              <div className="flex items-end mt-2">
+              <div className="flex mt-2">
                 <Image
                   src="/location_on.svg"
                   width={20}
                   height={20}
                   alt="gps pin icon"
+                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top1}
@@ -89,6 +90,7 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
+                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top2}
@@ -100,6 +102,7 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
+                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top3}
@@ -111,6 +114,7 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
+                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top4}
@@ -122,6 +126,7 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
+                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top5}
@@ -133,6 +138,7 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
+                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top6}
