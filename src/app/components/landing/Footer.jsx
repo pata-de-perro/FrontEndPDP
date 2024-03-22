@@ -24,7 +24,7 @@ export default function Footer() {
         )}>
           <div>
           <img
-            src="/dePataDePerroLogo.svg"
+            src="//PDPLogo.svg"
             width={217}
             height={41}
             alt="Footer logo"

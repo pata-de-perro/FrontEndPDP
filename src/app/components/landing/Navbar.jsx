@@ -1,14 +1,29 @@
 "use client";
 
 import clsx from "clsx";
-import { MenuItems } from "./MenuItems";
 import Image from "next/image";
 import { Link } from "react-scroll/modules";
 import { useState } from "react";
-import MenuButtons from "./MenuButtons";
+import MenuButtons from "@/app/components/landing/menuButtons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const MenuItems=[
+    {
+        title: "Funciones",
+        to:"tutorials",
+    },
+    {
+        title: "Opiniones",
+        to:"comments",
+    },
+    {
+        title: "Tutoriales",
+        to:"tutorials",
+    },
+]
+
 
   return (
     <nav
@@ -23,12 +38,10 @@ export default function Navbar() {
         className={clsx("grid grid-cols-2", "items-center", "md:grid-cols-3")}
       >
         <div className={clsx("logoContainer")}>
-          <Image
-            src="/DePataDePerroLogo.svg"
-            width={188}
-            height={50}
+          <img
+            src="/PDPLogo.svg"
             alt="Logo of De Pata de Perro"
-            className={clsx("ml-[24px]")}
+            className={clsx("ml-[24px] w-[188px] h-[50px]")}
           />
         </div>
 

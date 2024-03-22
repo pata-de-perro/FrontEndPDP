@@ -9,10 +9,8 @@ import {
   AiTwotoneCalendar,
   AiOutlinePlaySquare, 
   AiOutlineArrowRight} from "react-icons/ai";
-import { MdGroups } from "react-icons/md";
 import { LuLogOut } from "react-icons/lu";
 import { signOut } from "next-auth/react";
-// import { GiHamburgerMenu } from "react-icons/gi";
 
 export function AsideAuth() {
   const navigationItems = [
@@ -87,13 +85,3 @@ export function AsideAuth() {
   );
 }
 
-
-// export function AsideAuth({ children }) {
-//   return (
-//     <aside
-//       className={clsx("my-2", "border-r", "flex flex-col items-center gap-4")}
-//     >
-//       {children}
-//     </aside>
-//   );
-// }
