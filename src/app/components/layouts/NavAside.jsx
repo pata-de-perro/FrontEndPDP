@@ -5,6 +5,7 @@ import Image from "next/image";
 import clsx from "clsx";
 
 export function NavAside() {
+  
   return (
     <nav
       className="p-6 w-full flex flex-col flex-wrap h-full"

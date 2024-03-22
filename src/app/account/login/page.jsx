@@ -8,22 +8,16 @@ export default function LoginPage() {
   return (
     <>
       <div
-        className={clsx(
-          "grid justify-items-center",
-          "pb-[15px]",
-          "lg:justify-items-start"
-        )}
+        className={clsx("grid justify-items-center", "pb-[15px]", "lg:justify-items-start")}
       >
         <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Inicia sesión en
         </p>
         <Link href="/">
-          <Image
+          <img
             src="/dePataDePerroLogo.svg"
-            width={250}
-            height={50}
             alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[auto]"
+            className="w-[250px] h-[50px] lg:w-[420px] lg:h-[auto]"
           />
         </Link>
         <p
