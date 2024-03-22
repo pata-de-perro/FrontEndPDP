@@ -99,7 +99,7 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
           </span>
         )}
       </div>
-      <div className="form-control">
+      {/* <div className="form-control">
         <div className="mt-4">
           <input
             type="checkbox"
@@ -125,7 +125,7 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
             {errors.termsAndConditions.message}
           </span>
         )}
-      </div>
+      </div> */}
       <div className="form-control">
         <button
           type="submit"
