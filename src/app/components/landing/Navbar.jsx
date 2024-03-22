@@ -38,7 +38,7 @@ export default function Navbar() {
         className={clsx("grid grid-cols-2", "items-center", "md:grid-cols-3")}
       >
         <div className={clsx("logoContainer")}>
-          <Image
+          <img
             src="/DePataDePerroLogo.svg"
             width={188}
             height={50}
