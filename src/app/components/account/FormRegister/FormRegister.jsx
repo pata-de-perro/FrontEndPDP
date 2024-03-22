@@ -1,7 +1,6 @@
 import clsx from "clsx";
 
 export function FormRegister({ onSubmitRegister, register, errors, watch }) {
-
   return (
     <form onSubmit={onSubmitRegister}>
       <div className="form-control">
@@ -56,23 +55,16 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
               value:
                 /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/,
               message:
-                "La contraseña debe tener entre 8 y 30 caracteres. Debe incluir: letras minúsuclas (a-z), letras mayúsculas (A-Z), números (0-9) y al menos uno siguientes caracteres especiales #?!@$ %^&*-",
+                "La contraseña debe tener al menos 8 caracteres: Letras minúsculas(a-z), letras mayúsculas (A-Z), números (0-9) y al menos uno de los siguientes carácteres especiales #?!@$ %^&*-",
             },
           })}
-        >
-        </input>
+        />
         {errors.password && (
-          <span className={clsx(
-            "text-regular font-body text-red-500",
-            "ml-[5px] w-[450px]",
-          )}>
+          <span className="text-regular font-body text-red-500 ml-[5px] w-[450px]">
             {errors.password.message}
           </span>
         )}
-        {errors.pattern && <span className={clsx(
-            "text-regular font-body text-red-500",
-            "ml-[5px] w-[450px]",
-          )}>{errors.pattern.message}</span>}
+        {errors.pattern && <span>{errors.pattern.message}</span>}
       </div>
       <div className="form-control">
         <label className="label">Confirma tu contraseña</label>
@@ -107,7 +99,7 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
           </span>
         )}
       </div>
-      <div className="form-control">
+      {/* <div className="form-control">
         <div className="mt-4">
           <input
             type="checkbox"
@@ -133,7 +125,7 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
             {errors.termsAndConditions.message}
           </span>
         )}
-      </div>
+      </div> */}
       <div className="form-control">
         <button
           type="submit"

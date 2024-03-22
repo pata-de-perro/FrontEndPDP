@@ -1,8 +1,19 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-export function PlacesList() {
+export function PlacesListDD() {
   const placesList = [
+    // {
+    //   Hotel: "Hotel",
+    //   Places: [
+    //     Top1 = "Hotel1",
+    //     Top2 = "Hotel2",
+    //     Top3 = "Hotel3",
+    //     Top4 = "Hotel4",
+    //     Top5 = "Hotel5",
+    //     Top6 = "Hotel6",
+    //   ]
+    // },
     {
       Title: "Hotel",
       Top1: "Hotel1",
@@ -59,26 +70,35 @@ export function PlacesList() {
     },
   ];
 
+  const friends = [
+    "Paco", "Sonia", "Estevan"
+  ]
+
   return (
     <div id="placesList" className="ml-2">
       {placesList.map((item, index) => {
         return (
-          <div key={index} >
+          <div key={index} className="collapse collapse-arrow">
+            <input type="checkbox" />
             <div
               className={clsx(
-                "font-heading text-regularSemiBold text-azulGriss900 mt-4"
+                "collapse-title",
+                "font-heading text-regularSemiBold text-azulGriss900",
+                "mt-4",
               )}
             >
               {item.Title}
             </div>
-            <div className={clsx("grid grid-cols-2")}>
-              <div className="flex mt-2">
+            <div className={clsx(
+                "collapse-content",
+                "grid grid-cols-2",
+                )}>
+              <div className="flex items-end mt-2">
                 <Image
                   src="/location_on.svg"
                   width={20}
                   height={20}
                   alt="gps pin icon"
-                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top1}
@@ -90,7 +110,6 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
-                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top2}
@@ -102,7 +121,6 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
-                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top3}
@@ -114,7 +132,6 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
-                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top4}
@@ -126,7 +143,6 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
-                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top5}
@@ -138,7 +154,6 @@ export function PlacesList() {
                   width={20}
                   height={20}
                   alt="gps pin icon"
-                  className="self-start"
                 />
                 <p className="font-body text-regular text-azulGris900">
                   {item.Top6}
