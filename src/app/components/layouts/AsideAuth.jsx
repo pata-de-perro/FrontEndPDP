@@ -9,10 +9,8 @@ import {
   AiTwotoneCalendar,
   AiOutlinePlaySquare, 
   AiOutlineArrowRight} from "react-icons/ai";
-import { MdGroups } from "react-icons/md";
 import { LuLogOut } from "react-icons/lu";
 import { signOut } from "next-auth/react";
-// import { GiHamburgerMenu } from "react-icons/gi";
 
 export function AsideAuth() {
   const navigationItems = [
