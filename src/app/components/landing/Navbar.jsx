@@ -39,11 +39,9 @@ export default function Navbar() {
       >
         <div className={clsx("logoContainer")}>
           <img
-            src="/DePataDePerroLogo.svg"
-            width={188}
-            height={50}
+            src="/PDPLogo.svg"
             alt="Logo of De Pata de Perro"
-            className={clsx("ml-[24px]")}
+            className={clsx("ml-[24px] w-[188px] h-[50px]")}
           />
         </div>
 
