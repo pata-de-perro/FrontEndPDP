@@ -4,12 +4,7 @@ import clsx from "clsx";
 import { PlacesList } from "@/app/components/PlacesList";
 import { PlacesListDD } from "@/app/components/PlacesListDD";
 import { GoogleMap } from "@/app/components/maps";
-import {
-  BtnPrimary,
-  ModalContent,
-  TitleSection,
-  AddFriends,
-} from "@/app/components/common";
+import { ModalContent } from "@/app/components/common";
 import { CreateInvite } from "@/app/components/sendInvite/CreateInvite";
 
 export default function EventPage() {
@@ -95,15 +90,19 @@ export default function EventPage() {
             Compañeros de viaje
           </h3>
           <p className="ml-2">Lista de amigos</p>
-          <button className={clsx(
-            "w-auto h-[45px]",
-            "px-6 my-4",
-            "rounded-2xl",
-            "bg-secondary",
-            "text-accent2 font-body text-regularSemiBold",
-            "hover:bg-secondaryOpacity"
-          )}
-          onClick={handleOpenModal}>Agrega compañeros de viaje</button>
+          <button
+            className={clsx(
+              "w-auto h-[45px]",
+              "px-6 my-4",
+              "rounded-2xl",
+              "bg-secondary",
+              "text-accent2 font-body text-regularSemiBold",
+              "hover:bg-secondaryOpacity"
+            )}
+            onClick={handleOpenModal}
+          >
+            Agrega compañeros de viaje
+          </button>
         </section>
       </div>
 
