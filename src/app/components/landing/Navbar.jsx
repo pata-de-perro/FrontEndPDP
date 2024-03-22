@@ -1,14 +1,29 @@
 "use client";
 
 import clsx from "clsx";
-import { MenuItems } from "./MenuItems";
 import Image from "next/image";
 import { Link } from "react-scroll/modules";
 import { useState } from "react";
-import MenuButtons from "./MenuButtons";
+import MenuButtons from "@/app/components/landing/menuButtons";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const MenuItems=[
+    {
+        title: "Funciones",
+        to:"tutorials",
+    },
+    {
+        title: "Opiniones",
+        to:"comments",
+    },
+    {
+        title: "Tutoriales",
+        to:"tutorials",
+    },
+]
+
 
   return (
     <nav
