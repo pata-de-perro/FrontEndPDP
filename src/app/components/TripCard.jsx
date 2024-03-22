@@ -5,128 +5,6 @@ import Image from "next/image";
 import { PlacesList } from "./PlacesList";
 
 export function TripCard() {
-  // const events = [
-  //   {
-  //     eventName: "Viaje a Sayulita",
-  //     eventStartDate: "15 Mayo",
-  //     eventEndDate: "17 Mayo",
-  //     isTrip: true,
-  //     location: "Sayulita, Jalisco",
-  //     map: "xx",
-  //     listPlacesInterest: [
-  //       {
-  //         hotels: ["hotel 1", "hotel 2", "hotel 3"],
-  //         restaurant: ["restaurant 1", "restaurant 2", "restaurant 3"],
-  //         turistAtractions: ["atraccion 1", "atraccion 2", "atraccion 3"],
-  //         nightLife: [
-  //           "centro nocturno 1",
-  //           "centro nocturno 2",
-  //           "centro nocturno 3",
-  //         ],
-  //         museums: ["museo 1", "museo 2", "museo 3"],
-  //         openAirActivities: ["aire libre 1", "aire libre 2", "aire libre 3"],
-  //       },
-  //     ],
-  //     travelers: [
-  //       {
-  //         name: "Invitado 1",
-  //         aceptedInvite: true,
-  //       },
-  //       {
-  //         name: "Invitado 2",
-  //         aceptedInvite: false,
-  //       },
-  //       {
-  //         name: "Invitado 3",
-  //         aceptedInvite: true,
-  //       },
-  //       {
-  //         name: "Invitado 4",
-  //         aceptedInvite: true,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     eventName: "Cumpleaños de Anita",
-  //     eventStartDate: "15 Mayo",
-  //     eventEndDate: "17 Mayo",
-  //     isTrip: false,
-  //     location: "Sayulita, Jalisco",
-  //     map: "xx",
-  //     listPlacesInterest: [
-  //       {
-  //         hotels: ["hotel 1", "hotel 2", "hotel 3"],
-  //         restaurant: ["restaurant 1", "restaurant 2", "restaurant 3"],
-  //         turistAtractions: ["atraccion 1", "atraccion 2", "atraccion 3"],
-  //         nightLife: [
-  //           "centro nocturno 1",
-  //           "centro nocturno 2",
-  //           "centro nocturno 3",
-  //         ],
-  //         museums: ["museo 1", "museo 2", "museo 3"],
-  //         openAirActivities: ["aire libre 1", "aire libre 2", "aire libre 3"],
-  //       },
-  //     ],
-  //     travelers: [
-  //       {
-  //         name: "Invitado 1",
-  //         aceptedInvite: true,
-  //       },
-  //       {
-  //         name: "Invitado 2",
-  //         aceptedInvite: false,
-  //       },
-  //       {
-  //         name: "Invitado 3",
-  //         aceptedInvite: true,
-  //       },
-  //       {
-  //         name: "Invitado 4",
-  //         aceptedInvite: true,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     eventName: "Viaje a Durango",
-  //     eventStartDate: "15 Mayo",
-  //     eventEndDate: "17 Mayo",
-  //     isTrip: true,
-  //     location: "Durango, MX",
-  //     map: "xx",
-  //     listPlacesInterest: [
-  //       {
-  //         hotels: ["hotel 1", "hotel 2", "hotel 3"],
-  //         restaurant: ["restaurant 1", "restaurant 2", "restaurant 3"],
-  //         turistAtractions: ["atraccion 1", "atraccion 2", "atraccion 3"],
-  //         nightLife: [
-  //           "centro nocturno 1",
-  //           "centro nocturno 2",
-  //           "centro nocturno 3",
-  //         ],
-  //         museums: ["museo 1", "museo 2", "museo 3"],
-  //         openAirActivities: ["aire libre 1", "aire libre 2", "aire libre 3"],
-  //       },
-  //     ],
-  //     travelers: [
-  //       {
-  //         name: "Invitado 1",
-  //         aceptedInvite: true,
-  //       },
-  //       {
-  //         name: "Invitado 2",
-  //         aceptedInvite: false,
-  //       },
-  //       {
-  //         name: "Invitado 3",
-  //         aceptedInvite: true,
-  //       },
-  //       {
-  //         name: "Invitado 4",
-  //         aceptedInvite: true,
-  //       },
-  //     ],
-  //   },
-  // ];
 
   return (
     <div>
@@ -226,7 +104,7 @@ export function TripCard() {
                     Lugares de interés
                   </p>
                   {/* // LUGARES DE INTERÉS */}
-                      <PlacesList />
+                      {/* <PlacesList /> */}
 
                   {/* <div id="placesList">
                     <div className="collapse collapse-arrow">
