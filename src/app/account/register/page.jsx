@@ -11,7 +11,7 @@ export default function RegisterPage() {
         </p>
         <Link href="/">
           <img
-            src="/dePataDePerroLogo.svg"
+            src="/PDPLogo.svg"
             width={200}
             height={35}
             alt="Logo Pata de Perro"

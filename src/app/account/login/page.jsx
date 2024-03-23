@@ -19,7 +19,7 @@ export default function LoginPage() {
         </p>
         <Link href="/">
           <Image
-            src="/dePataDePerroLogo.svg"
+            src="/PDPLogo.svg"
             width={250}
             height={50}
             alt="Logo Pata de Perro"
