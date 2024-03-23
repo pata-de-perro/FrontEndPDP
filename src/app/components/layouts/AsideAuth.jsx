@@ -59,21 +59,19 @@ export function AsideAuth() {
               </Link>
             </li>
           ))}
-          <div className="fixed bottom-0">
-              <li className={clsx(
+              <div className={clsx(
               "flex gap-4 items-center",
               "p-2 mb-4 rounded-md",
               "font-body",
               "text-md",
+              "fixed bottom-0",
               "hover:text-primary",
             )}>
               <a className="flex items-center cursor-pointer" onClick={() => signOut()}>
                 <LuLogOut className="text-md mr-2" />
                 <span className={`${nav ? 'hidden' : 'flex'}  ml-2`}>Cerrar sesión</span>
               </a>
-            </li>
-          </div>
-
+            </div>
         </ul>
       </div>
     </div>
