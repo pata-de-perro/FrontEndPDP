@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { PlacesList } from "@/app/components/PlacesList";
 import { PlacesListDD } from "@/app/components/PlacesListDD";
 import { GoogleMap } from "@/app/components/maps";
 import { ModalContent } from "@/app/components/common";
@@ -72,11 +71,8 @@ export default function EventPage() {
                 <h3 className="fond-heading text-h3 ml-2">
                   Lugares de interés
                 </h3>
-                <div className="not-sr-only lg:sr-only">
+                <div>
                   <PlacesListDD />
-                </div>
-                <div className="sr-only lg:not-sr-only">
-                  <PlacesList />
                 </div>
               </div>
             </div>
@@ -85,11 +81,15 @@ export default function EventPage() {
             </div>
           </div>
         </section>
-        <section id="friendsContainer">
+        <section id="friendsContainer" 
+        className={clsx(
+          "flex justify-between"
+        )}>
+          <div>
           <h3 className="font-heading text-h3 text-azulGris900 ml-2 pt-4">
             Compañeros de viaje
           </h3>
-          <p className="ml-2">Lista de amigos</p>
+            <p className="ml-2">Lista de amigos</p>
           <button
             className={clsx(
               "w-auto h-[45px]",
@@ -101,8 +101,33 @@ export default function EventPage() {
             )}
             onClick={handleOpenModal}
           >
-            Agrega compañeros de viaje
+            Agrega amigos
           </button>
+          </div>
+          <div className="flex flex-wrap justify-end">
+            <button         
+            className={clsx(
+          "bg-azulGris200",
+          "text-regular font-body",
+          "h-[24px] w-auto",
+          "p-4 mr-6",
+          "rounded-lg",
+          "flex items-center",
+        )}>
+              Editar viaje
+            </button>
+            <button         
+            className={clsx(
+          "bg-primary",
+          "text-regular font-body text-white",
+          "h-[24px] w-auto",
+          "p-4 mr-6",
+          "rounded-lg",
+          "flex items-center",
+        )}>
+              Guardar viaje
+            </button>
+          </div>
         </section>
       </div>
 
