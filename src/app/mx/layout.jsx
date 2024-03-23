@@ -2,9 +2,7 @@ import clsx from "clsx";
 
 import {
   AsideAuth,
-  AvatarAside,
-  BrandLogoAside,
-  NavAside,
+
 } from "../components/layouts";
 
 export default function AuthLayout({ children }) {
@@ -16,12 +14,8 @@ export default function AuthLayout({ children }) {
         "bg-withe"
       )}
     >
-      <AsideAuth>
-        <BrandLogoAside />
-        <AvatarAside />
-        <NavAside />
-      </AsideAuth>
-      <main className="my-2">
+      <AsideAuth />
+      <main className="m-2">
         <div>{children}</div>
       </main>
     </div>

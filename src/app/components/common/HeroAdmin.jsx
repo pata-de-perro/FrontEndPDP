@@ -20,7 +20,7 @@ export function HeroAdmin({ title, children, urlImg }) {
               "font-body text-azulGris900 text-regular",
               "mb-8",
               "md:w-[400px] md:mb-0",
-              "w-[400px]"
+              "w-auto"
             )}
           >
             {children}
