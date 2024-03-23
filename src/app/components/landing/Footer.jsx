@@ -77,7 +77,7 @@ export default function Footer() {
               "md:text-start md:self-center md:mb-[0px]",
             )}
           >
-            © 2024 | PataDePerro
+            © 2024 | PataDePerro :D
           </p>
         </div>
       </div>
