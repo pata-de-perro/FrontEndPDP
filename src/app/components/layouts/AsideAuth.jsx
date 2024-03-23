@@ -27,8 +27,8 @@ export function AsideAuth() {
   }
 
   return (
-    <div className={`${!nav ? 'w-[230px]' : 'w-20'} h-screen p-4 border-r relative duration-300`}>
-      <div className={`text-white br-gray-300 bg-primary w-10 h-10 flex items-center justify-center text-xl rounded-full absolute top-4 right-[-18px] ${nav ? 'rotate-0' : 'rotate-180'}`}
+    <div className={`${!nav ? 'w-[230px]' : 'w-20'} h-screen p-4 border-r relative duration-300 sticky top-0`}>
+      <div className={`text-white br-gray-300 bg-primary w-10 h-10 flex items-center justify-center text-xl rounded-full absolute top-4 right-[-18px] cursor-pointer ${nav ? 'rotate-0' : 'rotate-180'}`}
       onClick={handleNav}>
         <AiOutlineArrowRight />
       </div>
@@ -59,26 +59,19 @@ export function AsideAuth() {
               </Link>
             </li>
           ))}
-          <div className="fixed bottom-0">
-            <lu className={clsx(
-            "flex flex-col gap-8 p-2",
-            "gap-8 p-2"
-            )}>
-              <li className={clsx(
+              <div className={clsx(
               "flex gap-4 items-center",
               "p-2 mb-4 rounded-md",
               "font-body",
               "text-md",
+              "fixed bottom-0",
               "hover:text-primary",
             )}>
               <a className="flex items-center cursor-pointer" onClick={() => signOut()}>
                 <LuLogOut className="text-md mr-2" />
                 <span className={`${nav ? 'hidden' : 'flex'}  ml-2`}>Cerrar sesión</span>
               </a>
-            </li>
-            </lu>
-          </div>
-
+            </div>
         </ul>
       </div>
     </div>

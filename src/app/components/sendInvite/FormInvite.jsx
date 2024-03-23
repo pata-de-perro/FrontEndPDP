@@ -1,43 +1,39 @@
-"use client"
 
 import { clsx } from "clsx";
-import { useForm } from "react-hook-form";
-// import Link from "next/link";
-// import { register } from "react-scroll/modules/mixins/scroller";
-import React from "react";
-// import { createContext, useContext, useState } from "react";
 
-export const FriendsContext = React.createContext()
-
-export function FormInvite() {
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-        watch,
-        reset,
-      } = useForm();
-
-
+export function FormInvite({
+  onSubmitInvite,
+  register,
+  errors,
+}) {
   return (
-     <form>
+     <form onSubmit={onSubmitInvite}>
       <div className="form-control">
+        <label className="label">Correo electrónico</label>
         <input
           type="email"
-          id="email"
+          className={clsx(
+            "px-3 py-2",
+            "h-[50px]",
+            "bg-white",
+            "border shadow-sm border-slate-300",
+            "placeholder-slate-400",
+            "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
+            "block w-[450px] rounded-lg focus:ring-1"
+          )}
           placeholder="Correo electrónico"
-          className={clsx("input input-bordered input-sm")}
           {...register("email", {
-            required: { value:true, message: "Por favor ingresa un correo electrónico valido"},
+            required: {
+              value: true,
+              message: "Es necesario un correo electrónico para enviar invitación.",
+            },
             pattern: {
-                value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
-              },
+              value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+            },
           })}
         />
         {errors.email && (
-          <span
-            className={clsx("text-regular font-body text-red-500", "ml-[5px]")}
-          >
+          <span className="text-regular font-body text-red-500 ml-[5px]">
             {errors.email.message}
           </span>
         )}

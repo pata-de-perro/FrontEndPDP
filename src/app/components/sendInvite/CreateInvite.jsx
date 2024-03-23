@@ -11,9 +11,9 @@ export function CreateInvite() {
     formState: { errors },
     watch,
     setValue,
-  } = useForm({ defaultValues: { isTravel: true } });
+  } = useForm();
 
-  const onSubmitEvent = handleSubmit((data) => {
+  const onSubmitInvite = handleSubmit((data) => {
     console.log(data);
   });
 
@@ -22,7 +22,13 @@ export function CreateInvite() {
       <p className={clsx("m-6", "text-center text-sm")}>
         Ingresa el correo electrónico de la pesona a quien quieras invitar a tu evento
       </p>
-      <FormInvite/>
+      <FormInvite 
+      register={register}
+      onSubmitFriend={onSubmitInvite}
+      errors={errors}
+      watch={watch}
+      setValue={setValue}
+      />
     </div>
   );
 }
