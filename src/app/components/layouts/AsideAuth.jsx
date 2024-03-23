@@ -60,7 +60,7 @@ export function AsideAuth() {
             </li>
           ))}
           <div className="fixed bottom-0">
-            <lu className={clsx(
+            <ul className={clsx(
             "flex flex-col gap-8 p-2",
             "gap-8 p-2"
             )}>
@@ -76,7 +76,7 @@ export function AsideAuth() {
                 <span className={`${nav ? 'hidden' : 'flex'}  ml-2`}>Cerrar sesión</span>
               </a>
             </li>
-            </lu>
+            </ul>
           </div>
 
         </ul>
