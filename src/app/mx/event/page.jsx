@@ -1,7 +1,6 @@
 "use client";
 
 import clsx from "clsx";
-import { PlacesList } from "@/app/components/PlacesList";
 import { PlacesListDD } from "@/app/components/PlacesListDD";
 import { GoogleMap } from "@/app/components/maps";
 import { ModalContent } from "@/app/components/common";
@@ -72,11 +71,8 @@ export default function EventPage() {
                 <h3 className="fond-heading text-h3 ml-2">
                   Lugares de interés
                 </h3>
-                <div className="not-sr-only lg:sr-only">
+                <div>
                   <PlacesListDD />
-                </div>
-                <div className="sr-only lg:not-sr-only">
-                  <PlacesList />
                 </div>
               </div>
             </div>
