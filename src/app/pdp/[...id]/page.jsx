@@ -4,10 +4,13 @@ import { ModalContent } from "@/components/common";
 import { GoogleMap, PlacesListDD } from "@/components/maps";
 import { CreateInvite } from "@/components/companions";
 
-export default function EventPage() {
+export default function EventPage({ params }) {
   const handleOpenModal = () => {
     document.getElementById("modal_send_invite").showModal();
   };
+
+  console.log(params);
+
   return (
     <>
       <div>

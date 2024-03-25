@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import { eventDateFormat } from "@/helpers";
 
 export function CardEvent({ info }) {
+  const router = useRouter();
+
   return (
     <div
       className={clsx(
@@ -47,7 +51,7 @@ export function CardEvent({ info }) {
         <div className="flex items-center">
           <Image src="/pin_drop.svg" width={21} height={21} alt="invite icon" />
           <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
-            Ubicación
+            {info.locationEvent}
           </p>
         </div>
         <div className="py-6">
@@ -58,6 +62,7 @@ export function CardEvent({ info }) {
               "bg-primary text-white",
               "hover:bg-accent1 hover:text-accent2"
             )}
+            onClick={() => router.push(`/pdp/${info._id}`)}
           >
             Ver viaje
           </button>
