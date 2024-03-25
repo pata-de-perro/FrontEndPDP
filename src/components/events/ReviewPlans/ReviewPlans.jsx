@@ -1,8 +1,9 @@
+"use client";
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import { getUserEventsApi } from "@/services";
 import { TitleSection } from "@/components/layouts";
-import { NotEvents } from "@/components/events";
+import { NotEvents, PlansContainer } from "@/components/events";
 
 export function ReviewPlans() {
   const { data: session } = useSession();
@@ -25,6 +26,7 @@ export function ReviewPlans() {
     <>
       <TitleSection title="Revisa tus planes" urlIcon="/Icono-Fecha.svg" />
       {events.length === 0 && <NotEvents title="Sin registro de planes" />}
+      <PlansContainer data={events} />
     </>
   );
 }
