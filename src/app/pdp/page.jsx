@@ -1,8 +1,7 @@
 "use client";
-import clsx from "clsx";
-import { HeroAuth, TitleSection } from "@/components/layouts";
+import { HeroAuth } from "@/components/layouts";
 import { BtnPrimary, ModalContent } from "@/components/common";
-import { CreateEvent, NotEvents } from "@/components/events";
+import { CreateEvent, ReviewPlans } from "@/components/events";
 
 export default function HomePage() {
   const handleOpenModal = () => {
@@ -23,8 +22,7 @@ export default function HomePage() {
             onClick={handleOpenModal}
           />
         </HeroAuth>
-        <TitleSection title="Revisa tus planes" urlIcon="/Icono-Fecha.svg" />
-        <NotEvents title="Sin registro de planes" />
+        <ReviewPlans />
       </main>
       <ModalContent
         idModal="modal_create_event"
