@@ -1,17 +1,20 @@
-import Navbar from "./components/landing/Navbar";
-import Footer from "./components/landing/Footer";
-import Hero from "./components/landing/Hero";
-import FirstCards from "./components/landing/FirstCards";
-import SecondCallToAction from "./components/landing/SecondCallToAction";
-import Functions from "./components/landing/Functions";
-import Tutorials from "./components/landing/Tutorials";
-import Comments from "./components/landing/Comments";
+import {
+  Comments,
+  FirstCards,
+  Footer,
+  Functions,
+  Hero,
+  Navbar,
+  SecondCallToAction,
+  Tutorials,
+} from "@/components/landing";
 
-
-export default function Home() {
+export default function LandingPage() {
   return (
     <main>
-      <header><Navbar /></header>
+      <header>
+        <Navbar />
+      </header>
       <div>
         <Hero />
         <FirstCards />

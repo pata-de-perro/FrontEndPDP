@@ -1,0 +1,10 @@
+export { default as Comments } from "./Comments/Comments";
+export { default as FirstCards } from "./FirstCards/FirstCards";
+export { default as Footer } from "./Footer/Footer";
+export { FunctionCards } from "./FunctionCards/FunctionCards";
+export { default as Functions } from "./Functions/Functions";
+export { default as Hero } from "./Hero/Hero";
+export { default as MenuButtons } from "./MenuButtons/MenuButtons";
+export { default as Navbar } from "./Navbar/Navbar";
+export { default as SecondCallToAction } from "./SecondCallToAction/SecondCallToAction";
+export { default as Tutorials } from "./Tutorials/Tutorials";
