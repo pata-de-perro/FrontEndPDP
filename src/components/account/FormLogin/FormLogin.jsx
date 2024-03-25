@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { clsx } from "clsx";
+import { BtnSubmit } from "@/components/common";
 
-export function FormLogin({ onSubmitSignIn, register, errors, watch }) {
+export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
   return (
     <form onSubmit={onSubmitSignIn}>
       <div className="form-control">
@@ -83,22 +84,7 @@ export function FormLogin({ onSubmitSignIn, register, errors, watch }) {
         </Link>
       </div> */}
       <div className="form-control">
-        <button
-          type="submit"
-          className={clsx(
-            "bg-primary",
-            "w-[450px]",
-            "text-white text-regular",
-            "px-[8px] py-[8px]",
-            "mb-[15px] mt-[60px]",
-            "rounded-md",
-            "flex justify-center",
-            "hover:bg-accent1 hover:text-accent2",
-            "border-2 border-primary hover:border-accent1"
-          )}
-        >
-          Enviar
-        </button>
+        <BtnSubmit title="Iniciar Sesión" loading={loading} />
       </div>
     </form>
   );

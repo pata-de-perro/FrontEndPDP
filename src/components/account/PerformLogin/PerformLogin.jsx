@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import { useNextAuthApi } from "@/components/hooks";
 import { FormLogin } from "@/components/account";
 
 export function PerformLogin() {
@@ -9,25 +9,18 @@ export function PerformLogin() {
     register,
     handleSubmit,
     formState: { errors },
-    watch,
     reset,
   } = useForm({
     mode: "onTouched",
   });
+  const { loading, handleAuthApi } = useNextAuthApi();
   const router = useRouter();
 
   const onSubmitSignIn = handleSubmit(async (data) => {
-    const res = await signIn("credentials", {
-      email: data.email,
-      password: data.password,
-      redirect: false,
-    });
-
-    if (res.error) {
-      console.log(res.error);
-    } else {
-      router.push("/pdp");
+    const result = await handleAuthApi(data);
+    if (result?.ok === true) {
       reset();
+      router.push("/pdp");
     }
   });
 
@@ -36,7 +29,7 @@ export function PerformLogin() {
       onSubmitSignIn={onSubmitSignIn}
       register={register}
       errors={errors}
-      watch={watch}
+      loading={loading}
     />
   );
 }
