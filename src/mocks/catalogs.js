@@ -6,13 +6,13 @@ import {
 } from "react-icons/ai";
 
 export const navigationItems = [
-  { icon: <AiOutlineHome />, label: "Inicio", href: "/mx" },
-  { icon: <AiOutlineUser />, label: "Tu perfil", href: "/mx/profile" },
-  { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/mx" },
+  { icon: <AiOutlineHome />, label: "Inicio", href: "/pdp" },
+  { icon: <AiOutlineUser />, label: "Tu perfil", href: "/pdp/profile" },
+  { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/pdp" },
   {
     icon: <AiOutlinePlaySquare />,
     label: "Tutoriales",
-    href: "/mx",
+    href: "/pdp",
   },
 ];
 
