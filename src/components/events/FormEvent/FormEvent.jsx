@@ -1,8 +1,8 @@
 "use client";
 import { useEffect } from "react";
-import { clsx } from "clsx";
-import { addHoursToDateTime } from "../../../helpers";
 import Link from "next/link";
+import { clsx } from "clsx";
+import { addHoursToDateTime } from "@/helpers";
 
 export function FormEvent({
   register,
