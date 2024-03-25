@@ -2,7 +2,7 @@ import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { postLoginApi } from "@/services";
 
-const authOptions = {
+export const authOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
@@ -18,13 +18,29 @@ const authOptions = {
         const result = await postLoginApi(credentials);
 
         if (result.user) {
-          return { id: result.user._id, email: result.user.email };
+          return {
+            id: result.user._id,
+            name: result.user.name,
+            email: result.user.email,
+            picture: result.user.avatar,
+            accessToken: result.token,
+          };
         } else {
           return null;
         }
       },
     }),
   ],
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.user = user;
+      return token;
+    },
+    async session({ session, token }) {
+      session.user = token.user;
+      return session;
+    },
+  },
   pages: {
     signIn: "/account/login",
   },
