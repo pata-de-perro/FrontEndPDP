@@ -1,6 +1,13 @@
 import clsx from "clsx";
+import { BtnSubmit } from "@/components/common";
 
-export function FormRegister({ onSubmitRegister, register, errors, watch }) {
+export function FormRegister({
+  onSubmitRegister,
+  register,
+  errors,
+  watch,
+  loading,
+}) {
   return (
     <form onSubmit={onSubmitRegister}>
       <div className="form-control">
@@ -127,22 +134,7 @@ export function FormRegister({ onSubmitRegister, register, errors, watch }) {
         )}
       </div> */}
       <div className="form-control">
-        <button
-          type="submit"
-          className={clsx(
-            "bg-azulGris100",
-            "text-azulGris400 text-regular",
-            "px-[8px] py-[8px]",
-            "mb-[15px] mt-[60px]",
-            "w-[450px]",
-            "rounded-md",
-            "flex justify-center",
-            "bg-primary text-white ",
-            "hover:bg-accent1 hover:text-accent2"
-          )}
-        >
-          Enviar
-        </button>
+        <BtnSubmit title="Registrarse" loading={loading} />
       </div>
     </form>
   );
