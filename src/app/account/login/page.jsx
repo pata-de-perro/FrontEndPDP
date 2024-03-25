@@ -1,8 +1,7 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { PerformLogin } from "@/app/components/account";
+import { PerformLogin } from "@/components/account";
 
 export default function LoginPage() {
   return (
@@ -14,9 +13,9 @@ export default function LoginPage() {
           "lg:justify-items-start"
         )}
       >
-        <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
+        <h1 className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Inicia sesión en
-        </p>
+        </h1>
         <Link href="/">
           <Image
             src="/PDPLogo.svg"

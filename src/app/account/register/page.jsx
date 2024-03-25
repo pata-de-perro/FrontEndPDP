@@ -1,14 +1,13 @@
-"use client";
 import Link from "next/link";
-import { CreateRegister } from "@/app/components/account";
+import { CreateRegister } from "@/components/account";
 
 export default function RegisterPage() {
   return (
     <>
       <div className="grid md:grid-cols-2 lg:grid-cols-1">
-        <p className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
+        <h1 className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Regístrate en
-        </p>
+        </h1>
         <Link href="/">
           <img
             src="/PDPLogo.svg"
@@ -25,7 +24,6 @@ export default function RegisterPage() {
       <p className="text-regularBold font-body text-center text-azulGris900">
         <Link href="/account/login">¡Inicia sesión ahora!</Link>
       </p>
-
       <CreateRegister />
     </>
   );
