@@ -15,3 +15,31 @@ export function addHoursToDateTime(dateTimeString, hoursToAdd) {
 
   return `${year}-${month}-${day}T${hours}:${minutes}`;
 }
+
+export function eventDateFormat(dateString) {
+  const date = new Date(dateString);
+
+  if (!date || isNaN(date.getTime())) {
+    return "";
+  }
+  const months = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ];
+
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${day} ${month} ${year}`;
+}

@@ -1,17 +1,18 @@
 import { HeroAuth, TitleSection } from "@/components/layouts";
-import { TravelMapContainer } from "@/components/maps";
 
-export default function TravelPlan() {
+export default function PlansPage() {
   return (
     <div>
-      <HeroAuth title="¡Realiza tú plan!">
+      <HeroAuth title="¡Revisa todos tus planes!">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
       </HeroAuth>
-      <TitleSection title="Revisa tu mapa" urlIcon="/Icono-Fecha.svg" />
-      <TravelMapContainer />
+      <TitleSection
+        title="Revisa tus viajes y/o salidas"
+        urlIcon="/Icono-Fecha.svg"
+      />
     </div>
   );
 }

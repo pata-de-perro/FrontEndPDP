@@ -1,8 +1,6 @@
-"use client";
 import { useEffect } from "react";
 import { clsx } from "clsx";
-import { addHoursToDateTime } from "../../../helpers";
-import Link from "next/link";
+import { addHoursToDateTime } from "@/helpers";
 
 export function FormEvent({
   register,
@@ -82,6 +80,7 @@ export function FormEvent({
             "h-20",
             "leading-tight"
           )}
+          {...register("description")}
         ></textarea>
       </div>
       <div className="form-control mb-4">
@@ -89,24 +88,12 @@ export function FormEvent({
           Lugar <span className="text-red-500">*</span>
         </label>
         <input
-          id="ubication"
+          id="locationEvent"
           type="text"
           placeholder="Ingrese el lugar"
           className={clsx("input input-bordered input-sm", "w-full")}
-          {...register("ubication", {
-            required: {
-              value: true,
-              message: "Por favor ingrese un lugar y/o destino para viajar",
-            },
-          })}
+          {...register("locationEvent")}
         />
-        <div className="label">
-          {errors?.ubication && (
-            <span className="label-text-alt text-red-500">
-              {errors.ubication.message}
-            </span>
-          )}
-        </div>
       </div>
       {watch("isTravel") === true || watch("isTravel") === "true" ? (
         <div className="flex space-x-4 mb-4">
@@ -269,7 +256,7 @@ export function FormEvent({
             "hover:bg-secondary"
           )}
         >
-          <Link href="/mx//travelplan">Guardar</Link>
+          Guardar evento
         </button>
       </div>
     </form>

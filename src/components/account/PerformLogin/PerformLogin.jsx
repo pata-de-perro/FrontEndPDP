@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useNextAuthApi } from "@/components/hooks";
 import { FormLogin } from "@/components/account";
+import { ToastMsgTop } from "@/components/common";
 
 export function PerformLogin() {
   const {
@@ -13,23 +14,26 @@ export function PerformLogin() {
   } = useForm({
     mode: "onTouched",
   });
-  const { loading, handleAuthApi } = useNextAuthApi();
+  const { loading, error, handleAuthApi } = useNextAuthApi();
   const router = useRouter();
 
   const onSubmitSignIn = handleSubmit(async (data) => {
     const result = await handleAuthApi(data);
     if (result?.ok === true) {
-      reset();
       router.push("/pdp");
+      reset();
     }
   });
 
   return (
-    <FormLogin
-      onSubmitSignIn={onSubmitSignIn}
-      register={register}
-      errors={errors}
-      loading={loading}
-    />
+    <>
+      {error && <ToastMsgTop message={error} type="error" />}
+      <FormLogin
+        onSubmitSignIn={onSubmitSignIn}
+        register={register}
+        errors={errors}
+        loading={loading}
+      />
+    </>
   );
 }
