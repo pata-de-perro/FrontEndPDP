@@ -85,3 +85,5 @@ export const placesList = [
 ];
 
 export const friends = ["Paco", "Sonia", "Estevan"];
+
+
