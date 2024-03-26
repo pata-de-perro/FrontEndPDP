@@ -1,3 +1,5 @@
+import { TitleSection } from "@/components/layouts";
+
 export function InvitedEvents() {
   return (
     <>
