@@ -62,7 +62,7 @@ export function CardEvent({ info }) {
               "bg-primary text-white",
               "hover:bg-accent1 hover:text-accent2"
             )}
-            onClick={() => router.push(`/pdp/${info._id}`)}
+            onClick={() => router.push(`/pdp/events/${info._id}`)}
           >
             Ver viaje
           </button>
