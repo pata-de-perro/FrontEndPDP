@@ -84,7 +84,7 @@ export function FormEvent({
         ></textarea>
       </div>
       <div className="form-control mb-4">
-        <label htmlFor="ubication" className={clsx("text-sm mb-1")}>
+        <label htmlFor="locationEvent" className={clsx("text-sm mb-1")}>
           Lugar <span className="text-red-500">*</span>
         </label>
         <input
