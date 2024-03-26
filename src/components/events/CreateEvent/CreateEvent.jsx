@@ -1,5 +1,9 @@
-import clsx from "clsx";
+"use client";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
+import clsx from "clsx";
+import { posCreateNewEventApi } from "@/services";
 import { FormEvent } from "@/components/events";
 
 export function CreateEvent() {
@@ -9,10 +13,24 @@ export function CreateEvent() {
     formState: { errors },
     watch,
     setValue,
+    reset,
   } = useForm({ defaultValues: { isTravel: true } });
+  const { data: session } = useSession();
+  const router = useRouter();
 
-  const onSubmitEvent = handleSubmit((data) => {
-    console.log(data);
+  const onSubmitEvent = handleSubmit(async (data) => {
+    const infoEvent = {
+      ...data,
+      userId: session.user.id,
+    };
+    const result = await posCreateNewEventApi(
+      infoEvent,
+      session.user.accessToken
+    );
+    if (result.success === true) {
+      reset();
+      router.push(`/pdp/plans/${result.event}`);
+    }
   });
 
   return (
