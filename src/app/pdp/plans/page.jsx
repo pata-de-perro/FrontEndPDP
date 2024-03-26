@@ -3,10 +3,9 @@ import { HeroAuth, TitleSection } from "@/components/layouts";
 export default function PlansPage() {
   return (
     <div>
-      <HeroAuth title="¡Revisa todos tus planes!">
+      <HeroAuth title="¡Sigamos planificando!">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Visualiza fácilmente todas las cosas que deseas realizar en tu viaje.
         </p>
       </HeroAuth>
       <TitleSection
