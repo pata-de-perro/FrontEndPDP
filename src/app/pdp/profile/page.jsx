@@ -64,7 +64,7 @@ export default async function Profile() {
         </div>
       </section>
 
-      <TitleSection urlIcon="/friends-icon.svg" title="Amigos" />
+      <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" />
       <section className="h-[150px]"></section>
     </>
   );
