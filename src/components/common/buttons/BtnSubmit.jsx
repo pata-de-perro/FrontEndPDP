@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export function BtnSubmit({ title, loading }) {
+export function BtnSubmit({ title, loading, ref }) {
   return (
     <button
       className={clsx(
@@ -9,6 +9,7 @@ export function BtnSubmit({ title, loading }) {
         "bg-primary text-white",
         "hover:bg-accent1 hover:text-accent2"
       )}
+      ref={ref}
     >
       {loading ? (
         <span className="loading loading-dots loading-lg"></span>

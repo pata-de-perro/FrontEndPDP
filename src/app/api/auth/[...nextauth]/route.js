@@ -9,10 +9,7 @@ export const authOptions = {
       credentials: {
         email: { label: "Email", type: "email", placeholder: "name@email.com" },
         password: {
-          label: "Password",
-          type: "password",
-          placeholder: "********",
-        },
+          label: "Password", type: "password", placeholder: "********"},
       },
       async authorize(credentials, req) {
         const result = await postLoginApi(credentials);
@@ -39,7 +36,7 @@ export const authOptions = {
     async session({ session, token }) {
       session.user = token.user;
       return session;
-    },
+    }
   },
   pages: {
     signIn: "/account/login",

@@ -1,8 +1,9 @@
-import Link from "next/link";
+"use client";
 import { clsx } from "clsx";
 import { BtnSubmit } from "@/components/common";
 
 export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
+
   return (
     <form onSubmit={onSubmitSignIn}>
       <div className="form-control">
@@ -63,28 +64,12 @@ export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
           </span>
         )}
       </div>
-      {/* <div className="form-control">
-        <span
-          className={clsx(
-            "text-link font-body",
-            "text-azulGris900",
-            "justify-self-start mt-[32px]"
-          )}
-        >
-          ¿Olvidaste tu contraseña?
-        </span>
-        <Link
-          href="#"
-          className={clsx(
-            "text-regularSemiBold font-body text-azulGris900",
-            "justify-self-start"
-          )}
-        >
-          Recuperar contraseña
-        </Link>
-      </div> */}
       <div className="form-control">
-        <BtnSubmit title="Iniciar Sesión" loading={loading} />
+        <BtnSubmit title="Iniciar Sesión" loading={loading} 
+        onClick={() => {
+          const values = getValues()
+        }
+        } />
       </div>
     </form>
   );

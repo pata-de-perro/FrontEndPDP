@@ -3,7 +3,7 @@ import clsx from "clsx";
 export default function Auth({ children }) {
   return (
     <>
-      <main className={clsx("w-[100wv]", "flex justify-center content-center")}>
+      <main className={clsx("w-[100wv] h-screen", "flex justify-center items-center")}>
         <div
           className={clsx(
             "flex",
