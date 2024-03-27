@@ -1,4 +1,5 @@
 import { HeroAuth, TitleSection } from "@/components/layouts";
+import { GoogleMap } from "@/components/maps";
 
 export default function TravelPage({ params }) {
   return (
@@ -10,7 +11,7 @@ export default function TravelPage({ params }) {
         </p>
       </HeroAuth>
       <TitleSection title="Revisa tu mapa" urlIcon="/Icono-Fecha.svg" />
-      Planeando el viaje: {params.id}
+      <GoogleMap />
     </div>
   );
 }

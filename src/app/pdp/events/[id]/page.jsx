@@ -1,15 +1,13 @@
 "use client";
 import clsx from "clsx";
 import { ModalContent } from "@/components/common";
-import { GoogleMap, PlacesListDD } from "@/components/maps";
+import { GoogleMap } from "@/components/maps";
 import { CreateInvite } from "@/components/companions";
 
 export default function EventPage({ params }) {
   const handleOpenModal = () => {
     document.getElementById("modal_send_invite").showModal();
   };
-
-  console.log(params);
 
   return (
     <>
@@ -25,7 +23,7 @@ export default function EventPage({ params }) {
             )}
           >
             <div className="col-span-1 grid-gap-2">
-              <div className="infoContainer ">
+              <div className={clsx("infoContainer", "pt-2")}>
                 <div className="flex items-center">
                   <img
                     src="/airport_shuttle.svg"
@@ -68,14 +66,6 @@ export default function EventPage({ params }) {
                   </div>
                 </div>
               </div>
-              <div id="placesListContainer">
-                <h3 className="fond-heading text-h3 ml-2">
-                  Lugares de interés
-                </h3>
-                <div>
-                  <PlacesListDD />
-                </div>
-              </div>
             </div>
             <div className="map-container col-span-2 mr-4 sm:h-[250px] md:h-[250px] lg:h-auto">
               <GoogleMap />
@@ -83,25 +73,7 @@ export default function EventPage({ params }) {
           </div>
         </section>
         <section id="friendsContainer" className={clsx("flex justify-between")}>
-          <div>
-            <h3 className="font-heading text-h3 text-azulGris900 ml-2 pt-4">
-              Compañeros de viaje
-            </h3>
-            <p className="ml-2">Lista de amigos</p>
-            <button
-              className={clsx(
-                "w-auto h-[45px]",
-                "px-6 my-4",
-                "rounded-2xl",
-                "bg-secondary",
-                "text-accent2 font-body text-regularSemiBold",
-                "hover:bg-secondaryOpacity"
-              )}
-              onClick={handleOpenModal}
-            >
-              Agrega amigos
-            </button>
-          </div>
+          <div></div>
           <div className="flex flex-wrap justify-end">
             <button
               className={clsx(
@@ -110,8 +82,10 @@ export default function EventPage({ params }) {
                 "h-[24px] w-auto",
                 "p-4 mr-6",
                 "rounded-lg",
-                "flex items-center"
+                "flex items-center",
+                "disabled: cursor-not-allowed"
               )}
+              disabled
             >
               Editar viaje
             </button>
@@ -122,8 +96,10 @@ export default function EventPage({ params }) {
                 "h-[24px] w-auto",
                 "p-4 mr-6",
                 "rounded-lg",
-                "flex items-center"
+                "flex items-center",
+                "disabled: cursor-not-allowed"
               )}
+              disabled
             >
               Guardar viaje
             </button>
