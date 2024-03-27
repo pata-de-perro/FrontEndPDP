@@ -5,7 +5,7 @@ export default function PlansPage() {
     <div>
       <HeroAuth title="¡Sigamos planificando!">
         <p>
-        Visualiza fácilmente todas las cosas que deseas realizar en tu viaje.
+          Visualiza fácilmente todas las cosas que deseas realizar en tu viaje.
         </p>
       </HeroAuth>
       <TitleSection
