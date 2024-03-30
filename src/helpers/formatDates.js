@@ -43,3 +43,24 @@ export function eventDateFormat(dateString) {
 
   return `${day} ${month} ${year}`;
 }
+
+export function getHourOfDate(dateISO) {
+  const date = new Date(dateISO);
+  let hour = date.getHours();
+  const minutes = date.getMinutes();
+
+  let period = "am";
+
+  if (hour >= 12) {
+    period = "pm";
+    hour -= 12;
+  }
+  if (hour === 0) {
+    hour = 12;
+  }
+
+  const formattedHour = hour.toString().padStart(2, "0");
+  const formattedMinutes = minutes.toString().padStart(2, "0");
+
+  return `${formattedHour}:${formattedMinutes} ${period}`;
+}
