@@ -7,6 +7,7 @@ import clsx from "clsx";
 import { Loader } from "@googlemaps/js-api-loader";
 import { posCreateNewEventApi } from "@/services";
 import { FormEvent } from "@/components/events";
+import { buildLocationByPlaces } from "@/helpers";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
@@ -20,6 +21,7 @@ export function CreateEvent() {
     reset,
   } = useForm({ defaultValues: { isTravel: true } });
   const { data: session } = useSession();
+
   const router = useRouter();
 
   useEffect(() => {
@@ -39,8 +41,10 @@ export function CreateEvent() {
         });
 
         autocomplete.addListener("place_changed", () => {
-          const place = autocomplete.getPlace();
-          console.log(place);
+          const places = autocomplete.getPlace();
+          const { coords, location } = buildLocationByPlaces(places);
+          setValue("locationEvent", location);
+          setValue("coordsEvent", coords);
         });
       });
     };
@@ -64,11 +68,10 @@ export function CreateEvent() {
   });
 
   return (
-    <div>
-      <h3 className={clsx("mb-6", "text-center text-sm")}>
+    <div className="mt-10 mr-4">
+      <h2 className={clsx("mb-6", "text-xl")}>
         Esto facilitará encontrar información de tu viaje
-      </h3>
-      <input type="text" placeholder="Address" id="location" />
+      </h2>
       <FormEvent
         register={register}
         onSubmitEvent={onSubmitEvent}

@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { clsx } from "clsx";
 import { addHoursToDateTime } from "@/helpers";
@@ -92,8 +93,17 @@ export function FormEvent({
           type="text"
           placeholder="Ingrese el lugar"
           className={clsx("input input-bordered input-sm", "w-full")}
-          {...register("locationEvent")}
+          {...register("locationEvent", {
+            required: { value: true, message: "Por favor ingrese un lugar" },
+          })}
         />
+        <div className="label">
+          {errors?.title && (
+            <span className="label-text-alt text-red-500">
+              {errors.locationEvent.message}
+            </span>
+          )}
+        </div>
       </div>
       {watch("isTravel") === true || watch("isTravel") === "true" ? (
         <div className="flex space-x-4 mb-4">
