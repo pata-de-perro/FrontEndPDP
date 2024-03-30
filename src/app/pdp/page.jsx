@@ -1,42 +1,11 @@
 "use client";
-import { useEffect } from "react";
-import { Loader } from "@googlemaps/js-api-loader";
+import { useRouter } from "next/navigation";
 import { HeroAuth } from "@/components/layouts";
-import { BtnPrimary, ModalContent } from "@/components/common";
-import { CreateEvent, ReviewPlans } from "@/components/events";
-
-const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
+import { BtnPrimary } from "@/components/common";
+import { ReviewPlans } from "@/components/events";
 
 export default function HomePage() {
-  const handleOpenModal = () => {
-    document.getElementById("modal_create_event").showModal();
-  };
-
-  useEffect(() => {
-    const initializeAutocomplete = () => {
-      const loader = new Loader({
-        apiKey: API_KEY,
-        version: "weekly",
-      });
-
-      loader.importLibrary("places").then(async () => {
-        const { Autocomplete } = await google.maps.importLibrary("places");
-        const input = document.getElementById("place");
-
-        const autocomplete = new Autocomplete(input, {
-          fields: ["address_components", "geometry", "name"],
-          types: ["address"],
-        });
-
-        autocomplete.addListener("place_changed", () => {
-          const place = autocomplete.getPlace();
-          console.log(place);
-        });
-      });
-    };
-
-    initializeAutocomplete();
-  }, []);
+  const router = useRouter();
 
   return (
     <>
@@ -48,19 +17,12 @@ export default function HomePage() {
             categoría.
           </p>
           <BtnPrimary
-            title="Planea tu primer viaje"
-            onClick={handleOpenModal}
+            title="Planea un evento"
+            onClick={() => router.push("/pdp/events/create")}
           />
         </HeroAuth>
-        <input type="text" placeholder="place" id="place" />
         <ReviewPlans />
       </main>
-      <ModalContent
-        idModal="modal_create_event"
-        title="Háblanos un poco de tu evento"
-      >
-        <CreateEvent />
-      </ModalContent>
     </>
   );
 }
