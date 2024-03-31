@@ -5,7 +5,7 @@ import { Loader } from "@googlemaps/js-api-loader";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function GoogleMap() {
+export function GoogleMap({ coords, children }) {
   const mapContainerRef = useRef(null);
   let map = null;
 
@@ -21,8 +21,8 @@ export function GoogleMap() {
         .then(() => {
           const google = window.google;
           map = new google.maps.Map(mapContainerRef.current, {
-            center: { lat: 23.6345, lng: -102.5528 },
-            zoom: 7,
+            center: { lat: coords[0], lng: coords[1] },
+            zoom: 13,
           });
         })
         .catch((error) => {
@@ -34,8 +34,10 @@ export function GoogleMap() {
   }, []);
 
   return (
-    <div className={clsx("h-[70vh]", "mt-2")}>
-      <div ref={mapContainerRef} className={clsx("h-full")} />
+    <div className={clsx("h-full")}>
+      <div ref={mapContainerRef} className={clsx("h-full", "rounded-xl")}>
+        {children}
+      </div>
     </div>
   );
 }
