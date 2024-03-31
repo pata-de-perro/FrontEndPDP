@@ -34,8 +34,8 @@ export function GoogleMap() {
   }, []);
 
   return (
-    <div className={clsx("h-[70vh]", "mt-2")}>
-      <div ref={mapContainerRef} className={clsx("h-full")} />
+    <div className={clsx("h-full")}>
+      <div ref={mapContainerRef} className={clsx("h-full", "rounded-xl")} />
     </div>
   );
 }
