@@ -2,11 +2,21 @@
 import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import clsx from "clsx";
-
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
+export function GoogleMapPlaces({ mapId, ubicationMap, placeRequest }) {
   const mapGooglePlacesRef = useRef(null);
+  const optionsMap = {
+    center: ubicationMap,
+    zoom: 13,
+    mapId,
+  };
+
+  const requestPlaces = {
+    location: ubicationMap,
+    radius: "8000",
+    type: placeRequest,
+  };
 
   const [] = useState(null);
 
