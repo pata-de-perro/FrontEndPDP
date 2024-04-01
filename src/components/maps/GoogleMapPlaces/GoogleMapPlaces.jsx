@@ -16,14 +16,14 @@ export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
       });
 
       const { Map } = await loader.importLibrary("maps");
-      const { PlacesService } = await loader.importLibrary("places");
+      const { PlacesService } = await google.maps.importLibrary("places");
       const { AdvancedMarkerElement } = await google.maps.importLibrary(
         "marker"
       );
 
       const map = new Map(mapGooglePlacesRef.current, optionsMap);
-      const placesService = new PlacesService(map);
 
+      const placesService = new PlacesService(map);
       placesService.nearbySearch(requestPlaces, (results, status) => {
         if (status !== "OK" || !results) return;
 
