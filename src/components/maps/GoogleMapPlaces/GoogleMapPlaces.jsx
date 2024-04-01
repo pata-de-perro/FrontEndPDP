@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import clsx from "clsx";
 
@@ -7,6 +7,8 @@ const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
 export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
   const mapGooglePlacesRef = useRef(null);
+
+  const [] = useState(null);
 
   useEffect(() => {
     const initializeMapPlaces = async () => {
@@ -17,9 +19,8 @@ export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
 
       const { Map } = await loader.importLibrary("maps");
       const { PlacesService } = await google.maps.importLibrary("places");
-      const { AdvancedMarkerElement } = await google.maps.importLibrary(
-        "marker"
-      );
+      const { AdvancedMarkerElement, PinElement } =
+        await google.maps.importLibrary("marker");
 
       const map = new Map(mapGooglePlacesRef.current, optionsMap);
 
@@ -28,10 +29,23 @@ export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
         if (status !== "OK" || !results) return;
 
         results.forEach((place) => {
-          new AdvancedMarkerElement({
+          if (place.business_status !== "OPERATIONAL") return;
+
+          const pinPdPBackground = new PinElement({
+            background: "#7ECDCE",
+            borderColor: "#fff",
+            glyphColor: "#87549F",
+          });
+
+          const marker = new AdvancedMarkerElement({
             map: map,
             position: place.geometry.location,
             title: place.name,
+            content: pinPdPBackground.element.cloneNode(true),
+          });
+
+          marker.addListener("click", () => {
+            console.log(place);
           });
         });
       });

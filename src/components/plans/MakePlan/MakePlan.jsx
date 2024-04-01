@@ -44,6 +44,22 @@ export async function MakePlan({ idPlan, user }) {
         <span className={clsx("font-medium text-sm text-accent2")}>
           {data?.locationEvent}
         </span>
+        <div className={clsx("flex flex-col flex-wrap")}>
+          <span className={clsx("text-sm", "text-center", "my-4")}>
+            Listado de lugares
+          </span>
+
+          <div className={clsx("flex items-center")}>
+            <img
+              src="/location_pdp.svg"
+              alt="gps pin icon"
+              className="h-12 w-auto"
+            />
+            <span className={clsx("text-sm text-azulGris900", "ml-4 mb-2")}>
+              Club Nocturno
+            </span>
+          </div>
+        </div>
       </aside>
     </div>
   );
