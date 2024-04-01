@@ -1,7 +1,11 @@
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth, TitleSection } from "@/components/layouts";
 import { MakePlan } from "@/components/plans";
 
-export default function PlanEventPage({ params }) {
+export default async function PlanEventPage({ params }) {
+  const { user } = await getServerSession(authOptions);
+
   return (
     <div>
       <HeroAuth title="¡Realiza tú plan!" urlImg="/World-bro.svg">
@@ -11,7 +15,7 @@ export default function PlanEventPage({ params }) {
         </p>
       </HeroAuth>
       <TitleSection title="Revisa tu mapa" urlIcon="/Icono-Fecha.svg" />
-      <MakePlan plan={params.id} />
+      <MakePlan idPlan={params.id} user={user} />
     </div>
   );
 }
