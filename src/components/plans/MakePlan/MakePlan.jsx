@@ -1,16 +1,11 @@
 import clsx from "clsx";
-import { getPlanEventApi } from "@/services";
 import { GoogleMapPlaces } from "@/components/maps";
 
-const MAP_ID = process.env.ID_MAP_GOOGLE;
-
-export async function MakePlan({ idPlan, user }) {
-  const { data } = await getPlanEventApi(idPlan, user.accessToken);
-
+export function MakePlan({ data, mapId }) {
   const optionsMap = {
     center: { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] },
     zoom: 13,
-    mapId: MAP_ID,
+    mapId,
   };
 
   const requestPlaces = {
