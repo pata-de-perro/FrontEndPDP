@@ -1,19 +1,33 @@
 import clsx from "clsx";
-import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getPlanEventApi } from "@/services";
-import { GoogleMap } from "@/components/maps";
+import { GoogleMapPlaces } from "@/components/maps";
 
-export async function MakePlan({ plan }) {
-  const { user } = await getServerSession(authOptions);
-  const { data } = await getPlanEventApi(plan, user.accessToken);
+const MAP_ID = process.env.ID_MAP_GOOGLE;
+
+export async function MakePlan({ idPlan, user }) {
+  const { data } = await getPlanEventApi(idPlan, user.accessToken);
+
+  const optionsMap = {
+    center: { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] },
+    zoom: 13,
+    mapId: MAP_ID,
+  };
+
+  const requestPlaces = {
+    location: { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] },
+    radius: "8000",
+    type: ["night_club"],
+  };
 
   return (
     <div
       className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4 mr-6")}
     >
       <div className={clsx("w-3/4")}>
-        <GoogleMap coords={data?.coordsEvent}></GoogleMap>
+        <GoogleMapPlaces
+          optionsMap={optionsMap}
+          requestPlaces={requestPlaces}
+        />
       </div>
       <aside
         className={clsx(
