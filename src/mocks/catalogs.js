@@ -86,4 +86,29 @@ export const placesList = [
 
 export const friends = ["Paco", "Sonia", "Estevan"];
 
-
+export const placesOfInterestMenu = [
+  {
+    key: "01",
+    title: "Hospedaje",
+    pinUrl: "/location_lodging.svg",
+    typePlace: ["lodging"],
+  },
+  {
+    key: "02",
+    title: "Atracciones Turísticas",
+    pinUrl: "/location_tourist.svg",
+    typePlace: ["tourist_attraction"],
+  },
+  {
+    key: "03",
+    title: "Restaurantes",
+    pinUrl: "/location_restaurant_pdp.svg",
+    typePlace: ["restaurant"],
+  },
+  {
+    key: "04",
+    title: "Vida Nocturna",
+    pinUrl: "/location_pdp.svg",
+    typePlace: ["night_club"],
+  },
+];

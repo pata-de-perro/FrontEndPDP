@@ -41,10 +41,31 @@ export function GoogleMapPlaces({ mapId, ubicationMap, placeRequest }) {
         results.forEach((place) => {
           if (place.business_status !== "OPERATIONAL") return;
 
+          const pinColors = {
+            lodging: {
+              background: "#C92CE5",
+              borderColor: "#fff",
+              glyphColor: "#fff",
+            },
+            tourist_attraction: {
+              background: "#253A74",
+              borderColor: "#fff",
+              glyphColor: "#fff",
+            },
+            restaurant: {
+              background: "#FE9401",
+              borderColor: "#fff",
+              glyphColor: "#87549F",
+            },
+            default: {
+              background: "#7ECDCE",
+              borderColor: "#fff",
+              glyphColor: "#87549F",
+            },
+          };
+
           const pinPdPBackground = new PinElement({
-            background: "#7ECDCE",
-            borderColor: "#fff",
-            glyphColor: "#87549F",
+            ...(pinColors[placeRequest] || pinColors.default),
           });
 
           const marker = new AdvancedMarkerElement({

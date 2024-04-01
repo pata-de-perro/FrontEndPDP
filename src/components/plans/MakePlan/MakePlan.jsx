@@ -1,27 +1,20 @@
+"use client";
+import { useState } from "react";
 import clsx from "clsx";
+import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
 
 export function MakePlan({ data, mapId }) {
-  const optionsMap = {
-    center: { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] },
-    zoom: 13,
-    mapId,
-  };
-
-  const requestPlaces = {
-    location: { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] },
-    radius: "8000",
-    type: ["night_club"],
-  };
+  const ubicationMap = { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] };
+  const [placeRequest, setPlaceRequest] = useState(["lodging"]);
 
   return (
-    <div
-      className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4 mr-6")}
-    >
+    <div className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4")}>
       <div className={clsx("w-3/4")}>
         <GoogleMapPlaces
-          optionsMap={optionsMap}
-          requestPlaces={requestPlaces}
+          mapId={mapId}
+          ubicationMap={ubicationMap}
+          placeRequest={placeRequest}
         />
       </div>
       <aside
@@ -44,15 +37,30 @@ export function MakePlan({ data, mapId }) {
             Listado de lugares
           </span>
 
-          <div className={clsx("flex items-center")}>
-            <img
-              src="/location_pdp.svg"
-              alt="gps pin icon"
-              className="h-12 w-auto"
-            />
-            <span className={clsx("text-sm text-azulGris900", "ml-4 mb-2")}>
-              Club Nocturno
-            </span>
+          <div className={clsx("flex flex-col")}>
+            {placesOfInterestMenu.map((itemPlace) => (
+              <div
+                key={itemPlace.key}
+                className={clsx("flex items-center", "hover:cursor-pointer")}
+                onClick={() => setPlaceRequest(itemPlace.typePlace)}
+              >
+                <img
+                  src={itemPlace.pinUrl}
+                  alt="gps pin icon"
+                  className="h-12 w-auto"
+                />
+                <span
+                  className={clsx(
+                    "text-sm text-azulGris900",
+                    "ml-4 mb-2",
+                    placeRequest === itemPlace.typePlace &&
+                      "text-primary font-semibold"
+                  )}
+                >
+                  {itemPlace.title}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </aside>
