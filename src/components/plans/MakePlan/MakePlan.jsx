@@ -4,6 +4,7 @@ import clsx from "clsx";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
 import { ModalDrawer } from "@/components/common";
+import { ElementPlacesPlan } from "@/components/plans";
 
 export function MakePlan({ data, mapId }) {
   const ubicationMap = { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] };
@@ -19,7 +20,7 @@ export function MakePlan({ data, mapId }) {
     console.log(dataPlace);
     setModalState({
       title: dataPlace.name,
-      content: <h2>Modal Drawer</h2>,
+      content: <ElementPlacesPlan data={dataPlace} />,
     });
     toggleVisible();
   };
