@@ -17,7 +17,6 @@ export function MakePlan({ data, mapId }) {
   };
 
   const handleClickMarker = (dataPlace) => {
-    console.log(dataPlace);
     setModalState({
       title: dataPlace.name,
       content: <ElementPlacesPlan data={dataPlace} />,

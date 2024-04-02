@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import clsx from "clsx";
+import { pinColors } from "@/mocks/catalogs";
+import { buildDetailsOfPlace } from "@/helpers";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
 export function GoogleMapPlaces({
@@ -20,7 +22,7 @@ export function GoogleMapPlaces({
   useEffect(() => {
     const requestPlaces = {
       location: ubicationMap,
-      radius: "8000",
+      radius: "20000",
       type: placeRequest,
     };
 
@@ -44,43 +46,28 @@ export function GoogleMapPlaces({
         results.forEach((place) => {
           if (place.business_status !== "OPERATIONAL") return;
 
-          const pinColors = {
-            lodging: {
-              background: "#C92CE5",
-              borderColor: "#fff",
-              glyphColor: "#fff",
-            },
-            tourist_attraction: {
-              background: "#253A74",
-              borderColor: "#fff",
-              glyphColor: "#fff",
-            },
-            restaurant: {
-              background: "#FE9401",
-              borderColor: "#fff",
-              glyphColor: "#87549F",
-            },
-            default: {
-              background: "#7ECDCE",
-              borderColor: "#fff",
-              glyphColor: "#87549F",
-            },
-          };
+          placesService.getDetails(
+            { placeId: place.place_id },
+            (placeDetail, status) => {
+              if (status === "OK" && placeDetail) {
+                const pinPdPBackground = new PinElement({
+                  ...(pinColors[placeRequest] || pinColors.default),
+                });
 
-          const pinPdPBackground = new PinElement({
-            ...(pinColors[placeRequest] || pinColors.default),
-          });
+                const marker = new AdvancedMarkerElement({
+                  map: map,
+                  position: placeDetail.geometry.location,
+                  title: placeDetail.name,
+                  content: pinPdPBackground.element.cloneNode(true),
+                });
 
-          const marker = new AdvancedMarkerElement({
-            map: map,
-            position: place.geometry.location,
-            title: place.name,
-            content: pinPdPBackground.element.cloneNode(true),
-          });
-
-          marker.addListener("click", () => {
-            handleClickMarker(place);
-          });
+                marker.addListener("click", () => {
+                  const placeFormated = buildDetailsOfPlace(placeDetail);
+                  handleClickMarker(placeFormated);
+                });
+              }
+            }
+          );
         });
       });
     };
