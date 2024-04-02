@@ -1,10 +1,15 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import clsx from "clsx";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function GoogleMapPlaces({ mapId, ubicationMap, placeRequest }) {
+export function GoogleMapPlaces({
+  mapId,
+  ubicationMap,
+  placeRequest,
+  handleClickMarker,
+}) {
   const mapGooglePlacesRef = useRef(null);
   const optionsMap = {
     center: ubicationMap,
@@ -12,15 +17,13 @@ export function GoogleMapPlaces({ mapId, ubicationMap, placeRequest }) {
     mapId,
   };
 
-  const requestPlaces = {
-    location: ubicationMap,
-    radius: "8000",
-    type: placeRequest,
-  };
-
-  const [] = useState(null);
-
   useEffect(() => {
+    const requestPlaces = {
+      location: ubicationMap,
+      radius: "8000",
+      type: placeRequest,
+    };
+
     const initializeMapPlaces = async () => {
       const loader = new Loader({
         apiKey: API_KEY,
@@ -76,13 +79,13 @@ export function GoogleMapPlaces({ mapId, ubicationMap, placeRequest }) {
           });
 
           marker.addListener("click", () => {
-            console.log(place);
+            handleClickMarker(place);
           });
         });
       });
     };
     initializeMapPlaces();
-  }, [optionsMap, requestPlaces]);
+  }, [placeRequest]);
 
   return (
     <div className={clsx("h-full")}>
