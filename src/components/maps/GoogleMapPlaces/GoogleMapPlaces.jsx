@@ -1,16 +1,29 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import clsx from "clsx";
-
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
+export function GoogleMapPlaces({
+  mapId,
+  ubicationMap,
+  placeRequest,
+  handleClickMarker,
+}) {
   const mapGooglePlacesRef = useRef(null);
-
-  const [] = useState(null);
+  const optionsMap = {
+    center: ubicationMap,
+    zoom: 13,
+    mapId,
+  };
 
   useEffect(() => {
+    const requestPlaces = {
+      location: ubicationMap,
+      radius: "8000",
+      type: placeRequest,
+    };
+
     const initializeMapPlaces = async () => {
       const loader = new Loader({
         apiKey: API_KEY,
@@ -31,10 +44,31 @@ export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
         results.forEach((place) => {
           if (place.business_status !== "OPERATIONAL") return;
 
+          const pinColors = {
+            lodging: {
+              background: "#C92CE5",
+              borderColor: "#fff",
+              glyphColor: "#fff",
+            },
+            tourist_attraction: {
+              background: "#253A74",
+              borderColor: "#fff",
+              glyphColor: "#fff",
+            },
+            restaurant: {
+              background: "#FE9401",
+              borderColor: "#fff",
+              glyphColor: "#87549F",
+            },
+            default: {
+              background: "#7ECDCE",
+              borderColor: "#fff",
+              glyphColor: "#87549F",
+            },
+          };
+
           const pinPdPBackground = new PinElement({
-            background: "#7ECDCE",
-            borderColor: "#fff",
-            glyphColor: "#87549F",
+            ...(pinColors[placeRequest] || pinColors.default),
           });
 
           const marker = new AdvancedMarkerElement({
@@ -45,13 +79,13 @@ export function GoogleMapPlaces({ optionsMap, requestPlaces }) {
           });
 
           marker.addListener("click", () => {
-            console.log(place);
+            handleClickMarker(place);
           });
         });
       });
     };
     initializeMapPlaces();
-  }, [optionsMap, requestPlaces]);
+  }, [placeRequest]);
 
   return (
     <div className={clsx("h-full")}>
