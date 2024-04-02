@@ -1,7 +1,13 @@
 export function ModalDrawer({ title, visible, toggleVisible, children }) {
   return (
     <div className="max-w-md mx-auto drawer drawer-end z-10">
-      <input type="checkbox" className="drawer-toggle" checked={visible} />
+      <input
+        id="modal_drawer"
+        type="checkbox"
+        className="drawer-toggle"
+        checked={visible}
+        onChange={toggleVisible}
+      />
       <div className="drawer-side">
         <label
           aria-label="close sidebar"
