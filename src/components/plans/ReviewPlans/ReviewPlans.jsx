@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import { getUserEventsApi } from "@/services";
 import { TitleSection } from "@/components/layouts";
-import { NotEvents, PlansContainer } from "@/components/events";
+import { NotEvents } from "@/components/common";
+import { ListPlans } from "@/components/plans";
 
 export async function ReviewPlans({ user }) {
   const { data: events } = await getUserEventsApi(user.id, user.accessToken);
@@ -16,7 +17,7 @@ export async function ReviewPlans({ user }) {
           }
         />
       )}
-      <PlansContainer data={events} />
+      <ListPlans data={events} />
     </div>
   );
 }

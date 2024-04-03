@@ -1,7 +1,7 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth } from "@/components/layouts";
-import { ReviewPlans } from "@/components/events";
+import { ReviewPlans } from "@/components/plans";
 import { BtnToLink } from "@/components/common";
 
 export default async function HomePage() {
