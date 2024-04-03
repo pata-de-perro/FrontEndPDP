@@ -2,7 +2,7 @@ const URL_API = process.env.NEXT_PUBLIC_URL_API;
 
 export const getUserEventsApi = async (userId, token) => {
   try {
-    const res = await fetch(`${URL_API}/events/${userId}`, {
+    const res = await fetch(`${URL_API}/events/user/${userId}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
