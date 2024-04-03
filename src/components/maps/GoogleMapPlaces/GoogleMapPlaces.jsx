@@ -67,7 +67,7 @@ export function GoogleMapPlaces({
                   new AdvancedMarkerElement({
                     map: map,
                     position: ubicationCoords,
-                    title: ubication.location_name,
+                    title: ubication.name,
                     content: pinPdPBackground.element.cloneNode(true),
                   });
                 });

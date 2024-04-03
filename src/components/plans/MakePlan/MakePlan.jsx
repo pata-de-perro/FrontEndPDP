@@ -1,13 +1,18 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import clsx from "clsx";
+import { postEventLocationsToApi } from "@/services";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
 import { ModalDrawer } from "@/components/common";
 import { ElementPlacesPlan } from "@/components/plans";
 
-export function MakePlan({ data, mapId }) {
+export function MakePlan({ data, mapId, user, idPlan }) {
   const ubicationMap = { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] };
+  const { accessToken } = user;
+  const router = useRouter();
+
   const [placeRequest, setPlaceRequest] = useState(["lodging"]);
   const [open, setOpen] = useState(false);
   const [modalState, setModalState] = useState({ title: null, content: null });
@@ -31,16 +36,30 @@ export function MakePlan({ data, mapId }) {
   };
 
   const handleAddUbicationToEvent = (ubication) => {
-    const { place_id, name, type, coords } = ubication;
+    const { place_id, name, type, coords, vicinity, contact } = ubication;
 
     const newUbication = {
-      place_id: place_id,
-      location_name: name,
+      placeIdGoogle: place_id,
+      name: name,
       type: type,
+      vicinity: vicinity,
+      simpleAddress: contact.address,
       coords: coords,
     };
     SetUbicationsUser([...ubicationsUser, newUbication]);
     setOpen(false);
+  };
+
+  const onSubmitLocations = async () => {
+    const result = await postEventLocationsToApi(
+      idPlan,
+      accessToken,
+      ubicationsUser
+    );
+
+    if (result.success === true) {
+      router.push("/pdp/");
+    }
   };
 
   return (
@@ -120,6 +139,7 @@ export function MakePlan({ data, mapId }) {
                     "bg-accent2 text-white",
                     "hover:bg-accent2/95"
                   )}
+                  onClick={onSubmitLocations}
                 >
                   Guardar ubicaciones
                 </button>
