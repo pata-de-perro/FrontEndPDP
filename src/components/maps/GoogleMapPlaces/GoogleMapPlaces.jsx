@@ -11,6 +11,7 @@ export function GoogleMapPlaces({
   ubicationMap,
   placeRequest,
   handleClickMarker,
+  ubicationsUser,
 }) {
   const mapGooglePlacesRef = useRef(null);
   const optionsMap = {
@@ -44,35 +45,52 @@ export function GoogleMapPlaces({
         if (status !== "OK" || !results) return;
 
         results.forEach((place) => {
+          const placeId = place.place_id;
           if (place.business_status !== "OPERATIONAL") return;
 
-          placesService.getDetails(
-            { placeId: place.place_id },
-            (placeDetail, status) => {
-              if (status === "OK" && placeDetail) {
-                const pinPdPBackground = new PinElement({
-                  ...(pinColors[placeRequest] || pinColors.default),
-                });
+          placesService.getDetails({ placeId }, (placeDetail, status) => {
+            if (status === "OK" && placeDetail) {
+              const pinPdPBackground = new PinElement({
+                ...(pinColors[placeRequest] || pinColors.default),
+              });
+              let markerContent = pinPdPBackground.element.cloneNode(true);
 
-                const marker = new AdvancedMarkerElement({
-                  map: map,
-                  position: placeDetail.geometry.location,
-                  title: placeDetail.name,
-                  content: pinPdPBackground.element.cloneNode(true),
-                });
-
-                marker.addListener("click", () => {
-                  const placeFormated = buildDetailsOfPlace(placeDetail);
-                  handleClickMarker(placeFormated);
+              if (ubicationsUser.length > 0) {
+                ubicationsUser.forEach((ubication) => {
+                  const ubicationCoords = {
+                    lat: ubication.coords[0],
+                    lng: ubication.coords[1],
+                  };
+                  const pinPdPBackground = new PinElement({
+                    ...pinColors.default,
+                  });
+                  new AdvancedMarkerElement({
+                    map: map,
+                    position: ubicationCoords,
+                    title: ubication.location_name,
+                    content: pinPdPBackground.element.cloneNode(true),
+                  });
                 });
               }
+
+              const marker = new AdvancedMarkerElement({
+                map: map,
+                position: placeDetail.geometry.location,
+                title: placeDetail.name,
+                content: markerContent,
+              });
+
+              marker.addListener("click", () => {
+                const placeFormated = buildDetailsOfPlace(placeDetail);
+                handleClickMarker(placeFormated);
+              });
             }
-          );
+          });
         });
       });
     };
     initializeMapPlaces();
-  }, [placeRequest]);
+  }, [placeRequest, ubicationsUser]);
 
   return (
     <div className={clsx("h-full")}>
