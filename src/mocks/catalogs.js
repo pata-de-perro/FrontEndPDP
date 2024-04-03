@@ -129,9 +129,14 @@ export const pinColors = {
     borderColor: "#fff",
     glyphColor: "#87549F",
   },
-  default: {
+  night_club: {
     background: "#7ECDCE",
     borderColor: "#fff",
+    glyphColor: "#87549F",
+  },
+  default: {
+    background: "#B6EAA4",
+    borderColor: "#87549F",
     glyphColor: "#87549F",
   },
 };
