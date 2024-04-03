@@ -2,15 +2,18 @@ import clsx from "clsx";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth, TitleSection } from "@/components/layouts";
+import {  AiOutlineUser } from "react-icons/ai";
+import { ModalContent } from "@/components/common";
+import {EditProfile} from "@/components/editProfile/EditProfile";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
+  const icon = <AiOutlineUser/>
 
   return (
     <>
-      <TitleSection urlIcon={"/person_icon.svg"} title="Perfil" />
       <HeroAuth
-        title={session.user.name ? session.user.name : "Nombre de usuario"}
+        title={session.user.name ? session.user.name : "Personaliza tu usuario"}
       >
         <p className="font-heading text-regularSemiBold">
           {session?.user.email}
@@ -20,16 +23,15 @@ export default async function Profile() {
         <div className={clsx("flex justify-start")}>
           <button
             className={clsx(
-              "mx-2",
-              "w-[180px] h-[45px]",
-              "font-body text-regular text-white",
-              "absolute right-4 -bottom-10",
-              "rounded-xl",
-              "bg-azulGris500",
-              "md:static",
-              "disabled: cursor-not-allowed"
+              "w-[180px] h-[45px] mx-2 rounded-xl",
+              // "absolute right-4 -bottom-10",
+              "bg-azulGris100",
+              "font-body text-regularSemiBold text-azulGris900",
+              // "md:static",
+              "hover:bg-primary hover:text-white"
+              // "disabled: cursor-not-allowed"
             )}
-            disabled
+            
           >
             Editar
           </button>
@@ -37,13 +39,11 @@ export default async function Profile() {
           <button
             className={clsx(
               "w-[180px] h-[45px]",
-              "rounded-xl",
-              "mx-2",
-              "bg-secondary",
-              "font-body text-regular text-accent2",
-              "justify-center",
-              "absolute right-4 -bottom-10",
-              "md:static",
+              "mx-2 rounded-xl",
+              // "justify-center absolute right-4 -bottom-10",
+              "bg-azulGris100",
+              "font-body text-regularSemiBold text-azulGris900",
+              // "md:static",
               "disabled: cursor-not-allowed"
             )}
             disabled
@@ -56,16 +56,29 @@ export default async function Profile() {
               src={
                 session.user.picture ? session.user.picture : "/profile-pic.png"
               }
-              width={180}
-              height={180}
-              className={clsx("absolute z-10 right-10 top-20", "border")}
+              className={clsx(
+                "absolute z-10 right-10 top-20", 
+                "border",  
+                "sr-only md:not-sr-only ml:not-sr-only",
+                "lg:w-[180px] lg:h-[180px]"
+                )}
             />
           </div>
         </div>
       </section>
 
-      <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" />
-      <section className="h-[150px]"></section>
+      <TitleSection urlIcon={icon} title="Perfil" />
+      {/* <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" /> */}
+      {/* <section className="h-[150px]"></section> */}
+      <EditProfile />
+
+      {/* <ModalContent 
+      idModal="modal_edit_profile"
+      title="Edita tu perfil"
+      >
+        <EditProfile />
+      </ModalContent> */}
+
     </>
   );
 }

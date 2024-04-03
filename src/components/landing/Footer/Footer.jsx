@@ -22,7 +22,6 @@ export default function Footer() {
             "m-[5px]",
             "md:col-span-1 md:flex flex-row-reverse md:justify-between",
         )}>
-          <div>
           <img
             src="/PDPLogo.svg"
             width={217}
@@ -33,35 +32,6 @@ export default function Footer() {
               "md:flex md:justify-end"
             )}
           />
-          <div
-            className={clsx(
-              "grid grid-cols-4",
-              "mt-[15px]",
-              "justify-items-center"
-            )}
-          >
-            <img
-              src="./instagram.svg"
-              alt="Instagram icon"
-              className="cursor-pointer"
-            />
-            <img
-              src="./tiktok.svg"
-              alt="Tiktok icon"
-              className="cursor-pointer"
-            />
-            <img
-              src="./youtube.svg"
-              alt="Youtube icon"
-              className="cursor-pointer"
-            />
-            <img
-              src="./twitter-x.svg"
-              alt="Twitter X icon"
-              className="cursor-pointer"
-            />
-          </div>
-          </div>
 
         </div>
         
@@ -77,7 +47,7 @@ export default function Footer() {
               "md:text-start md:self-center md:mb-[0px]",
             )}
           >
-            © 2024 | PataDePerro :D
+            © 2024 | PataDePerro
           </p>
         </div>
       </div>

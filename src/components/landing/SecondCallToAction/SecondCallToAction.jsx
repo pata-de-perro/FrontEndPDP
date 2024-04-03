@@ -91,7 +91,7 @@ export default function SecondCallToAction() {
               "md:w-[159px] md:h-[36px]"
             )}
           >
-            <Link href="/register">¡Regístrate!</Link>
+            <Link href="/account/register">¡Regístrate!</Link>
           </button>
         </div>
       </div>

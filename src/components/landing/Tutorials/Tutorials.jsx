@@ -4,16 +4,14 @@ export default function Tutorials() {
   return (
     <div id="tutorials"
       className={clsx(
-        "w-auto",
-        "full-size",
+        "w-auto full-size",
         "flex flex-col flex-wrap",
         "md:h-[500px]"
       )}
     >
       <div
         className={clsx(
-          "flex flex-col",
-          "items-center",
+          "flex flex-col items-center",
           "md:flex-row md:flex-row-reverse",
           "lg:sr-only"
         )}
@@ -56,10 +54,8 @@ export default function Tutorials() {
           </div>
         </div>
         <img
-          className={clsx("z-40", "sm:not-sr-only", "md:sr-only")}
+          className={clsx("z-40 w-auto h-[600px]", "sm:not-sr-only", "md:sr-only")}
           src="/App-mockup-sm.svg"
-          width={500}
-          height={100}
           alt="mockup phone screen sm"
         />
         <img

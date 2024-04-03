@@ -4,6 +4,7 @@ import { getPlanEventApi } from "@/services";
 import { TitleSection } from "@/components/layouts";
 import { MakePlan } from "@/components/plans";
 const MAP_ID = process.env.ID_MAP_GOOGLE;
+import { FaRegMap } from "react-icons/fa";
 
 export async function ContainerPlan({ idPlan, user }) {
   const { accessToken } = user;

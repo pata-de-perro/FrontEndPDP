@@ -3,8 +3,10 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth } from "@/components/layouts";
 import { ContainerPlan } from "@/components/plans";
 
+
 export default async function PlanEventPage({ params }) {
   const { user } = await getServerSession(authOptions);
+
 
   return (
     <>

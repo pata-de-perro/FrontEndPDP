@@ -17,7 +17,7 @@ export default function LoginPage() {
             width={250}
             height={50}
             alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[auto]"
+            className="lg:w-[auto] lg:h-[80px]"
           />
         </Link>
         </div>

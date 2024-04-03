@@ -16,7 +16,7 @@ export default function MenuButtons() {
           "border-2 border-accent2 hover:border-primary"
         )}
       >
-        <Link href="/account/register">¡Regístrate!</Link>
+          <Link href="/account/register">¡Regístrate!</Link>
       </button>
       <button
         className={clsx(
