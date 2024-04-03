@@ -48,3 +48,19 @@ export const getPlanEventApi = async (planId, token) => {
     throw new Error(`Error fetching user events: ${err.message}`);
   }
 };
+
+export const getPlacesEventApi = async (eventId, token) => {
+  try {
+    const res = await fetch(`${URL_API}/events/place/${eventId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw new Error(`Error retrieving target event: ${err.message}`);
+  }
+};
