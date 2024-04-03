@@ -10,8 +10,9 @@ export default async function PlanEventPage({ params }) {
     <>
       <HeroAuth title="¡Realiza tú plan!" urlImg="/World-bro.svg">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Descubre los lugares que te gustaria visitar u las opciones que tienes
+          para hospedarte, el listado de opciones es tu aliado para que puedas
+          agregarlas y una vez que estes listo, gardarlas en tu evento.
         </p>
       </HeroAuth>
       <ContainerPlan idPlan={params.id} user={user} />

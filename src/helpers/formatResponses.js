@@ -14,3 +14,29 @@ export const buildLocationByPlaces = (place) => {
 
   return { location, coords };
 };
+
+export const buildDetailsOfPlace = (place) => {
+  const dataPlace = {
+    place_id: place.place_id,
+    icon: place.icon,
+    name: place.name,
+    vicinity: place.vicinity,
+    photos: place?.photos?.map((photo) => photo.getUrl()),
+    rating: place.rating,
+    user_ratings_total: place.user_ratings_total,
+    coords: [place.geometry.location.lat(), place.geometry.location.lng()],
+    type: place.types[0],
+    contact: {
+      address: place.formatted_address,
+      phone: place.formatted_phone_number,
+      web: place.website,
+    },
+    opening: {
+      isOpen: place?.opening_hours?.isOpen(),
+      periods: place?.periods,
+      weekday: place?.weekday_text,
+    },
+  };
+
+  return dataPlace;
+};

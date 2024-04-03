@@ -2,6 +2,8 @@
 import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 import clsx from "clsx";
+import { pinColors } from "@/mocks/catalogs";
+import { buildDetailsOfPlace } from "@/helpers";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
 export function GoogleMapPlaces({
@@ -9,6 +11,7 @@ export function GoogleMapPlaces({
   ubicationMap,
   placeRequest,
   handleClickMarker,
+  ubicationsUser,
 }) {
   const mapGooglePlacesRef = useRef(null);
   const optionsMap = {
@@ -20,7 +23,7 @@ export function GoogleMapPlaces({
   useEffect(() => {
     const requestPlaces = {
       location: ubicationMap,
-      radius: "8000",
+      radius: "20000",
       type: placeRequest,
     };
 
@@ -42,50 +45,52 @@ export function GoogleMapPlaces({
         if (status !== "OK" || !results) return;
 
         results.forEach((place) => {
+          const placeId = place.place_id;
           if (place.business_status !== "OPERATIONAL") return;
 
-          const pinColors = {
-            lodging: {
-              background: "#C92CE5",
-              borderColor: "#fff",
-              glyphColor: "#fff",
-            },
-            tourist_attraction: {
-              background: "#253A74",
-              borderColor: "#fff",
-              glyphColor: "#fff",
-            },
-            restaurant: {
-              background: "#FE9401",
-              borderColor: "#fff",
-              glyphColor: "#87549F",
-            },
-            default: {
-              background: "#7ECDCE",
-              borderColor: "#fff",
-              glyphColor: "#87549F",
-            },
-          };
+          placesService.getDetails({ placeId }, (placeDetail, status) => {
+            if (status === "OK" && placeDetail) {
+              const pinPdPBackground = new PinElement({
+                ...(pinColors[placeRequest] || pinColors.default),
+              });
+              let markerContent = pinPdPBackground.element.cloneNode(true);
 
-          const pinPdPBackground = new PinElement({
-            ...(pinColors[placeRequest] || pinColors.default),
-          });
+              if (ubicationsUser.length > 0) {
+                ubicationsUser.forEach((ubication) => {
+                  const ubicationCoords = {
+                    lat: ubication.coords[0],
+                    lng: ubication.coords[1],
+                  };
+                  const pinPdPBackground = new PinElement({
+                    ...pinColors.default,
+                  });
+                  new AdvancedMarkerElement({
+                    map: map,
+                    position: ubicationCoords,
+                    title: ubication.name,
+                    content: pinPdPBackground.element.cloneNode(true),
+                  });
+                });
+              }
 
-          const marker = new AdvancedMarkerElement({
-            map: map,
-            position: place.geometry.location,
-            title: place.name,
-            content: pinPdPBackground.element.cloneNode(true),
-          });
+              const marker = new AdvancedMarkerElement({
+                map: map,
+                position: placeDetail.geometry.location,
+                title: placeDetail.name,
+                content: markerContent,
+              });
 
-          marker.addListener("click", () => {
-            handleClickMarker(place);
+              marker.addListener("click", () => {
+                const placeFormated = buildDetailsOfPlace(placeDetail);
+                handleClickMarker(placeFormated);
+              });
+            }
           });
         });
       });
     };
     initializeMapPlaces();
-  }, [placeRequest]);
+  }, [placeRequest, ubicationsUser]);
 
   return (
     <div className={clsx("h-full")}>

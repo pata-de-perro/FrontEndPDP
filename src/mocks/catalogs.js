@@ -112,3 +112,31 @@ export const placesOfInterestMenu = [
     typePlace: ["night_club"],
   },
 ];
+
+export const pinColors = {
+  lodging: {
+    background: "#C92CE5",
+    borderColor: "#fff",
+    glyphColor: "#fff",
+  },
+  tourist_attraction: {
+    background: "#253A74",
+    borderColor: "#fff",
+    glyphColor: "#fff",
+  },
+  restaurant: {
+    background: "#FE9401",
+    borderColor: "#fff",
+    glyphColor: "#87549F",
+  },
+  night_club: {
+    background: "#7ECDCE",
+    borderColor: "#fff",
+    glyphColor: "#87549F",
+  },
+  default: {
+    background: "#B6EAA4",
+    borderColor: "#87549F",
+    glyphColor: "#87549F",
+  },
+};
