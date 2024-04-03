@@ -11,6 +11,7 @@ export function MakePlan({ data, mapId }) {
   const [placeRequest, setPlaceRequest] = useState(["lodging"]);
   const [open, setOpen] = useState(false);
   const [modalState, setModalState] = useState({ title: null, content: null });
+  const [ubicationsUser, SetUbicationsUser] = useState([]);
 
   const toggleVisible = () => {
     setOpen(!open);
@@ -19,9 +20,27 @@ export function MakePlan({ data, mapId }) {
   const handleClickMarker = (dataPlace) => {
     setModalState({
       title: dataPlace.name,
-      content: <ElementPlacesPlan data={dataPlace} />,
+      content: (
+        <ElementPlacesPlan
+          data={dataPlace}
+          handleAddUbicationToEvent={handleAddUbicationToEvent}
+        />
+      ),
     });
-    toggleVisible();
+    setOpen(true);
+  };
+
+  const handleAddUbicationToEvent = (ubication) => {
+    const { place_id, name, type, coords } = ubication;
+
+    const newUbication = {
+      place_id: place_id,
+      location_name: name,
+      type: type,
+      coords: coords,
+    };
+    SetUbicationsUser([...ubicationsUser, newUbication]);
+    setOpen(false);
   };
 
   return (
@@ -30,55 +49,81 @@ export function MakePlan({ data, mapId }) {
         <div className={clsx("w-3/4")}>
           <GoogleMapPlaces
             mapId={mapId}
+            ubicationsUser={ubicationsUser}
             ubicationMap={ubicationMap}
             placeRequest={placeRequest}
             handleClickMarker={handleClickMarker}
           />
         </div>
-        <aside
-          className={clsx(
-            "bg-primary/10",
-            "w-1/4",
-            "rounded-xl",
-            "p-4",
-            "relative"
-          )}
-        >
-          <h3 className={clsx("font-semibold text-lg text-primary")}>
-            {data?.title}
-          </h3>
-          <span className={clsx("font-medium text-sm text-accent2")}>
-            {data?.locationEvent}
-          </span>
-          <div className={clsx("flex flex-col flex-wrap")}>
-            <span className={clsx("text-sm", "text-center", "my-4")}>
-              Listado de lugares
-            </span>
-
-            <div className={clsx("flex flex-col")}>
-              {placesOfInterestMenu.map((itemPlace) => (
-                <div
-                  key={itemPlace.key}
-                  className={clsx("flex items-center", "hover:cursor-pointer")}
-                  onClick={() => setPlaceRequest(itemPlace.typePlace)}
+        <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
+          <div
+            className={clsx(
+              "h-full",
+              "flex flex-col items-center justify-between",
+              "rounded-xl",
+              "border-2"
+            )}
+          >
+            <div className="mt-10 px-2">
+              <h3 className={clsx("font-semibold text-lg text-primary")}>
+                {data?.title}
+              </h3>
+              <span className={clsx("font-medium text-sm text-accent2")}>
+                {data?.locationEvent}
+              </span>
+              <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
+                <span
+                  className={clsx(
+                    "text-sm font-semibold",
+                    "text-center",
+                    "my-4"
+                  )}
                 >
-                  <img
-                    src={itemPlace.pinUrl}
-                    alt="gps pin icon"
-                    className="h-12 w-auto"
-                  />
-                  <span
-                    className={clsx(
-                      "text-sm text-azulGris900",
-                      "ml-4 mb-2",
-                      placeRequest === itemPlace.typePlace &&
-                        "text-primary font-semibold"
-                    )}
-                  >
-                    {itemPlace.title}
-                  </span>
+                  Listado de opciones
+                </span>
+
+                <div className={clsx("flex flex-col")}>
+                  {placesOfInterestMenu.map((itemPlace) => (
+                    <div
+                      key={itemPlace.key}
+                      className={clsx(
+                        "flex items-center",
+                        "hover:cursor-pointer"
+                      )}
+                      onClick={() => setPlaceRequest(itemPlace.typePlace)}
+                    >
+                      <img
+                        src={itemPlace.pinUrl}
+                        alt="gps pin icon"
+                        className="h-12 w-auto"
+                      />
+                      <span
+                        className={clsx(
+                          "text-sm text-azulGris900",
+                          "ml-4 mb-2",
+                          placeRequest === itemPlace.typePlace &&
+                            "text-primary font-semibold"
+                        )}
+                      >
+                        {itemPlace.title}
+                      </span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+            <div className={clsx("flex", "w-full m-1")}>
+              {ubicationsUser.length > 1 && (
+                <button
+                  className={clsx(
+                    "btn btn-block",
+                    "bg-accent2 text-white",
+                    "hover:bg-accent2/95"
+                  )}
+                >
+                  Guardar ubicaciones
+                </button>
+              )}
             </div>
           </div>
         </aside>

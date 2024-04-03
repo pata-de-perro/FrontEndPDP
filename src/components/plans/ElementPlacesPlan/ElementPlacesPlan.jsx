@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export function ElementPlacesPlan({ data }) {
+export function ElementPlacesPlan({ data, handleAddUbicationToEvent }) {
   return (
     <div className={clsx("flex flex-col")}>
       {data?.photos && (
@@ -68,6 +68,7 @@ export function ElementPlacesPlan({ data }) {
             <span>Sitio web:</span>
             <a
               href={data.contact.web}
+              target="_blank"
               className={clsx(
                 "text-accent2 font-medium",
                 "hover:text-accent2/95"
@@ -89,6 +90,7 @@ export function ElementPlacesPlan({ data }) {
             "bg-accent1 ",
             "hover:bg-accent1/80 hover:text-accent2/80"
           )}
+          onClick={() => handleAddUbicationToEvent(data)}
         >
           Agregar ubicación
         </button>
