@@ -64,3 +64,19 @@ export const getPlacesEventApi = async (eventId, token) => {
     throw new Error(`Error retrieving target event: ${err.message}`);
   }
 };
+
+export const deleteEventByIdApi = async (eventId, token) => {
+  try {
+    const res = await fetch(`${URL_API}/events/delete/${eventId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw new Error(`Error removing event: ${err.message}`);
+  }
+};
