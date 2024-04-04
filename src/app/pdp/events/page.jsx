@@ -1,6 +1,10 @@
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth, TitleSection } from "@/components/layouts";
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  const { user } = await getServerSession(authOptions);
+
   return (
     <>
       <HeroAuth title="¡Sigamos planificando!" urlImg="/Journey-amico.svg">
