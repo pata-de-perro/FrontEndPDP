@@ -2,18 +2,12 @@ import {
   AiOutlineHome,
   AiOutlineUser,
   AiTwotoneCalendar,
-  AiOutlinePlaySquare,
 } from "react-icons/ai";
 
 export const navigationItems = [
   { icon: <AiOutlineHome />, label: "Inicio", href: "/pdp" },
   { icon: <AiOutlineUser />, label: "Tu perfil", href: "/pdp/profile" },
-  { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/pdp/plans" },
-  {
-    icon: <AiOutlinePlaySquare />,
-    label: "Tutoriales",
-    href: "/pdp",
-  },
+  { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/pdp/events" },
 ];
 
 export const placesList = [
