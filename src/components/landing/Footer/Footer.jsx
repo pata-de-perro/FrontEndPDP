@@ -7,20 +7,17 @@ export default function Footer() {
       className={clsx(
         "bg-accent2 w-[full]",
         "flex justify-center",
-        "md:grid-cols-2 md:px-[24px]",
+        "md:justify-end md:pl-16"
         )}
         >
       <div
         className={clsx(
-          "w-[500px] pt-[24px]",
-          "flex flex-wrap flex-col",
-          "md:flex-no-wrap md:w-[100vw]",
-          "lg:w-[1179px]",
+          "pt-[24px]",
+          "md:w-[100vw]",
         )}
       >
         <div className={clsx(
             "m-[5px]",
-            // "md:col-span-1 md:flex flex-row-reverse md:justify-between",
         )}>
           <img
             src="/PDPLogo.svg"
@@ -28,9 +25,6 @@ export default function Footer() {
             height={41}
             alt="Footer logo"
             className={clsx(
-              // "flex justify-center",
-              // "grid justify-self-center",
-              // "md:flex md:justify-center"
             )}
           />
 
