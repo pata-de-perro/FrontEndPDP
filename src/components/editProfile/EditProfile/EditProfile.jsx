@@ -17,6 +17,7 @@ export function EditProfile({session}){
 
     const onSumbitProfile = handleSubmit((data) => {
         console.log(data)
+        
     })
 
     return(

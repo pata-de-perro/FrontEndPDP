@@ -1,12 +1,6 @@
 import clsx from "clsx";
 
 export function FormEditProfile({ onSumbitProfile, register, errors, session }) {
-  // register={register}
-  // onSumbitProfile={onSumbitProfile}
-  // errors={errors}
-  // watch={watch}
-  // setValue={setValue}
-  // session= {session}
 
   return (
     <div className="flex justify-center">
@@ -97,6 +91,53 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
                 required: false,
               })}
           />
+        </div>
+        <div className="form-control mt-4 col-span-2">
+          <label className="label font-body text-regular">Género</label>
+          <div className="flex justify-around">
+            <div className="font-body text-regular">
+                  <input
+                  type="radio"
+                  value="mujer"
+                  id="mujer"
+                  name="gender"
+                  className="mr-3"
+                  {...register("gender",{
+                    required: false,
+                  })}
+                  />
+                  <label
+                  htmlFor="mujer">Mujer</label>
+                </div>
+                <div className="font-body text-regular">
+                  <input
+                  type="radio"
+                  value="hombre"
+                  id="hombre"
+                  name="gender"
+                  className="mr-3"
+                  {...register("gender",{
+                    required: false,
+                  })}
+                  />
+                  <label
+                  htmlFor="hombre">Hombre</label>
+                </div>
+                <div className="font-body text-regular">
+                  <input
+                  type="radio"
+                  value="Prefiero no responder"
+                  id="Prefiero no responder"
+                  name="gender"
+                  className="mr-3"
+                  {...register("gender",{
+                    required: false,
+                  })}
+                  />
+                  <label
+                  htmlFor="Prefiero no responder">Prefiero no responder</label>
+                </div>
+        </div>
         </div>
         <div className="form-control mt-4 items-center col-span-2">
           <button
