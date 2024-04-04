@@ -95,33 +95,33 @@ export const placesOfInterestMenu = [
   },
   {
     key: "02",
+    title: "Spa",
+    pinUrl: "/location_spa.svg",
+    typePlace: ["spa"],
+  },
+  {
+    key: "03",
     title: "Atracciones Turísticas",
     pinUrl: "/location_tourist.svg",
     typePlace: ["tourist_attraction"],
   },
   {
-    key: "03",
+    key: "04",
     title: "Restaurantes",
     pinUrl: "/location_restaurant_pdp.svg",
     typePlace: ["restaurant"],
   },
   {
-    key: "04",
+    key: "05",
     title: "Vida Nocturna",
     pinUrl: "/location_pdp.svg",
     typePlace: ["night_club"],
   },
   {
-    key: "05",
+    key: "06",
     title: "Bares",
     pinUrl: "/location_bar.svg",
     typePlace: ["bar"],
-  },
-  {
-    key: "06",
-    title: "Otros",
-    pinUrl: "/location_default.svg",
-    typePlace: ["spa"],
   },
 ];
 
@@ -130,6 +130,11 @@ export const pinColors = {
     background: "#C92CE5",
     borderColor: "#fff",
     glyphColor: "#fff",
+  },
+  spa: {
+    background: "#EDB3F8",
+    borderColor: "#fff",
+    glyphColor: "#87549F",
   },
   tourist_attraction: {
     background: "#253A74",
