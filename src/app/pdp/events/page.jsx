@@ -1,9 +1,9 @@
 import { HeroAuth, TitleSection } from "@/components/layouts";
 
-export default function PlansPage() {
+export default function EventsPage() {
   return (
-    <div>
-      <HeroAuth title="¡Sigamos planificando!">
+    <>
+      <HeroAuth title="¡Sigamos planificando!" urlImg="/Journey-amico.svg">
         <p>
           Visualiza fácilmente todas las cosas que deseas realizar en tu viaje.
         </p>
@@ -12,6 +12,6 @@ export default function PlansPage() {
         title="Revisa tus viajes y/o salidas"
         urlIcon="/Icono-Fecha.svg"
       />
-    </div>
+    </>
   );
 }
