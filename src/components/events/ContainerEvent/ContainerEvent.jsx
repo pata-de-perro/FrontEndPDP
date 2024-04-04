@@ -1,10 +1,11 @@
 import clsx from "clsx";
+
 import { TitleSection } from "@/components/layouts";
 import { ActionsEvent, MainPlacesEvent } from "@/components/events";
 
 const MAP_ID = process.env.ID_MAP_GOOGLE;
 
-export function ContainerEvent({ event }) {
+export function ContainerEvent({ event, user }) {
   return (
     <div className={clsx("mr-6")}>
       <div className={clsx("flex items-center justify-between")}>
@@ -13,7 +14,7 @@ export function ContainerEvent({ event }) {
           urlIcon="/location_on.svg"
           type="primary"
         />
-        <ActionsEvent />
+        <ActionsEvent user={user} eventId={event._id} />
       </div>
       <MainPlacesEvent event={event} mapId={MAP_ID} />
     </div>
