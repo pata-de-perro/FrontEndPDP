@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import {FormEditProfile} from "@/components/editProfile/FormEditProfile"
 
-export function EditProfile({params}){
+export function EditProfile({session}){
     const {
         register,
         handleSubmit,
@@ -30,6 +30,7 @@ export function EditProfile({params}){
             errors={errors}
             watch={watch}
             setValue={setValue}
+            session= {session}
             />
         </div>
     )

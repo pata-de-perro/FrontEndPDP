@@ -34,7 +34,7 @@ export default async function Profile() {
                  )}
             />
           </div>
-          <ContainerEditProfile />
+          <ContainerEditProfile session={session}/>
 
       <TitleSection urlIcon={icon} title="Perfil" />
       {/* <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" /> */}
