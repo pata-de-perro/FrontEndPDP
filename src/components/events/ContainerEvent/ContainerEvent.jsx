@@ -7,8 +7,9 @@ export function ContainerEvent({ event }) {
   return (
     <div className={clsx("mt-4 mr-6")}>
       <TitleSection
-        title="Revisa tu lugares elejidos"
+        title="Revisa tu mapa"
         urlIcon="/location_on.svg"
+        type="primary"
       />
       <MainPlacesEvent event={event} mapId={MAP_ID} />
     </div>
