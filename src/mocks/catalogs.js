@@ -111,6 +111,12 @@ export const placesOfInterestMenu = [
     pinUrl: "/location_pdp.svg",
     typePlace: ["night_club"],
   },
+  {
+    key: "05",
+    title: "Bares",
+    pinUrl: "/location_bar.svg",
+    typePlace: ["bar"],
+  },
 ];
 
 export const pinColors = {
@@ -133,6 +139,11 @@ export const pinColors = {
     background: "#7ECDCE",
     borderColor: "#fff",
     glyphColor: "#87549F",
+  },
+  bar: {
+    background: "#87549F",
+    borderColor: "#fff",
+    glyphColor: "#fff",
   },
   default: {
     background: "#B6EAA4",

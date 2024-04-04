@@ -1,5 +1,5 @@
+export { ContainerEvent } from "./ContainerEvent/ContainerEvent";
 export { CreateEvent } from "./CreateEvent/CreateEvent";
 export { FormEvent } from "./FormEvent/FormEvent";
-export { NotEvents } from "./NotEvents/NotEvents";
-export { PlansContainer } from "./PlansContainer/PlansContainer";
-export { ReviewPlans } from "./ReviewPlans/ReviewPlans";
+export { MainPlacesEvent } from "./MainPlacesEvent/MainPlacesEvent";
+export { ShowInfoEventHero } from "./ShowInfoEventHero/ShowInfoEventHero";

@@ -9,11 +9,14 @@ import { ModalDrawer } from "@/components/common";
 import { ElementPlacesPlan } from "@/components/plans";
 
 export function MakePlan({ data, mapId, user, idPlan }) {
-  const ubicationMap = { lat: data?.coordsEvent[0], lng: data?.coordsEvent[1] };
+  const { title, locationEvent, coordsEvent, isTravel } = data;
+  const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
   const { accessToken } = user;
   const router = useRouter();
 
-  const [placeRequest, setPlaceRequest] = useState(["lodging"]);
+  const [placeRequest, setPlaceRequest] = useState(
+    isTravel ? ["lodging"] : ["restaurant"]
+  );
   const [open, setOpen] = useState(false);
   const [modalState, setModalState] = useState({ title: null, content: null });
   const [ubicationsUser, SetUbicationsUser] = useState([]);
@@ -85,10 +88,10 @@ export function MakePlan({ data, mapId, user, idPlan }) {
           >
             <div className="mt-10 px-2">
               <h3 className={clsx("font-semibold text-lg text-primary")}>
-                {data?.title}
+                {title}
               </h3>
               <span className={clsx("font-medium text-sm text-accent2")}>
-                {data?.locationEvent}
+                {locationEvent}
               </span>
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
                 <span
@@ -102,37 +105,40 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                 </span>
 
                 <div className={clsx("flex flex-col")}>
-                  {placesOfInterestMenu.map((itemPlace) => (
-                    <div
-                      key={itemPlace.key}
-                      className={clsx(
-                        "flex items-center",
-                        "hover:cursor-pointer"
-                      )}
-                      onClick={() => setPlaceRequest(itemPlace.typePlace)}
-                    >
-                      <img
-                        src={itemPlace.pinUrl}
-                        alt="gps pin icon"
-                        className="h-12 w-auto"
-                      />
-                      <span
-                        className={clsx(
-                          "text-sm text-azulGris900",
-                          "ml-4 mb-2",
-                          placeRequest === itemPlace.typePlace &&
-                            "text-primary font-semibold"
-                        )}
-                      >
-                        {itemPlace.title}
-                      </span>
-                    </div>
-                  ))}
+                  {placesOfInterestMenu.map(
+                    (itemPlace) =>
+                      (isTravel || itemPlace.typePlace[0] !== "lodging") && (
+                        <div
+                          key={itemPlace.key}
+                          className={clsx(
+                            "flex items-center",
+                            "hover:cursor-pointer"
+                          )}
+                          onClick={() => setPlaceRequest(itemPlace.typePlace)}
+                        >
+                          <img
+                            src={itemPlace.pinUrl}
+                            alt="gps pin icon"
+                            className="h-12 w-auto"
+                          />
+                          <span
+                            className={clsx(
+                              "text-sm text-azulGris900",
+                              "ml-4 mb-2",
+                              placeRequest === itemPlace.typePlace &&
+                                "text-primary font-semibold"
+                            )}
+                          >
+                            {itemPlace.title}
+                          </span>
+                        </div>
+                      )
+                  )}
                 </div>
               </div>
             </div>
             <div className={clsx("flex", "w-full m-1")}>
-              {ubicationsUser.length > 1 && (
+              {ubicationsUser.length > 0 && (
                 <button
                   className={clsx(
                     "btn btn-block",
