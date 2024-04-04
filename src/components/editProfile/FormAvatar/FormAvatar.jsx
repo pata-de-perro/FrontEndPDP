@@ -22,12 +22,26 @@ export function FormAvatar({ onSubmitAvatar, register, errors, session}){
                 <div className="form-control">
                     <input type="file" id="avatar" accept="image/png, image/jpeg, image/jpg"
                     {...register("avatar", {
-                        required: true,
+                        required: {
+                            value: true,
+                            message: "Es necesario que elijas un archivo para poder enviar el formulario",
+                        },
                         pattern: {
-                            value: /(.*?)\.(jpg|gif|jpeg)$/,
+                            value: /(.*?)\.(jpg|png|jpeg)$/,
+                            message: "Es necesario que elijas un archivo que sea un jpg, jpeg o png",
                         }
                     })} 
                     />
+                    {errors.avatar && (
+                        <span className="text-regular font-body text-red-500 ml-[5px] w-[450px]">
+                            {errors.avatar.message}
+                        </span>
+                    )}
+                    {errors.pattern && (
+                        <span className="text-regular font-body text-red-500 ml-[5px] w-[450px]">
+                            {errors.pattern.message}
+                        </span>
+                    )}
                 </div>
                 <div className="form-control mt-4 items-center">
                     <button

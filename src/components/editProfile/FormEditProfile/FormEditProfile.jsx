@@ -51,7 +51,7 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "block w-[450px] rounded-lg focus:ring-1"
             )}
             placeholder="Correo electronico de usuario"
-            disabled="true"
+            disabled={true}
           />
         </div>
         <div className="form-control mx-4">

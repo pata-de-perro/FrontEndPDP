@@ -102,7 +102,10 @@ export function CreateRegister() {
             {errors.password.message}
           </span>
         )}
-        {errors.pattern && <span>{errors.pattern.message}</span>}
+        {errors.pattern && (
+        <span className="text-regular font-body text-red-500 ml-[5px] w-[450px]">
+          {errors.pattern.message}
+          </span>)}
       </div>
       <div className="form-control">
         <label className="label font-body text-regularSemiBold">Confirma tu contraseña</label>

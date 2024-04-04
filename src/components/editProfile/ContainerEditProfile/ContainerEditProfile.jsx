@@ -36,12 +36,8 @@ export function ContainerEditProfile({ session }) {
             "bg-azulGris100",
             "font-body text-regularSemiBold text-azulGris900",
             "hover:bg-primary hover:text-white"
-            // "justify-center absolute right-4 -bottom-10",
-            // "md:static",
-            // "disabled: cursor-not-allowed"
           )}
           onClick={ () => handleOpenAvatarModal()}
-          // disabled
         >
           Cambiar imagen
         </button>
