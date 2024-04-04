@@ -20,7 +20,7 @@ export default function Footer() {
       >
         <div className={clsx(
             "m-[5px]",
-            "md:col-span-1 md:flex flex-row-reverse md:justify-between",
+            // "md:col-span-1 md:flex flex-row-reverse md:justify-between",
         )}>
           <img
             src="/PDPLogo.svg"
@@ -28,29 +28,21 @@ export default function Footer() {
             height={41}
             alt="Footer logo"
             className={clsx(
-              "grid justify-self-center",
-              "md:flex md:justify-end"
+              // "flex justify-center",
+              // "grid justify-self-center",
+              // "md:flex md:justify-center"
             )}
           />
 
         </div>
-        
-        <div className={clsx(
-            "m-[5px]",
-            "md:flex flex-row-reverse",
-            "md:m-[15px] md:items-center md:justify-between",
-        )}>
           <p
             className={clsx(
-              "mb-[25px]",
+              "mb-4",
               "text-regular font-body text-white text-center",
-              "md:text-start md:self-center md:mb-[0px]",
+              "md:self-center",
             )}
-          >
-            © 2024 | PataDePerro
-          </p>
-        </div>
+          >© 2024 | PataDePerro</p>
       </div>
     </footer>
-  );
+  )
 }
