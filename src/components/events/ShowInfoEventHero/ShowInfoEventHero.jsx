@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import Image from "next/image";
 import { eventDateFormat, getHourOfDate } from "@/helpers";
 import { AiTwotoneCalendar } from "react-icons/ai";
 import { LuMapPin } from "react-icons/lu";
+import { GrGroup } from "react-icons/gr";
 
 export function ShowInfoEventHero({ event }) {
   return (
@@ -38,13 +38,7 @@ export function ShowInfoEventHero({ event }) {
       </section>
       {event?.friends && (
         <div className="flex items-end">
-          <Image
-            src="/people-icon.svg"
-            width={21}
-            height={21}
-            alt="invite icon"
-            className="mr-2"
-          />
+          <GrGroup />
           <p className="font-body text-inviteSmallText text-azulGris600">0</p>
           <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
             Personas
