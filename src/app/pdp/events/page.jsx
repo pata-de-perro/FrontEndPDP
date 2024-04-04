@@ -13,7 +13,7 @@ export default async function EventsPage() {
           Visualiza fácilmente todas las cosas que deseas realizar en tu viaje.
         </p>
       </HeroAuth>
-      <ReviewEvents />
+      <ReviewEvents user={user} />
     </>
   );
 }
