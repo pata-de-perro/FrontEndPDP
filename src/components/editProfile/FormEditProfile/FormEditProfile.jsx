@@ -26,12 +26,12 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "block w-[450px] rounded-lg focus:ring-1"
             )}
             placeholder="Nombre de usuario"
-            //   {...register("name", {
-            //     required: false,
-            //     pattern: {
-            //         value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
-            //     }
-            //   })}
+              {...register("name", {
+                required: false,
+                pattern: {
+                    value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
+                }
+              })}
           />
         </div>
         <div className="form-control mx-4 col-span-2">
@@ -68,14 +68,14 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
               "block w-[200px] rounded-lg focus:ring-1"
             )}
-            placeholder="123456789"
-            maxLength={14}
-            //   {...register("phone", {
-            //     required: false,
-            //     pattern: {
-            //         value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
-            //     }
-            //   })}
+            placeholder="3314142525"
+            maxLength={10}
+              {...register("phone", {
+                required: false,
+                pattern: {
+                    value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+                }
+              })}
           />
         </div>
         <div className="form-control mx-4">
@@ -93,9 +93,9 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "block w-[200px] rounded-lg focus:ring-1"
             )}
             placeholder="Tu cumpleaños"
-            //   {...register("birthdate", {
-            //     required: false,
-            //   })}
+              {...register("birthdate", {
+                required: false,
+              })}
           />
         </div>
         <div className="form-control mt-4 items-center col-span-2">
