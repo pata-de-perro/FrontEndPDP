@@ -1,13 +1,14 @@
 import clsx from "clsx";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMap } from "@/components/maps";
+import { BtnToLink } from "@/components/common";
 
 export function MainPlacesEvent({ event, mapId }) {
   const { coordsEvent, locations } = event;
   const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
 
   return (
-    <main className={clsx("h-[700px]", "flex flex-col gap-4", "mt-4")}>
+    <main className={clsx("h-[800px]", "flex flex-col gap-4", "mt-4")}>
       <section className={clsx("h-full", "flex justify-between gap-4")}>
         <aside
           className={clsx("bg-secondary/10", "w-1/4", "rounded-xl", "p-2")}
@@ -65,7 +66,15 @@ export function MainPlacesEvent({ event, mapId }) {
           ></GoogleMap>
         </section>
       </section>
-      <section className={clsx("h-5", "bg-secondary", "rounded-xl")}></section>
+      <section className={clsx("mb-10", "flex flex-col items-end")}>
+        <div className="flex gap-8">
+          <BtnToLink
+            url={`/pdp/plans/${event._id}`}
+            name="Cambiar lugares"
+            type="secondary"
+          />
+        </div>
+      </section>
     </main>
   );
 }
