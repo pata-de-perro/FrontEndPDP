@@ -1,10 +1,12 @@
 import clsx from "clsx";
 
-export function HeroAuth({ title, children, urlImg }) {
+export function HeroAuth({ title, children, urlImg, type }) {
   return (
     <div
       className={clsx(
-        "bg-gradient-to-r from-[#F5F5F5] to-secondary",
+        type === "primary"
+          ? "bg-gradient-to-r from-[#F5F5F5] to-primary"
+          : "bg-gradient-to-r from-[#F5F5F5] to-secondary",
         "rounded-2xl",
         "mr-[24px] mt-[35px] p-[24px]",
         "w-[auto] h-[auto]"
