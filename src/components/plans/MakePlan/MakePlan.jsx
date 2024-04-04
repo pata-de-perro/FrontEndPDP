@@ -1,7 +1,7 @@
 "use client";
+import clsx from "clsx";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import clsx from "clsx";
 import { postEventLocationsToApi } from "@/services";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
@@ -9,7 +9,7 @@ import { ModalDrawer } from "@/components/common";
 import { ElementPlacesPlan } from "@/components/plans";
 
 export function MakePlan({ data, mapId, user, idPlan }) {
-  const { title, locationEvent, coordsEvent, isTravel } = data;
+  const { title, locationEvent, coordsEvent, isTravel, locations } = data;
   const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
   const { accessToken } = user;
   const router = useRouter();
@@ -62,6 +62,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
 
     if (result.success === true) {
       router.push("/pdp/");
+      router.refresh();
     }
   };
 
@@ -75,6 +76,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             ubicationMap={ubicationMap}
             placeRequest={placeRequest}
             handleClickMarker={handleClickMarker}
+            locations={locations}
           />
         </div>
         <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
@@ -86,13 +88,23 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               "border-2"
             )}
           >
-            <div className="mt-10 px-2">
-              <h3 className={clsx("font-semibold text-lg text-primary")}>
+            <div className="mt-4 px-2">
+              <h3
+                className={clsx(
+                  "font-semibold text-lg text-center",
+                  "text-primary"
+                )}
+              >
                 {title}
               </h3>
-              <span className={clsx("font-medium text-sm text-accent2")}>
+              <p
+                className={clsx(
+                  "font-medium text-sm text-center",
+                  "text-accent2"
+                )}
+              >
                 {locationEvent}
-              </span>
+              </p>
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
                 <span
                   className={clsx(

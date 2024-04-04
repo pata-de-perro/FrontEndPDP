@@ -15,7 +15,11 @@ export default async function HomePage() {
           Pata de Perro puedes guardar diferentes ubicaciones segun su
           categoría.
         </p>
-        <BtnToLink url="/pdp/events/create" name="Planea un evento" />
+        <BtnToLink
+          url="/pdp/events/create"
+          name="Planea un evento"
+          type="primary"
+        />
       </HeroAuth>
       <ReviewPlans user={user} />
     </>

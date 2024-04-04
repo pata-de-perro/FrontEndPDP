@@ -1,9 +1,13 @@
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth } from "@/components/layouts";
 import { CreateEvent } from "@/components/events";
 
-export default function CreateEventPage() {
+export default async function CreateEventPage() {
+  const { user } = await getServerSession(authOptions);
+
   return (
-    <div>
+    <>
       <HeroAuth
         title="¡Háblanos sobre tu evento!"
         urlImg="/Globalization-amico.svg"
@@ -12,7 +16,7 @@ export default function CreateEventPage() {
           Queremos que el planear tu viaje o salida sea lo más fácil posible.
         </p>
       </HeroAuth>
-      <CreateEvent />
-    </div>
+      <CreateEvent user={user} />
+    </>
   );
 }

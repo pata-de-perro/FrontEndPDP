@@ -11,12 +11,22 @@ export function ShowInfoEventHero({ event }) {
         <h4
           className={clsx(
             "font-heading text-h4",
-            event?.isTravel ? "text-primary" : "text-accent2"
+            event?.isTravel
+              ? "bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-blue-500"
+              : "bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"
           )}
         >
           {event?.title}
         </h4>
-        <p className="mb-4 text-lg font-medium">{event?.description}</p>
+        <p
+          className={clsx(
+            "mb-4",
+            "text-lg font-medium",
+            event?.isTravel ? "text-blue-700" : "text-violet-700"
+          )}
+        >
+          {event?.description}
+        </p>
       </div>
 
       <section className={clsx("mt-2", "text-accent2 font-medium")}>
