@@ -2,7 +2,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getPlacesEventApi } from "@/services";
 import { HeroAuth } from "@/components/layouts";
-import { ContainerEvent } from "@/components/events";
+import { ContainerEvent, ShowInfoEventHero } from "@/components/events";
 
 export default async function EventPage({ params }) {
   const eventId = params.id;
@@ -15,7 +15,9 @@ export default async function EventPage({ params }) {
         title="¡Verifica tú plan!"
         urlImg="/World-amico.svg"
         type="primary"
-      ></HeroAuth>
+      >
+        <ShowInfoEventHero event={event} />
+      </HeroAuth>
       <ContainerEvent event={event} />
     </>
   );
