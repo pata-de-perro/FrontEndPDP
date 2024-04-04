@@ -9,7 +9,7 @@ export function HeroAuth({ title, children, urlImg, type }) {
           : "bg-gradient-to-r from-[#F5F5F5] to-secondary",
         "rounded-2xl",
         "mr-[24px] mt-[35px] p-[24px]",
-        "w-[auto] h-[auto]"
+        "w-[auto] min-h-60"
       )}
     >
       <div className={clsx("flex", "relative")}>
