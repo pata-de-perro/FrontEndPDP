@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { ModalContent } from "@/components/common";
 import { EditProfile } from "./EditProfile";
 
-export function ContainerEditProfile({}) {
+export function ContainerEditProfile({ session }) {
   const handleOpenModal = () => {
     document.getElementById("modal_edit_profile").showModal();
   };
@@ -39,7 +39,7 @@ export function ContainerEditProfile({}) {
       </div>
 
       <ModalContent idModal="modal_edit_profile" title="Edita tu perfil">
-        <EditProfile />
+        <EditProfile session={session}/>
       </ModalContent>
     </>
   );

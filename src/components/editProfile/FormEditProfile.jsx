@@ -1,9 +1,16 @@
 import clsx from "clsx";
 
-export function FormEditProfile({ onSubmitEdit, register, errors }) {
+export function FormEditProfile({ onSumbitProfile, register, errors, session }) {
+  // register={register}
+  // onSumbitProfile={onSumbitProfile}
+  // errors={errors}
+  // watch={watch}
+  // setValue={setValue}
+  // session= {session}
+
   return (
     <div className="flex justify-center">
-      <form onSubmit={onSubmitEdit} className="grid grid-cols-2">
+      <form onSubmit={onSumbitProfile} className="grid grid-cols-2">
         <div className="form-control mx-4 col-span-2">
           <label className="label font-body text-regular">Nombre</label>
           <input
