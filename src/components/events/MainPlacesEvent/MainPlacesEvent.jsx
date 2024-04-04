@@ -1,6 +1,6 @@
-import { GoogleMap } from "@/components/maps";
-import { placesOfInterestMenu } from "@/mocks/catalogs";
 import clsx from "clsx";
+import { placesOfInterestMenu } from "@/mocks/catalogs";
+import { GoogleMap } from "@/components/maps";
 
 export function MainPlacesEvent({ event, mapId }) {
   const { coordsEvent, locations } = event;
