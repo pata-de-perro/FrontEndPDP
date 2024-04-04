@@ -1,13 +1,17 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 import { getPlacesEventApi } from "@/services";
 import { HeroAuth } from "@/components/layouts";
 import { ContainerEvent, ShowInfoEventHero } from "@/components/events";
 
 export default async function EventPage({ params }) {
-  const eventId = params.id;
   const { user } = await getServerSession(authOptions);
-  const { data: event } = await getPlacesEventApi(eventId, user.accessToken);
+  const { data: event } = await getPlacesEventApi(params.id, user.accessToken);
+
+  if (!event) {
+    redirect("/pdp");
+  }
 
   return (
     <>
@@ -18,7 +22,7 @@ export default async function EventPage({ params }) {
       >
         <ShowInfoEventHero event={event} />
       </HeroAuth>
-      <ContainerEvent event={event} />
+      <ContainerEvent event={event} user={user} />
     </>
   );
 }
