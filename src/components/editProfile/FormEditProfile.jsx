@@ -3,8 +3,8 @@ import clsx from "clsx";
 export function FormEditProfile({ onSubmitEdit, register, errors }) {
   return (
     <div className="flex justify-center">
-      <form onSubmit={onSubmitEdit}>
-        <div className="form-control mx-4">
+      <form onSubmit={onSubmitEdit} className="grid grid-cols-2">
+        <div className="form-control mx-4 col-span-2">
           <label className="label font-body text-regular">Nombre</label>
           <input
             type="text"
@@ -27,7 +27,7 @@ export function FormEditProfile({ onSubmitEdit, register, errors }) {
             //   })}
           />
         </div>
-        <div className="form-control mx-4">
+        <div className="form-control mx-4 col-span-2">
           <label className="label font-body text-regular">
             Correo electrónico
           </label>
@@ -59,7 +59,7 @@ export function FormEditProfile({ onSubmitEdit, register, errors }) {
               "border shadow-sm border-slate-300",
               "placeholder-slate-400",
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-              "block w-[450px] rounded-lg focus:ring-1"
+              "block w-[200px] rounded-lg focus:ring-1"
             )}
             placeholder="123456789"
             maxLength={14}
@@ -83,7 +83,7 @@ export function FormEditProfile({ onSubmitEdit, register, errors }) {
               "border shadow-sm border-slate-300",
               "placeholder-slate-400",
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-              "block w-[450px] rounded-lg focus:ring-1"
+              "block w-[200px] rounded-lg focus:ring-1"
             )}
             placeholder="Tu cumpleaños"
             //   {...register("birthdate", {
@@ -91,78 +91,7 @@ export function FormEditProfile({ onSubmitEdit, register, errors }) {
             //   })}
           />
         </div>
-        <div className="form-control mx-4">
-          <label className="label font-body text-regular">Género</label>
-          <div className="flex flex-wrap justify-between">
-            <div className="flex flex-wrap items-center">
-              <input
-                type="radio"
-                name="gender"
-                id="Mujer"
-                value="Mujer"
-                className={clsx(
-                  "px-3 py-2",
-                  "h-4 w-4",
-                  "bg-white",
-                  "border shadow-sm border-slate-300",
-                  "placeholder-slate-400",
-                  "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                  "block w-[450px] rounded-lg focus:ring-1"
-                )}
-              />
-              <label className="ml-2 font-body text-regular" for="Mujer">
-                Mujer
-              </label>
-            </div>
-            <div className="flex flex-wrap items-center">
-              <input
-                type="radio"
-                name="gender"
-                id="Hombre"
-                value="Hombre"
-                className={clsx(
-                  "px-3 py-2",
-                  "h-4 w-4",
-                  "bg-white",
-                  "border shadow-sm border-slate-300",
-                  "placeholder-slate-400",
-                  "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                  "block w-[450px] rounded-lg focus:ring-1"
-                )}
-              />
-              <label className="ml-2 font-body text-regular" for="Hombre">
-                Hombre
-              </label>
-            </div>
-            <div className="flex flex-wrap items-center">
-              <input
-                type="radio"
-                name="gender"
-                id="NoDefinido"
-                value="NoDefinido"
-                className={clsx(
-                  "px-3 py-2",
-                  "h-4 w-4",
-                  "bg-white",
-                  "border shadow-sm border-slate-300",
-                  "placeholder-slate-400",
-                  "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-                  "block w-[450px] rounded-lg focus:ring-1"
-                )}
-              />
-              <label className="ml-2 font-body text-regular" for="NoDefinido">
-                Prefiero no definirlo
-              </label>
-            </div>
-          </div>
-          {/* {...register("gender", {
-                     required: false,
-                     pattern: {
-                         value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
-                     }
-                   })} */}
-        </div>
-        <div className="form-control mt-4 items-center">
+        <div className="form-control mt-4 items-center col-span-2">
           <button
             type="submit"
             className={clsx(

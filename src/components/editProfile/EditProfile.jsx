@@ -22,7 +22,7 @@ export function EditProfile({params}){
     return(
         <div>
             <p className={clsx("m-6", "text-sm")}>
-                A continuación puedes ver la información que tenemos almacenada, completa los espacios pendientes para completar tu perfil.
+                Completa los espacios pendientes para completar tu perfil.
             </p>
             <FormEditProfile 
             register={register}

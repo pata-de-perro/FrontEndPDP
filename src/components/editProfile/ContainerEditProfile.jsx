@@ -13,12 +13,9 @@ export function ContainerEditProfile({}) {
         <button
           className={clsx(
             "w-[180px] h-[45px] mx-2 rounded-xl",
-            // "absolute right-4 -bottom-10",
             "bg-azulGris100",
             "font-body text-regularSemiBold text-azulGris900",
-            // "md:static",
             "hover:bg-primary hover:text-white"
-            // "disabled: cursor-not-allowed"
           )}
           onClick={ () => handleOpenModal() }
         >
