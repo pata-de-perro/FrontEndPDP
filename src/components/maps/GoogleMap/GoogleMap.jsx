@@ -1,11 +1,17 @@
 "use client";
+import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-import clsx from "clsx";
+import { pinColors } from "@/mocks/catalogs";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function GoogleMap({ optionsMap, chidren }) {
+export function GoogleMap({ chidren, ubicationMap, mapId, locations }) {
   const mapGoogleRef = useRef(null);
+  const optionsMap = {
+    center: ubicationMap,
+    zoom: 13,
+    mapId,
+  };
 
   useEffect(() => {
     const initializeMap = async () => {
@@ -15,7 +21,26 @@ export function GoogleMap({ optionsMap, chidren }) {
       });
 
       const { Map } = await loader.importLibrary("maps");
-      new Map(mapGoogleRef.current, optionsMap);
+      const { AdvancedMarkerElement, PinElement } =
+        await google.maps.importLibrary("marker");
+      const map = new Map(mapGoogleRef.current, optionsMap);
+
+      locations.forEach((place) => {
+        const pinPdPBackground = new PinElement({
+          ...(pinColors[place.type] || pinColors.default),
+        });
+        const ubication = {
+          lat: place.coords[0],
+          lng: place.coords[1],
+        };
+
+        new AdvancedMarkerElement({
+          map: map,
+          position: ubication,
+          title: place.name,
+          content: pinPdPBackground.element.cloneNode(true),
+        });
+      });
     };
 
     initializeMap();
