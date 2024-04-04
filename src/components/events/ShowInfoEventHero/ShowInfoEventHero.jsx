@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { eventDateFormat, getHourOfDate } from "@/helpers";
+import { AiTwotoneCalendar } from "react-icons/ai";
+import { LuMapPin } from "react-icons/lu";
 
 export function ShowInfoEventHero({ event }) {
   return (
@@ -19,12 +21,7 @@ export function ShowInfoEventHero({ event }) {
 
       <section className={clsx("mt-2", "text-accent2 font-medium")}>
         <div className="flex items-center">
-          <Image
-            src="/calendar_today.svg"
-            width={21}
-            height={21}
-            alt="icon calendar today"
-          />
+          <AiTwotoneCalendar />
           <p className="font-body text-inviteSmallText  ml-2">
             {eventDateFormat(event?.initialDate)} -{" "}
             {event?.isTravel
@@ -33,7 +30,7 @@ export function ShowInfoEventHero({ event }) {
           </p>
         </div>
         <div className="flex items-center">
-          <Image src="/pin_drop.svg" width={21} height={21} alt="invite icon" />
+          <LuMapPin />
           <p className="font-body text-inviteSmallText  ml-2">
             {event?.locationEvent}
           </p>
