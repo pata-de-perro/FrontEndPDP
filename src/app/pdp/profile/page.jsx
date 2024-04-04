@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth, TitleSection } from "@/components/layouts";
 import {  AiOutlineUser } from "react-icons/ai";
-import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile";
+import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
