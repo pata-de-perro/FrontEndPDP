@@ -19,7 +19,7 @@ export default async function Profile() {
         </p>
       </HeroAuth>
          <div className="static">
-            <img
+            {/* <img
               src={
                 session.user.picture ? session.user.picture : "/profile-pic.png"
               }
@@ -27,9 +27,25 @@ export default async function Profile() {
                 "absolute z-10 right-10 top-20", 
                 "border",  
                 "sr-only md:not-sr-only ml:not-sr-only",
-                "lg:w-[180px] lg:h-[180px]"
+                "w-[100px] h-[100px]"
                 )}
+            /> */}
+                      {/* <div className="static"> */}
+            <img
+              src={
+                session.user.picture ? session.user.picture : "/profile-pic.png"
+              }
+              width={100}
+              height={100}
+              className={clsx(
+                "absolute z-10 right-10 top-20",
+                 "border",
+                 "sm:w-[100px] sm:h-[100px]",
+                 "md:w-[120px] md:h-[120px]",
+                 "lg:w-[180px] lg:h-[180px]",
+                 )}
             />
+          {/* </div> */}
           </div>
           <ContainerEditProfile />
 

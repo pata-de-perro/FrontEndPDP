@@ -9,7 +9,7 @@ export function ContainerEditProfile({}) {
   };
   return (
     <>
-      <div className={clsx("flex justify-start")}>
+      <div className={clsx("flex justify-start", "mt-4")}>
         <button
           className={clsx(
             "w-[180px] h-[45px] mx-2 rounded-xl",
