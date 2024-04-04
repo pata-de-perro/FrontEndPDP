@@ -3,8 +3,15 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import clsx from "clsx";
 import { eventDateFormat, getHourOfDate } from "@/helpers";
+import { AiTwotoneCalendar } from "react-icons/ai";
+import { LuMapPin } from "react-icons/lu";
+import { GrGroup } from "react-icons/gr";
 
 export function CardEvent({ info }) {
+  const calendarIcon = <AiTwotoneCalendar />
+  const pinIcon = <LuMapPin />
+  const friendsIcon = <GrGroup />
+
   const router = useRouter();
 
   return (
@@ -21,7 +28,7 @@ export function CardEvent({ info }) {
         className={clsx(
           "rounded-t-2xl",
           "w-[400px] h-[150px]",
-          info.isTravel ? "bg-primary" : "bg-secondary",
+          info.isTravel ? "bg-[url('/travel-header.png')]" : "bg-[url('/event-header.png')]",
           "mb-2"
         )}
       ></div>
@@ -37,12 +44,7 @@ export function CardEvent({ info }) {
           />
         </div>
         <div className="flex items-center">
-          <Image
-            src="/calendar_today.svg"
-            width={21}
-            height={21}
-            alt="icon calendar today"
-          />
+        {calendarIcon}
           <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
             {eventDateFormat(info.initialDate)} -{" "}
             {info.isTravel
@@ -51,20 +53,14 @@ export function CardEvent({ info }) {
           </p>
         </div>
         <div className="flex items-center">
-          <Image src="/pin_drop.svg" width={21} height={21} alt="invite icon" />
+          {pinIcon}
           <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
             {info.locationEvent}
           </p>
         </div>
         {info?.friends && (
           <div className="flex items-end">
-            <Image
-              src="/people-icon.svg"
-              width={21}
-              height={21}
-              alt="invite icon"
-              className="mr-2"
-            />
+            {friendsIcon}
             <p className="font-body text-inviteSmallText text-azulGris600">0</p>
             <p className="font-body text-inviteSmallText text-azulGris600 ml-2">
               Personas
@@ -76,13 +72,12 @@ export function CardEvent({ info }) {
             className={clsx(
               "btn btn-block",
               "my-2",
-              "text-white",
-              info.isTravel ? "bg-primary" : "bg-secondary",
+              info.isTravel ? "bg-primary text-white" : "bg-secondary text-accent2",
               "hover:bg-accent1 hover:text-accent2"
             )}
             onClick={() => router.push(`/pdp/events/${info._id}`)}
           >
-            Ver viaje
+            {info.isTravel ? "Ver viaje" : "Ver evento"}
           </button>
         </div>
       </div>

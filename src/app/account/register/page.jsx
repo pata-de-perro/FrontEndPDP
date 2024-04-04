@@ -14,7 +14,7 @@ export default function RegisterPage() {
             width={200}
             height={35}
             alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[auto]"
+            className="lg:w-[auto] lg:h-[80px]"
           />
         </Link>
       </div>

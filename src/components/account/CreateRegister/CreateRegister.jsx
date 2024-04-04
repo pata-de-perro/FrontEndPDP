@@ -44,17 +44,15 @@ export function CreateRegister() {
   return (
     <form onSubmit={onSubmitRegister}>
       <div className="form-control">
-        <label className="label">Correo electrónico</label>
+        <label className="label font-body text-regularSemiBold">Correo electrónico</label>
         <input
           type="email"
           className={clsx(
-            "px-3 py-2",
-            "h-[50px]",
-            "bg-white",
-            "border shadow-sm border-slate-300",
+            "px-3 py-2 h-[50px]",
+            "bg-white border shadow-sm border-slate-300",
             "placeholder-slate-400",
+            "block w-[450px] rounded-lg focus:ring-1",
             "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-            "block w-[450px] rounded-lg focus:ring-1"
           )}
           placeholder="Correo electrónico"
           {...register("email", {
@@ -74,7 +72,7 @@ export function CreateRegister() {
         )}
       </div>
       <div className="form-control">
-        <label className="label">Contraseña</label>
+        <label className="label font-body text-regularSemiBold">Contraseña</label>
         <input
           type="password"
           className={clsx(
@@ -107,7 +105,7 @@ export function CreateRegister() {
         {errors.pattern && <span>{errors.pattern.message}</span>}
       </div>
       <div className="form-control">
-        <label className="label">Confirma tu contraseña</label>
+        <label className="label font-body text-regularSemiBold">Confirma tu contraseña</label>
         <input
           type="password"
           className={clsx(

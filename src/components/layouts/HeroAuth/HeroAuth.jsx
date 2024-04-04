@@ -22,6 +22,7 @@ export function HeroAuth({ title, children, urlImg, type }) {
               "font-body text-azulGris900 text-regular",
               "mb-8",
               "md:w-[400px] md:mb-0",
+              "lg:w-[450px]",
               "w-auto"
             )}
           >

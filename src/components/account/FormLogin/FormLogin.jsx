@@ -7,7 +7,7 @@ export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
   return (
     <form onSubmit={onSubmitSignIn}>
       <div className="form-control">
-        <label className="label">Correo electrónico</label>
+        <label className="label font-body text-regularSemiBold">Correo electrónico</label>
         <input
           type="email"
           className={clsx(
@@ -39,7 +39,7 @@ export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
         )}
       </div>
       <div className="form-control">
-        <label className="label">Contraseña</label>
+        <label className="label font-body text-regularSemiBold">Contraseña</label>
         <input
           type="password"
           className={clsx(

@@ -1,36 +1,29 @@
 import clsx from "clsx";
 
-export function FunctionCards({title, description, urlImg, orientation}){
+export function FunctionCards({title, description, urlImg}){
     return(
         <div
         className={clsx(
           "w-[358px] h-[425px]",
-          "p-[20px] m-[24px]",
-          "shadow-xl",
-          "rounded-xl",
-          "flex flex-wrap justify-center",
+          "m-4",
+          "shadow-xl rounded-xl",
+          "flex flex-col justify-center items-center",
           "lg:h-[200px] ",
-          {orientation}
         )}
       >
         <img
           src={urlImg}
-          width={453}
-          height={453}
           alt="progresive app pana"
-          className={clsx(
-              "w-[260px]", 
-              "lg:sr-only",
-              )}
-        />
-        <p
+          className="w-[260px] h-[260px] lg:sr-only" 
+          />
+        <h3
           className={clsx(
             "font-heading text-accent2 text-h3 text-center",
-            "mb-[10px] mx-8"
+            "mb-[10px]",
           )}
         >
           {title}
-        </p>
+        </h3>
         <p
           className={clsx(
             "font-body text-regular text-azulGris900 text-center",

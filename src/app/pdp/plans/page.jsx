@@ -1,6 +1,8 @@
 import { HeroAuth, TitleSection } from "@/components/layouts";
+import { AiTwotoneCalendar } from "react-icons/ai";
 
 export default function PlansPage() {
+  const icon = <AiTwotoneCalendar />
   return (
     <div>
       <HeroAuth title="¡Sigamos planificando!">
@@ -10,7 +12,7 @@ export default function PlansPage() {
       </HeroAuth>
       <TitleSection
         title="Revisa tus viajes y/o salidas"
-        urlIcon="/Icono-Fecha.svg"
+        urlIcon={icon}
       />
     </div>
   );

@@ -2,19 +2,17 @@ import {
   AiOutlineHome,
   AiOutlineUser,
   AiTwotoneCalendar,
-  AiOutlinePlaySquare,
 } from "react-icons/ai";
+import { GrGroup } from "react-icons/gr";
+
 
 export const navigationItems = [
   { icon: <AiOutlineHome />, label: "Inicio", href: "/pdp" },
   { icon: <AiOutlineUser />, label: "Tu perfil", href: "/pdp/profile" },
   { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/pdp/plans" },
-  {
-    icon: <AiOutlinePlaySquare />,
-    label: "Tutoriales",
-    href: "/pdp",
-  },
+  { icon: <GrGroup />, label: "Amigos", href: "/pdp", },
 ];
+
 
 export const placesList = [
   // {
