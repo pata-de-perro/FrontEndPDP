@@ -1,7 +1,7 @@
 "use client";
+import clsx from "clsx";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import clsx from "clsx";
 import { postEventLocationsToApi } from "@/services";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
@@ -62,6 +62,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
 
     if (result.success === true) {
       router.push("/pdp/");
+      router.refresh();
     }
   };
 

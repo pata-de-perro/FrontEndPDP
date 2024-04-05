@@ -20,6 +20,7 @@ export function ActionsEvent({ user, event }) {
     if (result?.success === true) {
       setMsgResult({ type: "success", msg: result?.msg });
       router.push("/pdp");
+      router.refresh();
     } else {
       setMsgResult({ type: "error", msg: result?.msg });
     }
