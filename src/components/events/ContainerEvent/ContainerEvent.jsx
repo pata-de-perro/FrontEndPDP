@@ -1,5 +1,4 @@
 import clsx from "clsx";
-
 import { TitleSection } from "@/components/layouts";
 import { ActionsEvent, MainPlacesEvent } from "@/components/events";
 
@@ -14,7 +13,7 @@ export function ContainerEvent({ event, user }) {
           urlIcon="/location_on.svg"
           type="primary"
         />
-        <ActionsEvent user={user} eventId={event._id} />
+        <ActionsEvent user={user} event={event} />
       </div>
       <MainPlacesEvent event={event} mapId={MAP_ID} />
     </div>
