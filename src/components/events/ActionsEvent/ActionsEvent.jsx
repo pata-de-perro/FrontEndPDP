@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteEventByIdApi } from "@/services";
 import { ModalContent, ToastMsgTop } from "@/components/common";
+import { EditEvent } from "@/components/events";
 
 import { TbEdit } from "react-icons/tb";
 import { AiFillDelete } from "react-icons/ai";
@@ -53,7 +54,7 @@ export function ActionsEvent({ user, event }) {
         </button>
       </section>
       <ModalContent idModal="edit_event_modal" title="Editando el evento">
-        <h2>Editando...</h2>
+        <EditEvent user={user} event={event} />
       </ModalContent>
     </>
   );
