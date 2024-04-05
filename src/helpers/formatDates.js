@@ -72,11 +72,17 @@ const parsedUTCToLocalDateTimeString = (utcDateTime) => {
   const day = String(date.getDate()).padStart(2, "0");
   const hours = String(date.getHours()).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");
+
   return `${year}-${month}-${day}T${hours}:${minutes}`;
 };
 
-export const parsedUTCDateToISODateString = (utcDate) => {
-  return new Date(utcDate).toISOString().split("T")[0];
+export const parsedUTCToLocalDateString = (utcDate) => {
+  const date = new Date(utcDate);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 };
 
 export const formatDatesEvent = (condition, startDate, endDate) => {
@@ -84,8 +90,8 @@ export const formatDatesEvent = (condition, startDate, endDate) => {
   let formattedEndDate = null;
 
   if (condition) {
-    formattedStartDate = parsedUTCDateToISODateString(startDate);
-    formattedEndDate = parsedUTCDateToISODateString(endDate);
+    formattedStartDate = parsedUTCToLocalDateString(startDate);
+    formattedEndDate = parsedUTCToLocalDateString(endDate);
   } else {
     formattedStartDate = parsedUTCToLocalDateTimeString(startDate);
     formattedEndDate = parsedUTCToLocalDateTimeString(endDate);
