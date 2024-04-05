@@ -1,5 +1,6 @@
 "use client";
 import clsx from "clsx";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { formatDatesEvent } from "@/helpers";
 import { FormEditEvent } from "@/components/events";
@@ -29,6 +30,7 @@ export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
       endDate: formattedEndDate,
     },
   });
+  const router = useRouter();
 
   const onSubmitEditEvent = handleSubmit(async (data) => {
     const result = await updateEventByIdApi(_id, accessToken, data);
@@ -36,6 +38,8 @@ export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
     if (result?.success === true) {
       setMsgResult({ type: "success", msg: result?.msg });
       handleCloseEditModal();
+      router.push(`/pdp`);
+      router.refresh();
     } else {
       setMsgResult({ type: "error", msg: result?.msg });
     }
