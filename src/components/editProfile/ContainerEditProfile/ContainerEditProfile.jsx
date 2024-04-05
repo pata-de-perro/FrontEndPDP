@@ -5,8 +5,6 @@ import { ModalContent } from "@/components/common";
 import { EditProfile } from "../EditProfile/EditProfile";
 import { UploadAvatar } from "../UploadAvatar/UploadAvatar";
 import { getProfileApi } from "@/services";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function ContainerEditProfile({ user }) {
   const { accessToken } = user;

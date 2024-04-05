@@ -1,7 +1,5 @@
-"use client"
+
 import clsx from "clsx"
-import { useEffect } from "react";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FormEditProfile } from "../FormEditProfile/FormEditProfile";
@@ -13,8 +11,6 @@ export function EditProfile({ profile, token }){
         register,
         handleSubmit,
         formState: {errors},
-        watch,
-        setValue,
     } = useForm();
 
     const onSumbitProfile = handleSubmit(async (data) => {
@@ -30,8 +26,6 @@ export function EditProfile({ profile, token }){
                 onSumbitProfile={onSumbitProfile}
                 register={register}
                 errors={errors}
-                profile={profile}
-                loading={loading}
                 />
         </div>
     )

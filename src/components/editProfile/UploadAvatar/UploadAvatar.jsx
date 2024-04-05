@@ -1,6 +1,5 @@
-"use client"
+
 import clsx from "clsx"
-import { useSession } from "next-auth/react"
 import { useForm } from "react-hook-form"
 import { FormAvatar } from "../FormAvatar/FormAvatar"
 
@@ -9,8 +8,6 @@ export function UploadAvatar({session}){
         register,
         handleSubmit,
         formState: {errors},
-        watch,
-        setValue,
     } = useForm();
 
     const onSubmitAvatar = handleSubmit((data) => {
@@ -27,8 +24,6 @@ export function UploadAvatar({session}){
             onSubmitAvatar={onSubmitAvatar}
             register = {register}
             errors = {errors}
-            setValue = {setValue}
-            watch = {watch}
             session= {session}
             />
         </div>
