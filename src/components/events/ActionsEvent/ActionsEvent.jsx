@@ -4,16 +4,18 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteEventByIdApi } from "@/services";
 import { ModalContent, ToastMsgTop } from "@/components/common";
+
 import { TbEdit } from "react-icons/tb";
 import { AiFillDelete } from "react-icons/ai";
 
-export function ActionsEvent({ user, eventId }) {
+export function ActionsEvent({ user, event }) {
   const { accessToken } = user;
+
   const [msgResult, setMsgResult] = useState();
   const router = useRouter();
 
   const handleDeletEvent = async () => {
-    const result = await deleteEventByIdApi(eventId, accessToken);
+    const result = await deleteEventByIdApi(event._id, accessToken);
     if (result?.success === true) {
       setMsgResult({ type: "success", msg: result?.msg });
       router.push("/pdp");
