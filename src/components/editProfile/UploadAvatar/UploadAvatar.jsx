@@ -1,7 +1,5 @@
-
-import clsx from "clsx"
 import { useForm } from "react-hook-form"
-import { FormAvatar } from "../FormAvatar/FormAvatar"
+import { FormAvatar } from "../FormAvatar/FormAvatar";
 
 export function UploadAvatar({session}){
     const {
@@ -10,8 +8,19 @@ export function UploadAvatar({session}){
         formState: {errors},
     } = useForm();
 
-    const onSubmitAvatar = handleSubmit((data) => {
-        console.log(data)
+    const onSubmitAvatar = handleSubmit( async (data) => {
+               const infoProfile = {
+                       ...data,
+                       userId: profile._id
+                   };
+                   const result = await updateProfileApi(
+                       infoProfile,
+                       token,
+                   );
+                   if (result.success === true) {
+                       reset()
+                       router.push("/pdp/profile")
+                   }
     })
 
     return(
@@ -24,7 +33,6 @@ export function UploadAvatar({session}){
             onSubmitAvatar={onSubmitAvatar}
             register = {register}
             errors = {errors}
-            session= {session}
             />
         </div>
     )

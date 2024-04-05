@@ -1,5 +1,4 @@
 "use client";
-
 import clsx from "clsx";
 import { ModalContent } from "@/components/common";
 import { EditProfile } from "../EditProfile/EditProfile";
@@ -9,12 +8,10 @@ import { getProfileApi } from "@/services";
 export async function ContainerEditProfile({ user }) {
   const { accessToken } = user;
   const { id } = user;
-  const { data: profile } = await getProfileApi(id, accessToken)
+  const { data: profileData } = await getProfileApi(id, accessToken)
   
   const handleOpenModal = () => {
     document.getElementById("modal_edit_profile").showModal();
-    // console.log(accessToken)
-    console.log(profile)
   };
 
   const handleOpenAvatarModal = () => {
@@ -51,11 +48,11 @@ export async function ContainerEditProfile({ user }) {
       </div>
 
       <ModalContent idModal="modal_edit_profile" title="Edita tu perfil">
-        <EditProfile  profile={profile} toke={accessToken}/>
+        <EditProfile  profileData={profileData} token={accessToken}/>
       </ModalContent>
 
       <ModalContent idModal="modal_upload_avatar" title="Sube tu fotografía">
-        {/* <UploadAvatar profile={profile}/> */}
+        <UploadAvatar profileData={profileData} token={accessToken}/>
       </ModalContent>
     </>
   );

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export function FormAvatar({ onSubmitAvatar, register, errors, session}){
+export async function FormAvatar({ onSubmitAvatar, register, errors}){
 
     return(
         <div className="flex justify-center">

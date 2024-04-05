@@ -16,17 +16,34 @@ export const getProfileApi = async (userId, token) => {
     }
 }
 
-export const updateProfileApi = async (userId, token, newData) => {
+export const updateProfileApi = async (newData, token) => {
     try{
-        const res = await fetch(`${URL_API}/users/profile-update/${userId}`, {
+        const res = await fetch(`${URL_API}/users/profile-update/${newData.userId}`, {
             method: 'PUT',
             headers:{
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,
             },
+            body: JSON.stringify(newData)
         });
-        return
+        return res
     }catch (err) {
         throw new Error(`Error fetching user profile: ${err.message}`)
+    }
+}
+
+export const updateAvatarApi = async (newData, token) => {
+    try{
+        const res = await fetch(`${URL_API}/users/profile-update-avatar/${newData.userId}`, {
+            method: 'PUT',
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(newData)
+        });
+        return res
+    } catch (err) {
+        throw new Error(`Error uploading user avatar: ${err.message}`)
     }
 }

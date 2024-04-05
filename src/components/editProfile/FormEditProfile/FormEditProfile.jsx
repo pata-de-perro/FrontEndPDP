@@ -1,9 +1,6 @@
-"use client"
 import clsx from "clsx";
 
-export async function FormEditProfile({ onSumbitProfile, register, errors, profile }) {
-
-
+export async function FormEditProfile({ onSumbitProfile, register }) {
   return (
     <div className="flex justify-center">
       <form onSubmit={onSumbitProfile} className="grid grid-cols-2">
@@ -28,9 +25,7 @@ export async function FormEditProfile({ onSumbitProfile, register, errors, profi
                     value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
                 }
               })}
-          >
-            {/* <p>{ profile.name ? profile.name : "Actualiza tu nombre"}</p> */}
-          </input>
+          />
         </div>
         <div className="form-control mx-4 col-span-2">
           <label className="label font-body text-regular">
@@ -49,7 +44,10 @@ export async function FormEditProfile({ onSumbitProfile, register, errors, profi
               "block w-[450px] rounded-lg focus:ring-1"
             )}
             placeholder="Correo electronico de usuario"
-            disabled={true}
+            disabled
+            {...register("email", {
+              required: false,
+            })}
           />
         </div>
         <div className="form-control mx-4">
@@ -102,8 +100,8 @@ export async function FormEditProfile({ onSumbitProfile, register, errors, profi
             <div className="font-body text-regular">
                   <input
                   type="radio"
-                  value="mujer"
-                  id="mujer"
+                  value="femenino"
+                  id="femenino"
                   name="gender"
                   className="mr-3"
                   {...register("gender",{
@@ -111,13 +109,13 @@ export async function FormEditProfile({ onSumbitProfile, register, errors, profi
                   })}
                   />
                   <label
-                  htmlFor="mujer">Mujer</label>
+                  htmlFor="Femenino">Femenino</label>
                 </div>
                 <div className="font-body text-regular">
                   <input
                   type="radio"
-                  value="hombre"
-                  id="hombre"
+                  value="masculino"
+                  id="masculino"
                   name="gender"
                   className="mr-3"
                   {...register("gender",{
@@ -125,13 +123,13 @@ export async function FormEditProfile({ onSumbitProfile, register, errors, profi
                   })}
                   />
                   <label
-                  htmlFor="hombre">Hombre</label>
+                  htmlFor="Masculino">Masculino</label>
                 </div>
                 <div className="font-body text-regular">
                   <input
                   type="radio"
-                  value="Prefiero no responder"
-                  id="Prefiero no responder"
+                  value="indefinido"
+                  id="indefinido"
                   name="gender"
                   className="mr-3"
                   {...register("gender",{
@@ -139,7 +137,7 @@ export async function FormEditProfile({ onSumbitProfile, register, errors, profi
                   })}
                   />
                   <label
-                  htmlFor="Prefiero no responder">Prefiero no responder</label>
+                  htmlFor="Indefinido">Prefiero no decirlo</label>
                 </div>
         </div>
         </div>
