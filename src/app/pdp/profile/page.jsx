@@ -4,18 +4,30 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth, TitleSection } from "@/components/layouts";
 import {  AiOutlineUser } from "react-icons/ai";
 import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
+import { getProfileApi } from "@/services"
 
 export default async function Profile() {
-  const { user } = await getServerSession(authOptions);
-  const icon = <AiOutlineUser/>
+  const session = await getServerSession(authOptions);
+  const user = session.user
+  
+  const profileData = (await getProfileApi(session.user.id, session.user.accessToken)).data
+  console.log(profileData)
 
+  const icon = <AiOutlineUser/>
+  
   return (
     <>
       <HeroAuth
-        title={user.name ? user.name : "Personaliza tu usuario"}
+        title={profileData.name ? profileData.name : "Personaliza tu usuario"}
       >
         <p className="font-heading text-regularSemiBold">
-          {user.email}
+          {profileData.email}
+        </p>
+        <p className="font-heading text-regularSemiBold">
+          {profileData.phoneNumber}
+        </p>
+        <p className="font-heading text-regularSemiBold">
+          {profileData.birthdate}
         </p>
       </HeroAuth>
          <div className="static">
