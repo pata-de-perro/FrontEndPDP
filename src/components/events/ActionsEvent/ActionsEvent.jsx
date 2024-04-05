@@ -3,9 +3,9 @@ import clsx from "clsx";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { deleteEventByIdApi } from "@/services";
+import { ModalContent, ToastMsgTop } from "@/components/common";
 import { TbEdit } from "react-icons/tb";
 import { AiFillDelete } from "react-icons/ai";
-import { ToastMsgTop } from "@/components/common";
 
 export function ActionsEvent({ user, eventId }) {
   const { accessToken } = user;
@@ -22,6 +22,10 @@ export function ActionsEvent({ user, eventId }) {
     }
   };
 
+  const handleOpenEditModal = () => {
+    document.getElementById("edit_event_modal").showModal();
+  };
+
   return (
     <>
       {msgResult && (
@@ -35,6 +39,7 @@ export function ActionsEvent({ user, eventId }) {
             "bg-accent1",
             "hover:bg-accent1/90"
           )}
+          onClick={() => handleOpenEditModal()}
         >
           <TbEdit /> Editar evento
         </button>
@@ -45,6 +50,9 @@ export function ActionsEvent({ user, eventId }) {
           <AiFillDelete className={clsx("text-red-800")} /> Eliminar evento
         </button>
       </section>
+      <ModalContent idModal="edit_event_modal" title="Editando el evento">
+        <h2>Editando...</h2>
+      </ModalContent>
     </>
   );
 }
