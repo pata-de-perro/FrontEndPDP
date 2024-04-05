@@ -2,18 +2,14 @@ import {
   AiOutlineHome,
   AiOutlineUser,
   AiTwotoneCalendar,
-  AiOutlinePlaySquare,
 } from "react-icons/ai";
+import { GrGroup } from "react-icons/gr";
 
 export const navigationItems = [
   { icon: <AiOutlineHome />, label: "Inicio", href: "/pdp" },
   { icon: <AiOutlineUser />, label: "Tu perfil", href: "/pdp/profile" },
   { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/pdp/plans" },
-  {
-    icon: <AiOutlinePlaySquare />,
-    label: "Tutoriales",
-    href: "/pdp",
-  },
+  { icon: <GrGroup />, label: "Amigos", href: "/pdp", },
 ];
 
 export const placesList = [
@@ -86,4 +82,79 @@ export const placesList = [
 
 export const friends = ["Paco", "Sonia", "Estevan"];
 
+export const placesOfInterestMenu = [
+  {
+    key: "01",
+    title: "Hospedaje",
+    pinUrl: "/location_lodging.svg",
+    typePlace: ["lodging"],
+  },
+  {
+    key: "02",
+    title: "Spa",
+    pinUrl: "/location_spa.svg",
+    typePlace: ["spa"],
+  },
+  {
+    key: "03",
+    title: "Atracciones Turísticas",
+    pinUrl: "/location_tourist.svg",
+    typePlace: ["tourist_attraction"],
+  },
+  {
+    key: "04",
+    title: "Restaurantes",
+    pinUrl: "/location_restaurant_pdp.svg",
+    typePlace: ["restaurant"],
+  },
+  {
+    key: "05",
+    title: "Vida Nocturna",
+    pinUrl: "/location_pdp.svg",
+    typePlace: ["night_club"],
+  },
+  {
+    key: "06",
+    title: "Bares",
+    pinUrl: "/location_bar.svg",
+    typePlace: ["bar"],
+  },
+];
 
+export const pinColors = {
+  lodging: {
+    background: "#C92CE5",
+    borderColor: "#fff",
+    glyphColor: "#fff",
+  },
+  spa: {
+    background: "#EDB3F8",
+    borderColor: "#fff",
+    glyphColor: "#87549F",
+  },
+  tourist_attraction: {
+    background: "#253A74",
+    borderColor: "#fff",
+    glyphColor: "#fff",
+  },
+  restaurant: {
+    background: "#FE9401",
+    borderColor: "#fff",
+    glyphColor: "#87549F",
+  },
+  night_club: {
+    background: "#7ECDCE",
+    borderColor: "#fff",
+    glyphColor: "#87549F",
+  },
+  bar: {
+    background: "#87549F",
+    borderColor: "#fff",
+    glyphColor: "#fff",
+  },
+  default: {
+    background: "#B6EAA4",
+    borderColor: "#87549F",
+    glyphColor: "#87549F",
+  },
+};

@@ -1,13 +1,17 @@
 "use client";
-import { useEffect, useRef } from "react";
 import clsx from "clsx";
+import { useEffect, useRef } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
-
+import { pinColors } from "@/mocks/catalogs";
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function GoogleMap() {
-  const mapContainerRef = useRef(null);
-  let map = null;
+export function GoogleMap({ chidren, ubicationMap, mapId, locations }) {
+  const mapGoogleRef = useRef(null);
+  const optionsMap = {
+    center: ubicationMap,
+    zoom: 13,
+    mapId,
+  };
 
   useEffect(() => {
     const initializeMap = async () => {
@@ -16,26 +20,37 @@ export function GoogleMap() {
         version: "weekly",
       });
 
-      loader
-        .importLibrary("maps")
-        .then(() => {
-          const google = window.google;
-          map = new google.maps.Map(mapContainerRef.current, {
-            center: { lat: 23.6345, lng: -102.5528 },
-            zoom: 7,
-          });
-        })
-        .catch((error) => {
-          console.error("Error loading Google Maps API:", error);
+      const { Map } = await loader.importLibrary("maps");
+      const { AdvancedMarkerElement, PinElement } =
+        await google.maps.importLibrary("marker");
+      const map = new Map(mapGoogleRef.current, optionsMap);
+
+      locations.forEach((place) => {
+        const pinPdPBackground = new PinElement({
+          ...(pinColors[place.type] || pinColors.default),
         });
+        const ubication = {
+          lat: place.coords[0],
+          lng: place.coords[1],
+        };
+
+        new AdvancedMarkerElement({
+          map: map,
+          position: ubication,
+          title: place.name,
+          content: pinPdPBackground.element.cloneNode(true),
+        });
+      });
     };
 
     initializeMap();
-  }, []);
+  }, [optionsMap]);
 
   return (
-    <div className={clsx("h-[70vh]", "mt-2")}>
-      <div ref={mapContainerRef} className={clsx("h-full")} />
+    <div className={clsx("h-full")}>
+      <div ref={mapGoogleRef} className={clsx("h-full", "rounded-xl")}>
+        {chidren}
+      </div>
     </div>
   );
 }

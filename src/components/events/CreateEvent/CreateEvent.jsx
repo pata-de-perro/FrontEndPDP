@@ -1,16 +1,17 @@
 "use client";
+import clsx from "clsx";
 import { useEffect } from "react";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import clsx from "clsx";
 import { Loader } from "@googlemaps/js-api-loader";
 import { posCreateNewEventApi } from "@/services";
 import { FormEvent } from "@/components/events";
+import { buildLocationByPlaces } from "@/helpers";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function CreateEvent() {
+export function CreateEvent({ user }) {
+  const { id, accessToken } = user;
   const {
     register,
     handleSubmit,
@@ -19,7 +20,6 @@ export function CreateEvent() {
     setValue,
     reset,
   } = useForm({ defaultValues: { isTravel: true } });
-  const { data: session } = useSession();
   const router = useRouter();
 
   useEffect(() => {
@@ -39,8 +39,10 @@ export function CreateEvent() {
         });
 
         autocomplete.addListener("place_changed", () => {
-          const place = autocomplete.getPlace();
-          console.log(place);
+          const places = autocomplete.getPlace();
+          const { coords, location } = buildLocationByPlaces(places);
+          setValue("locationEvent", location);
+          setValue("coordsEvent", coords);
         });
       });
     };
@@ -51,12 +53,9 @@ export function CreateEvent() {
   const onSubmitEvent = handleSubmit(async (data) => {
     const infoEvent = {
       ...data,
-      userId: session.user.id,
+      userId: id,
     };
-    const result = await posCreateNewEventApi(
-      infoEvent,
-      session.user.accessToken
-    );
+    const result = await posCreateNewEventApi(infoEvent, accessToken);
     if (result.success === true) {
       reset();
       router.push(`/pdp/plans/${result.event}`);
@@ -64,11 +63,10 @@ export function CreateEvent() {
   });
 
   return (
-    <div>
-      <h3 className={clsx("mb-6", "text-center text-sm")}>
+    <div className="mt-10 mr-4">
+      <h2 className={clsx("mb-6", "text-xl")}>
         Esto facilitará encontrar información de tu viaje
-      </h3>
-      <input type="text" placeholder="Address" id="location" />
+      </h2>
       <FormEvent
         register={register}
         onSubmitEvent={onSubmitEvent}

@@ -1,49 +1,40 @@
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { redirect } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import clsx from "clsx";
 import { PerformLogin } from "@/components/account";
 
-export default function LoginPage() {
+export default async function LoginPage() {
+  const user = await getServerSession(authOptions);
+  if (user) {
+    redirect("/pdp");
+  }
+
   return (
     <>
-      <div
-        className={clsx(
-          "grid justify-items-center",
-          "pb-[15px]",
-          "lg:justify-items-start"
-        )}
-      >
+      <div className="grid md:grid-cols-2 lg:grid-cols-1 justify-items-center lg:justify-items-start">
         <h1 className="text-h1 font-heading text-center text-azulGris900 pt-[15px]">
           Inicia sesión en
         </h1>
         <Link href="/">
-          <Image
+          <img
             src="/PDPLogo.svg"
             width={250}
             height={50}
             alt="Logo Pata de Perro"
-            className="lg:w-[420px] lg:h-[auto]"
+            className="lg:w-[auto] lg:h-[80px]"
           />
         </Link>
-        <p
-          className={clsx(
-            "text-regular font-body",
-            "text-center text-azulGris900"
-          )}
-        >
+      </div>
+      <div className="flex flex-col lg:flex-row">
+        <p className="text-regular font-body text-center text-azulGris900">
           ¿Eres un nuevo usuario?
         </p>
-        <p
-          className={clsx(
-            "text-regularBold font-body",
-            "text-center text-azulGris900"
-          )}
-        >
+        <p className="text-regularBold font-body text-center text-azulGris900 lg:ml-4">
           <Link href="/account/register">¡Registrate ahora!</Link>
         </p>
-
-        <PerformLogin />
       </div>
+      <PerformLogin />
     </>
   );
 }

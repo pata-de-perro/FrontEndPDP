@@ -3,15 +3,16 @@ import clsx from "clsx";
 export default function Auth({ children }) {
   return (
     <>
-      <main className={clsx("w-[100wv]", "flex justify-center content-center")}>
+      <main className={clsx(
+        "w-[full] h-screen", 
+        "md:flex-none md:item-start",
+        "lg:flex lg:justify-center lg:items-center",
+        )}>
         <div
           className={clsx(
-            "flex",
-            "flex-wrap",
-            "lg:flex-nowrap",
-            "justify-center",
-            "p-[20px]",
-            "lg:w-[1280px] lg:mt-[30px] lg:justify-center"
+            "flex flex-wrap justify-center",
+            "lg:flex-nowrap lg:w-[1280px]",
+            "lg:justify-center"
           )}
         >
           <img
@@ -25,8 +26,7 @@ export default function Auth({ children }) {
             className={clsx(
               "flex justify-center",
               "md:pb-[15px] md:flex-row md:justify-start",
-              "lg:flex-wrap",
-              "lg:w-[500px]"
+              "lg:flex-wrap lg:w-[500px]"
             )}
           >
             <img
@@ -35,33 +35,35 @@ export default function Auth({ children }) {
               height={329}
               alt="progresive app pana"
               className={clsx(
-                "w-[319px]",
-                "pt-[45px]",
-                "sr-only",
-                "md:not-sr-only",
-                "md:w-[329px] md:h-[329px]",
-                "lg:w-[400px] lg:h-[400px]",
-                "lg:self-end"
+                "w-[319px] pt-[45px] sr-only",
+                "md:not-sr-only md:w-[329px] md:h-[329px]",
+                "lg:w-[400px] lg:h-[400px] lg:self-end"
               )}
             />
             <div className="md:grid md:content-center md:w-[350px] lg:content-start lg:w-[500px]">
               <div className="grid justify-items-center md:justify-items-start lg:flex">
-                <p className={clsx("text-h1 text-azulGris900", "font-heading")}>
+                <p className={clsx("text-h1 text-azulGris900", "font-heading", "mt-4 md:mt-0 lg:mt-0")}>
                   Bienvenido a{" "}
                 </p>
                 <p
                   className={clsx(
-                    "pl-[3px]",
+                    "pl-4",
                     "text-h1 text-primary",
                     "font-heading",
                     "justify-center",
-                    "md:justify-items-start"
+                    "md:justify-items-start md:pl-0",
+                    "lg:pl-4",
                   )}
                 >
-                  PataDePerro
+                  dePataDePerro
                 </p>
               </div>
-              <p className="font-body text-regular w-[360px] text-center md:text-left md:w-[300px] lg:w-[400px]">
+              <p className={clsx(
+                "font-body text-regular w-[360px] text-center",
+                "mt-8",
+                "md:text-left md:w-[300px] md:mt-0",
+                "lg:w-[400px] lg:mt-0",
+              )}>
                 Organiza tu viaje, guarda puntos de interés y comparte el
                 itinerario con todos tus compañeros de viaje.
               </p>
@@ -83,15 +85,15 @@ export default function Auth({ children }) {
           >
             <div>{children}</div>
 
-            <p className="text-center text-regular font-body text-azulGris500 w-[450px] p-[5px]">
+            <p className="text-center text-xs font-body text-azulGris500 w-[450px]">
               Al seguir usando una cuenta en México, aceptas los Términos de uso
               y confirmas que has leído la Política de privacidad.
             </p>
           </div>
           <img
             src="/World.svg"
-            width={450}
-            height={450}
+            width={350}
+            height={350}
             alt="World image"
             className="absolute right-0 bottom-0 -z-10 justify-self-start"
           />

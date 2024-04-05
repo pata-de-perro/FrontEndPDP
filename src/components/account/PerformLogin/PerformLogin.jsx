@@ -11,14 +11,17 @@ export function PerformLogin() {
     handleSubmit,
     formState: { errors },
     reset,
+    onChange,
   } = useForm({
     mode: "onTouched",
   });
+
   const { loading, error, handleAuthApi } = useNextAuthApi();
   const router = useRouter();
 
   const onSubmitSignIn = handleSubmit(async (data) => {
     const result = await handleAuthApi(data);
+    
     if (result?.ok === true) {
       router.push("/pdp");
       reset();

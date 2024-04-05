@@ -1,17 +1,23 @@
-import { HeroAuth, TitleSection } from "@/components/layouts";
-import { GoogleMap } from "@/components/maps";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { HeroAuth } from "@/components/layouts";
+import { ContainerPlan } from "@/components/plans";
 
-export default function TravelPage({ params }) {
+
+export default async function PlanEventPage({ params }) {
+  const { user } = await getServerSession(authOptions);
+
+
   return (
-    <div>
-      <HeroAuth title="¡Realiza tú plan!">
+    <>
+      <HeroAuth title="¡Realiza tú plan!" urlImg="/World-bro.svg">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Descubre los lugares que te gustaria visitar u las opciones que tienes
+          para hospedarte, el listado de opciones es tu aliado para que puedas
+          agregarlas y una vez que estes listo, gardarlas en tu evento.
         </p>
       </HeroAuth>
-      <TitleSection title="Revisa tu mapa" urlIcon="/Icono-Fecha.svg" />
-      <GoogleMap />
-    </div>
+      <ContainerPlan idPlan={params.id} user={user} />
+    </>
   );
 }

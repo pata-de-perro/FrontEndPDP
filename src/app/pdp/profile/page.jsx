@@ -2,70 +2,52 @@ import clsx from "clsx";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { HeroAuth, TitleSection } from "@/components/layouts";
+import {  AiOutlineUser } from "react-icons/ai";
+import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
+import { getProfileApi } from "@/services"
+import { eventDateFormat } from "@/helpers";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
+  const user = session.user
+  
+  const profileData = (await getProfileApi(session.user.id, session.user.accessToken)).data
+  const profileBirthdate = (eventDateFormat(profileData.birthdate))
 
   return (
     <>
-      <TitleSection urlIcon={"/person_icon.svg"} title="Perfil" />
       <HeroAuth
-        title={session.user.name ? session.user.name : "Nombre de usuario"}
+        title={profileData.name ? profileData.name : "Personaliza tu usuario"}
       >
         <p className="font-heading text-regularSemiBold">
-          {session?.user.email}
+          {profileData.email}
+        </p>
+        <p className="font-heading text-regularSemiBold">
+          {profileData.phoneNumber}
+        </p>
+        <p className="font-heading text-regularSemiBold">
+          {profileBirthdate}
         </p>
       </HeroAuth>
-      <section className="mt-4">
-        <div className={clsx("flex justify-start")}>
-          <button
-            className={clsx(
-              "mx-2",
-              "w-[180px] h-[45px]",
-              "font-body text-regular text-white",
-              "absolute right-4 -bottom-10",
-              "rounded-xl",
-              "bg-azulGris500",
-              "md:static",
-              "disabled: cursor-not-allowed"
-            )}
-            disabled
-          >
-            Editar
-          </button>
-
-          <button
-            className={clsx(
-              "w-[180px] h-[45px]",
-              "rounded-xl",
-              "mx-2",
-              "bg-secondary",
-              "font-body text-regular text-accent2",
-              "justify-center",
-              "absolute right-4 -bottom-10",
-              "md:static",
-              "disabled: cursor-not-allowed"
-            )}
-            disabled
-          >
-            Cambiar imagen
-          </button>
-
-          <div className="static">
+         <div className="static">
             <img
               src={
-                session.user.picture ? session.user.picture : "/profile-pic.png"
+                user.avatar ? user.avatar : "/profile-pic.png"
               }
-              width={180}
-              height={180}
-              className={clsx("absolute z-10 right-10 top-20", "border")}
+              width={100}
+              height={100}
+              className={clsx(
+                "absolute z-10 right-10 top-20",
+                 "border",
+                 "sm:w-[100px] sm:h-[100px]",
+                 "md:w-[120px] md:h-[120px]",
+                 "lg:w-[180px] lg:h-[180px]",
+                 )}
             />
           </div>
-        </div>
-      </section>
+          <ContainerEditProfile user={user}/>
 
-      <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" />
-      <section className="h-[150px]"></section>
+      <TitleSection urlIcon={<AiOutlineUser/>} title="Perfil" type="primary"/>
     </>
   );
 }

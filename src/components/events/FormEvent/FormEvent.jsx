@@ -1,3 +1,4 @@
+"use client";
 import { useEffect } from "react";
 import { clsx } from "clsx";
 import { addHoursToDateTime } from "@/helpers";
@@ -92,8 +93,17 @@ export function FormEvent({
           type="text"
           placeholder="Ingrese el lugar"
           className={clsx("input input-bordered input-sm", "w-full")}
-          {...register("locationEvent")}
+          {...register("locationEvent", {
+            required: { value: true, message: "Por favor ingrese un lugar" },
+          })}
         />
+        <div className="label">
+          {errors?.title && (
+            <span className="label-text-alt text-red-500">
+              {errors.locationEvent.message}
+            </span>
+          )}
+        </div>
       </div>
       {watch("isTravel") === true || watch("isTravel") === "true" ? (
         <div className="flex space-x-4 mb-4">
@@ -176,73 +186,6 @@ export function FormEvent({
                   </span>
                 )}
               </div>
-            </div>
-          </div>
-          <h3
-            className={clsx(
-              "my-4",
-              "text-base font-medium text-center",
-              "divider"
-            )}
-          >
-            ¿A dónde quieres ir?
-          </h3>
-          <div className="flex space-x-4 mb-4 items-center">
-            <div className="form-control flex items-center">
-              <label className="cursor-pointer label">
-                <input
-                  type="checkbox"
-                  className={clsx(
-                    "checkbox",
-                    "border-gray-400 checked:border-primary",
-                    "[--chkbg:theme(colors.primary)]"
-                  )}
-                  {...register("Restaurantes")}
-                />
-              </label>
-              <span className="label-text">Restaurantes</span>
-            </div>
-            <div className="form-control flex items-center">
-              <label className="cursor-pointer label">
-                <input
-                  type="checkbox"
-                  className={clsx(
-                    "checkbox",
-                    "border-gray-400 checked:border-primary",
-                    "[--chkbg:theme(colors.primary)]"
-                  )}
-                  {...register("Vida nocturna")}
-                />
-              </label>
-              <span className="label-text">Vida nocturna</span>
-            </div>
-            <div className="form-control flex items-center">
-              <label className="cursor-pointer label">
-                <input
-                  type="checkbox"
-                  className={clsx(
-                    "checkbox",
-                    "border-gray-400 checked:border-primary",
-                    "[--chkbg:theme(colors.primary)]"
-                  )}
-                  {...register("Cafeterías")}
-                />
-              </label>
-              <span className="label-text">Cafeterías</span>
-            </div>
-            <div className="form-control flex items-center">
-              <label className="cursor-pointer label">
-                <input
-                  type="checkbox"
-                  className={clsx(
-                    "checkbox",
-                    "border-gray-400 checked:border-primary",
-                    "[--chkbg:theme(colors.primary)]"
-                  )}
-                  {...register("Museos y Arte")}
-                />
-              </label>
-              <span className="label-text">Museos y Arte</span>
             </div>
           </div>
         </>
