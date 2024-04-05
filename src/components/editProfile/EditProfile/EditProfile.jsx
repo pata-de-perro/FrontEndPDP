@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import {FormEditProfile} from "@/components/editProfile/FormEditProfile/FormEditProfile"
 
-export function EditProfile({session}){
+export function EditProfile({ user }){
     const {
         register,
         handleSubmit,
@@ -15,24 +15,24 @@ export function EditProfile({session}){
         setValue,
     } = useForm();
 
-    const onSumbitProfile = handleSubmit((data) => {
-        console.log(data)
+    // const onSumbitProfile = handleSubmit((data) => {
+    //     console.log("Hola")
         
-    })
+    // })
 
     return(
         <div>
             <p className={clsx("m-6", "text-sm")}>
                 Completa los espacios pendientes para completar tu perfil.
             </p>
-            <FormEditProfile 
-            register={register}
-            onSumbitProfile={onSumbitProfile}
-            errors={errors}
-            watch={watch}
-            setValue={setValue}
-            session= {session}
-            />
+            {/* <FormEditProfile 
+                onSumbitProfile={onSumbitProfile}
+                register={register}
+                errors={errors}
+                watch={watch}
+                setValue={setValue}
+                user={user}
+                /> */}
         </div>
     )
 }

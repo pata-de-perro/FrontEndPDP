@@ -1,6 +1,8 @@
 import clsx from "clsx";
 
-export function FormEditProfile({ onSumbitProfile, register, errors, session }) {
+export function FormEditProfile({ onSumbitProfile, register, errors, user }) {
+  // const { name, email, gender, birthdate } = user
+  // const { accessToken } = user
 
   return (
     <div className="flex justify-center">
@@ -19,7 +21,7 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
               "block w-[450px] rounded-lg focus:ring-1"
             )}
-            placeholder="Nombre de usuario"
+            placeholder="Actualiza tu información"
               {...register("name", {
                 required: false,
                 pattern: {

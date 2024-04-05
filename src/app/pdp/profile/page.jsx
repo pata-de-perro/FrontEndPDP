@@ -6,22 +6,22 @@ import {  AiOutlineUser } from "react-icons/ai";
 import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
 
 export default async function Profile() {
-  const session = await getServerSession(authOptions);
+  const { user } = await getServerSession(authOptions);
   const icon = <AiOutlineUser/>
 
   return (
     <>
       <HeroAuth
-        title={session.user.name ? session.user.name : "Personaliza tu usuario"}
+        title={user.name ? user.name : "Personaliza tu usuario"}
       >
         <p className="font-heading text-regularSemiBold">
-          {session?.user.email}
+          {user.email}
         </p>
       </HeroAuth>
          <div className="static">
             <img
               src={
-                session.user.picture ? session.user.picture : "/profile-pic.png"
+                user.avatar ? user.avatar : "/profile-pic.png"
               }
               width={100}
               height={100}
@@ -34,7 +34,7 @@ export default async function Profile() {
                  )}
             />
           </div>
-          <ContainerEditProfile session={session}/>
+          <ContainerEditProfile user={user}/>
 
       <TitleSection urlIcon={icon} title="Perfil" />
       {/* <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" /> */}
