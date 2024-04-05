@@ -1,7 +1,9 @@
+"use client";
 import clsx from "clsx";
 import { useForm } from "react-hook-form";
 import { formatDatesEvent } from "@/helpers";
 import { FormEditEvent } from "@/components/events";
+import { updateEventByIdApi } from "@/services";
 
 export function EditEvent({ user, event }) {
   const { accessToken } = user;
@@ -28,8 +30,9 @@ export function EditEvent({ user, event }) {
     },
   });
 
-  const onSubmitEditEvent = handleSubmit((data) => {
-    console.log(data);
+  const onSubmitEditEvent = handleSubmit(async (data) => {
+    const result = await updateEventByIdApi(_id, accessToken, data);
+    console.log(result);
   });
 
   return (
