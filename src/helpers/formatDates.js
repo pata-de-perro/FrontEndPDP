@@ -78,3 +78,18 @@ const parsedUTCToLocalDateTimeString = (utcDateTime) => {
 export const parsedUTCDateToISODateString = (utcDate) => {
   return new Date(utcDate).toISOString().split("T")[0];
 };
+
+export const formatDatesEvent = (condition, startDate, endDate) => {
+  let formattedStartDate = null;
+  let formattedEndDate = null;
+
+  if (condition) {
+    formattedStartDate = parsedUTCDateToISODateString(startDate);
+    formattedEndDate = parsedUTCDateToISODateString(endDate);
+  } else {
+    formattedStartDate = parsedUTCToLocalDateTimeString(startDate);
+    formattedEndDate = parsedUTCToLocalDateTimeString(endDate);
+  }
+
+  return { formattedStartDate, formattedEndDate };
+};
