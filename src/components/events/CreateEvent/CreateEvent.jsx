@@ -1,9 +1,8 @@
 "use client";
+import clsx from "clsx";
 import { useEffect } from "react";
-import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import clsx from "clsx";
 import { Loader } from "@googlemaps/js-api-loader";
 import { posCreateNewEventApi } from "@/services";
 import { FormEvent } from "@/components/events";
@@ -11,7 +10,8 @@ import { buildLocationByPlaces } from "@/helpers";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY_GOOGLE;
 
-export function CreateEvent() {
+export function CreateEvent({ user }) {
+  const { id, accessToken } = user;
   const {
     register,
     handleSubmit,
@@ -20,8 +20,6 @@ export function CreateEvent() {
     setValue,
     reset,
   } = useForm({ defaultValues: { isTravel: true } });
-  const { data: session } = useSession();
-
   const router = useRouter();
 
   useEffect(() => {
@@ -55,12 +53,9 @@ export function CreateEvent() {
   const onSubmitEvent = handleSubmit(async (data) => {
     const infoEvent = {
       ...data,
-      userId: session.user.id,
+      userId: id,
     };
-    const result = await posCreateNewEventApi(
-      infoEvent,
-      session.user.accessToken
-    );
+    const result = await posCreateNewEventApi(infoEvent, accessToken);
     if (result.success === true) {
       reset();
       router.push(`/pdp/plans/${result.event}`);
