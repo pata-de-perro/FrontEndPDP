@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form";
+import { FormEditEvent } from "@/components/events";
+import clsx from "clsx";
 
 export function EditEvent({ user, event }) {
   const { accessToken } = user;
@@ -9,8 +11,6 @@ export function EditEvent({ user, event }) {
     handleSubmit,
     formState: { errors },
     watch,
-    setValue,
-    reset,
   } = useForm({
     defaultValues: {
       isTravel,
@@ -26,10 +26,14 @@ export function EditEvent({ user, event }) {
   });
 
   return (
-    <div>
-      <h2>Editando...{_id}</h2>
-      <span>{title}</span>
-      <span>{description}</span>
+    <div className={clsx("mt-4 p-2")}>
+      <FormEditEvent
+        onSubmitEditEvent={onSubmitEditEvent}
+        isTravel={isTravel}
+        register={register}
+        errors={errors}
+        watch={watch}
+      />
     </div>
   );
 }
