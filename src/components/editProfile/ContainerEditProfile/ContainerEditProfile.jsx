@@ -53,11 +53,11 @@ export async function ContainerEditProfile({ user }) {
       </div>
 
       <ModalContent idModal="modal_edit_profile" title="Edita tu perfil">
-        <EditProfile  data={profile}/>
+        <EditProfile  profile={profile} toke={accessToken}/>
       </ModalContent>
 
       <ModalContent idModal="modal_upload_avatar" title="Sube tu fotografía">
-        {/* <UploadAvatar data={profile}/> */}
+        {/* <UploadAvatar profile={profile}/> */}
       </ModalContent>
     </>
   );

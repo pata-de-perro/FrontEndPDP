@@ -4,9 +4,11 @@ import { useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import {FormEditProfile} from "@/components/editProfile/FormEditProfile/FormEditProfile"
+import { FormEditProfile } from "../FormEditProfile/FormEditProfile";
+import { updateProfileApi } from "@/services";
 
-export function EditProfile({ profile }){
+export function EditProfile({ profile, token }){
+    const { _id } = profile
     const {
         register,
         handleSubmit,
@@ -15,12 +17,8 @@ export function EditProfile({ profile }){
         setValue,
     } = useForm();
 
-      // const { accessToken } = user
-
-    const onSumbitProfile = handleSubmit((data) => {
-        // console.log("este es el register" + register.json())
-        console.log(data)
-        
+    const onSumbitProfile = handleSubmit(async (data) => {
+        const result = await updateProfileApi(profile)
     })
 
     return(
@@ -32,9 +30,8 @@ export function EditProfile({ profile }){
                 onSumbitProfile={onSumbitProfile}
                 register={register}
                 errors={errors}
-                watch={watch}
-                setValue={setValue}
                 profile={profile}
+                loading={loading}
                 />
         </div>
     )
