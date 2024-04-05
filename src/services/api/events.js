@@ -80,3 +80,20 @@ export const deleteEventByIdApi = async (eventId, token) => {
     throw new Error(`Error removing event: ${err.message}`);
   }
 };
+
+export const updateEventByIdApi = async (eventId, token, infoEvent) => {
+  try {
+    const res = await fetch(`${URL_API}/events/update/${eventId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(infoEvent),
+    });
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw new Error(`Error updating event: ${err.message}`);
+  }
+};
