@@ -9,7 +9,6 @@ export const navigationItems = [
   { icon: <AiOutlineHome />, label: "Inicio", href: "/pdp" },
   { icon: <AiOutlineUser />, label: "Tu perfil", href: "/pdp/profile" },
   { icon: <AiTwotoneCalendar />, label: "Tus eventos", href: "/pdp/plans" },
-  { icon: <GrGroup />, label: "Amigos", href: "/pdp", },
 ];
 
 export const placesList = [

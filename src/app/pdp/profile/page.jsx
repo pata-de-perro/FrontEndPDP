@@ -46,8 +46,6 @@ export default async function Profile() {
             />
           </div>
           <ContainerEditProfile user={user}/>
-
-      <TitleSection urlIcon={<AiOutlineUser/>} title="Perfil" type="primary"/>
     </>
   );
 }
