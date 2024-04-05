@@ -5,16 +5,15 @@ import { HeroAuth, TitleSection } from "@/components/layouts";
 import {  AiOutlineUser } from "react-icons/ai";
 import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
 import { getProfileApi } from "@/services"
+import { eventDateFormat } from "@/helpers";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
   const user = session.user
   
   const profileData = (await getProfileApi(session.user.id, session.user.accessToken)).data
-  console.log(profileData)
+  const profileBirthdate = (eventDateFormat(profileData.birthdate))
 
-  const icon = <AiOutlineUser/>
-  
   return (
     <>
       <HeroAuth
@@ -27,7 +26,7 @@ export default async function Profile() {
           {profileData.phoneNumber}
         </p>
         <p className="font-heading text-regularSemiBold">
-          {profileData.birthdate}
+          {profileBirthdate}
         </p>
       </HeroAuth>
          <div className="static">
@@ -48,10 +47,7 @@ export default async function Profile() {
           </div>
           <ContainerEditProfile user={user}/>
 
-      <TitleSection urlIcon={icon} title="Perfil" />
-      {/* <TitleSection urlIcon={"/friends-icon.svg"} title="Amigos" /> */}
-      {/* <section className="h-[150px]"></section> */}
-
+      <TitleSection urlIcon={<AiOutlineUser/>} title="Perfil" type="primary"/>
     </>
   );
 }
