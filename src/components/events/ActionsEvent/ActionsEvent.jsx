@@ -29,6 +29,10 @@ export function ActionsEvent({ user, event }) {
     document.getElementById("edit_event_modal").showModal();
   };
 
+  const handleCloseEditModal = () => {
+    document.getElementById("edit_event_modal").close();
+  };
+
   return (
     <>
       {msgResult && (
@@ -54,7 +58,11 @@ export function ActionsEvent({ user, event }) {
         </button>
       </section>
       <ModalContent idModal="edit_event_modal" title="Editando el evento">
-        <EditEvent user={user} event={event} />
+        <EditEvent
+          user={user}
+          event={event}
+          handleCloseEditModal={handleCloseEditModal}
+        />
       </ModalContent>
     </>
   );
