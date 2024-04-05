@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export async function FormEditProfile({ onSumbitProfile, register }) {
+export function FormEditProfile({ onSumbitProfile, register }) {
   return (
     <div className="flex justify-center">
       <form onSubmit={onSumbitProfile} className="grid grid-cols-2">
@@ -151,7 +151,7 @@ export async function FormEditProfile({ onSumbitProfile, register }) {
               "hover:bg-secondary hover:text-accent2"
             )}
           >
-            Guardar evento
+            Actualizar perfil
           </button>
         </div>
       </form>

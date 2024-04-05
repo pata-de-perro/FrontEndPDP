@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form"
 import { FormAvatar } from "../FormAvatar/FormAvatar";
+import { updateProfileApi } from "@/services"
 
 export function UploadAvatar({session}){
     const {
@@ -10,7 +11,7 @@ export function UploadAvatar({session}){
 
     const onSubmitAvatar = handleSubmit( async (data) => {
                const infoProfile = {
-                       ...data,
+                       ...field,
                        userId: profile._id
                    };
                    const result = await updateProfileApi(

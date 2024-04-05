@@ -34,7 +34,7 @@ export function EditProfile({ profileData, token }){
         );
         if (result?.success === true) {
             reset()
-            // router.push("/pdp/profile")
+            router.push("/pdp/profile")
         }
     })
 
