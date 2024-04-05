@@ -13,8 +13,11 @@ export async function ContainerPlan({ idPlan, user }) {
   }
 
   return (
-    <div className={clsx("mt-4 mr-6")}>
-      <TitleSection title="Revisa tu mapa" urlIcon="/location_on.svg" />
+    <div className={clsx("mt-4 mr-6 mb-10")}>
+      <TitleSection
+        title="Revisa los lugares para tú plan"
+        urlIcon="/location_on.svg"
+      />
       <MakePlan data={event} mapId={MAP_ID} user={user} idPlan={idPlan} />
     </div>
   );
