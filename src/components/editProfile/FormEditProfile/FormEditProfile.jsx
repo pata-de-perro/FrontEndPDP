@@ -1,13 +1,6 @@
 import clsx from "clsx";
 
-export function FormEditProfile({ onSumbitProfile, register, errors, session }) {
-  // register={register}
-  // onSumbitProfile={onSumbitProfile}
-  // errors={errors}
-  // watch={watch}
-  // setValue={setValue}
-  // session= {session}
-
+export function FormEditProfile({ onSumbitProfile, register }) {
   return (
     <div className="flex justify-center">
       <form onSubmit={onSumbitProfile} className="grid grid-cols-2">
@@ -25,13 +18,13 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
               "block w-[450px] rounded-lg focus:ring-1"
             )}
-            placeholder="Nombre de usuario"
-            //   {...register("name", {
-            //     required: false,
-            //     pattern: {
-            //         value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
-            //     }
-            //   })}
+            placeholder="Actualiza tu información"
+              {...register("name", {
+                required: false,
+                pattern: {
+                    value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
+                }
+              })}
           />
         </div>
         <div className="form-control mx-4 col-span-2">
@@ -51,7 +44,10 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "block w-[450px] rounded-lg focus:ring-1"
             )}
             placeholder="Correo electronico de usuario"
-            disabled="true"
+            disabled
+            {...register("email", {
+              required: false,
+            })}
           />
         </div>
         <div className="form-control mx-4">
@@ -68,14 +64,14 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
               "block w-[200px] rounded-lg focus:ring-1"
             )}
-            placeholder="123456789"
-            maxLength={14}
-            //   {...register("phone", {
-            //     required: false,
-            //     pattern: {
-            //         value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
-            //     }
-            //   })}
+            placeholder="3314142525"
+            maxLength={10}
+              {...register("phone", {
+                required: false,
+                pattern: {
+                    value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
+                }
+              })}
           />
         </div>
         <div className="form-control mx-4">
@@ -93,10 +89,57 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
               "block w-[200px] rounded-lg focus:ring-1"
             )}
             placeholder="Tu cumpleaños"
-            //   {...register("birthdate", {
-            //     required: false,
-            //   })}
+              {...register("birthdate", {
+                required: false,
+              })}
           />
+        </div>
+        <div className="form-control mt-4 col-span-2">
+          <label className="label font-body text-regular">Género</label>
+          <div className="flex justify-around">
+            <div className="font-body text-regular">
+                  <input
+                  type="radio"
+                  value="femenino"
+                  id="femenino"
+                  name="gender"
+                  className="mr-3"
+                  {...register("gender",{
+                    required: false,
+                  })}
+                  />
+                  <label
+                  htmlFor="Femenino">Femenino</label>
+                </div>
+                <div className="font-body text-regular">
+                  <input
+                  type="radio"
+                  value="masculino"
+                  id="masculino"
+                  name="gender"
+                  className="mr-3"
+                  {...register("gender",{
+                    required: false,
+                  })}
+                  />
+                  <label
+                  htmlFor="Masculino">Masculino</label>
+                </div>
+                <div className="font-body text-regular">
+                  <input
+                  type="radio"
+                  value="indefinido"
+                  id="indefinido"
+                  name="gender"
+                  className="mr-3"
+                  {...register("gender",{
+                    required: false,
+                  })}
+                  />
+                  <label
+                  htmlFor="Indefinido">Prefiero no decirlo</label>
+                </div>
+        </div>
         </div>
         <div className="form-control mt-4 items-center col-span-2">
           <button
@@ -104,11 +147,11 @@ export function FormEditProfile({ onSumbitProfile, register, errors, session }) 
             className={clsx(
               "btn btn-block",
               "w-fit px-14",
-              "bg-secondary/90 text-accent2",
-              "hover:bg-secondary"
+              "bg-azulGris200 text-azulGris900",
+              "hover:bg-secondary hover:text-accent2"
             )}
           >
-            Guardar evento
+            Actualizar perfil
           </button>
         </div>
       </form>
