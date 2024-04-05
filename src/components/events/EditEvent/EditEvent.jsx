@@ -5,7 +5,7 @@ import { formatDatesEvent } from "@/helpers";
 import { FormEditEvent } from "@/components/events";
 import { updateEventByIdApi } from "@/services";
 
-export function EditEvent({ user, event, handleCloseEditModal }) {
+export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
   const { accessToken } = user;
   const { _id, isTravel, title, description, initialDate, endDate } = event;
 
@@ -32,9 +32,12 @@ export function EditEvent({ user, event, handleCloseEditModal }) {
 
   const onSubmitEditEvent = handleSubmit(async (data) => {
     const result = await updateEventByIdApi(_id, accessToken, data);
-    console.log(result);
+
     if (result?.success === true) {
+      setMsgResult({ type: "success", msg: result?.msg });
       handleCloseEditModal();
+    } else {
+      setMsgResult({ type: "error", msg: result?.msg });
     }
   });
 

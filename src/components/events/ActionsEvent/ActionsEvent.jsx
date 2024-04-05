@@ -62,6 +62,7 @@ export function ActionsEvent({ user, event }) {
           user={user}
           event={event}
           handleCloseEditModal={handleCloseEditModal}
+          setMsgResult={setMsgResult}
         />
       </ModalContent>
     </>
