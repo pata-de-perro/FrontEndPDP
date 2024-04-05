@@ -1,8 +1,8 @@
+"use client"
 import clsx from "clsx";
 
-export function FormEditProfile({ onSumbitProfile, register, errors, user }) {
-  // const { name, email, gender, birthdate } = user
-  // const { accessToken } = user
+export async function FormEditProfile({ onSumbitProfile, register, errors, profile }) {
+
 
   return (
     <div className="flex justify-center">
@@ -28,7 +28,9 @@ export function FormEditProfile({ onSumbitProfile, register, errors, user }) {
                     value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
                 }
               })}
-          />
+          >
+            {/* <p>{ profile.name ? profile.name : "Actualiza tu nombre"}</p> */}
+          </input>
         </div>
         <div className="form-control mx-4 col-span-2">
           <label className="label font-body text-regular">

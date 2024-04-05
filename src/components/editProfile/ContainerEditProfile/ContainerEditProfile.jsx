@@ -10,10 +10,13 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 export async function ContainerEditProfile({ user }) {
   const { accessToken } = user;
-  const { user: profile } = await getProfileApi(accessToken)
+  const { id } = user;
+  const { data: profile } = await getProfileApi(id, accessToken)
   
   const handleOpenModal = () => {
     document.getElementById("modal_edit_profile").showModal();
+    // console.log(accessToken)
+    console.log(profile)
   };
 
   const handleOpenAvatarModal = () => {

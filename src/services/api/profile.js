@@ -2,7 +2,7 @@ const URL_API = process.env.NEXT_PUBLIC_URL_API;
 
 export const getProfileApi = async (userId, token) => {
     try{
-        const res = await fetch(`${URL_API}/profile/${userId}`, {
+        const res = await fetch(`${URL_API}/users/profile/${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export const getProfileApi = async (userId, token) => {
 
 export const updateProfileApi = async (userId, token, newData) => {
     try{
-        const res = await fetch(`${URL_API}/profile-update/${userId}`, {
+        const res = await fetch(`${URL_API}/users/profile-update/${userId}`, {
             method: 'PUT',
             headers:{
                 "Content-Type": "application/json",
