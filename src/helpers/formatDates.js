@@ -74,3 +74,7 @@ const parsedUTCToLocalDateTimeString = (utcDateTime) => {
   const minutes = String(date.getMinutes()).padStart(2, "0");
   return `${year}-${month}-${day}T${hours}:${minutes}`;
 };
+
+export const parsedUTCDateToISODateString = (utcDate) => {
+  return new Date(utcDate).toISOString().split("T")[0];
+};
