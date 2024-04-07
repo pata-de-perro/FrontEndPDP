@@ -42,16 +42,17 @@ export function CreateRegister() {
   });
 
   return (
-    <form onSubmit={onSubmitRegister}>
+    <form onSubmit={onSubmitRegister} className="flex flex-col">
       <div className="form-control">
         <label className="label font-body text-regularSemiBold">Correo electrónico</label>
         <input
           type="email"
           className={clsx(
-            "px-3 py-2 h-[50px]",
+            "px-3 py-2 h-[50px] w-[350px]",
+            "md:w-[410px]",
             "bg-white border shadow-sm border-slate-300",
             "placeholder-slate-400",
-            "block w-[450px] rounded-lg focus:ring-1",
+            "block rounded-lg focus:ring-1",
             "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
           )}
           placeholder="Correo electrónico"
@@ -71,17 +72,18 @@ export function CreateRegister() {
           </span>
         )}
       </div>
-      <div className="form-control">
+      <div className="form-control w-[350px]">
         <label className="label font-body text-regularSemiBold">Contraseña</label>
         <input
           type="password"
           className={clsx(
             "px-3",
-            "bg-white",
+            "bg-white w-[350px]",
+            "md:w-[410px]",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
             "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+            "block h-[50px] rounded-lg focus:ring-1"
           )}
           placeholder="Contraseña"
           {...register("password", {
@@ -112,12 +114,13 @@ export function CreateRegister() {
         <input
           type="password"
           className={clsx(
-            "px-3",
+            "px-3 w-[350px]",
             "bg-white",
+            "md:w-[410px]",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
             "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+            "block h-[50px] rounded-lg focus:ring-1"
           )}
           placeholder="Confirma tu contraseña"
           {...register("confirmPassword", {

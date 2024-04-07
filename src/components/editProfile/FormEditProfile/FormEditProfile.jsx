@@ -18,36 +18,13 @@ export function FormEditProfile({ onSumbitProfile, register }) {
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
               "block w-[450px] rounded-lg focus:ring-1"
             )}
-            placeholder="Actualiza tu información"
+            placeholder="Nombre Apellido"
               {...register("name", {
                 required: false,
                 pattern: {
                     value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
                 }
               })}
-          />
-        </div>
-        <div className="form-control mx-4 col-span-2">
-          <label className="label font-body text-regular">
-            Correo electrónico
-          </label>
-          <input
-            type="email"
-            className={clsx(
-              "px-3 py-2",
-              "h-[50px] w-[400px]",
-              "bg-white input-sm",
-              "font-body text-regular",
-              "border shadow-sm border-slate-300",
-              "placeholder-slate-400",
-              "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-              "block w-[450px] rounded-lg focus:ring-1"
-            )}
-            placeholder="Correo electronico de usuario"
-            disabled
-            {...register("email", {
-              required: false,
-            })}
           />
         </div>
         <div className="form-control mx-4">

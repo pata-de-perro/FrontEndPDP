@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CreateRegister } from "@/components/account";
+import clsx from "clsx";
 
 export default function RegisterPage() {
   return (
@@ -19,14 +20,14 @@ export default function RegisterPage() {
         </Link>
       </div>
       <div className="flex flex-col lg:flex-row">
-        <p className="text-regular font-body text-center text-azulGris900">
+        <p className="text-regular font-body text-center text-azulGris900 lg:text-start ">
           ¿Ya eres usuario?
         </p>
         <p className="text-regularBold font-body text-center text-azulGris900 lg:ml-4">
           <Link href="/account/login">¡Inicia sesión ahora!</Link>
         </p>
       </div>
-      <CreateRegister />
+        <CreateRegister />
     </>
   );
 }
