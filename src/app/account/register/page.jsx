@@ -19,11 +19,14 @@ export default function RegisterPage() {
           />
         </Link>
       </div>
-      <div className="flex flex-row justify-center ">
+      <div className="flex flex-col lg:flex-row justify-center lg:justify-start ">
         <p className="text-regular font-body text-center text-azulGris900 lg:text-start ">
           ¿Ya eres usuario?
         </p>
-        <p className="text-regularBold font-body text-center text-azulGris900 ml-4">
+        <p className={clsx(
+          "text-regularBold font-body text-center text-azulGris900 ml-0 lg:ml-4",
+          "lg:text-start"
+        )}>
           <Link href="/account/login">¡Inicia sesión ahora!</Link>
         </p>
       </div>

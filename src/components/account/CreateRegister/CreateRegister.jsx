@@ -151,9 +151,6 @@ export function CreateRegister() {
           onExpired={ e => setTokenCaptchaData("")}
         />
       </div>
-      <p className="font-body text-regularSemiBold text-center w-[350px] mt-4">
-          Una vez que crees tu cuenta, te llegará por correo un enlace de verificación. Es necesario que verifiques tu cuenta para poder entrar a la plataforma.
-          </p>
       <div className="form-control">
         <BtnSubmit title="Registrarse" loading={loading} />
       </div>
