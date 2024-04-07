@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
-import Link from "next/link";
-import { signOut } from "next-auth/react";
 import clsx from "clsx";
+import Link from "next/link";
+import { useState } from "react";
+import { signOut } from "next-auth/react";
 import { navigationItems } from "@/mocks/catalogs";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { BtnToLink } from "@/components/common";
 import { LuLogOut } from "react-icons/lu";
+import { FaPenClip } from "react-icons/fa6";
 
 export function AsideAuth() {
   const [nav, setNav] = useState(false);
@@ -44,7 +46,7 @@ export function AsideAuth() {
                 "flex gap-4 items-center",
                 "p-2 rounded-md",
                 "font-body",
-                "text-md",
+                "text-regular",
                 "hover:bg-secondaryOpacity"
               )}
             >
@@ -56,6 +58,22 @@ export function AsideAuth() {
               </Link>
             </li>
           ))}
+          <a
+            className={clsx(
+              "bg-primary text-white font-body text-regular py-2 flex flex-wrap rounded-md",
+              "h-fit w-fit",
+              "flex items-center justify-center cursor-pointer"
+            )}
+          >
+            <FaPenClip className="text-md mr-2 ml-2" />
+            <span
+              className={`${
+                nav ? "hidden" : "flex"
+              }  mr-2 pr-2 text-regular font-body`}
+            >
+              <Link href="/pdp/events/create">Planea un evento</Link>
+            </span>
+          </a>
           <div
             className={clsx(
               "flex gap-4 items-center",
@@ -71,7 +89,11 @@ export function AsideAuth() {
               onClick={() => signOut()}
             >
               <LuLogOut className="text-md mr-2" />
-              <span className={`${nav ? "hidden" : "flex"}  ml-2`}>
+              <span
+                className={`${
+                  nav ? "hidden" : "flex"
+                }  ml-2 text-regular font-body`}
+              >
                 Cerrar sesión
               </span>
             </a>
