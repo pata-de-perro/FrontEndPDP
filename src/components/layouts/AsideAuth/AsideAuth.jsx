@@ -18,7 +18,7 @@ export function AsideAuth() {
     <div
       className={`${
         !nav ? "w-[230px]" : "w-20"
-      } h-screen p-4 border-r relative duration-300 top-0`}
+      } h-screen sticky top-0 p-4 border-r relative duration-300`}
     >
       <div
         className={`text-white br-gray-300 bg-primary w-10 h-10 flex items-center justify-center text-xl rounded-full absolute top-4 right-[-18px] cursor-pointer ${
