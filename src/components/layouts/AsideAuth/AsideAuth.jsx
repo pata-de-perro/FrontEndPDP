@@ -5,7 +5,6 @@ import { useState } from "react";
 import { signOut } from "next-auth/react";
 import { navigationItems } from "@/mocks/catalogs";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { BtnToLink } from "@/components/common";
 import { LuLogOut } from "react-icons/lu";
 import { FaPenClip } from "react-icons/fa6";
 
@@ -69,29 +68,13 @@ export function AsideAuth() {
               mr-2 pr-2 text-regular font-body`}>Planear evento</span>
             </Link>
           </div>
-          {/* <div
-            className={clsx(
-              "bg-primary text-white font-body text-regular py-2 flex flex-wrap rounded-md",
-              "h-fit w-fit",
-              "flex items-center justify-center cursor-pointer",
-              "hover:bg-primary/75"
-            )}
-          >
-            <a href="/pdp/events/create">
-               <FaPenClip className="text-md mr-2 ml-2" />
-              <Link href="/pdp/events/create">
-                <span className={`${
-                nav ? "hidden" : "flex"
-              } flex-wrap mr-2 pr-2 text-regular font-body`}>Planea un evento</span></Link>
-            </a>
-          </div> */}
           <div
             className={clsx(
               "flex gap-4 items-center",
               "p-2 mb-4 rounded-md",
               "font-body",
               "text-md",
-              "fixed bottom-0",
+              "absolute bottom-0",
               "hover:text-primary"
             )}
           >
