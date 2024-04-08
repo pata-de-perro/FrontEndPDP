@@ -10,6 +10,7 @@ export function EditProfile({ profileData, handleCloseEditModal, token }){
     const {
         register,
         handleSubmit,
+        reset,
         formState: {errors},
     } = useForm({defaultValues:
     {
@@ -28,7 +29,6 @@ export function EditProfile({ profileData, handleCloseEditModal, token }){
             token,
         );
         if (result?.success === true) {
-            // console.log(result)
             reset();
             handleCloseEditModal();
             router.refresh();

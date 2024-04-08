@@ -26,7 +26,8 @@ export const updateProfileApi = async (userId, newData, token) => {
             },
             body: JSON.stringify(newData)
         });
-        return res
+        const data = await res.json()
+        return data
     }catch (err) {
         throw new Error(`Error fetching user profile: ${err.message}`)
     }
