@@ -46,7 +46,10 @@ export default async function Profile() {
                  )}
             />
           </div>
-          <ContainerEditProfile profileData={profileData} token={token}/>
+          <ContainerEditProfile 
+            profileData={profileData} 
+            token={token}
+          />
     </>
   );
 }
