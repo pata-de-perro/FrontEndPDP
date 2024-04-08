@@ -99,3 +99,36 @@ export const formatDatesEvent = (condition, startDate, endDate) => {
 
   return { formattedStartDate, formattedEndDate };
 };
+
+export const birthdayDateProfile = (utcDate) => {
+  const date = new Date(utcDate);
+  const newDate = date.toISOString().slice(0,10)
+  const year = newDate.slice(0,4)
+  const month = newDate.slice(6,7)
+  const monthNumb = parseInt(month)
+  const day = newDate.slice(9,10)
+  
+  const months = [
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
+  ]
+
+  return `${day} ${months[monthNumb -1]} ${year}`
+};
+
+export const birthdayDateForm = (utcDate) => {
+  const date = new Date(utcDate);
+  const newDate = date.slice(0,10)
+
+  return newDate
+};

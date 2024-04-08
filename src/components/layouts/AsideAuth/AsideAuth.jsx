@@ -58,22 +58,33 @@ export function AsideAuth() {
               </Link>
             </li>
           ))}
-          <a
+          <div className={clsx(
+            "flex flex-wrap items-center bg-primary rounded-md",
+            "h-[40px]",
+            "text-white hover:bg-primary/75"
+          )}>
+            <Link href="/pdp/events/create" className="flex ">
+              <span> <FaPenClip className="text-md mr-2 ml-2"/></span>
+              <span className={`${ nav ? "hidden" : "flex"} 
+              mr-2 pr-2 text-regular font-body`}>Planear evento</span>
+            </Link>
+          </div>
+          {/* <div
             className={clsx(
               "bg-primary text-white font-body text-regular py-2 flex flex-wrap rounded-md",
               "h-fit w-fit",
-              "flex items-center justify-center cursor-pointer"
+              "flex items-center justify-center cursor-pointer",
+              "hover:bg-primary/75"
             )}
           >
-            <FaPenClip className="text-md mr-2 ml-2" />
-            <span
-              className={`${
+            <a href="/pdp/events/create">
+               <FaPenClip className="text-md mr-2 ml-2" />
+              <Link href="/pdp/events/create">
+                <span className={`${
                 nav ? "hidden" : "flex"
-              }  mr-2 pr-2 text-regular font-body`}
-            >
-              <Link href="/pdp/events/create">Planea un evento</Link>
-            </span>
-          </a>
+              } flex-wrap mr-2 pr-2 text-regular font-body`}>Planea un evento</span></Link>
+            </a>
+          </div> */}
           <div
             className={clsx(
               "flex gap-4 items-center",

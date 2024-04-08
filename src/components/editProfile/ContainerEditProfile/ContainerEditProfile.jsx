@@ -1,17 +1,21 @@
 "use client";
 import clsx from "clsx";
+import { useState } from "react";
 import { ModalContent } from "@/components/common";
 import { EditProfile } from "../EditProfile/EditProfile";
 import { getProfileApi } from "@/services";
 
-export async function ContainerEditProfile({ user }) {
-  const { accessToken } = user;
-  const { id } = user;
-  const { data: profileData } = await getProfileApi(id, accessToken)
+export async function ContainerEditProfile({ profileData, token }) {
+  // const [msgResult, setMsgResult] = useState();
   
   const handleOpenModal = () => {
     document.getElementById("modal_edit_profile").showModal();
   };
+
+  const handleCloseEditModal = () => {
+    document.getElementById("modal_edit_profile").close();
+  };
+
   return (
     <>
       <div className={clsx("flex justify-start", "mt-4")}>
@@ -29,7 +33,12 @@ export async function ContainerEditProfile({ user }) {
       </div>
 
       <ModalContent idModal="modal_edit_profile" title="Edita tu perfil">
-        <EditProfile  profileData={profileData} token={accessToken}/>
+        <EditProfile  
+        profileData={profileData} 
+        handleCloseEditModal={handleCloseEditModal}
+        token={token}
+        // setMsgResult={setMsgResult}
+        />
       </ModalContent>
     </>
   );

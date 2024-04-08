@@ -63,12 +63,18 @@ export function CreateRegister() {
             },
             pattern: {
               value: /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/,
+              message: "Te falta el '@'"
             },
           })}
         />
         {errors.email && (
           <span className="text-regular font-body text-red-500 ml-[5px]">
             {errors.email.message}
+          </span>
+        )}
+        {errors.pattern && (
+          <span className="text-regular font-body text-red-500 ml-[5px]">
+            {errors.pattern.message}
           </span>
         )}
       </div>

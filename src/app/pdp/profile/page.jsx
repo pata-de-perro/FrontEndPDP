@@ -5,14 +5,14 @@ import { HeroAuth, TitleSection } from "@/components/layouts";
 import {  AiOutlineUser } from "react-icons/ai";
 import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
 import { getProfileApi } from "@/services"
-import { eventDateFormat } from "@/helpers";
+import { birthdayDateProfile } from "@/helpers";
+import { birthdayDateForm } from "@/helpers"
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
   const user = session.user
-  
-  const profileData = (await getProfileApi(session.user.id, session.user.accessToken)).data
-  const profileBirthdate = (eventDateFormat(profileData.birthdate))
+  const token = session.user.accessToken
+  const profileData = (await getProfileApi(session.user.id, token)).data
 
   return (
     <>
@@ -20,13 +20,16 @@ export default async function Profile() {
         title={profileData.name ? profileData.name : "Personaliza tu usuario"}
       >
         <p className="font-heading text-regularSemiBold">
-          {profileData.email}
+          {profileData.email} 
         </p>
         <p className="font-heading text-regularSemiBold">
           {profileData.phoneNumber}
         </p>
         <p className="font-heading text-regularSemiBold">
-          {profileBirthdate}
+          {birthdayDateProfile(profileData.birthdate)}
+        </p>
+        <p className="font-heading text-regularSemiBold">
+          {profileData.gender}
         </p>
       </HeroAuth>
          <div className="static">
@@ -45,7 +48,7 @@ export default async function Profile() {
                  )}
             />
           </div>
-          <ContainerEditProfile user={user}/>
+          <ContainerEditProfile profileData={profileData} token={token}/>
     </>
   );
 }

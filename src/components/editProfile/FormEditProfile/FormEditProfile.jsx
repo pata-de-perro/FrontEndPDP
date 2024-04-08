@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-export function FormEditProfile({ onSumbitProfile, register }) {
+export function FormEditProfile({ onSumbitProfile, register, errors }) {
   return (
     <div className="flex justify-center">
       <form onSubmit={onSumbitProfile} className="grid grid-cols-2">
         <div className="form-control mx-4 col-span-2">
-          <label className="label font-body text-regular">Nombre</label>
+          <label className="label font-body text-regular">Nombre y Apellido</label>
           <input
             type="text"
             className={clsx(
@@ -22,10 +22,11 @@ export function FormEditProfile({ onSumbitProfile, register }) {
               {...register("name", {
                 required: false,
                 pattern: {
-                    value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
+                    value: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
+                    message: "Escribe tu nombre y apellido. El formato permíte letras con carácteres especiales.",
                 }
               })}
-          />
+            />
         </div>
         <div className="form-control mx-4">
           <label className="label font-body text-regular">Teléfono</label>
@@ -43,7 +44,7 @@ export function FormEditProfile({ onSumbitProfile, register }) {
             )}
             placeholder="3314142525"
             maxLength={10}
-              {...register("phone", {
+              {...register("phoneNumber", {
                 required: false,
                 pattern: {
                     value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
