@@ -35,7 +35,6 @@ export function HeroAuth({ title, children, urlImg, type }) {
             src={urlImg}
             width={330}
             height={330}
-            alt="progresive app pana"
             className={clsx(
               "sr-only",
               "md:absolute md:-right-8 md:top-5",
