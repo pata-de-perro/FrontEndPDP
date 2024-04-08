@@ -4,39 +4,41 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FormEditProfile } from "../FormEditProfile/FormEditProfile";
 import { updateProfileApi } from "@/services";
+import { parsedUTCToLocalDateString } from "@/helpers"
 
-export function EditProfile({ profileData, token }){
-    const profile = profileData
+export function EditProfile({ profileData, handleCloseEditModal, token }){
+
     const {
         register,
         handleSubmit,
         formState: {errors},
     } = useForm({defaultValues:
     {
-        name:profile?.name,
-        email:profile?.email,
-        phoneNumber: profile?.phoneNumber,
-        birthdate: profile?.birthdate,
-        gender: profile?.gender,
+        name:profileData?.name,
+        phoneNumber: profileData?.phoneNumber,
+        birthdate: parsedUTCToLocalDateString(profileData?.birthdate),
+        gender: profileData?.gender,
     }});
 
-    // const router = useRouter()
+    const router = useRouter()
 
     const onSumbitProfile = handleSubmit(async (data) => {
-        delete data.email
+        console.log(data.birthdate.slice(0,10))
         const infoProfile = {
             ...data,
-            userId: profile._id
+            userId: profileData._id
         };
         const result = await updateProfileApi(
             infoProfile,
             token,
         );
         if (result?.success === true) {
-            reset()
-            router.push("/pdp/profile")
+            handleCloseEditModal();
+            router.push(`/pdp/profile`);
+            router.refresh();
         }
     })
+    
 
     return(
         <div>

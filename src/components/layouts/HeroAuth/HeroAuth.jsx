@@ -9,11 +9,12 @@ export function HeroAuth({ title, children, urlImg, type }) {
           : "bg-gradient-to-r from-[#F5F5F5] to-secondary",
         "rounded-2xl",
         "mr-[24px] mt-[35px] p-[24px]",
-        "w-[auto] min-h-60"
+        "min-h-60",
+        "w-400px"
       )}
     >
       <div className={clsx("flex", "relative")}>
-        <div className="w-[500px]">
+        <div className="w-[380px]">
           <h1 className={clsx("font-heading text-azulGris900 text-h1", "mb-2")}>
             {title}
           </h1>
