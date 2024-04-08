@@ -10,18 +10,15 @@ export function UploadAvatar({session}){
     } = useForm();
 
     const onSubmitAvatar = handleSubmit( async (data) => {
-               const infoProfile = {
-                       ...field,
-                       userId: profile._id
-                   };
-                   const result = await updateProfileApi(
-                       infoProfile,
-                       token,
-                   );
-                   if (result.success === true) {
-                       reset()
-                       router.push("/pdp/profile")
-                   }
+        const result = await updateProfileApi(
+        profile._id,
+        data,
+        token,
+        );
+        if (result.success === true) {
+            reset()
+            router.push("/pdp/profile")
+        }
     })
 
     return(

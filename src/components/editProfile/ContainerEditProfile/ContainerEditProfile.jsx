@@ -1,23 +1,25 @@
 "use client";
 import clsx from "clsx";
 import { useState } from "react";
-import { ModalContent } from "@/components/common";
+import { ModalContent, ToastMsgTop} from "@/components/common";
 import { EditProfile } from "../EditProfile/EditProfile";
-import { getProfileApi } from "@/services";
 
 export async function ContainerEditProfile({ profileData, token }) {
-  // const [msgResult, setMsgResult] = useState();
+  const [msgResult, setMsgResult] = useState();
   
-  const handleOpenModal = () => {
+  const handleOpenEditProfileModal = () => {
     document.getElementById("modal_edit_profile").showModal();
   };
 
-  const handleCloseEditModal = () => {
+  const handleCloseEditProfileModal = () => {
     document.getElementById("modal_edit_profile").close();
   };
 
   return (
     <>
+      {msgResult && (
+        <ToastMsgTop type={msgResult.type} message={msgResult.msg} />
+      )}
       <div className={clsx("flex justify-start", "mt-4")}>
         <button
           className={clsx(
@@ -26,7 +28,7 @@ export async function ContainerEditProfile({ profileData, token }) {
             "font-body text-regularSemiBold text-azulGris900",
             "hover:bg-primary hover:text-white"
           )}
-          onClick={ () => handleOpenModal() }
+          onClick={ () => handleOpenEditProfileModal() }
         >
           Editar
         </button>
@@ -34,10 +36,10 @@ export async function ContainerEditProfile({ profileData, token }) {
 
       <ModalContent idModal="modal_edit_profile" title="Edita tu perfil">
         <EditProfile  
-        profileData={profileData} 
-        handleCloseEditModal={handleCloseEditModal}
-        token={token}
-        // setMsgResult={setMsgResult}
+          profileData={profileData} 
+          handleCloseEditModal={handleCloseEditProfileModal}
+          token={token}
+          setMsgResult={setMsgResult}
         />
       </ModalContent>
     </>

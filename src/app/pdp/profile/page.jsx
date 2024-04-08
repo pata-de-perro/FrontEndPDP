@@ -1,12 +1,10 @@
 import clsx from "clsx";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { HeroAuth, TitleSection } from "@/components/layouts";
-import {  AiOutlineUser } from "react-icons/ai";
+import { HeroAuth } from "@/components/layouts";
 import { ContainerEditProfile } from "@/components/editProfile/ContainerEditProfile/ContainerEditProfile";
 import { getProfileApi } from "@/services"
 import { birthdayDateProfile } from "@/helpers";
-import { birthdayDateForm } from "@/helpers"
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);

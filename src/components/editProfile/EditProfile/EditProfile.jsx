@@ -22,19 +22,16 @@ export function EditProfile({ profileData, handleCloseEditModal, token }){
 
     const router = useRouter()
 
-    const onSumbitProfile = handleSubmit(async (data) => {
-        console.log(data.birthdate.slice(0,10))
-        const infoProfile = {
-            ...data,
-            userId: profileData._id
-        };
+    const onSumbitProfile = handleSubmit(async (data) => {       
         const result = await updateProfileApi(
-            infoProfile,
+            profileData._id,
+            data,
             token,
         );
         if (result?.success === true) {
+            // console.log(result)
+            reset();
             handleCloseEditModal();
-            router.push(`/pdp/profile`);
             router.refresh();
         }
     })

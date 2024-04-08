@@ -16,9 +16,9 @@ export const getProfileApi = async (userId, token) => {
     }
 }
 
-export const updateProfileApi = async (newData, token) => {
+export const updateProfileApi = async (userId, newData, token) => {
     try{
-        const res = await fetch(`${URL_API}/users/profile-update/${newData.userId}`, {
+        const res = await fetch(`${URL_API}/users/profile-update/${userId}`, {
             method: 'PUT',
             headers:{
                 "Content-Type": "application/json",
