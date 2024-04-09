@@ -126,9 +126,8 @@ export const birthdayDateProfile = (utcDate) => {
   return `${day} ${months[monthNumb -1]} ${year}`
 };
 
-export const birthdayDateForm = (utcDate) => {
-  const date = new Date(utcDate);
-  const newDate = date.slice(0,10)
-
+export const birthdayProfileForm = (utcDate) => {
+  const date = new Date(utcDate)
+  const newDate = date.toISOString().slice(0,10)
   return newDate
-};
+}
