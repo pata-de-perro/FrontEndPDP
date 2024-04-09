@@ -10,7 +10,7 @@ export function CreationInstructions() {
         "bg-white drop-shadow-2xl rounded-2xl mb-4",
         "md:w-[300px] lg:w-[400px]",
         )}>
-      <ul className="font-body text-regularBold mt-">
+      <ul className="font-body text-regularBold ">
       Primero hay que elegir el tipo de evento que se estará planificando
       </ul>
         <li className="font-body text-regular mt-2">
@@ -46,7 +46,7 @@ export function CreationInstructions() {
             <a>, podrás elegir</a>
             <a className="underline decoration-4 decoration-secondary"> la fecha de inicio y su hora.</a>
         </li>
-        <ul className="font-body text-regularBold text-center mt-4">Has click en "Guardar tu evento" para continuar con la planeación.</ul>
+        <ul className="font-body text-regularBold text-center mt-4">Has click en Guardar tu evento para continuar con la planeación.</ul>
     </div>
     </section>
   );
