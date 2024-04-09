@@ -79,13 +79,16 @@ export default function Auth({ children }) {
           <div
             className={clsx(
               "grid justify-items-center",
-              "pb-[15px]",
+              "pb-[15px] lg:pb-[0px]",
               "lg:justify-items-start"
             )}
           >
             <div>{children}</div>
 
-            <p className="text-center text-xs font-body text-azulGris500 w-[450px]">
+            <p className={clsx(
+              "text-center text-xs font-body text-azulGris500 mx-5",
+              "lg:w-[400px] lg:mx-0 lg:text-start"
+            )}>
               Al seguir usando una cuenta en México, aceptas los Términos de uso
               y confirmas que has leído la Política de privacidad.
             </p>

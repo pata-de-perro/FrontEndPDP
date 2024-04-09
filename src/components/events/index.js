@@ -7,3 +7,4 @@ export { FormEvent } from "./FormEvent/FormEvent";
 export { MainPlacesEvent } from "./MainPlacesEvent/MainPlacesEvent";
 export { ReviewEvents } from "./ReviewEvents/ReviewEvents";
 export { ShowInfoEventHero } from "./ShowInfoEventHero/ShowInfoEventHero";
+export { CreationInstructions } from "./CreationInstructions/CreationInstructions"

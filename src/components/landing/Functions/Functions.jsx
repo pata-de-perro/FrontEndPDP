@@ -19,7 +19,7 @@ export default function Functions() {
       >
         <h1
           className={clsx(
-            "text-h1 font-heading text-wrap text-accent2"
+            "text-h1 font-heading text-wrap text-center text-accent2"
           )}
         >
           Algunas de nuestras funciones

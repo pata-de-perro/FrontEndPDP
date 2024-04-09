@@ -49,8 +49,8 @@ export default function Hero() {
         <p
           className={clsx(
             "text-regular text-center font-body text-azulGris900",
-            "my-8",
-            "w-[400px]",
+            "my-8 mx-2",
+            // "w-[400px]",
             "md:w-[280px] md:text-left md:my-2",
             "lg:w-[360px] lg:mb-8"
           )}

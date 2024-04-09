@@ -20,7 +20,7 @@ export function FormEvent({
   }, [watch("initialDate"), watch("isTravel")]);
 
   return (
-    <form onSubmit={onSubmitEvent}>
+    <form onSubmit={onSubmitEvent} className="w-[430px] ">
       <div className="flex space-x-4 mb-4">
         <div className="form-control">
           <label className="label cursor-pointer">
@@ -47,6 +47,21 @@ export function FormEvent({
           </label>
         </div>
       </div>
+          <div className="md:sr-only lg:sr-only">
+            <span className={clsx(
+              "underline decoration-4 decoration-primary text-inviteSmallText font-body"
+            )}>Un viaje</span>
+            <span className="text-inviteSmallText font-body ml-2"
+            >es aquel que tiene como duración de dos días o más.</span>
+          </div>
+          <div className="md:sr-only lg:sr-only mb-2">
+            <span className={clsx(
+              "underline decoration-4 decoration-secondary text-inviteSmallText font-body"
+            )}>Una salida</span>
+            <span className="text-inviteSmallText font-body ml-2"
+            > es aquella que tiene como duración sólo un día e inicia a
+            una hora en específico.</span>
+          </div>
       <div className="form-control mb-4">
         <label htmlFor="title" className={clsx("text-sm mb-1")}>
           Nombre del viaje y/o salida <span className="text-red-500">*</span>
@@ -84,9 +99,9 @@ export function FormEvent({
           {...register("description")}
         ></textarea>
       </div>
-      <div className="form-control mb-4">
+      <div className="form-control mb-4 ">
         <label htmlFor="locationEvent" className={clsx("text-sm mb-1")}>
-          Lugar <span className="text-red-500">*</span>
+          ¿Dónde harás tu evento? Elige un municipio o zona <span className="text-red-500">*</span>
         </label>
         <input
           id="locationEvent"
@@ -104,6 +119,11 @@ export function FormEvent({
             </span>
           )}
         </div>
+      </div>
+      <div className=" text-inviteSmallText font-body mb-2 md:sr-only lg:sr-only">
+        <span>La plataforma</span>
+        <span className="underline decoration-4 decoration-accent1 ml-2">busca por zonas </span>
+        <span>esta te hará sugerencias basado en diferentes categorías.</span>
       </div>
       {watch("isTravel") === true || watch("isTravel") === "true" ? (
         <div className="flex space-x-4 mb-4">

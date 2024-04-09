@@ -64,7 +64,7 @@ export function CreateEvent({ user }) {
 
   return (
     <div className="mt-10 mr-4">
-      <h2 className={clsx("mb-6", "text-xl")}>
+      <h2 className={clsx("mb-6", "font-body text-regularBold")}>
         Esto facilitará encontrar información de tu viaje
       </h2>
       <FormEvent

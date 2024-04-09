@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-export function FormEditProfile({ onSumbitProfile, register }) {
+export function FormEditProfile({ onSumbitProfile, register, errors }) {
   return (
     <div className="flex justify-center">
       <form onSubmit={onSumbitProfile} className="grid grid-cols-2">
         <div className="form-control mx-4 col-span-2">
-          <label className="label font-body text-regular">Nombre</label>
+          <label className="label font-body text-regular">Nombre y Apellido</label>
           <input
             type="text"
             className={clsx(
@@ -18,37 +18,19 @@ export function FormEditProfile({ onSumbitProfile, register }) {
               "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
               "block w-[450px] rounded-lg focus:ring-1"
             )}
-            placeholder="Actualiza tu información"
+            placeholder="Nombre Apellido"
               {...register("name", {
                 required: false,
                 pattern: {
-                    value: /^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/,
+                    value: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
+                    message: "Es necesario que la primera letra esté en mayúscula. Puedes tener espacios.",
                 }
               })}
-          />
-        </div>
-        <div className="form-control mx-4 col-span-2">
-          <label className="label font-body text-regular">
-            Correo electrónico
-          </label>
-          <input
-            type="email"
-            className={clsx(
-              "px-3 py-2",
-              "h-[50px] w-[400px]",
-              "bg-white input-sm",
-              "font-body text-regular",
-              "border shadow-sm border-slate-300",
-              "placeholder-slate-400",
-              "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-              "block w-[450px] rounded-lg focus:ring-1"
+            />
+            {errors.name && (
+              <span className="text-regular font-body text-red-500 ml-[5px]">
+                {errors.name.message}</span>
             )}
-            placeholder="Correo electronico de usuario"
-            disabled
-            {...register("email", {
-              required: false,
-            })}
-          />
         </div>
         <div className="form-control mx-4">
           <label className="label font-body text-regular">Teléfono</label>
@@ -66,7 +48,7 @@ export function FormEditProfile({ onSumbitProfile, register }) {
             )}
             placeholder="3314142525"
             maxLength={10}
-              {...register("phone", {
+              {...register("phoneNumber", {
                 required: false,
                 pattern: {
                     value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,

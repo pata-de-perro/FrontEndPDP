@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation";
 import { deleteEventByIdApi } from "@/services";
 import { ModalContent, ToastMsgTop } from "@/components/common";
 import { EditEvent } from "@/components/events";
-
 import { TbEdit } from "react-icons/tb";
 import { AiFillDelete } from "react-icons/ai";
 
