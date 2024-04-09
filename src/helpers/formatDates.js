@@ -101,12 +101,14 @@ export const formatDatesEvent = (condition, startDate, endDate) => {
 };
 
 export const birthdayDateProfile = (utcDate) => {
-  const date = new Date(utcDate);
-  const newDate = date.toISOString().slice(0,10)
+  if(!utcDate){
+    return
+  }
+  const newDate = utcDate.slice(0,10)
   const year = newDate.slice(0,4)
-  const month = newDate.slice(6,7)
+  const month = newDate.slice(5,7)
   const monthNumb = parseInt(month)
-  const day = newDate.slice(9,10)
+  const day = newDate.slice(8,10)
   
   const months = [
     "Enero",
@@ -122,10 +124,11 @@ export const birthdayDateProfile = (utcDate) => {
     "Noviembre",
     "Diciembre",
   ]
-
   return `${day} ${months[monthNumb -1]} ${year}`
 };
 
 export const birthdayProfileForm = (utcDate) => {
-  return utcDate.slice(0,10)
+  if(utcDate){
+    return utcDate.slice(0,10)
+  }
 }

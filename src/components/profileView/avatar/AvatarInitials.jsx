@@ -1,11 +1,19 @@
 import clsx from "clsx"
 
 export function AvatarInitials({ data }){
-  const fullName = data.name
-  const separeteName = fullName.split(' ')
-  const firstIn = separeteName[0].charAt(0)
-  const secondIn = separeteName[1].charAt(0)
-  const nameInitials = firstIn + secondIn
+  let nameInitials = ""
+
+  if(data.name){
+    const fullName = data.name
+    const separeteName = fullName.split(' ')
+    const firstIn = separeteName[0].charAt(0)
+    const secondIn = separeteName[1].charAt(0)
+    nameInitials = firstIn + secondIn
+  }
+  else{
+    nameInitials = data.email.slice(0,2)
+  }
+  
 
   return(
     <>
