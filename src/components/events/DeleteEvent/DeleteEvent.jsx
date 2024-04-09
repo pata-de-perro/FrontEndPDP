@@ -39,7 +39,7 @@ export function DeleteEvent({event, accessToken}){
             <form onSubmit={onSubmitDeleteEvent} className="flex flex-wrap justify-center">
                 <div className="form-control">
                     <label className="font-body text-azulGris900 text-center">Estas a punto de eliminar un evento</label>
-                    <label className="font-body text-azulGris900 text-center">Si así lo deseas escribe abajo "Quiero eliminar este evento"</label>
+                    <label className="font-body text-azulGris900 text-center">Si así lo deseas escribe abajo Quiero eliminar este evento</label>
                     <input 
                     id="delete"
                     type="text"
