@@ -8,7 +8,6 @@ export function UploadAvatar({session}){
         handleSubmit,
         formState: {errors},
     } = useForm();
-
     const onSubmitAvatar = handleSubmit( async (data) => {
         const result = await updateProfileApi(
         profile._id,
@@ -20,7 +19,6 @@ export function UploadAvatar({session}){
             router.push("/pdp/profile")
         }
     })
-
     return(
         <div>
             <div className="m-6 text-sm text-center font-body text-regular">
