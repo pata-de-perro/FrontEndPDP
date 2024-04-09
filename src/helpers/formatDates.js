@@ -127,7 +127,5 @@ export const birthdayDateProfile = (utcDate) => {
 };
 
 export const birthdayProfileForm = (utcDate) => {
-  const date = new Date(utcDate)
-  const newDate = date.toISOString().slice(0,10)
-  return newDate
+  return utcDate.slice(0,10)
 }
