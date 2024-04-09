@@ -23,10 +23,14 @@ export function FormEditProfile({ onSumbitProfile, register, errors }) {
                 required: false,
                 pattern: {
                     value: /\b([A-ZÀ-ÿ][-,a-z. ']+[ ]*)+/,
-                    message: "Escribe tu nombre y apellido. El formato permíte letras con carácteres especiales.",
+                    message: "Es necesario que la primera letra esté en mayúscula. Puedes tener espacios.",
                 }
               })}
             />
+            {errors.name && (
+              <span className="text-regular font-body text-red-500 ml-[5px]">
+                {errors.name.message}</span>
+            )}
         </div>
         <div className="form-control mx-4">
           <label className="label font-body text-regular">Teléfono</label>
