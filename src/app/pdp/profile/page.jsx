@@ -25,12 +25,12 @@ export default async function Profile() {
   return (
     <>
       <HeroAuth title="Perfil de usuario">
-        <p>Completa tu perfil</p>
+        <ContainerEditProfile profileData={profileData} token={token} />
         <div className="absolute z-10 right-0 top-0">
           <AvatarInitials data={profileData}/>
         </div>
       </HeroAuth>
-      <ContainerEditProfile profileData={profileData} token={token} />
+      
       <ProfileDataView data={profileData}/>
     </>
   );

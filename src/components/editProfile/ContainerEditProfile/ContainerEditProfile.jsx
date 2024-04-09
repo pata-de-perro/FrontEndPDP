@@ -24,9 +24,9 @@ export async function ContainerEditProfile({ profileData, token }) {
         <button
           className={clsx(
             "w-[180px] h-[45px] mx-2 rounded-xl",
-            "bg-azulGris100",
-            "font-body text-regularSemiBold text-azulGris900",
-            "hover:bg-primary hover:text-white"
+            "bg-primary",
+            "font-body text-regularSemiBold text-white",
+            "hover:bg-primary/75 hover:text-white"
           )}
           onClick={ () => handleOpenEditProfileModal() }
         >
