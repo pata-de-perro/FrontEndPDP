@@ -6,7 +6,7 @@ const MAP_ID = process.env.ID_MAP_GOOGLE;
 
 export function ContainerEvent({ event, user }) {
   return (
-    <div className={clsx("mt-4 mr-6 text-primary")}>
+    <div className={clsx("mt-4 mr-6 text-azulGris900")}>
       <TitleSection
         title="Revisa tu lugares elejidos"
         urlIcon={<FiMap />}

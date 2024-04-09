@@ -11,12 +11,12 @@ export function MainPlacesEvent({ event, mapId }) {
     <main className={clsx("h-[800px]", "flex flex-col gap-4", "mt-4")}>
       <section className={clsx("h-full", "flex justify-between gap-4")}>
         <aside
-          className={clsx("bg-secondary/10", "w-1/4", "rounded-xl", "p-2")}
+          className={clsx("bg-azulGris50", "w-1/4", "rounded-xl", "p-2")}
         >
           <div className={clsx("flex flex-col")}>
             <h3
               className={clsx(
-                "text-lg font-semibold text-accent2",
+                "font-heading text-h3 text-azulGris900",
                 "text-center",
                 "my-4"
               )}
@@ -34,21 +34,21 @@ export function MainPlacesEvent({ event, mapId }) {
                   />
                   <span
                     className={clsx(
-                      "text-sm font-semibold text-azulGris900",
-                      "ml-4 mb-2"
+                      "font-body text-regularSemiBold text-azulGris900",
+                      "ml-2 mb-2"
                     )}
                   >
                     {placeMenuCategory.title}
                   </span>
                 </div>
-                <ul className="pl-4">
+                <ul className="pl-4 list-disc ml-6">
                   {locations.map((location) => {
                     if (placeMenuCategory.typePlace.includes(location.type)) {
                       return (
                         <li key={location._id}>
-                          <span className="text-xs font-medium uppercase">
+                          <a className="text-xs font-body">
                             {location.name}
-                          </span>
+                          </a>
                         </li>
                       );
                     }
