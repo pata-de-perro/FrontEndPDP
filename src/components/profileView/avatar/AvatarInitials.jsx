@@ -6,9 +6,18 @@ export function AvatarInitials({ data }){
   if(data.name){
     const fullName = data.name
     const separeteName = fullName.split(' ')
-    const firstIn = separeteName[0].charAt(0)
-    const secondIn = separeteName[1].charAt(0)
-    nameInitials = firstIn + secondIn
+
+    let length = separeteName.length
+    
+    if( length >= 2){
+      const firstIn = separeteName[0].charAt(0).toUpperCase()
+      const secondIn = separeteName[1].charAt(0).toUpperCase()
+      nameInitials = firstIn + secondIn
+    } else {
+      const fInitial = separeteName[0].charAt(0).toUpperCase()
+      const sInitial = separeteName[0].charAt(1).toUpperCase()
+      nameInitials = fInitial + sInitial
+    }
   }
   else{
     nameInitials = data.email.slice(0,2).toUpperCase()
