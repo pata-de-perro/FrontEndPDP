@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 import { birthdayDateProfile } from "@/helpers";
 
 export function ProfileDataView({ data }) {

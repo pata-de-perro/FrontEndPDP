@@ -27,7 +27,7 @@ export function EditProfile({ profileData, handleCloseEditModal, token }){
             token,
         );
         if (result?.success === true) {
-            reset();
+            router.refresh();
             handleCloseEditModal();
             router.refresh();
         }
