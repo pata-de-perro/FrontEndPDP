@@ -30,7 +30,7 @@ export async function ContainerEditProfile({ profileData, token }) {
           )}
           onClick={ () => handleOpenEditProfileModal() }
         >
-          Editar
+          Editar perfil
         </button>
       </div>
 
