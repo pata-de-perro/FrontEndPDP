@@ -36,7 +36,7 @@ export function CreateRegister() {
     const result = await handleConsumeApi(postCreateNewUserApi, data);
 
     if (result?.success === true) {
-      router.push("/account/login");
+      router.push("/verifyAccount");
       reset();
     }
   });
