@@ -11,7 +11,7 @@ export function AvatarInitials({ data }){
     nameInitials = firstIn + secondIn
   }
   else{
-    nameInitials = data.email.slice(0,2)
+    nameInitials = data.email.slice(0,2).toUpperCase()
   }
   
 
