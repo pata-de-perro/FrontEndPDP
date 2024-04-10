@@ -1,5 +1,6 @@
 "use client";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { deleteEventByIdApi } from "@/services";
 import { ModalContent } from "@/components/common";
@@ -12,10 +13,43 @@ export function ActionsEvent({ user, event }) {
   const router = useRouter();
 
   const handleDeletEvent = async () => {
-    const result = await deleteEventByIdApi(event._id, accessToken);
-    if (result?.success === true) {
-      router.push("/pdp");
-      router.refresh();
+    const res = await Swal.fire({
+      title: "¿Estás seguro de eliminar el evento?",
+      text: "¡No podrás revertirlo!",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      confirmButtonText: "Si, ¡Eliminarlo!",
+      customClass: {
+        title: "text-2xl text-accent2 font-heading",
+      },
+    });
+    if (res.isConfirmed) {
+      const result = await deleteEventByIdApi(event._id, accessToken);
+      if (result?.success === true) {
+        Swal.fire({
+          position: "top-end",
+          title: result?.msg,
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+            popup: "bg-accent1",
+          },
+        });
+        router.push("/pdp");
+        router.refresh();
+      } else {
+        Swal.fire({
+          position: "top-end",
+          title: result?.msg,
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+            popup: "bg-red-200",
+          },
+        });
+      }
     }
   };
 
