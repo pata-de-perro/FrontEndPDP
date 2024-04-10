@@ -69,17 +69,19 @@ export function MakePlan({ data, mapId, user, idPlan }) {
   return (
     <>
       <div className={clsx(
-        // "h-[fit]", 
         "flex flex-col-reverse",
-        "justify-between gap-4", 
+        "justify-between", 
         "mt-4",
         "md:flex-row "
         )}>
         <div className={clsx(
-          // "w-3/4"
           "h-[530px] w-[360px]",
-          "md:w-[400px] md:h-[600px]",
+          "md:w-[400px] md:h-[550px]",
+          "lg:h-[350px] lg:w-[780px] lg:mb-4",
           )}>
+          <p className="font-body text-xs m-2">
+            Selecciona un pin en el mapa para ver la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
+          </p>
           <GoogleMapPlaces
             mapId={mapId}
             ubicationsUser={ubicationsUser}
@@ -91,19 +93,19 @@ export function MakePlan({ data, mapId, user, idPlan }) {
         </div>
         <div className={clsx(
           "w-[fit] h-[fit]",
-          // "w-1/4", 
-          "md:w-[220px]",
           "rounded-xl", 
-          "p-2 md:px-2 md:py-0 "
+          "md:w-[220px] md:border-l",
+          "lg:w-[350px]",
+          "p-2 md:pr-4 md:pl-2 md:py-0",
           )}>
           <div
             className={clsx(
-              "h-full",
+              "h-full w-full",
               "flex flex-col items-center justify-between",
               "rounded-xl",
             )}
           >
-            <div className="mt-4 px-2 md:px-0">
+            <div className="mt-4 px-2 md:px-0 ">
               <div className="">
                 <h3
                   className={clsx(
@@ -123,7 +125,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                 </p>
               </div>
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
-                <p className="font-body text-regular italic mx-2 text-center">
+                <p className="font-body text-xs text-center">
                   Selecciona una categoría para que puedas visualizar los lugares en el mapa
                 </p>
                 <span
@@ -170,9 +172,6 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                       )
                   )}
                 </div>
-                <p className="font-body text-regular italic mx-2 text-center">
-                  Selecciona un pin en el mapa para que puedas ver toda la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
-                  </p>
               </div>
             </div>
             <div className={clsx(
