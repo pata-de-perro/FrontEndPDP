@@ -106,6 +106,12 @@ export const placesOfInterestMenu = [
     pinUrl: "/location_bar.svg",
     typePlace: ["bar"],
   },
+  {
+    key: "07",
+    title: "Más lugares",
+    pinUrl: "/location_default.svg",
+    typePlace: [""],
+  },
 ];
 
 export const pinColors = {
