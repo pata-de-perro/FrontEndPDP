@@ -73,7 +73,6 @@ export function FormEvent({
           className={clsx(
             "input input-bordered input-sm",
             "w-[340px] md:w-[450px] lg:w-[450px]",
-            // "w-full"
             )}
           {...register("title", {
             required: { value: true, message: "Por favor ingrese el nombre" },
@@ -97,7 +96,6 @@ export function FormEvent({
           className={clsx(
             "textarea textarea-bordered textarea-sm",
             "w-[340px] md:w-[450px] lg:w-[450px]",
-            // "w-full",
             "h-20",
             "leading-tight"
           )}
@@ -115,7 +113,6 @@ export function FormEvent({
           className={clsx(
             "input input-bordered input-sm", 
             "w-[340px] md:w-[450px] lg:w-[450px]",
-            // "w-full"
             )}
           {...register("locationEvent", {
             required: { value: true, message: "Por favor ingrese un lugar" },
