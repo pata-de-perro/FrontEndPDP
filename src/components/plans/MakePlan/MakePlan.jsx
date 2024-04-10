@@ -93,6 +93,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
         },
       });
       router.push(`/pdp/events/${idPlan}`);
+      router.refresh();
     }
     Swal.fire({
       position: "top-end",
