@@ -56,6 +56,24 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     setOpen(false);
   };
 
+  const handleRemoveUbicationToEvent = async (dataUbication) => {
+    const res = await Swal.fire({
+      title: "¿Deseas quitar está ubicación?",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      confirmButtonText: "Sí",
+      customClass: {
+        title: "text-xl text-accent2 font-heading",
+      },
+    });
+    if (res.isConfirmed) {
+      const newUbicationsUser = ubicationsUser.filter(
+        (ubication) => ubication !== dataUbication
+      );
+      SetUbicationsUser(newUbicationsUser);
+    }
+  };
+
   const onSubmitLocations = async () => {
     const result = await postEventLocationsToApi(
       idPlan,
@@ -98,6 +116,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             ubicationMap={ubicationMap}
             placeRequest={placeRequest}
             handleClickMarker={handleClickMarker}
+            handleRemoveUbicationToEvent={handleRemoveUbicationToEvent}
           />
         </div>
         <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
