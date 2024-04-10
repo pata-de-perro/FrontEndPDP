@@ -99,7 +99,7 @@ export function GoogleMapPlaces({
 
   return (
     <div className={clsx("h-full")}>
-      <div ref={mapGooglePlacesRef} className={clsx("h-full", "rounded-xl")} />
+      <div ref={mapGooglePlacesRef} className={clsx("h-full m-4", "rounded-xl")} />
     </div>
   );
 }

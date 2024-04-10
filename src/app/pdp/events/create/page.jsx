@@ -17,7 +17,7 @@ export default async function CreateEventPage() {
           Queremos que el planear tu viaje o salida sea lo más fácil posible.
         </p>
       </HeroAuth>
-      <div className="grid grid-cols-1 md:grid-cols-2 justify-items-start md:justify-items-center ">
+      <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-start md:justify-items-center ">
         <CreateEvent user={user} />
         <CreationInstructions />
       </div>

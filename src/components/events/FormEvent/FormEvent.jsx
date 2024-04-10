@@ -20,8 +20,8 @@ export function FormEvent({
   }, [watch("initialDate"), watch("isTravel")]);
 
   return (
-    <form onSubmit={onSubmitEvent} className="w-[430px] ">
-      <div className="flex space-x-4 mb-4">
+    <form onSubmit={onSubmitEvent} className="w-[380px] md:w-[430px] ">
+      <div className="flex space-x-4 mb-4 w-[340px] md:w-[450px] lg:w-[450px]">
         <div className="form-control">
           <label className="label cursor-pointer">
             <input
@@ -81,7 +81,10 @@ export function FormEvent({
           id="title"
           type="text"
           placeholder="Ingrese nombre del viaje y/o salida"
-          className={clsx("input input-bordered input-sm", "w-full")}
+          className={clsx(
+            "input input-bordered input-sm",
+            "w-[340px] md:w-[450px] lg:w-[450px]"
+          )}
           {...register("title", {
             required: { value: true, message: "Por favor ingrese el nombre" },
           })}
@@ -103,7 +106,7 @@ export function FormEvent({
           placeholder="Ingrese la descripción"
           className={clsx(
             "textarea textarea-bordered textarea-sm",
-            "w-full",
+            "w-[340px] md:w-[450px] lg:w-[450px]",
             "h-20",
             "leading-tight"
           )}
@@ -119,7 +122,10 @@ export function FormEvent({
           id="locationEvent"
           type="text"
           placeholder="Ingrese el lugar"
-          className={clsx("input input-bordered input-sm", "w-full")}
+          className={clsx(
+            "input input-bordered input-sm",
+            "w-[340px] md:w-[450px] lg:w-[450px]"
+          )}
           {...register("locationEvent", {
             required: { value: true, message: "Por favor ingrese un lugar" },
           })}
@@ -132,7 +138,7 @@ export function FormEvent({
           )}
         </div>
       </div>
-      <div className=" text-inviteSmallText font-body mb-2 md:sr-only lg:sr-only">
+      <div className=" text-inviteSmallText font-body mb-2 w-[340px] md:w-[450px] mr-4 lg:sr-only">
         <span>La plataforma</span>
         <span className="underline decoration-4 decoration-accent1 ml-2">
           busca por zonas{" "}
@@ -140,7 +146,7 @@ export function FormEvent({
         <span>esta te hará sugerencias basado en diferentes categorías.</span>
       </div>
       {watch("isTravel") === true || watch("isTravel") === "true" ? (
-        <div className="flex space-x-4 mb-4">
+        <div className="flex space-x-4 mb-4 w-[340px] md:w-[450px] lg:w-[450px]">
           <div className="form-control w-1/2">
             <label htmlFor="initialDate" className={clsx("text-sm mb-1")}>
               Fecha de Inicio <span className="text-red-500">*</span>
@@ -148,7 +154,10 @@ export function FormEvent({
             <input
               id="initialDate"
               type="date"
-              className={clsx("input input-bordered input-sm", "w-full")}
+              className={clsx(
+                "input input-bordered input-sm"
+                // "w-full"
+              )}
               {...register("initialDate", {
                 required: {
                   value: true,
@@ -172,7 +181,10 @@ export function FormEvent({
             <input
               id="endDate"
               type="date"
-              className={clsx("input input-bordered input-sm", "w-full")}
+              className={clsx(
+                "input input-bordered input-sm"
+                // "w-full"
+              )}
               {...register("endDate", {
                 required: {
                   value: true,
@@ -206,7 +218,10 @@ export function FormEvent({
               <input
                 id="initialDate"
                 type="datetime-local"
-                className={clsx("input input-bordered input-sm", "w-full")}
+                className={clsx(
+                  "input input-bordered input-sm",
+                  "w-[340px] md:w-[450px] lg:w-[450px]"
+                )}
                 {...register("initialDate", {
                   required: {
                     value: true,
@@ -238,7 +253,8 @@ export function FormEvent({
         <button
           type="submit"
           className={clsx(
-            "btn btn-block",
+            "btn",
+            "w-[340px] md:w-[450px] lg:w-[450px]",
             "bg-secondary/90 text-accent2",
             "hover:bg-secondary"
           )}

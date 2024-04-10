@@ -63,7 +63,8 @@ export function ActionsEvent({ user, event }) {
 
   return (
     <>
-      <section className={clsx("mt-4", "relative", "flex gap-4")}>
+      <section className={clsx("mt-4 w-[350px]", "relative", "flex gap-4")}>
+
         <button
           className={clsx(
             "btn",

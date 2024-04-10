@@ -18,7 +18,7 @@ export function CardEvent({ info }) {
     <div
       className={clsx(
         "bg-white shadow-xl rounded-2xl",
-        "w-[400px]",
+        "w-[340px] md:w-[400px] lg:w-[400px]",
         "flex-none ",
         "m-2",
         "grid justify-items-center items-start"
@@ -27,12 +27,12 @@ export function CardEvent({ info }) {
       <div
         className={clsx(
           "rounded-t-2xl",
-          "w-[400px] h-[150px]",
+          "w-[340px] md:w-[400px] lg:w-[400px] h-[150px]",
           info.isTravel ? "bg-[url('/travel-header.png')]" : "bg-[url('/event-header.png')]",
           "mb-2"
         )}
       ></div>
-      <div className="infoContainer w-[350px]">
+      <div className="infoContainer w-[300px] md:w-[360px]">
         <div className="flex justify-between content-end">
           <p className="font-heading text-accent2 text-h4">{info.title}</p>
           <Image
@@ -40,7 +40,6 @@ export function CardEvent({ info }) {
             width={35}
             height={35}
             alt="trip icon"
-            className=""
           />
         </div>
         <div className="flex items-center">
