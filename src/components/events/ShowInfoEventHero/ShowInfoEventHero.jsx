@@ -6,7 +6,7 @@ import { GrGroup } from "react-icons/gr";
 
 export function ShowInfoEventHero({ event }) {
   return (
-    <div className="infoContainer w-[350px]">
+    <div className="infoContainer w-[300px]">
       <div className={clsx("flex flex-col", "mt-3")}>
         <h4
           className={clsx(

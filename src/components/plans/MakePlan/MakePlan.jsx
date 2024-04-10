@@ -68,8 +68,20 @@ export function MakePlan({ data, mapId, user, idPlan }) {
 
   return (
     <>
-      <div className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4")}>
-        <div className={clsx("w-3/4")}>
+      <div className={clsx(
+        "flex flex-col-reverse",
+        "justify-between", 
+        "mt-4",
+        "md:flex-row "
+        )}>
+        <div className={clsx(
+          "h-[530px] w-[360px]",
+          "md:w-[400px] md:h-[550px]",
+          "lg:h-[350px] lg:w-[780px] lg:mb-4",
+          )}>
+          <p className="font-body text-xs m-2">
+            Selecciona un pin en el mapa para ver la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
+          </p>
           <GoogleMapPlaces
             mapId={mapId}
             ubicationsUser={ubicationsUser}
@@ -79,44 +91,56 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             locations={locations}
           />
         </div>
-        <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
+        <div className={clsx(
+          "w-[fit] h-[fit]",
+          "md:w-[220px] md:border-l",
+          "lg:w-[350px]",
+          "p-2 md:pr-4 md:pl-2 md:py-0",
+          )}>
           <div
             className={clsx(
-              "h-full",
+              "h-full w-full",
               "flex flex-col items-center justify-between",
               "rounded-xl",
-              "border-2"
             )}
           >
-            <div className="mt-4 px-2">
-              <h3
-                className={clsx(
-                  "font-semibold text-lg text-center",
-                  "text-primary"
-                )}
-              >
-                {title}
-              </h3>
-              <p
-                className={clsx(
-                  "font-medium text-sm text-center",
-                  "text-accent2"
-                )}
-              >
-                {locationEvent}
-              </p>
+            <div className="mt-4 px-2 md:px-0 ">
+              <div className="">
+                <h3
+                  className={clsx(
+                    "font-heading text-h3 text-center",
+                    "text-azulGris900"
+                  )}
+                >
+                  {title}
+                </h3>
+                <p
+                  className={clsx(
+                    "font-body text-regular text-center",
+                    "text-azulGris900"
+                  )}
+                >
+                  {locationEvent}
+                </p>
+              </div>
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
+                <p className="font-body text-xs text-center">
+                  Selecciona una categoría para que puedas visualizar los lugares en el mapa
+                </p>
                 <span
                   className={clsx(
-                    "text-sm font-semibold",
+                    "font-body text-regularSemiBold",
                     "text-center",
                     "my-4"
                   )}
                 >
-                  Listado de opciones
+                  Categorías de lugares
                 </span>
 
-                <div className={clsx("flex flex-col")}>
+                <div className={clsx(
+                  "flex flex-col",
+                  // "grid grid-cols-2 "
+                  )}>
                   {placesOfInterestMenu.map(
                     (itemPlace) =>
                       (isTravel || itemPlace.typePlace[0] !== "lodging") && (
@@ -135,8 +159,8 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                           />
                           <span
                             className={clsx(
-                              "text-sm text-azulGris900",
-                              "ml-4 mb-2",
+                              "font-body text-regular text-azulGris900",
+                              "mb-2",
                               placeRequest === itemPlace.typePlace &&
                                 "text-primary font-semibold"
                             )}
@@ -149,7 +173,10 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                 </div>
               </div>
             </div>
-            <div className={clsx("flex", "w-full m-1")}>
+            <div className={clsx(
+              "flex", 
+              "w-full m-1"
+              )}>
               {ubicationsUser.length > 0 && (
                 <button
                   className={clsx(
@@ -164,7 +191,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               )}
             </div>
           </div>
-        </aside>
+        </div>
       </div>
       <ModalDrawer
         title={modalState.title}

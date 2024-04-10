@@ -27,7 +27,9 @@ export function AvatarInitials({ data }){
   return(
     <>
       <div className={clsx(
-        "w-[100px] h-[100px] md:w-[150px] md:h-[150px]", 
+        "w-[100px] h-[100px]",
+        "mt-[150px] md:mt-[100px]",
+        "md:w-[150px] md:h-[150px]", 
         "rounded-full bg-gradient-to-tr from-secondary to-accent1 border border-white border-4 drop-shadow-lg", 
         "flex justify-center items-center"
       )}>

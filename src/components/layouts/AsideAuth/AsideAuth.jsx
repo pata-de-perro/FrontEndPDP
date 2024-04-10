@@ -18,7 +18,7 @@ export function AsideAuth() {
   return (
     <div
       className={`${
-        !nav ? "w-[230px]" : "w-20"
+        !nav ? "w-[230px]" : "w-0 md:w-20 lg:w-20"
       } h-screen sticky top-0 p-4 border-r relative duration-300`}
     >
       <div
@@ -29,11 +29,12 @@ export function AsideAuth() {
       >
         <AiOutlineArrowRight />
       </div>
+
       <div className="flex items-center p-2">
         <img src="/DePataDePerroIcon.svg" className="w-[30px] h-auto" />
         <img
           src="/dePataDePerroLogoLETERS.svg"
-          className={`${nav ? "hidden" : "flex"} w-auto h-[45px]`}
+          className={`${nav ? "hidden" : "md:flex"} w-auto h-[45px]`}
         />
       </div>
       <div className="mt-6">
@@ -49,7 +50,7 @@ export function AsideAuth() {
                 "hover:bg-secondaryOpacity"
               )}
             >
-              <Link href={item.href} className="flex items-center">
+              <Link href={item.href} className={`${ nav ? "hidden md:flex md:items-center" : "flex items-center"}`}>
                 {item.icon}
                 <span className={`${nav ? "hidden" : "flex"}  ml-2`}>
                   {item.label}
@@ -82,7 +83,7 @@ export function AsideAuth() {
               className="flex items-center cursor-pointer"
               onClick={() => signOut()}
             >
-              <LuLogOut className="text-md mr-2" />
+              <LuLogOut className={`${ nav ? "hidden md:flex md:items-center" : "flex items-center"}`} />
               <span
                 className={`${
                   nav ? "hidden" : "flex"
