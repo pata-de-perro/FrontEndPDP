@@ -29,6 +29,7 @@ export function AsideAuth() {
       >
         <AiOutlineArrowRight />
       </div>
+
       <div className="flex items-center p-2">
         <img src="/DePataDePerroIcon.svg" className="w-[30px] h-auto" />
         <img

@@ -10,11 +10,11 @@ export function HeroAuth({ title, children, urlImg, type }) {
         "rounded-2xl",
         "mr-[24px] mt-[35px] p-[24px]",
         "min-h-60",
-        "w-400px"
+        "w-350px md:w-400px"
       )}
     >
       <div className={clsx("flex", "relative")}>
-        <div className="w-[380px]">
+        <div className="">
           <h1 className={clsx("font-heading text-azulGris900 text-h1", "mb-2")}>
             {title}
           </h1>

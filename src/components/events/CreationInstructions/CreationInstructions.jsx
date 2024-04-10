@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export function CreationInstructions() {
   return (
-    <section className="sr-only md:not-sr-only lg:not-sr-only">
+    <section className="sr-only lg:not-sr-only">
     <div className={clsx(
         "mt-8", 
         "flex flex-col ",
