@@ -72,7 +72,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
           popup: "bg-accent1",
         },
       });
-      router.push("/pdp/");
+      router.push(`/pdp/events/${idPlan}`);
     }
     Swal.fire({
       position: "top-end",
