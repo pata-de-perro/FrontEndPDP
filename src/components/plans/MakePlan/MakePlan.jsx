@@ -108,12 +108,12 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
                 <span
                   className={clsx(
-                    "text-sm font-semibold",
+                    "text-lg font-semibold",
                     "text-center",
-                    "my-4"
+                    "mt-10 mb-4"
                   )}
                 >
-                  Listado de opciones
+                  Elije a opción para visualizarla en el mapa
                 </span>
 
                 <div className={clsx("flex flex-col")}>
