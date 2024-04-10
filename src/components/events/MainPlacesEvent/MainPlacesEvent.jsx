@@ -79,7 +79,7 @@ export function MainPlacesEvent({ event, mapId }) {
         <section className={clsx(
           "h-[530px] w-[340px]",
           "md:w-[630px] md:h-[550px]",
-          "lg:h-[350px] lg:w-[900px] lg:mb-4",
+          "lg:h-[full] lg:w-[900px] lg:mb-4",
           )}>
           <GoogleMap
             ubicationMap={ubicationMap}
