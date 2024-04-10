@@ -72,10 +72,13 @@ export function MakePlan({ data, mapId, user, idPlan }) {
         // "h-[fit]", 
         "flex flex-col-reverse",
         "justify-between gap-4", 
-        "mt-4")}>
+        "mt-4",
+        "md:flex-row "
+        )}>
         <div className={clsx(
           // "w-3/4"
-          "h-[530px] w-[360px]"
+          "h-[530px] w-[360px]",
+          "md:w-[400px] md:h-[600px]",
           )}>
           <GoogleMapPlaces
             mapId={mapId}
@@ -89,8 +92,9 @@ export function MakePlan({ data, mapId, user, idPlan }) {
         <div className={clsx(
           "w-[fit] h-[fit]",
           // "w-1/4", 
+          "md:w-[220px]",
           "rounded-xl", 
-          "p-2"
+          "p-2 md:px-2 md:py-0 "
           )}>
           <div
             className={clsx(
@@ -99,7 +103,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               "rounded-xl",
             )}
           >
-            <div className="mt-4 px-2">
+            <div className="mt-4 px-2 md:px-0">
               <div className="">
                 <h3
                   className={clsx(
@@ -167,11 +171,14 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                   )}
                 </div>
                 <p className="font-body text-regular italic mx-2 text-center">
-                  Selecciona un pin en el mapa para que puedas ver toda la información del lugar.
+                  Selecciona un pin en el mapa para que puedas ver toda la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
                   </p>
               </div>
             </div>
-            <div className={clsx("flex", "w-full m-1")}>
+            <div className={clsx(
+              "flex", 
+              "w-full m-1"
+              )}>
               {ubicationsUser.length > 0 && (
                 <button
                   className={clsx(
