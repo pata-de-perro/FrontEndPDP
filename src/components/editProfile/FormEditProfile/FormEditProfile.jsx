@@ -90,8 +90,8 @@ export function FormEditProfile({ onSumbitProfile, register, errors }) {
                     required: false,
                   })}
                   />
-                  <label
-                  htmlFor="Femenino">Femenino</label>
+                  <span
+                  htmlFor="Femenino">Femenino</span>
                 </div>
                 <div className="font-body text-regular">
                   <input
@@ -104,8 +104,8 @@ export function FormEditProfile({ onSumbitProfile, register, errors }) {
                     required: false,
                   })}
                   />
-                  <label
-                  htmlFor="Masculino">Masculino</label>
+                  <span
+                  htmlFor="Masculino">Masculino</span>
                 </div>
                 <div className="font-body text-regular">
                   <input
@@ -118,8 +118,8 @@ export function FormEditProfile({ onSumbitProfile, register, errors }) {
                     required: false,
                   })}
                   />
-                  <label
-                  htmlFor="Indefinido">Prefiero no decirlo</label>
+                  <span
+                  htmlFor="Indefinido">Prefiero no decirlo</span>
                 </div>
         </div>
         </div>
