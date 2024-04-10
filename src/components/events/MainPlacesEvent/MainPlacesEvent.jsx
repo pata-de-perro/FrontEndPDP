@@ -90,7 +90,7 @@ export function MainPlacesEvent({ event, mapId }) {
       </div>
       <section className={clsx(
         )}>
-        <div className="flex gap-8 justify-center lg:justify-end">
+        <div className="flex gap-8 justify-center md:justify-end lg:justify-end">
           <BtnToLink
             url={`/pdp/plans/${event._id}`}
             name="Cambiar lugares"
