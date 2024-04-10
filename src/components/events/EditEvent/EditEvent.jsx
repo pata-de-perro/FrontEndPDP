@@ -37,7 +37,6 @@ export function EditEvent({ user, event, handleCloseEditModal }) {
 
     if (result?.success === true) {
       handleCloseEditModal();
-      router.push(`/pdp`);
       router.refresh();
     }
   });
