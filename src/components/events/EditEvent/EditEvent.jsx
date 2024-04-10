@@ -6,7 +6,7 @@ import { formatDatesEvent } from "@/helpers";
 import { FormEditEvent } from "@/components/events";
 import { updateEventByIdApi } from "@/services";
 
-export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
+export function EditEvent({ user, event, handleCloseEditModal }) {
   const { accessToken } = user;
   const { _id, isTravel, title, description, initialDate, endDate } = event;
 
@@ -36,12 +36,9 @@ export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
     const result = await updateEventByIdApi(_id, accessToken, data);
 
     if (result?.success === true) {
-      setMsgResult({ type: "success", msg: result?.msg });
       handleCloseEditModal();
       router.push(`/pdp`);
       router.refresh();
-    } else {
-      setMsgResult({ type: "error", msg: result?.msg });
     }
   });
 
