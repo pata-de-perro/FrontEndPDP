@@ -1,5 +1,6 @@
 "use client";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { formatDatesEvent } from "@/helpers";
@@ -36,8 +37,29 @@ export function EditEvent({ user, event, handleCloseEditModal }) {
     const result = await updateEventByIdApi(_id, accessToken, data);
 
     if (result?.success === true) {
+      Swal.fire({
+        position: "top-end",
+        title: result?.msg,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: "text-xl text-accent2 font-heading",
+          popup: "bg-accent1",
+        },
+      });
       handleCloseEditModal();
       router.refresh();
+    } else {
+      Swal.fire({
+        position: "top-end",
+        title: result?.msg,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: "text-xl text-accent2 font-heading",
+          popup: "bg-red-200",
+        },
+      });
     }
   });
 
