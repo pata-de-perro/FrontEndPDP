@@ -1,5 +1,6 @@
 "use client";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { postEventLocationsToApi } from "@/services";
@@ -61,9 +62,28 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     );
 
     if (result.success === true) {
+      Swal.fire({
+        position: "top-end",
+        title: result?.msg,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: "text-xl text-accent2 font-heading",
+          popup: "bg-accent1",
+        },
+      });
       router.push("/pdp/");
-      router.refresh();
     }
+    Swal.fire({
+      position: "top-end",
+      title: result?.msg,
+      showConfirmButton: false,
+      timer: 1500,
+      customClass: {
+        title: "text-xl text-accent2 font-heading",
+        popup: "bg-accent1",
+      },
+    });
   };
 
   return (
@@ -135,10 +155,11 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                           />
                           <span
                             className={clsx(
-                              "text-sm text-azulGris900",
+                              "text-base font-medium",
                               "ml-4 mb-2",
                               placeRequest === itemPlace.typePlace &&
-                                "text-primary font-semibold"
+                                "text-primary underline",
+                              "hover:text-primary/50"
                             )}
                           >
                             {itemPlace.title}
