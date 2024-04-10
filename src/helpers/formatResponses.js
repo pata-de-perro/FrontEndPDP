@@ -40,3 +40,19 @@ export const buildDetailsOfPlace = (place) => {
 
   return dataPlace;
 };
+
+export const parsePlacesToEdit = (places) => {
+  if (!places || !Array.isArray(places)) {
+    return [];
+  }
+  const parsedPlaces = places.map((place) => ({
+    coords: place?.coords,
+    name: place?.name,
+    placeIdGoogle: place?.placeIdGoogle,
+    simpleAddress: place?.simpleAddress,
+    type: place?.type,
+    vicinity: place?.vicinity,
+  }));
+
+  return parsedPlaces;
+};

@@ -96,7 +96,6 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             ubicationMap={ubicationMap}
             placeRequest={placeRequest}
             handleClickMarker={handleClickMarker}
-            locations={locations}
           />
         </div>
         <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
