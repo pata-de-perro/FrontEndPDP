@@ -212,6 +212,15 @@ export function FormEvent({
                     value: true,
                     message: "Por favor ingrese fecha y hora de la salida",
                   },
+                  validate: (value) => {
+                    const currentDate = new Date();
+                    const selectedDate = new Date(value);
+                    const isFutureDate = selectedDate >= currentDate;
+                    const isValidDate =
+                      isFutureDate ||
+                      "La fecha y hora deben ser posterior a la fecha y hora actual";
+                    return isValidDate;
+                  },
                 })}
               />
               <div className="label">
