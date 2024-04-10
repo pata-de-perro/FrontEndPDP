@@ -8,12 +8,25 @@ export function MainPlacesEvent({ event, mapId }) {
   const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
 
   return (
-    <main className={clsx("h-[800px]", "flex flex-col gap-4", "mt-4")}>
-      <section className={clsx("h-full", "flex justify-between gap-4")}>
-        <aside
-          className={clsx("bg-azulGris50", "w-1/4", "rounded-xl", "p-2")}
+    <main className={clsx(
+      "mt-4",
+      "w-[350px]",
+      "md:w-[630px]",
+      "lg:w-[1130px]"
+      )}>
+      <div className={clsx(
+        "h-full", 
+        "flex flex-col",
+        "lg:flex-row"
+        )}>
+        <div
+          className={clsx(
+            "w-[fit] h-[fit] p-2 ",
+            )}
         >
-          <div className={clsx("flex flex-col")}>
+          <div className={clsx(
+            "md:flex md:flex-col"
+            )}>
             <h3
               className={clsx(
                 "font-heading text-h3 text-azulGris900",
@@ -23,10 +36,14 @@ export function MainPlacesEvent({ event, mapId }) {
             >
               Tus lugares elejidos
             </h3>
-
+            <div className="md:grid md:grid-cols-3 lg:grid-cols-1 lg:mr-4">
             {placesOfInterestMenu.map((placeMenuCategory) => (
-              <div key={placeMenuCategory.key} className={clsx("mb-3")}>
-                <div className={clsx("flex items-center", "border-t-0")}>
+              <div key={placeMenuCategory.key} 
+              className={clsx(
+                )}>
+                <div className={clsx(
+                  "flex items-center", 
+                  )}>
                   <img
                     src={placeMenuCategory.pinUrl}
                     alt="gps pin icon"
@@ -34,7 +51,7 @@ export function MainPlacesEvent({ event, mapId }) {
                   />
                   <span
                     className={clsx(
-                      "font-body text-regularSemiBold text-azulGris900",
+                      "font-body text-regular text-azulGris900",
                       "ml-2 mb-2"
                     )}
                   >
@@ -56,18 +73,24 @@ export function MainPlacesEvent({ event, mapId }) {
                 </ul>
               </div>
             ))}
+            </div>
           </div>
-        </aside>
-        <section className={clsx("w-3/4")}>
+        </div>
+        <section className={clsx(
+          "h-[530px] w-[340px]",
+          "md:w-[630px] md:h-[550px]",
+          "lg:h-[350px] lg:w-[900px] lg:mb-4",
+          )}>
           <GoogleMap
             ubicationMap={ubicationMap}
             mapId={mapId}
             locations={locations}
           ></GoogleMap>
         </section>
-      </section>
-      <section className={clsx("mb-10", "flex flex-col items-end")}>
-        <div className="flex gap-8">
+      </div>
+      <section className={clsx(
+        )}>
+        <div className="flex gap-8 justify-center lg:justify-end">
           <BtnToLink
             url={`/pdp/plans/${event._id}`}
             name="Cambiar lugares"

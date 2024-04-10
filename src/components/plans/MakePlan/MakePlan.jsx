@@ -93,7 +93,6 @@ export function MakePlan({ data, mapId, user, idPlan }) {
         </div>
         <div className={clsx(
           "w-[fit] h-[fit]",
-          "rounded-xl", 
           "md:w-[220px] md:border-l",
           "lg:w-[350px]",
           "p-2 md:pr-4 md:pl-2 md:py-0",

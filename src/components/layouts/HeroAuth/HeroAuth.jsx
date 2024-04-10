@@ -5,8 +5,8 @@ export function HeroAuth({ title, children, urlImg, type }) {
     <div
       className={clsx(
         type === "primary"
-          ? "bg-gradient-to-r from-[#F5F5F5] to-primary"
-          : "bg-gradient-to-r from-[#F5F5F5] to-secondary",
+          ? "bg-gradient-to-tr from-[#F5F5F5] to-primary"
+          : "bg-gradient-to-tr from-[#F5F5F5] to-secondary",
         "rounded-2xl",
         "mr-[24px] mt-[35px] p-[24px]",
         "min-h-60",
