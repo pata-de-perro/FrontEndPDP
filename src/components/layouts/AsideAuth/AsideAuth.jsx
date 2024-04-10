@@ -23,17 +23,17 @@ export function AsideAuth() {
       <Disclosure as="nav">
         <Disclosure.Button className={clsx(
           "absolute top-4 right-4 inline-flex items-center peer justify-center rounded-md p-2",
-          "text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-inset focus:rind-white group",
+          "text-white bg-primary hover:bg-primary/75 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white group lg:sr-only",
         )}>
-          <img src="/PDPLogo.svg" className="w-auto h-[45px]" />
+          <img src="/PDPLogo.svg" className="w-auto h-[30px]" />
           <LuMenu 
             className="block h-6 w-6 "
             aria-hidden="true"
           />
         </Disclosure.Button>
           <div className={clsx(
-            "p-6 w-1/2 md:w-1/3 h-screen bg-white z-20 fixed top-0 -left-96",
-            "lg-left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-200"
+            "p-6 w-1/2 md:w-1/3  lg:w-1-4 h-screen bg-white z-20 fixed top-0 -left-96 ",
+            "lg:w-60 lg:left-0 peer-focus:left-0 peer:transition ease-out delay-150 duration-200"
           )}>
             <div className="flex flex-col justify-start items-center">
               <img src="/PDPLogo.svg" className="h-[45px]"/>
