@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { postEventLocationsToApi } from "@/services";
+import { parsePlacesToEdit } from "@/helpers";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
 import { ModalDrawer } from "@/components/common";
@@ -11,6 +12,7 @@ import { ElementPlacesPlan } from "@/components/plans";
 
 export function MakePlan({ data, mapId, user, idPlan }) {
   const { title, locationEvent, coordsEvent, isTravel, locations } = data;
+  const locationsEdit = parsePlacesToEdit(locations);
   const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
   const { accessToken } = user;
   const router = useRouter();
@@ -20,7 +22,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
   );
   const [open, setOpen] = useState(false);
   const [modalState, setModalState] = useState({ title: null, content: null });
-  const [ubicationsUser, SetUbicationsUser] = useState([]);
+  const [ubicationsUser, SetUbicationsUser] = useState([...locationsEdit]);
 
   const toggleVisible = () => {
     setOpen(!open);
