@@ -157,36 +157,41 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                 </span>
 
                 <div className={clsx("flex flex-col")}>
-                  {placesOfInterestMenu.map(
-                    (itemPlace) =>
-                      (isTravel || itemPlace.typePlace[0] !== "lodging") && (
-                        <div
-                          key={itemPlace.key}
-                          className={clsx(
-                            "flex items-center",
-                            "hover:cursor-pointer"
-                          )}
-                          onClick={() => setPlaceRequest(itemPlace.typePlace)}
-                        >
-                          <img
-                            src={itemPlace.pinUrl}
-                            alt="gps pin icon"
-                            className="h-12 w-auto"
-                          />
-                          <span
+                  {placesOfInterestMenu
+                    .filter(
+                      (itemPlace) =>
+                        itemPlace.key && itemPlace.typePlace[0] !== ""
+                    )
+                    .map(
+                      (itemPlace) =>
+                        (isTravel || itemPlace.typePlace[0] !== "lodging") && (
+                          <div
+                            key={itemPlace.key}
                             className={clsx(
-                              "text-base font-medium",
-                              "ml-4 mb-2",
-                              placeRequest === itemPlace.typePlace &&
-                                "text-primary underline",
-                              "hover:text-primary/50"
+                              "flex items-center",
+                              "hover:cursor-pointer"
                             )}
+                            onClick={() => setPlaceRequest(itemPlace.typePlace)}
                           >
-                            {itemPlace.title}
-                          </span>
-                        </div>
-                      )
-                  )}
+                            <img
+                              src={itemPlace.pinUrl}
+                              alt="gps pin icon"
+                              className="h-12 w-auto"
+                            />
+                            <span
+                              className={clsx(
+                                "text-base font-medium",
+                                "ml-4 mb-2",
+                                placeRequest === itemPlace.typePlace &&
+                                  "text-primary underline",
+                                "hover:text-primary/50"
+                              )}
+                            >
+                              {itemPlace.title}
+                            </span>
+                          </div>
+                        )
+                    )}
                 </div>
               </div>
             </div>
