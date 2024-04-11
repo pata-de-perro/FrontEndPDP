@@ -109,8 +109,19 @@ export function MakePlan({ data, mapId, user, idPlan }) {
 
   return (
     <>
-      <div className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4")}>
-        <div className={clsx("w-3/4")}>
+      <div className={clsx(
+        "h-[600px]", 
+        "flex flex-col-reverse",
+        "justify-between", 
+        "mt-4",
+        "md:flex-row ")}>
+        <div className={clsx(
+          "h-full w-full",
+          "mb-4 pb-4",
+          )}>
+          <p className="font-body text-xs m-2">
+            Selecciona un pin en el mapa para ver la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
+          </p>
           <GoogleMapPlaces
             mapId={mapId}
             ubicationsUser={ubicationsUser}
@@ -120,13 +131,17 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             handleRemoveUbicationToEvent={handleRemoveUbicationToEvent}
           />
         </div>
-        <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
+        <div className={clsx(
+          "w-[fit] h-[fit]",
+          "md:w-[220px] md:border-l",
+          "lg:w-[350px]",
+          "p-2 md:pr-4 md:pl-2 md:py-0",
+          )}>
           <div
             className={clsx(
-              "h-full",
+              "h-full w-full",
               "flex flex-col items-center justify-between",
               "rounded-xl",
-              "border-2"
             )}
           >
             <div className="mt-4 px-2">
@@ -184,7 +199,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                                 "text-base font-medium",
                                 "ml-4 mb-2",
                                 placeRequest === itemPlace.typePlace &&
-                                  "text-primary underline",
+                                "text-azulGris900 underline",
                                 "hover:text-primary/50"
                               )}
                             >
@@ -211,7 +226,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               )}
             </div>
           </div>
-        </aside>
+        </div>
       </div>
       <ModalDrawer
         title={modalState.title}
