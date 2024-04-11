@@ -180,7 +180,7 @@ export function FormEvent({
               type="date"
               className={clsx(
                 "input input-bordered input-sm",
-                "w-[340px] md:w-[450px] lg:w-[450px]"
+                "w-full"
                 )}
 
               {...register("endDate", {
