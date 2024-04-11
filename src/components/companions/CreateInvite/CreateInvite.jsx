@@ -12,7 +12,6 @@ export function CreateInvite() {
   } = useForm();
 
   const onSubmitInvite = handleSubmit((data) => {
-    console.log(data);
   });
 
   return (

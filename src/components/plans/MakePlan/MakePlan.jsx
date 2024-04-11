@@ -91,7 +91,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
           title: "text-xl text-accent2 font-heading",
           popup: "bg-accent1",
         },
-      });
+     });
       router.push(`/pdp/events/${idPlan}`);
       router.refresh();
     }
@@ -199,7 +199,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                                 "text-xs font-body",
                                 placeRequest === itemPlace.typePlace &&
                                 "text-azulGris900 underline",
-                                "hover:text-primary/50"
+                                "hover:font-semibold"
                               )}
                             >
                               {itemPlace.title}

@@ -16,9 +16,6 @@ export const authOptions = {
       },
       async authorize(credentials, req) {
         const result = await postLoginApi(credentials);
-
-        console.log(result);
-
         if (result.user) {
           return {
             id: result.user._id,

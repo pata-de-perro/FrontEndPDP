@@ -63,7 +63,7 @@ export function CreateEvent({ user }) {
   });
 
   return (
-    <div className="mt-10 mr-4">
+    <div className="mt-10 mr-4 flex flex-wrap justify-center">
       <h2 className={clsx("mb-6", "font-body text-regularBold")}>
         Esto facilitará encontrar información de tu viaje
       </h2>

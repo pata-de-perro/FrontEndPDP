@@ -1,11 +1,11 @@
 "use client";
+import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useConsumeApi } from "@/components/hooks";
 import { postCreateNewUserApi } from "@/services";
 import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
-import clsx from "clsx";
 import { BtnSubmit } from "@/components/common";
 
 export function CreateRegister() {

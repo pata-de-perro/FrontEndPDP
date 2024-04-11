@@ -1,23 +1,14 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
-// import { useState } from "react";
 import { signOut } from "next-auth/react";
 import { navigationItems } from "@/mocks/catalogs";
-import { AiOutlineArrowRight } from "react-icons/ai";
 import { LuLogOut, LuMenu } from "react-icons/lu";
 import { FaPenClip } from "react-icons/fa6";
-
 import { Disclosure } from "@headlessui/react";
 import React from "react";
 
 export function AsideAuth() {
-  // const [nav, setNav] = useState(false);
-
-  // const handleNav = () => {
-  //   setNav(!nav);
-  // };
-
   return (
     <div>
       <Disclosure as="nav">
@@ -64,7 +55,7 @@ export function AsideAuth() {
           )}>
             <Link href="/pdp/events/create" className="flex ">
               <span> <FaPenClip className="text-md mr-2 ml-2"/></span>
-              <span className="flex mr-2 pr-2 text-regular font-body">Planear evento</span>
+              <span className="flex mr-2 pr-2 text-regular font-body">Planea un evento</span>
             </Link>
           </div>
           <div
