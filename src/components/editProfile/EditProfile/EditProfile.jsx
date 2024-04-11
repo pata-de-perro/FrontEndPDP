@@ -6,7 +6,7 @@ import { updateProfileApi } from "@/services";
 import { birthdayProfileForm } from "@/helpers"
 
 export function EditProfile({ profileData, handleCloseEditModal, token }){
-    const birthday = birthdayProfileForm(profileData.birthdate)
+    const birthday = birthdayProfileForm(profileData?.birthdate)
     const {
         register,
         handleSubmit,

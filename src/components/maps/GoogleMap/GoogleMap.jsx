@@ -40,7 +40,6 @@ export function GoogleMap({ chidren, ubicationMap, mapId, locations }) {
           title: place.name,
           content: pinPdPBackground.element.cloneNode(true),
         });
-
         marker.addListener("click", () => {
           const infoWindow = new google.maps.InfoWindow({
             content: `<div><h3>${place.name}</h3><p>${place.vicinity}</p></div>`,

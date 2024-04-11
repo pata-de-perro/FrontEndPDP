@@ -3,7 +3,7 @@ import clsx from "clsx"
 export function AvatarInitials({ data }){
   let nameInitials = ""
 
-  if(data.name){
+  if(data?.name){
     const fullName = data.name
     const separeteName = fullName.split(' ')
 
@@ -20,7 +20,7 @@ export function AvatarInitials({ data }){
     }
   }
   else{
-    nameInitials = data.email.slice(0,2).toUpperCase()
+    nameInitials = data?.email.slice(0,2).toUpperCase()
   }
   
 

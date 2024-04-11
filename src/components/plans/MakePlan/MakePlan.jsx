@@ -41,38 +41,38 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     setOpen(true);
   };
 
-  const handleAddUbicationToEvent = (ubication) => {
-    const { place_id, name, type, coords, vicinity, contact } = ubication;
+    const handleRemoveUbicationToEvent = async (dataUbication) => {
+        const res = await Swal.fire({
+          title: "¿Deseas quitar está ubicación?",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          confirmButtonText: "Sí",
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+          },
+        });
+        if (res.isConfirmed) {
+          const newUbicationsUser = ubicationsUser.filter(
+            (ubication) => ubication !== dataUbication
+          );
+          SetUbicationsUser(newUbicationsUser);
+        }
+      };
 
-    const newUbication = {
-      placeIdGoogle: place_id,
-      name: name,
-      type: type,
-      vicinity: vicinity,
-      simpleAddress: contact.address,
-      coords: coords,
-    };
-    SetUbicationsUser([...ubicationsUser, newUbication]);
-    setOpen(false);
-  };
-
-  const handleRemoveUbicationToEvent = async (dataUbication) => {
-    const res = await Swal.fire({
-      title: "¿Deseas quitar está ubicación?",
-      showCancelButton: true,
-      confirmButtonColor: "#d33",
-      confirmButtonText: "Sí",
-      customClass: {
-        title: "text-xl text-accent2 font-heading",
-      },
-    });
-    if (res.isConfirmed) {
-      const newUbicationsUser = ubicationsUser.filter(
-        (ubication) => ubication !== dataUbication
-      );
-      SetUbicationsUser(newUbicationsUser);
-    }
-  };
+      const handleAddUbicationToEvent = (ubication) => {
+        const { place_id, name, type, coords, vicinity, contact } = ubication;
+        
+        const newUbication = {
+        placeIdGoogle: place_id,
+        name: name,
+        type: type,
+        vicinity: vicinity,
+        simpleAddress: contact.address,
+        coords: coords,
+        };
+        SetUbicationsUser([...ubicationsUser, newUbication]);
+        setOpen(false);
+        };
 
   const onSubmitLocations = async () => {
     const result = await postEventLocationsToApi(
@@ -109,8 +109,19 @@ export function MakePlan({ data, mapId, user, idPlan }) {
 
   return (
     <>
-      <div className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4")}>
-        <div className={clsx("w-3/4")}>
+      <div className={clsx(
+        "flex flex-col-reverse",
+        "justify-between", 
+        "mt-4",
+        "md:flex-row ")}>
+        <div className={clsx(
+          "h-[500px]",
+          "mb-4 pb-4",
+          "flex flex-col"
+          )}>
+          <p className="font-body text-xs m-2">
+            Selecciona un pin en el mapa para ver la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
+          </p>
           <GoogleMapPlaces
             mapId={mapId}
             ubicationsUser={ubicationsUser}
@@ -120,13 +131,17 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             handleRemoveUbicationToEvent={handleRemoveUbicationToEvent}
           />
         </div>
-        <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
+        <div className={clsx(
+          "w-[fit] h-[fit]",
+          "md:w-[220px] md:border-l",
+          "lg:w-[350px]",
+          "p-2 md:pr-4 md:pl-2 md:py-0",
+          )}>
           <div
             className={clsx(
-              "h-full",
+              "h-full w-full",
               "flex flex-col items-center justify-between",
               "rounded-xl",
-              "border-2"
             )}
           >
             <div className="mt-4 px-2">
@@ -149,12 +164,12 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
                 <span
                   className={clsx(
-                    "text-lg font-semibold",
+                    "text-regular font-body",
                     "text-center",
-                    "mt-10 mb-4"
+                    "mt-2 mb-4"
                   )}
                 >
-                  Elije a opción para visualizarla en el mapa
+                  Elige una categoría para visualizarla en el mapa
                 </span>
 
                 <div className={clsx("flex flex-col")}>
@@ -177,14 +192,13 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                             <img
                               src={itemPlace.pinUrl}
                               alt="gps pin icon"
-                              className="h-12 w-auto"
+                              className="h-12 w-12"
                             />
                             <span
                               className={clsx(
-                                "text-base font-medium",
-                                "ml-4 mb-2",
+                                "text-xs font-body",
                                 placeRequest === itemPlace.typePlace &&
-                                  "text-primary underline",
+                                "text-azulGris900 underline",
                                 "hover:text-primary/50"
                               )}
                             >
@@ -211,7 +225,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               )}
             </div>
           </div>
-        </aside>
+        </div>
       </div>
       <ModalDrawer
         title={modalState.title}
