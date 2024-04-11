@@ -110,14 +110,14 @@ export function MakePlan({ data, mapId, user, idPlan }) {
   return (
     <>
       <div className={clsx(
-        "h-[600px]", 
         "flex flex-col-reverse",
         "justify-between", 
         "mt-4",
         "md:flex-row ")}>
         <div className={clsx(
-          "h-full w-full",
+          "h-[500px]",
           "mb-4 pb-4",
+          "flex flex-col"
           )}>
           <p className="font-body text-xs m-2">
             Selecciona un pin en el mapa para ver la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
@@ -164,12 +164,12 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
                 <span
                   className={clsx(
-                    "text-lg font-semibold",
+                    "text-regular font-body",
                     "text-center",
-                    "mt-10 mb-4"
+                    "mt-2 mb-4"
                   )}
                 >
-                  Elije a opción para visualizarla en el mapa
+                  Elige una categoría para visualizarla en el mapa
                 </span>
 
                 <div className={clsx("flex flex-col")}>
@@ -192,12 +192,11 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                             <img
                               src={itemPlace.pinUrl}
                               alt="gps pin icon"
-                              className="h-12 w-auto"
+                              className="h-12 w-12"
                             />
                             <span
                               className={clsx(
-                                "text-base font-medium",
-                                "ml-4 mb-2",
+                                "text-xs font-body",
                                 placeRequest === itemPlace.typePlace &&
                                 "text-azulGris900 underline",
                                 "hover:text-primary/50"
