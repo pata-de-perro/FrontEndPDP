@@ -47,13 +47,19 @@ export function FormEvent({
           </label>
         </div>
       </div>
-      <div className="w-[340px] md:w-[450px] mr-4 lg:sr-only">
-        <span className={clsx(
-          "underline decoration-4 decoration-primary text-inviteSmallText font-body "
-        )}>Un viaje</span>
-        <span className="text-inviteSmallText font-body ml-2"
-        >es aquel que tiene como duración de dos días o más.</span>
+      <div className="md:sr-only lg:sr-only">
+        <span
+          className={clsx(
+            "underline decoration-4 decoration-primary text-inviteSmallText font-body"
+          )}
+        >
+          Un viaje
+        </span>
+        <span className="text-inviteSmallText font-body ml-2">
+          es aquel que tiene como duración de dos días o más.
+        </span>
       </div>
+
       <div className="w-[340px] md:w-[450px] mr-4 lg:sr-only mb-2">
         <span className={clsx(
           "underline decoration-4 decoration-secondary text-inviteSmallText font-body"
@@ -61,6 +67,7 @@ export function FormEvent({
         <span className="text-inviteSmallText font-body ml-2"
         >{" "}es aquella que tiene como duración sólo un día e inicia a
         una hora en específico.</span>
+
       </div>
       <div className="form-control mb-4">
         <label htmlFor="title" className={clsx("text-sm mb-1")}>
@@ -73,7 +80,9 @@ export function FormEvent({
           className={clsx(
             "input input-bordered input-sm",
             "w-[340px] md:w-[450px] lg:w-[450px]"
+
             )}
+
           {...register("title", {
             required: { value: true, message: "Por favor ingrese el nombre" },
           })}
@@ -104,7 +113,7 @@ export function FormEvent({
       </div>
       <div className="form-control mb-4 ">
         <label htmlFor="locationEvent" className={clsx("text-sm mb-1")}>
-          ¿Dónde harás tu evento? Elige un municipio o zona {" "}
+          Escribe un lugar, municipio o zona{" "}
           <span className="text-red-500">*</span>
         </label>
         <input
@@ -112,9 +121,9 @@ export function FormEvent({
           type="text"
           placeholder="¿A dónde quieres ir?"
           className={clsx(
-            "input input-bordered input-sm", 
-            "w-[340px] md:w-[450px] lg:w-[450px]",
-            )}
+            "input input-bordered input-sm",
+            "w-[340px] md:w-[450px] lg:w-[450px]"
+          )}
           {...register("locationEvent", {
             required: { value: true, message: "Por favor ingrese un lugar" },
           })}
@@ -129,7 +138,9 @@ export function FormEvent({
       </div>
       <div className=" text-inviteSmallText font-body mb-2 w-[340px] md:w-[450px] mr-4 lg:sr-only">
         <span>La plataforma</span>
-        <span className="underline decoration-4 decoration-accent1 ml-2">busca por zonas </span>
+        <span className="underline decoration-4 decoration-accent1 ml-2">
+          busca por zonas{" "}
+        </span>
         <span>esta te hará sugerencias basado en diferentes categorías.</span>
       </div>
       {watch("isTravel") === true || watch("isTravel") === "true" ? (
@@ -171,6 +182,7 @@ export function FormEvent({
                 "input input-bordered input-sm",
                 "w-[340px] md:w-[450px] lg:w-[450px]"
                 )}
+
               {...register("endDate", {
                 required: {
                   value: true,
@@ -207,13 +219,22 @@ export function FormEvent({
                 id="initialDate"
                 type="datetime-local"
                 className={clsx(
-                  "input input-bordered input-sm", 
-                  "w-[340px] md:w-[450px] lg:w-[450px]",
-                  )}
+                  "input input-bordered input-sm",
+                  "w-[340px] md:w-[450px] lg:w-[450px]"
+                )}
                 {...register("initialDate", {
                   required: {
                     value: true,
                     message: "Por favor ingrese fecha y hora de la salida",
+                  },
+                  validate: (value) => {
+                    const currentDate = new Date();
+                    const selectedDate = new Date(value);
+                    const isFutureDate = selectedDate >= currentDate;
+                    const isValidDate =
+                      isFutureDate ||
+                      "La fecha y hora deben ser posterior a la fecha y hora actual";
+                    return isValidDate;
                   },
                 })}
               />
