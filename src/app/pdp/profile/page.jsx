@@ -7,7 +7,6 @@ import { AvatarInitials, ProfileDataView } from "@/components/profileView/";
 
 export default async function Profile() {
   const session = await getServerSession(authOptions);
-  const user = session.user;
   const token = session.user.accessToken;
   const profileData = (await getProfileApi(session.user.id, token)).data;
 
