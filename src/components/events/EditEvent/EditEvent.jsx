@@ -1,12 +1,13 @@
 "use client";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { formatDatesEvent } from "@/helpers";
 import { FormEditEvent } from "@/components/events";
 import { updateEventByIdApi } from "@/services";
 
-export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
+export function EditEvent({ user, event, handleCloseEditModal }) {
   const { accessToken } = user;
   const { _id, isTravel, title, description, initialDate, endDate } = event;
 
@@ -36,12 +37,29 @@ export function EditEvent({ user, event, handleCloseEditModal, setMsgResult }) {
     const result = await updateEventByIdApi(_id, accessToken, data);
 
     if (result?.success === true) {
-      setMsgResult({ type: "success", msg: result?.msg });
+      Swal.fire({
+        position: "top-end",
+        title: result?.msg,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: "text-xl text-accent2 font-heading",
+          popup: "bg-accent1",
+        },
+      });
       handleCloseEditModal();
-      router.push(`/pdp`);
       router.refresh();
     } else {
-      setMsgResult({ type: "error", msg: result?.msg });
+      Swal.fire({
+        position: "top-end",
+        title: result?.msg,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: "text-xl text-accent2 font-heading",
+          popup: "bg-red-200",
+        },
+      });
     }
   });
 

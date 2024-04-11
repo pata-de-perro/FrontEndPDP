@@ -1,35 +1,39 @@
 "use client";
 import clsx from "clsx";
-import { ModalContent } from "@/components/common";
+import { ModalContent,} from "@/components/common";
 import { EditProfile } from "../EditProfile/EditProfile";
-import { getProfileApi } from "@/services";
 
-export async function ContainerEditProfile({ user }) {
-  const { accessToken } = user;
-  const { id } = user;
-  const { data: profileData } = await getProfileApi(id, accessToken)
-  
-  const handleOpenModal = () => {
+export function ContainerEditProfile({ profileData, token }) {
+
+  const handleOpenEditProfileModal = () => {
     document.getElementById("modal_edit_profile").showModal();
   };
+
+  const handleCloseEditProfileModal = () => {
+    document.getElementById("modal_edit_profile").close();
+  };
+
   return (
     <>
       <div className={clsx("flex justify-start", "mt-4")}>
         <button
           className={clsx(
             "w-[180px] h-[45px] mx-2 rounded-xl",
-            "bg-azulGris100",
-            "font-body text-regularSemiBold text-azulGris900",
-            "hover:bg-primary hover:text-white"
+            "bg-primary",
+            "font-body text-regularSemiBold text-white",
+            "hover:bg-primary/75 hover:text-white"
           )}
-          onClick={ () => handleOpenModal() }
+          onClick={ () => handleOpenEditProfileModal() }
         >
-          Editar
+          Editar perfil
         </button>
       </div>
-
       <ModalContent idModal="modal_edit_profile" title="Edita tu perfil">
-        <EditProfile  profileData={profileData} token={accessToken}/>
+        <EditProfile  
+          profileData={profileData} 
+          handleCloseEditModal={handleCloseEditProfileModal}
+          token={token}
+        />
       </ModalContent>
     </>
   );

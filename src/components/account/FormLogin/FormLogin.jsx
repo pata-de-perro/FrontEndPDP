@@ -5,19 +5,23 @@ import { BtnSubmit } from "@/components/common";
 export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
 
   return (
-    <form onSubmit={onSubmitSignIn}>
+    <form onSubmit={onSubmitSignIn} className={clsx(
+      "w-[380px] flex flex-wrap justify-center",
+      "md:flex-col md:flex-nowrap"
+    )}>
       <div className="form-control">
         <label className="label font-body text-regularSemiBold">Correo electrónico</label>
         <input
           type="email"
           className={clsx(
             "mt-1 px-3 py-2",
-            "h-[50px]",
+            "h-[50px] w-[350px]",
+            "md:w-[410px]",
             "bg-white",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
             "focus:outline-none focus:border-sky-500 focus:ring-sky-500",
-            "block w-[450px] rounded-lg focus:ring-1"
+            "block rounded-lg focus:ring-1"
           )}
           placeholder="Correo electrónico"
           {...register("email", {
@@ -45,10 +49,11 @@ export function FormLogin({ onSubmitSignIn, register, errors, loading }) {
           className={clsx(
             "px-3",
             "bg-white",
+            "md:w-[410px]",
             "border shadow-sm border-slate-300",
             "placeholder-slate-400",
             "focus:outline-none focus:border-sky-45 focus:ring-sky-500",
-            "block w-[450px] h-[50px] rounded-lg focus:ring-1"
+            "block w-[350px] h-[50px] rounded-lg focus:ring-1"
           )}
           placeholder="Contraseña"
           {...register("password", {

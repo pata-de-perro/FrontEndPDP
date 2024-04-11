@@ -11,6 +11,7 @@ export function GoogleMapPlaces({
   ubicationMap,
   placeRequest,
   handleClickMarker,
+  handleRemoveUbicationToEvent,
   ubicationsUser,
 }) {
   const mapGooglePlacesRef = useRef(null);
@@ -64,11 +65,15 @@ export function GoogleMapPlaces({
                   const pinPdPBackground = new PinElement({
                     ...pinColors.default,
                   });
-                  new AdvancedMarkerElement({
+                  const marker = new AdvancedMarkerElement({
                     map: map,
                     position: ubicationCoords,
                     title: ubication.name,
                     content: pinPdPBackground.element.cloneNode(true),
+                  });
+
+                  marker.addListener("click", () => {
+                    handleRemoveUbicationToEvent(ubication);
                   });
                 });
               }
@@ -94,7 +99,7 @@ export function GoogleMapPlaces({
 
   return (
     <div className={clsx("h-full")}>
-      <div ref={mapGooglePlacesRef} className={clsx("h-full", "rounded-xl")} />
+      <div ref={mapGooglePlacesRef} className={clsx("h-full m-4", "rounded-xl")} />
     </div>
   );
 }

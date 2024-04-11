@@ -11,7 +11,7 @@ export default function Navbar() {
   const MenuItems = [
     {
       title: "Funciones",
-      to: "tutorials",
+      to: "functions",
     },
     {
       title: "Opiniones",

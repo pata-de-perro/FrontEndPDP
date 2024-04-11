@@ -1,28 +1,55 @@
 "use client";
 import clsx from "clsx";
-import { useState } from "react";
+import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
 import { deleteEventByIdApi } from "@/services";
-import { ModalContent, ToastMsgTop } from "@/components/common";
+import { ModalContent } from "@/components/common";
 import { EditEvent } from "@/components/events";
-
 import { TbEdit } from "react-icons/tb";
 import { AiFillDelete } from "react-icons/ai";
 
 export function ActionsEvent({ user, event }) {
   const { accessToken } = user;
-
-  const [msgResult, setMsgResult] = useState();
   const router = useRouter();
 
   const handleDeletEvent = async () => {
-    const result = await deleteEventByIdApi(event._id, accessToken);
-    if (result?.success === true) {
-      setMsgResult({ type: "success", msg: result?.msg });
-      router.push("/pdp");
-      router.refresh();
-    } else {
-      setMsgResult({ type: "error", msg: result?.msg });
+    const res = await Swal.fire({
+      title: "¿Estás seguro de eliminar el evento?",
+      text: "¡No podrás revertirlo!",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      confirmButtonText: "Si, ¡Eliminarlo!",
+      customClass: {
+        title: "text-2xl text-accent2 font-heading",
+      },
+    });
+    if (res.isConfirmed) {
+      const result = await deleteEventByIdApi(event._id, accessToken);
+      if (result?.success === true) {
+        Swal.fire({
+          position: "top-end",
+          title: result?.msg,
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+            popup: "bg-accent1",
+          },
+        });
+        router.push("/pdp");
+        router.refresh();
+      } else {
+        Swal.fire({
+          position: "top-end",
+          title: result?.msg,
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+            popup: "bg-red-200",
+          },
+        });
+      }
     }
   };
 
@@ -36,9 +63,6 @@ export function ActionsEvent({ user, event }) {
 
   return (
     <>
-      {msgResult && (
-        <ToastMsgTop type={msgResult.type} message={msgResult.msg} />
-      )}
       <section className={clsx("mt-4", "relative", "flex gap-4")}>
         <button
           className={clsx(
@@ -63,7 +87,6 @@ export function ActionsEvent({ user, event }) {
           user={user}
           event={event}
           handleCloseEditModal={handleCloseEditModal}
-          setMsgResult={setMsgResult}
         />
       </ModalContent>
     </>

@@ -1,8 +1,10 @@
 "use client";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { postEventLocationsToApi } from "@/services";
+import { parsePlacesToEdit } from "@/helpers";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
 import { ModalDrawer } from "@/components/common";
@@ -10,6 +12,7 @@ import { ElementPlacesPlan } from "@/components/plans";
 
 export function MakePlan({ data, mapId, user, idPlan }) {
   const { title, locationEvent, coordsEvent, isTravel, locations } = data;
+  const locationsEdit = parsePlacesToEdit(locations);
   const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
   const { accessToken } = user;
   const router = useRouter();
@@ -19,7 +22,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
   );
   const [open, setOpen] = useState(false);
   const [modalState, setModalState] = useState({ title: null, content: null });
-  const [ubicationsUser, SetUbicationsUser] = useState([]);
+  const [ubicationsUser, SetUbicationsUser] = useState([...locationsEdit]);
 
   const toggleVisible = () => {
     setOpen(!open);
@@ -38,20 +41,38 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     setOpen(true);
   };
 
-  const handleAddUbicationToEvent = (ubication) => {
-    const { place_id, name, type, coords, vicinity, contact } = ubication;
+    const handleRemoveUbicationToEvent = async (dataUbication) => {
+        const res = await Swal.fire({
+          title: "¿Deseas quitar está ubicación?",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          confirmButtonText: "Sí",
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+          },
+        });
+        if (res.isConfirmed) {
+          const newUbicationsUser = ubicationsUser.filter(
+            (ubication) => ubication !== dataUbication
+          );
+          SetUbicationsUser(newUbicationsUser);
+        }
+      };
 
-    const newUbication = {
-      placeIdGoogle: place_id,
-      name: name,
-      type: type,
-      vicinity: vicinity,
-      simpleAddress: contact.address,
-      coords: coords,
-    };
-    SetUbicationsUser([...ubicationsUser, newUbication]);
-    setOpen(false);
-  };
+      const handleAddUbicationToEvent = (ubication) => {
+        const { place_id, name, type, coords, vicinity, contact } = ubication;
+        
+        const newUbication = {
+        placeIdGoogle: place_id,
+        name: name,
+        type: type,
+        vicinity: vicinity,
+        simpleAddress: contact.address,
+        coords: coords,
+        };
+        SetUbicationsUser([...ubicationsUser, newUbication]);
+        setOpen(false);
+        };
 
   const onSubmitLocations = async () => {
     const result = await postEventLocationsToApi(
@@ -61,31 +82,66 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     );
 
     if (result.success === true) {
-      router.push("/pdp/");
+      Swal.fire({
+        position: "top-end",
+        title: result?.msg,
+        showConfirmButton: false,
+        timer: 1500,
+        customClass: {
+          title: "text-xl text-accent2 font-heading",
+          popup: "bg-accent1",
+        },
+      });
+      router.push(`/pdp/events/${idPlan}`);
       router.refresh();
     }
+    Swal.fire({
+      position: "top-end",
+      title: result?.msg,
+      showConfirmButton: false,
+      timer: 1500,
+      customClass: {
+        title: "text-xl text-accent2 font-heading",
+        popup: "bg-accent1",
+      },
+    });
   };
 
   return (
     <>
-      <div className={clsx("h-[600px]", "flex justify-between gap-4", "mt-4")}>
-        <div className={clsx("w-3/4")}>
+      <div className={clsx(
+        "flex flex-col-reverse",
+        "justify-between", 
+        "mt-4",
+        "md:flex-row ")}>
+        <div className={clsx(
+          "h-[500px]",
+          "mb-4 pb-4",
+          "flex flex-col"
+          )}>
+          <p className="font-body text-xs m-2">
+            Selecciona un pin en el mapa para ver la información del lugar. Tienes que tener al menos un lugar seleccionado para poder continuar en la creación de tu evento
+          </p>
           <GoogleMapPlaces
             mapId={mapId}
             ubicationsUser={ubicationsUser}
             ubicationMap={ubicationMap}
             placeRequest={placeRequest}
             handleClickMarker={handleClickMarker}
-            locations={locations}
+            handleRemoveUbicationToEvent={handleRemoveUbicationToEvent}
           />
         </div>
-        <aside className={clsx("bg-primary/10", "w-1/4", "rounded-xl", "p-2")}>
+        <div className={clsx(
+          "w-[fit] h-[fit]",
+          "md:w-[220px] md:border-l",
+          "lg:w-[350px]",
+          "p-2 md:pr-4 md:pl-2 md:py-0",
+          )}>
           <div
             className={clsx(
-              "h-full",
+              "h-full w-full",
               "flex flex-col items-center justify-between",
               "rounded-xl",
-              "border-2"
             )}
           >
             <div className="mt-4 px-2">
@@ -108,44 +164,49 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               <div className={clsx("flex flex-col flex-wrap", "mt-2")}>
                 <span
                   className={clsx(
-                    "text-sm font-semibold",
+                    "text-regular font-body",
                     "text-center",
-                    "my-4"
+                    "mt-2 mb-4"
                   )}
                 >
-                  Listado de opciones
+                  Elige una categoría para visualizarla en el mapa
                 </span>
 
                 <div className={clsx("flex flex-col")}>
-                  {placesOfInterestMenu.map(
-                    (itemPlace) =>
-                      (isTravel || itemPlace.typePlace[0] !== "lodging") && (
-                        <div
-                          key={itemPlace.key}
-                          className={clsx(
-                            "flex items-center",
-                            "hover:cursor-pointer"
-                          )}
-                          onClick={() => setPlaceRequest(itemPlace.typePlace)}
-                        >
-                          <img
-                            src={itemPlace.pinUrl}
-                            alt="gps pin icon"
-                            className="h-12 w-auto"
-                          />
-                          <span
+                  {placesOfInterestMenu
+                    .filter(
+                      (itemPlace) =>
+                        itemPlace.key && itemPlace.typePlace[0] !== ""
+                    )
+                    .map(
+                      (itemPlace) =>
+                        (isTravel || itemPlace.typePlace[0] !== "lodging") && (
+                          <div
+                            key={itemPlace.key}
                             className={clsx(
-                              "text-sm text-azulGris900",
-                              "ml-4 mb-2",
-                              placeRequest === itemPlace.typePlace &&
-                                "text-primary font-semibold"
+                              "flex items-center",
+                              "hover:cursor-pointer"
                             )}
+                            onClick={() => setPlaceRequest(itemPlace.typePlace)}
                           >
-                            {itemPlace.title}
-                          </span>
-                        </div>
-                      )
-                  )}
+                            <img
+                              src={itemPlace.pinUrl}
+                              alt="gps pin icon"
+                              className="h-12 w-12"
+                            />
+                            <span
+                              className={clsx(
+                                "text-xs font-body",
+                                placeRequest === itemPlace.typePlace &&
+                                "text-azulGris900 underline",
+                                "hover:text-primary/50"
+                              )}
+                            >
+                              {itemPlace.title}
+                            </span>
+                          </div>
+                        )
+                    )}
                 </div>
               </div>
             </div>
@@ -164,7 +225,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
               )}
             </div>
           </div>
-        </aside>
+        </div>
       </div>
       <ModalDrawer
         title={modalState.title}

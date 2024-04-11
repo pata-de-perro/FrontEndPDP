@@ -12,7 +12,7 @@ export default async function EventPage({ params }) {
   if (!event) {
     redirect("/pdp");
   }
-
+  
   return (
     <>
       <HeroAuth

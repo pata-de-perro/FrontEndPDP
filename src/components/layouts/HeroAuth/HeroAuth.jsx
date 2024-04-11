@@ -5,15 +5,16 @@ export function HeroAuth({ title, children, urlImg, type }) {
     <div
       className={clsx(
         type === "primary"
-          ? "bg-gradient-to-r from-[#F5F5F5] to-primary"
-          : "bg-gradient-to-r from-[#F5F5F5] to-secondary",
+          ? "bg-gradient-to-tr from-[#F5F5F5] to-primary"
+          : "bg-gradient-to-tr from-[#F5F5F5] to-secondary",
         "rounded-2xl",
         "mr-[24px] mt-[35px] p-[24px]",
-        "w-[auto] min-h-60"
+        "min-h-60",
+        "w-350px md:w-400px"
       )}
     >
       <div className={clsx("flex", "relative")}>
-        <div className="w-[500px]">
+        <div className="">
           <h1 className={clsx("font-heading text-azulGris900 text-h1", "mb-2")}>
             {title}
           </h1>
@@ -34,7 +35,6 @@ export function HeroAuth({ title, children, urlImg, type }) {
             src={urlImg}
             width={330}
             height={330}
-            alt="progresive app pana"
             className={clsx(
               "sr-only",
               "md:absolute md:-right-8 md:top-5",
