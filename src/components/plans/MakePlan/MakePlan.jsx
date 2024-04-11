@@ -1,8 +1,10 @@
 "use client";
 import clsx from "clsx";
+import Swal from "sweetalert2";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { postEventLocationsToApi } from "@/services";
+import { parsePlacesToEdit } from "@/helpers";
 import { placesOfInterestMenu } from "@/mocks/catalogs";
 import { GoogleMapPlaces } from "@/components/maps";
 import { ModalDrawer } from "@/components/common";
@@ -10,6 +12,7 @@ import { ElementPlacesPlan } from "@/components/plans";
 
 export function MakePlan({ data, mapId, user, idPlan }) {
   const { title, locationEvent, coordsEvent, isTravel, locations } = data;
+  const locationsEdit = parsePlacesToEdit(locations);
   const ubicationMap = { lat: coordsEvent[0], lng: coordsEvent[1] };
   const { accessToken } = user;
   const router = useRouter();
@@ -19,7 +22,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
   );
   const [open, setOpen] = useState(false);
   const [modalState, setModalState] = useState({ title: null, content: null });
-  const [ubicationsUser, SetUbicationsUser] = useState([]);
+  const [ubicationsUser, SetUbicationsUser] = useState([...locationsEdit]);
 
   const toggleVisible = () => {
     setOpen(!open);
@@ -38,20 +41,23 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     setOpen(true);
   };
 
-  const handleAddUbicationToEvent = (ubication) => {
-    const { place_id, name, type, coords, vicinity, contact } = ubication;
-
-    const newUbication = {
-      placeIdGoogle: place_id,
-      name: name,
-      type: type,
-      vicinity: vicinity,
-      simpleAddress: contact.address,
-      coords: coords,
-    };
-    SetUbicationsUser([...ubicationsUser, newUbication]);
-    setOpen(false);
-  };
+    const handleRemoveUbicationToEvent = async (dataUbication) => {
+        const res = await Swal.fire({
+          title: "¿Deseas quitar está ubicación?",
+          showCancelButton: true,
+          confirmButtonColor: "#d33",
+          confirmButtonText: "Sí",
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+          },
+        });
+        if (res.isConfirmed) {
+          const newUbicationsUser = ubicationsUser.filter(
+            (ubication) => ubication !== dataUbication
+          );
+          SetUbicationsUser(newUbicationsUser);
+        }
+      };
 
   const onSubmitLocations = async () => {
     const result = await postEventLocationsToApi(
@@ -61,9 +67,29 @@ export function MakePlan({ data, mapId, user, idPlan }) {
     );
 
     if (result.success === true) {
-      router.push("/pdp/");
-      router.refresh();
+      Swal.fire({
+          position: "top-end",
+          title: result?.msg,
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+            popup: "bg-accent1",
+          },
+        });
+        router.push(`/pdp/events/${idPlan}`);
+        router.refresh();
     }
+        Swal.fire({
+          position: "top-end",
+          title: result?.msg,
+          showConfirmButton: false,
+          timer: 1500,
+          customClass: {
+            title: "text-xl text-accent2 font-heading",
+            popup: "bg-accent1",
+          },
+        });
   };
 
   return (
@@ -88,7 +114,7 @@ export function MakePlan({ data, mapId, user, idPlan }) {
             ubicationMap={ubicationMap}
             placeRequest={placeRequest}
             handleClickMarker={handleClickMarker}
-            locations={locations}
+            handleRemoveUbicationToEvent={handleRemoveUbicationToEvent}
           />
         </div>
         <div className={clsx(
@@ -164,7 +190,13 @@ export function MakePlan({ data, mapId, user, idPlan }) {
                               placeRequest === itemPlace.typePlace &&
                                 "text-primary font-semibold"
                             )}
+                            onClick={() => setPlaceRequest(itemPlace.typePlace)}
                           >
+                            <img
+                              src={itemPlace.pinUrl}
+                              alt="gps pin icon"
+                              className="h-12 w-auto"
+                            />
                             {itemPlace.title}
                           </span>
                         </div>

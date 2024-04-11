@@ -11,6 +11,7 @@ export function GoogleMapPlaces({
   ubicationMap,
   placeRequest,
   handleClickMarker,
+  handleRemoveUbicationToEvent,
   ubicationsUser,
 }) {
   const mapGooglePlacesRef = useRef(null);

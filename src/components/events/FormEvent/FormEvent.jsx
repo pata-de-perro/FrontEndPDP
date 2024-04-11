@@ -59,7 +59,7 @@ export function FormEvent({
           "underline decoration-4 decoration-secondary text-inviteSmallText font-body"
         )}>Una salida</span>
         <span className="text-inviteSmallText font-body ml-2"
-        > es aquella que tiene como duración sólo un día e inicia a
+        >{" "}es aquella que tiene como duración sólo un día e inicia a
         una hora en específico.</span>
       </div>
       <div className="form-control mb-4">
@@ -72,7 +72,7 @@ export function FormEvent({
           placeholder="Ingrese nombre del viaje y/o salida"
           className={clsx(
             "input input-bordered input-sm",
-            "w-[340px] md:w-[450px] lg:w-[450px]",
+            "w-[340px] md:w-[450px] lg:w-[450px]"
             )}
           {...register("title", {
             required: { value: true, message: "Por favor ingrese el nombre" },
@@ -103,13 +103,14 @@ export function FormEvent({
         ></textarea>
       </div>
       <div className="form-control mb-4 ">
-        <label htmlFor="locationEvent" className={clsx("text-sm")}>
-          ¿Dónde harás tu evento? Elige un municipio o zona <span className="text-red-500">*</span>
+        <label htmlFor="locationEvent" className={clsx("text-sm mb-1")}>
+          ¿Dónde harás tu evento? Elige un municipio o zona {" "}
+          <span className="text-red-500">*</span>
         </label>
         <input
           id="locationEvent"
           type="text"
-          placeholder="Ingrese el lugar"
+          placeholder="¿A dónde quieres ir?"
           className={clsx(
             "input input-bordered input-sm", 
             "w-[340px] md:w-[450px] lg:w-[450px]",
@@ -141,8 +142,7 @@ export function FormEvent({
               id="initialDate"
               type="date"
               className={clsx(
-                "input input-bordered input-sm", 
-                // "w-full"
+                "input input-bordered input-sm"
                 )}
               {...register("initialDate", {
                 required: {
@@ -150,6 +150,7 @@ export function FormEvent({
                   message: "Por favor ingrese fecha de inicio del viaje",
                 },
               })}
+              min={new Date().toISOString().split("T")[0]}
             />
             <div className="label">
               {errors?.initialDate && (
@@ -168,7 +169,7 @@ export function FormEvent({
               type="date"
               className={clsx(
                 "input input-bordered input-sm",
-                // "w-full"
+                "w-[340px] md:w-[450px] lg:w-[450px]"
                 )}
               {...register("endDate", {
                 required: {
@@ -176,11 +177,13 @@ export function FormEvent({
                   message: "Por favor ingrese fecha de término del viaje",
                 },
                 validate: (value) => {
-                  const initialDateValue = watch("initialDate");
-                  return (
-                    value > initialDateValue ||
-                    "La fecha de término debe ser posterior a la fecha inicial"
-                  );
+                  const currentDate = new Date();
+                  const selectedDate = new Date(value);
+                  const isFutureDate = selectedDate >= currentDate;
+                  const isValidDate =
+                    isFutureDate ||
+                    "La fecha y hora deben ser posterior a la fecha y hora actual";
+                  return isValidDate;
                 },
               })}
             />

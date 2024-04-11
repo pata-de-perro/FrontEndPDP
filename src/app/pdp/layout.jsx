@@ -12,7 +12,7 @@ export default function AuthLayout({ children }) {
       )}
     >
       <AsideAuth />
-      <main className="m-2 lg:ml-60">{children}</main>
+      <main className="m-2">{children}</main>
     </div>
   );
 }
