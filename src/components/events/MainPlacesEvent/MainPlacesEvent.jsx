@@ -12,13 +12,11 @@ export function MainPlacesEvent({ event, mapId }) {
       "mt-4 w-full",
       )}>
       <div className={clsx(
-        "h-full", 
-        "flex flex-col",
-        "lg:flex-row"
+        "h-full flex flex-col lg:flex-row"
         )}>
         <div
           className={clsx(
-            "w-[fit] h-[fit] p-2 ",
+            "w-[fit] h-[fit] p-2",
             )}
         >
           <div className={clsx(
@@ -27,8 +25,7 @@ export function MainPlacesEvent({ event, mapId }) {
             <h3
               className={clsx(
                 "font-heading text-h3 text-azulGris900",
-                "text-center",
-                "my-4"
+                "text-center my-4"
               )}
             >
               Tus lugares elegidos

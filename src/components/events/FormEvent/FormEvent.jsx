@@ -20,7 +20,7 @@ export function FormEvent({
   }, [watch("initialDate"), watch("isTravel")]);
 
   return (
-    <form onSubmit={onSubmitEvent} className="w-[380px] md:w-[430px] ">
+    <form onSubmit={onSubmitEvent} className="w-[380px] md:w-[430px] flex flex-wrap justify-center">
       <div className="flex space-x-4 mb-4 w-[340px] md:w-[450px] lg:w-[450px]">
         <div className="form-control">
           <label className="label cursor-pointer">
@@ -47,7 +47,7 @@ export function FormEvent({
           </label>
         </div>
       </div>
-      <div className="md:sr-only lg:sr-only">
+      <div className="w-full mx-4 md:mx-0 lg:sr-only mb-2">
         <span
           className={clsx(
             "underline decoration-4 decoration-primary text-inviteSmallText font-body"
@@ -60,7 +60,7 @@ export function FormEvent({
         </span>
       </div>
 
-      <div className="w-[340px] md:w-[450px] mr-4 lg:sr-only mb-2">
+      <div className="w-full mx-4 md:mx-0 lg:sr-only mb-2">
         <span className={clsx(
           "underline decoration-4 decoration-secondary text-inviteSmallText font-body"
         )}>Una salida</span>
